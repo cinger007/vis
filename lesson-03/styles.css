@@ -879,15 +879,15 @@ pre .star { color: #fbbf24; font-weight: 700; }
 /* CVD 论文图测：原图 vs CVD 模拟 */
 .cvd-paper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 8px;
+  grid-template-columns: 1fr;
+  gap: 12px;
   margin: 10px 0;
 }
 .cvd-paper-card {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
-  padding: 8px;
+  padding: 10px 8px;
   text-align: center;
 }
 .cvd-paper-card h5 {
