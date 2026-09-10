@@ -809,9 +809,9 @@ window.DEMOS["d-3-8"] = async function (mount) {
     card.innerHTML = `
       <h5>${p.name}</h5>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:9px;">
-        <div><div style="color:#94a3b8;margin-bottom:2px">正常</div>${original}</div>
-        <div><div style="color:#94a3b8;margin-bottom:2px">红盲</div>${prota}</div>
-        <div><div style="color:#94a3b8;margin-bottom:2px">绿盲</div>${deuta}</div>
+        <div><div style="color:#94a3b8;margin-bottom:2px">正常</div>${original}</div><br/>
+        <div><div style="color:#94a3b8;margin-bottom:2px">红盲</div>${prota}</div><br/>
+        <div><div style="color:#94a3b8;margin-bottom:2px">绿盲</div>${deuta}</div><br/>
       </div>
     `;
     papers.appendChild(card);
