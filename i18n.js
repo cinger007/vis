@@ -112,7 +112,7 @@ const I18N = {
     'portal.title': '《可视化导论》',
     'footer.meta': '零依赖 · D3.js v7 · 部署于 WorkBuddy Sites',
 
-    'footer.copyright': '© 2026 《可视化导论》课程 · WorkBuddy 教师版',
+    'footer.copyright': '© 2026 《可视化导论》课程 · 中国石油大学（华东）· 授课教师：<a href="https://cinger007.github.io" target="_blank" rel="noopener" class="teacher-link">李昕</a> · 主要参考教材：陈为《可视化导论》',
 
     'portal.cards.color-bold': '颜色是可视化基础',
 
@@ -128,7 +128,7 @@ const I18N = {
 
     'portal.nav.chapters': '📚 章节',
 
-    'portal.hero.meta': '陈为《可视化导论》配套课程文档 · 案例驱动 · 代码可运行',
+    'portal.hero.meta': '中国石油大学（华东）· 授课教师：<a href="https://cinger007.github.io" target="_blank" rel="noopener" class="teacher-link">李昕</a> · 主要参考教材：陈为《可视化导论》',
 
     'portal.hero.subtitle': '从数据到图表：JavaScript + D3.js 实战课程',
 
@@ -281,7 +281,7 @@ const I18N = {
     // === Portal home ===
     'portal.title': 'Introduction to Visualization',
     'footer.meta': 'Zero dependencies · D3.js v7 · Deployed on WorkBuddy Sites',
-    'footer.copyright': '© 2026 《Introduction to Visualization》Course · WorkBuddy Teacher Edition',
+    'footer.copyright': '© 2026 Introduction to Visualization Course · China University of Petroleum (Huadong) · Instructor: <a href="https://cinger007.github.io" target="_blank" rel="noopener" class="teacher-link">Li Xin</a> · Main reference: Chen Wei’s 《Introduction to Visualization》',
     'portal.cards.color-bold': 'Color is the foundation of visualization',
     'portal.cards.source-prefix': 'Standalone topic:',
     'portal.cta.enter3': 'Open Topic →',
@@ -289,7 +289,7 @@ const I18N = {
     'portal.nav.about': 'ℹ️ About',
     'portal.nav.howto': '▶️ How to Use',
     'portal.nav.chapters': '📚 Chapters',
-    'portal.hero.meta': "Companion materials to Chen Wei's 《Introduction to Visualization》· Case-driven · Code that runs",
+    'portal.hero.meta': 'China University of Petroleum (Huadong) · Instructor: <a href="https://cinger007.github.io" target="_blank" rel="noopener" class="teacher-link">Li Xin</a> · Main reference: Chen Wei’s 《Introduction to Visualization》',
     'portal.hero.subtitle': 'From Data to Charts: A Hands-on JavaScript + D3.js Course',
     'portal.hero.h1': 'Introduction to Visualization',
     'portal.hero.tag': 'VISUALIZATION · INTRODUCTION',
@@ -414,6 +414,15 @@ function applyLocale(loc) {
     const key = el.getAttribute('data-i18n-placeholder');
     const v = t(key);
     if (v) el.setAttribute('placeholder', v);
+  });
+
+  // 3.5 替换 [data-i18n-html] innerHTML（带链接的混合内容）
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (!key) return;
+    if (el.classList && el.classList.contains('demo-mount')) return;
+    const v = t(key);
+    if (v) el.innerHTML = v;
   });
 
   // 4. 切换按钮高亮
