@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="SiMWi6zR9erlZJSK6BCNkA">
+<head data-page-node-id="lvZNSFHctHyCyGLMFtlJUK">
+  <meta charset="UTF-8" data-page-node-id="9TBVVYu4a52OmA71fFaq4s" />
+  <title>Demo 5 · selection 三态模型</title>
+  <link rel="stylesheet" href="../styles.css" data-page-node-id="DF8hdkyJKkXEAIKI7Ikd2b" />
+</head>
+<body data-page-node-id="9QGHDjqSM6i7eSRpEUvEfI">
+  <a href="../index.html" data-page-node-id="fCZrFcExMN3pQyOzKW8Zuk">← 返回导航</a>
+  <h1 data-page-node-id="8WmZYqw3lW0Y7uAs0CCtQi">Demo 5 · D3 Selection 与 enter/update/exit</h1>
+  <p data-page-node-id="zMgeOEV8oOCBdLtZHueCVN">
+    对应讲义章节 <span class="tag" data-page-node-id="ZEfXMz49NFADQvirdol5xP">3.5.1 D3 数据选择器</span>。本 demo 把 D3 最核心的
+    <strong data-page-node-id="vFQ7wNAVTFTqk8ipJstHin">Data-Join 三态模型</strong>（enter / update / exit）可视化：
+    数据 > 元素 ⇒ 多出来的进入 enter，被替换的留在 update，多余元素进入 exit。
+  </p>
+
+  <div class="demo-nav" data-page-node-id="kXA1DukACy3uAlTjXlGPHG">
+    <div class="panel-title" data-page-node-id="mz3FgWandSJhN8C8RG9ekI">select vs selectAll</div>
+    <table data-page-node-id="lcPojHaJVWEM1HagjtcCMC">
+      <thead data-page-node-id="dm5cwLjjgSAv1qUfRC8lBX">
+        <tr data-page-node-id="2DMO1m0kk7WJNCC6cYGl2g"><th data-page-node-id="H2kDijAVGk4yP4IxwGvwFT">方法</th><th data-page-node-id="T51BiCTHbghWXSfFONzxfP">返回</th><th data-page-node-id="7t6ccNsO1Gi8KxBCzz1YwW">典型用法</th></tr>
+      </thead>
+      <tbody data-page-node-id="q2lroXXHDDfXPTx6L01nAK">
+        <tr data-page-node-id="S8D8O6LyEMVpEHvVHVvM9h"><td data-page-node-id="1qVqvsEBweGJ6vm0eXgtNp">d3.select("selector")</td><td data-page-node-id="HxPIa6BNpzkLFxsByUa4PF">单个元素（或 null）</td><td data-page-node-id="lZ5BRsXcOHTjcRIKc5NX6Z">选中唯一的根元素</td></tr>
+        <tr data-page-node-id="AT3XB5HX4C8TuWuaqxQKII"><td data-page-node-id="XqEg60lWhv5XWV5IpkOGpd">d3.selectAll("selector")</td><td data-page-node-id="nIFe64CfolonFGWEJwByLA">多个元素的 selection</td><td data-page-node-id="aiST917fufpVfM3qUTOySv">绑定数据数组 → 三态模型</td></tr>
+        <tr data-page-node-id="EK2q4sOot1X82gxRBf7sCA"><td data-page-node-id="HMPDYyZqrrCx3B16E88aVN">selection.select("selector")</td><td data-page-node-id="iJ4KmNWkAuO9qcOqeNeKNn">每个选中元素的后代中第一个匹配</td><td data-page-node-id="jFn2hG3gymfLlZ2fpmxKWf">嵌套：父 → 子</td></tr>
+        <tr data-page-node-id="dtUI4il0nkKxo4Weezj5XM"><td data-page-node-id="0ZP9j4F401oLOG4BW877PL">selection.selectAll("selector")</td><td data-page-node-id="LqV0Q1VzfhZ2LSTEG3201Q">每个选中元素的后代中所有匹配</td><td data-page-node-id="9QCLw4FHL68iFN4MUcPaAB">嵌套：父 → 多个子</td></tr>
+        <tr data-page-node-id="stRC99BVfnYLhy0zbkIas6"><td data-page-node-id="M8h9xDwNWtKtnKCVgr2njL">selection.selectChild()</td><td data-page-node-id="hx9IZyDp0ul0jhsDXzGcL4">直接子元素中的第一个</td><td data-page-node-id="mgW8FDGcER2CjtvYpkVyqB">DOM 层级</td></tr>
+        <tr data-page-node-id="6DYV4UYs45nhtrAl5CpBHv"><td data-page-node-id="Qp7xV0FSiCCm61yOzwsrS8">selection.selectChildren()</td><td data-page-node-id="e4QgLhW6kG4HKQv3srYU5s">所有直接子元素</td><td data-page-node-id="qlB0PFGttGiDW2RDrSdC7E">DOM 层级</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel" data-page-node-id="UcE0kOUQjMFBxdB86qXJYP">
+    <div class="panel-title" data-page-node-id="xZDXPZFttT4lMqrff4jGvp">交互演示 —— enter / update / exit</div>
+    <div class="controls" data-page-node-id="UbAGnWAfQErSgSUrPDkUKA">
+      <button id="btn-add" data-page-node-id="E5tLI1USFnNAcXpvoiN2Wv">+ 添加 1 个数据</button>
+      <button id="btn-update" data-page-node-id="zGLgCrVpVYDomivYpG5cxg">⇆ 全部更新（×2）</button>
+      <button id="btn-remove" data-page-node-id="Opuw24yqlEA76LQSgaEi7C">− 删除 1 个数据</button>
+      <button id="btn-reset" data-page-node-id="BGwUaXSc1hCUcXh95UJhA2">重置</button>
+    </div>
+    <p style="font-size:13px; color:#475569;" data-page-node-id="pXBimEfZUqb97IS8TX8eqq">
+      当前数据：<code id="data-state" data-page-node-id="gi5flbkaA4LQO6FEoQq1QF">[1, 2, 3]</code>（N=3） · 元素：<code id="el-state" data-page-node-id="VAGFRVliBZjq9ed3X52B7Z">3</code> 个
+    </p>
+    <svg id="states" style="width:100%; height:160px;" data-page-node-id="BcxQz2GXEJ2iFro8kdTF00"></svg>
+    <div class="legend" style="margin-top:8px;" data-page-node-id="47uyo8PsAJPryZoMjfIA9z">
+      <span class="tag green" data-page-node-id="FUkRlwguG6vu9KuVecyGAX">绿色 = enter（新增元素）</span>
+      <span class="tag cyan" data-page-node-id="wH0L1MICwpZPqkV32IeL7Q">蓝色 = update（更新现有）</span>
+      <span class="tag red" data-page-node-id="t0mj2Fse73C7GHBjdE0RJ6">红色 = exit（待移除）</span>
+    </div>
+  </div>
+
+  <div class="panel" data-page-node-id="Z1yL3ZGsKD5pnyNbYApttB">
+    <div class="panel-title" data-page-node-id="oEeggn1eVhEgNEKSsBG2IV">核心代码</div>
+    <div class="console" data-page-node-id="nYPbSvMSGRiTuQEtkMMBjo">const circles = svg.selectAll("circle")
+  .data(currentData)
+  .join(
+    enter => enter.append("circle")
+      .attr("fill", "green"),
+    update => update.attr("fill", "cyan"),
+    exit => exit.remove()
+  );</div>
+  </div>
+
+  <div class="note" data-page-node-id="Wi1WCWkDMzYz1NqcjK7rC9">
+    <strong data-page-node-id="d8A5nqa617aHruQELIe0fe">嵌入理论：</strong>D3 的 Data-Join 是 Mike Bostock 提出的声明式数据绑定模型。
+    与命令式 DOM 操作相比，三态模型的优势：
+    (1) 增量更新而非全量重绘 → 性能好；(2) 元素身份稳定 → 过渡动画自然；
+    (3) 与函数式数据流天然契合 → 易于推理。
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

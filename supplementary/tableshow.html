@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛软件学院25级新生</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="utils/data.js"></script>
+    <script src="utils/table.js"></script>
+    <link rel="stylesheet" href="style/table.css">
+</head>
+
+<body>
+        <div id="app">
+        <h1>青岛软件学院25级新生</h1>
+        <div class="table-container">
+            <table id="data-table" class="data-table"></table>
+        </div>
+    </div>
+    <script>
+        // 启动渲染
+        main();
+        // 测试树渲染
+        async function main() {
+            try {
+                const students = await loadCSV();
+                renderTable(students,"#data-table");
+            } catch (error) {
+                console.error("渲染失败:", error);
+                d3.select("#tree-container").html(`<div style="color:red">加载失败: ${error.message}</div>`);
+            }
+        }
+        
+    </script>
+</body>
+</html>

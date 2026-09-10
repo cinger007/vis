@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="A4XHaGnDE34ijuivK9r34X">
+<head data-page-node-id="3sX5EgkQRk2gwNSlQiDBJu">
+  <meta charset="UTF-8" data-page-node-id="jl75d2FlfCBkGuQWwEvbzB" />
+  <title>Demo 2 · DIKW 金字塔</title>
+  <link rel="stylesheet" href="../styles.css" data-page-node-id="33atvnA5ePa03tl8DtwTue" />
+</head>
+<body data-page-node-id="FdOmCJS2sjsktGzX52PwVe">
+  <a href="../index.html" data-page-node-id="bNNkvDe0NFc6O5vX2ThRId">← 返回导航</a>
+  <h1 data-page-node-id="iukCfmtDDSE65D4lrog1T6">Demo 2 · DIKW 金字塔</h1>
+  <p data-page-node-id="d4GXeX0hCbxlKwfwvJWUmq">
+    对应讲义章节 <span class="tag" data-page-node-id="P8RCGh13uIogEEOOdEpB8d">3.2 数据定义</span>。本 demo 把"数据 → 信息 → 知识 → 智慧"的金字塔可视化，
+    鼠标悬停/点击任一层，右侧会显示该层的定义、典型数据与可视化方式。
+  </p>
+
+  <div class="demo-nav" data-page-node-id="8CVMaNSzkRa4QiUXk6auQd">
+    <div class="panel-title" data-page-node-id="OqfZJFcyCkp7FmirzbOHWM">可视化在 DIKW 中的位置</div>
+    <p style="font-size: 13px; color: #475569;" data-page-node-id="GD0F3yH0t0w9skluPGLNfP">
+      数据可视化主要把 <strong data-page-node-id="hbpByqtxAm49qikYjWmmWo">Data 升到 Information</strong>（部分场景能升到 Knowledge），但难以跨越到 Wisdom。
+      ——陈为《可视化导论》Ch1 绪论部分
+    </p>
+  </div>
+
+  <div class="panel" data-page-node-id="MrFrnulDllFCy1vTxLmmgQ">
+    <div class="panel-title" data-page-node-id="FpAcvA8qJnjwgdHgJVKwnu">DIKW 金字塔（点击/悬停层查看详情）</div>
+    <div id="dikw-svg" data-page-node-id="NGehDhrpLdj3rODz5ALzFD"></div>
+  </div>
+
+  <div class="panel" data-page-node-id="0PdZ6rpsXBeejNzwhku1z8">
+    <div class="panel-title" data-page-node-id="6maDxdr9e9xHKCAKZ5wsGK">当前层级详情</div>
+    <div id="dikw-detail" style="font-size: 14px; color: #334155;" data-page-node-id="eVYO64jzD3DKvOoOkQZ6F7">
+      ← 把鼠标移到金字塔上…
+    </div>
+  </div>
+
+  <div class="note" data-page-node-id="5QY8LtLI3BS0UxPpaz7PWl">
+    <strong data-page-node-id="UJ0W5CDrJQ2v47768XLeEn">嵌入理论（陈为 Ch1 拓展）：</strong>Rowley (2007) 指出 DIKW 是过度简化的层次模型——
+    现实中 Data 与 Information 之间的界限往往模糊，知识可以是更结构化的信息。
+    但作为教学脚手架，DIKW 仍然是最常用的概念框架。
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

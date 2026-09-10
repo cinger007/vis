@@ -1,0 +1,26 @@
+
+        .axis-label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .dot {
+            stroke: #000;
+        }
+        .tooltip {
+            position: absolute;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 4px;
+            pointer-events: none;
+            font-size: 12px;
+        }
+        .fit-line {
+            stroke: #ff7f0e;
+            stroke-width: 2;
+            fill: none;
+        }
+        .fit-area {
+            fill: #ff7f0e;
+            opacity: 0.2;
+        }

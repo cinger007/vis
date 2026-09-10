@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="hNrbrHCo2r4YFXQzUO08dZ">
+<head data-page-node-id="qpqRFPEqg1wksOYxc7WLkF">
+  <meta charset="UTF-8" data-page-node-id="wYYxzy4qaDMorpHH8HWiCO" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="YBoHgqnHubDpZ0ScYeEUZF" />
+  <title>第 2 章 数据可视化流程 · 集成教学页面</title>
+  <link rel="stylesheet" href="./styles.css" data-page-node-id="ij1vo24zIjwGRIVWQBJ0ds" />
+  <link rel="stylesheet" href="../i18n.css" />
+</head>
+<body data-page-node-id="Q3X4M9HkdeSrSxacdoxNzk">
+
+  <nav class="course-topbar" data-current="2">
+    <a class="brand" href="../">
+      <span class="back">←</span><span data-i18n="nav.home" data-i18n="common.enter">课程门户</span>
+    </a>
+    <ul class="tabs">
+      <li><a href="../" data-i18n="nav.home" data-i18n="common.enter">课程门户</a></li>
+      <li><a href="../lesson-01/" data-i18n="nav.ch1">第 1 章 · 数据</a></li>
+      <li><a href="../lesson-02/" data-i18n="nav.ch2">第 2 章 · 数据可视化流程</a></li>
+      <li><a href="../lesson-03/" data-i18n="nav.ch3">第 3 章 · 色彩专题</a></li>
+      <li><a href="../lesson-04/" data-i18n="nav.ch4">第 4 章 · 低维可视化</a></li>
+      <li><a href="../lesson-05/" data-i18n="nav.ch5">第 5 章 · 时序可视化</a></li>
+    </ul>
+  </nav>
+  <header class="lesson-header" data-page-node-id="NhFu6XXkmB1PW6yjCyYWSB">
+    <div data-page-node-id="Bs2M8KZKHW5vjChTp7Qodg">
+      <h1 data-page-node-id="nwc0KuZEYCGTrh8xPcCRhX">第 2 章 数据可视化流程</h1>
+      <p class="subtitle" data-page-node-id="kVoHA9DQzZENnIRKpAfXsB">Doc-02 集成教学页面 · 讲解 ⇄ 代码 ⇄ 演示 三 tab 切换</p>
+    </div>
+    <div class="header-tip" data-page-node-id="4HwyRVssPD47bDQY5SZIss">
+      <span class="kbd" data-page-node-id="ijVBDQIYnkdHnRcUyBc0Vw">Tab</span> 切换章节 · 每个章节内三 tab 自由切换
+    </div>
+  </header>
+
+  <main class="lesson-main" data-page-node-id="dqoB9J9BJTkyJnfnNQM34q">
+    <!-- 左侧章节导航 -->
+    <aside class="chapter-nav" data-page-node-id="bO8mLFuMjhQIH8PHjCDCgs">
+      <h3 data-page-node-id="jHYOttGmtr0WpyeQvOwGgC" data-i18n="nav.toc">章节目录</h3>
+      <ul data-page-node-id="iP8zHnxkGm93v2xO9XUavj">
+        <li data-page-node-id="pfvqADXEDAuYZ5bJYklFR4"><a data-i18n="sec-02-1.title" href="#ch-2-1" data-chapter="ch-2-1" class="active" data-page-node-id="6wTada9WoEB6CqQUssx74h">2.1 数据可视化流程</a></li>
+        <li data-page-node-id="G3NBIho0yxoW9ge4Iv8C9W"><a data-i18n="sec-02-2.title" href="#ch-2-2" data-chapter="ch-2-2" data-page-node-id="Hd9lkA4WLhWSxdph6mWW9R">2.2 数据分类树（rollup）</a></li>
+        <li data-page-node-id="5NVKBfEifOKKxKLsLLT1YB"><a data-i18n="sec-02-3.title" href="#ch-2-3" data-chapter="ch-2-3" data-page-node-id="7QA8LbF46ZVx8RJEUEBBQW">2.3 树布局算法</a></li>
+        <li data-page-node-id="eqfQlh0MtzamwzBhDOxDhE"><a data-i18n="sec-02-4.title" href="#ch-2-4" data-chapter="ch-2-4" data-page-node-id="JHK4JqqUtBPoieAxDBlG3I">2.4 树形列表渲染</a></li>
+      </ul>
+      <div class="nav-tip" data-page-node-id="KowyFiXPzzSGzid2DHfIZN">        <a href="../supplementary/#第-2-章-数据可视化流程" target="_blank"><span data-i18n="common.supplementary">↗ 补充 demo 集合</span></a>
+        <br>        <a href="./demo/" target="_blank"><span data-i18n="common.demo-folder">↗ 独立 demo 集合</span></a>
+        <br>        <a href="./lecture.md" target="_blank" data-i18n-href="lecture"><span data-i18n="common.full-lecture">↗ 完整讲义 markdown</span></a>
+      
+      </div>
+    </aside>
+
+    <!-- 章节内容 -->
+    <section class="chapter-content" data-page-node-id="clYQGy8tFydqwgkDMRYlx9">
+
+      <!-- ============= 4.1 数据可视化流程 ============= -->
+      <article class="chapter active" id="ch-2-1" data-page-node-id="48cDkK2zBOmvkvKMP6jCDq">
+        <h2 data-page-node-id="HX0qb3Q5PQFLDXhtl4QHnW" data-i18n="sec-02-1.title">2.1 数据可视化流程</h2>
+        <p class="chapter-subtitle" data-lang="zh-CN">从「拿到一张表」到「画出一张图」的完整链路</p>
+        <p class="chapter-subtitle" data-lang="en-US" hidden>The complete pipeline from "getting a table" to "drawing a chart"</p>
+
+        <div class="tabs" data-page-node-id="ogmcpFFo0doBhUVGHj3rbc">
+          <button class="tab-btn active" data-tab="explain" data-page-node-id="Z5IOILK0o2FlMyCoXwlofq" data-i18n="tab.explain">📖 讲解</button>
+          <button class="tab-btn" data-tab="code" data-page-node-id="IgP7lLzBS60t55R2ED1seJ" data-i18n="tab.code">⌨️ 关键代码</button>
+          <button class="tab-btn" data-tab="demo" data-page-node-id="AI9uEuOkp0QA1c25aUQJe2" data-i18n="tab.demo">▶️ 演示</button>
+        </div>
+
+        <div class="tab-panels" data-page-node-id="937RcQq9OQGN2Fucd4dFkx">
+          <!-- 讲解 -->
+          <div class="tab-panel active" data-panel="explain" data-page-node-id="3lrzZYyF49hdTW1JvEoj12">
+            <h3 data-lang="zh-CN">你的原案例</h3>
+            <h3 data-lang="en-US" hidden>Your Original Case</h3>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="Gt09aW9kyXLvebSvgeGjLk">3 个可视化流程模型</strong>：① 参考 Card 1999 模型绘制流程图（Box Flowcharts）→
+              ② Mackinlay 自动化准则 → ③ van Wijk 模型（含交互反馈）。
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>3 visualization pipeline models</strong>: ① Reference the Card 1999 model for box flowcharts &rarr;
+              ② Mackinlay's automation principles &rarr; ③ van Wijk's model (with interaction feedback).
+            </p>
+            <p data-lang="zh-CN">
+              原始图片是你的概念图。<strong data-page-node-id="q5ZApGCzwNprT9LPo7rB89">本节课</strong>用 D3 重画这张概念图，每个节点点击后能展开细节。
+            </p>
+            <p data-lang="en-US" hidden>
+              The original image is your concept map. <strong>This lesson</strong> uses D3 to redraw this concept map &mdash; every node expands details when clicked.
+            </p>
+
+            <h3 data-lang="zh-CN">嵌入理论：可视化流程的三个经典模型</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: Three Classic Models of the Visualization Pipeline</h3>
+            <table data-lang="zh-CN" class="theory-table" data-page-node-id="gdc324OQ2JVZQyXmIBNlSp">
+              <thead data-page-node-id="VpVzWp6ywZrhdm2bX4hHu1">
+                <tr data-page-node-id="VDGsDdyEQCOCvLyMiSegX8"><th data-page-node-id="UmaIxKfAYLFuH0VGf3UHDo">模型</th><th data-page-node-id="vL5mYTJIGi9Yl3qhgRNRDF">作者 / 年份</th><th data-page-node-id="SeESifMZNkJJpUoMZtHQtC">核心思想</th></tr>
+              </thead>
+              <tbody data-page-node-id="FWyQcXd2HCUToX3ZlgSbCm">
+                <tr data-page-node-id="7W2zJgtKxercbnR89zCMJ1">
+                  <td data-page-node-id="UGLAZRN1dDXBAbVuojb6aA"><strong data-page-node-id="Mq17cX9nnSV0lQ0RrTQkRF">Card 数据流模型</strong></td>
+                  <td data-page-node-id="FfbCxJoe6kYnGniq1LjefJ">Card, Mackinlay &amp; Shneiderman, 1999</td>
+                  <td data-page-node-id="QdM7Y06edWa0BilFqvnZwu">原始数据 → 数据表 → 视觉结构 → 视图（嵌套变换 D→T→V→C/L/S）</td>
+                </tr>
+                <tr data-page-node-id="aEKil5CzvMrkpJR7NpQ0Xb">
+                  <td data-page-node-id="9wUV4nCsyES0NMvhXXOTGt"><strong data-page-node-id="hB9zqA4HMGMHnnA1GiBtLk">Mackinlay 自动化准则</strong></td>
+                  <td data-page-node-id="ImhYVEmgLjcUdgGUbQ7WnY">Mackinlay 1986</td>
+                  <td data-page-node-id="yuav8SGisqapd8uzJm7rZU">对每种数据类型，自动选「量化准确性最高」的视觉通道（如：数值→位置、类别→色调）</td>
+                </tr>
+                <tr data-page-node-id="yBxBSnyTN4sjHTRBDC2O8E">
+                  <td data-page-node-id="xkiLFloma0HXbZBT9roomx"><strong data-page-node-id="c3Gv6fIaC7XEZfVAw7wQRp">van Wijk 反馈模型</strong></td>
+                  <td data-page-node-id="6htjqVGJN9tyslEeMiNTsn">van Wijk 2005</td>
+                  <td data-page-node-id="dGswazcV1VKzhsqWP27RDU">View ⇆ Filter ⇆ Param ⇆ Other Views —— 强调<strong data-page-node-id="GvpB8XM5tkReV8tn0bZ3wf">交互反馈循环</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <table data-lang="en-US" hidden class="theory-table" data-page-node-id="gdc324OQ2JVZQyXmIBNlSp">
+              <thead>
+                <tr><th>Model</th><th>Author / Year</th><th>Core Idea</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Card Data Flow Model</strong></td>
+                  <td>Card, Mackinlay &amp; Shneiderman, 1999</td>
+                  <td>Raw data &rarr; data table &rarr; visual structure &rarr; view (nested transformations D&rarr;T&rarr;V&rarr;C/L/S)</td>
+                </tr>
+                <tr>
+                  <td><strong>Mackinlay's Automation Principles</strong></td>
+                  <td>Mackinlay, 1986</td>
+                  <td>For each data type, automatically pick the visual channel with the highest &ldquo;quantitative accuracy&rdquo; (e.g., quantitative &rarr; position, categorical &rarr; hue)</td>
+                </tr>
+                <tr>
+                  <td><strong>van Wijk Feedback Model</strong></td>
+                  <td>van Wijk, 2005</td>
+                  <td>View &harr; Filter &harr; Param &harr; Other Views &mdash; emphasizing the <strong>interaction feedback loop</strong></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="L3CFQKDsq29xKQAnH2TF40">核心教学要点</strong>：三个模型描述同一件事的不同侧面——
+              Card 给"管道"，Mackinlay 给"自动决策"，van Wijk 给"反馈环"。
+              <strong data-page-node-id="ha48b6H3I1OlCe6DDDsrmd">三者是叠加关系，不是冲突关系。</strong>
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>Core teaching points</strong>: the three models describe different facets of the same thing &mdash;
+              Card gives you the &ldquo;pipeline,&rdquo; Mackinlay gives you &ldquo;automated decisions,&rdquo; and van Wijk gives you the &ldquo;feedback loop.&rdquo;
+              <strong>They layer on top of each other rather than conflict.</strong>
+            </p>
+            <ul data-page-node-id="oz9TidkTrbl4NJ0J3OOAsd">
+              <li data-lang="zh-CN"><strong data-page-node-id="9lkPO67nCOv5awhbaygUrn">Card 模型</strong>：告诉你"transform 之后该 mapping，mapping 之后该 view"</li>
+              <li data-lang="en-US" hidden><strong>Card model</strong>: tells you &ldquo;after transform comes mapping, after mapping comes view&rdquo;</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="VvtvHTSobHpsU20VC8nSzU">Mackinlay</strong>：告诉你"mapping 这一步怎么自动决策"</li>
+              <li data-lang="en-US" hidden><strong>Mackinlay</strong>: tells you &ldquo;how to automate the mapping step&rdquo;</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="nUCXD80SXhdTerrmPcj7hW">van Wijk</strong>：告诉你"view 之后还要把用户操作 feed 回去"</li>
+              <li data-lang="en-US" hidden><strong>van Wijk</strong>: tells you &ldquo;after view, you still need to feed user actions back&rdquo;</li>
+            </ul>
+          </div>
+
+          <!-- 关键代码 -->
+          <div class="tab-panel" data-panel="code" data-page-node-id="HdXCsw8zWEqDuKhWow0Nk6">
+            <h3 data-lang="zh-CN">关键代码 ① SVG 流程图节点 + 箭头</h3>
+            <h3 data-lang="en-US" hidden>Key Code &mdash; SVG Flowchart Nodes + Arrows</h3>
+            <p class="code-purpose" data-lang="zh-CN">5 个 step 节点横向排列，相邻节点之间用 SVG marker 画的箭头连接。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>5 step nodes arranged horizontally, connected by SVG-marker-drawn arrows between adjacent nodes.</p>
+<pre data-page-node-id="VEsQhEJUhtY5lmfEITAGC9"><code data-page-node-id="vvpJ9MSz8EsSZCdAwpjl4r"><span class="star" data-page-node-id="7cUT59HdL3UkEQFLJZkYTx">⭐</span> <span class="cmt" data-page-node-id="U53atGOIFgFvKLAflf18ZW">// 1. 用 &lt;defs&gt; + &lt;marker&gt; 定义箭头</span>
+svg.<span class="fn" data-page-node-id="1XT25LvrrILPEhWMAXtN58">append</span>(<span class="str" data-page-node-id="UzLaHZcObe3rwBLOCG4coa">"defs"</span>).<span class="fn" data-page-node-id="xER9D3WSxabP4oMQhkrFEQ">append</span>(<span class="str" data-page-node-id="6f3AnkxWkp3crKWM0nr0KT">"marker"</span>)
+   .<span class="fn" data-page-node-id="tebFKN8mxPOudfKxDNOsCC">attr</span>(<span class="str" data-page-node-id="A89PZGopT9YqAHDPE4YehD">"id"</span>, <span class="str" data-page-node-id="RIKe0XVS9R8AW6WRQiCdiU">"arrowhead"</span>)
+   .<span class="fn" data-page-node-id="cVnguWvfdUqfPzxuly8tvy">attr</span>(<span class="str" data-page-node-id="rUYMWBBtvpXYKP6elw477y">"viewBox"</span>, <span class="str" data-page-node-id="wDF3yCNW3Yk8rebUTBmGgJ">"0 -5 10 10"</span>)
+   .<span class="fn" data-page-node-id="7H9VPSv9bPc8IHkkhHkO8P">attr</span>(<span class="str" data-page-node-id="GNTb39AHPmXAB9Hjkzzs00">"refX"</span>, <span class="num" data-page-node-id="olqItetydM6D8JwWHfrDDO">8</span>)            <span class="cmt" data-page-node-id="6uXLJjHKAeyWOFgXNNTi4V">// 箭头位置校准</span>
+   .<span class="fn" data-page-node-id="E3xGveG0Bzveptm6Rr9M5C">attr</span>(<span class="str" data-page-node-id="0kcHmbBuPxYV1k4r1drAVU">"markerWidth"</span>, <span class="num" data-page-node-id="xpCGF3320KcXwFLYZ0bBqR">6</span>)
+   .<span class="fn" data-page-node-id="bhLP7i1rFenteVPFY7ysFF">attr</span>(<span class="str" data-page-node-id="aLzKHh7UDl9t6ZSFgaBMMN">"orient"</span>, <span class="str" data-page-node-id="ZWlDAK7sfxNtSeGUXTFe1A">"auto"</span>)       <span class="cmt" data-page-node-id="uBIGs5EvFLrMfZbGBVqCLP">// 跟随线方向旋转</span>
+   .<span class="fn" data-page-node-id="PsTVjvV7QEPu4bcOSGy9WR">append</span>(<span class="str" data-page-node-id="kULE8Nk9LqjVnT70reoO13">"path"</span>).<span class="fn" data-page-node-id="mwPcRIJpu0cHzlyoOX86xy">attr</span>(<span class="str" data-page-node-id="uHOMAwxRZNEu9DeOx6V7Sc">"d"</span>, <span class="str" data-page-node-id="ZVE2rEJ5hJpGLDRd4mscDg">"M0,-5L10,0L0,5"</span>).<span class="fn" data-page-node-id="7pv1nEJCsGxmr6UjRG0V9k">attr</span>(<span class="str" data-page-node-id="PAheb6SW2YSG7HsGnaxZ3y">"fill"</span>, <span class="str" data-page-node-id="Xq1F27Q3ent5DySIfpH88t">"#94a3b8"</span>);
+
+<span class="star" data-page-node-id="ODWrgFSFIep8Dwl8w383E4">⭐</span> <span class="cmt" data-page-node-id="kvhDi2e4x6ykOGMBddGcji">// 2. 用 marker-end 引用箭头（重要）</span>
+svg.<span class="fn" data-page-node-id="Obz5ponqDjs32HF7JS4ly5">append</span>(<span class="str" data-page-node-id="wrRTcY5oeBpMwKrdMjSYDG">"line"</span>)
+   .<span class="fn" data-page-node-id="bPgiX1fKq3TPpd9K7QkC1z">attr</span>(<span class="str" data-page-node-id="Yi5bIBzNwTmFlyjgEwWI9c">"marker-end"</span>, <span class="str" data-page-node-id="yiyh00I6OlqcXqO8K9IXjA">"url(#arrowhead)"</span>)
+   .<span class="fn" data-page-node-id="px77c5EvOEwdN08kogFfGG">attr</span>(<span class="str" data-page-node-id="PO4IB2F56obSs4JTB8fI0Y">"x1"</span>, x1).<span class="fn" data-page-node-id="JeetAxCy1uwSEO5bFywwhX">attr</span>(<span class="str" data-page-node-id="ihiBuQvHTHsOj3Ry3KF8Ee">"y1"</span>, y).<span class="fn" data-page-node-id="warLZX8XTN2WczpZDiz0c6">attr</span>(<span class="str" data-page-node-id="ocFMgBemOgXv1e5Hqb39xL">"x2"</span>, x2).<span class="fn" data-page-node-id="EozuHYCVsYChsWAkZVUUV5">attr</span>(<span class="str" data-page-node-id="wDljpmUx4tCosqHVBaTPDB">"y2"</span>, y);
+
+<span class="star" data-page-node-id="EyBDV3AqsgvABRR0lo6xWs">⭐</span> <span class="cmt" data-page-node-id="xtuS65zuYLaqhOcEBtaEPx">// 3. 节点 ↔ 数据 绑定：d3.data + click 事件</span>
+svg.<span class="fn" data-page-node-id="mEdIrFoJF0RaDiinFS8DfQ">selectAll</span>(<span class="str" data-page-node-id="WDkZr88xR6kD6Hd4cg57jb">".node"</span>).<span class="fn" data-page-node-id="0D8NmOGSmIxX1McHpWwvmE">data</span>(nodes)
+   .<span class="fn" data-page-node-id="idHvUIRQBKqYqLqBDts6iU">join</span>(<span class="str" data-page-node-id="UyM7ICaWhwaHASVUU61shI">"g"</span>)
+   .<span class="fn" data-page-node-id="VIdf7jSMBbJh5mOXvMBPsu">on</span>(<span class="str" data-page-node-id="CCn0OsyrXsTQCjffRFe7YK">"click"</span>, (event, d) =&gt; {
+     <span class="cmt" data-page-node-id="XSR0NrG2x9kPWp3pHpPMH1">// ⭐ 关键：classed 是 D3 状态管理核心 API</span>
+     svg.<span class="fn" data-page-node-id="KIj5Old5UE1BDabS5cehAt">selectAll</span>(<span class="str" data-page-node-id="4fj5B86MZuWmxWvC0fk3zx">".node"</span>).<span class="fn" data-page-node-id="f7xMmSTU9eFUzkHvLNrUG9">classed</span>(<span class="str" data-page-node-id="DSOCxKpb2557SVdpCLGVB6">"selected"</span>, n =&gt; n.id === d.id);
+     document.<span class="fn" data-page-node-id="fmj4kEsAbdKV3K9AFGWCzi">getElementById</span>(<span class="str" data-page-node-id="rOwk929dptpyo3IgONNgND">"d-4-1-detail"</span>).innerHTML = d.detail;
+   });</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="xoflUCP3YwQff4qG3MljCl">关键点解释：</strong>
+              <code data-page-node-id="vvgzNCU5dxg7agLbEHBzJi">marker-end="url(#arrowhead)"</code> 是 SVG 引用的方式 —— 把 &lt;defs&gt; 里定义的形状"嵌入"到线段末端；
+              <code data-page-node-id="wY4u7ebmpawMAGXQSTs1H3">classed("selected", predicate)</code> 接收布尔函数，一次性切换所有节点的"selected"状态，<strong data-page-node-id="0q3M1EUcEi57yjembM6vF9">避免自己写 forEach</strong>。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key explanation:</strong>
+              <code>marker-end="url(#arrowhead)"</code> is SVG's referencing mechanism &mdash; it &ldquo;embeds&rdquo; a shape defined inside <code>&lt;defs&gt;</code> at the line's end;
+              <code>classed("selected", predicate)</code> takes a boolean function and toggles the &ldquo;selected&rdquo; state of every node in one call, <strong>so you avoid writing forEach yourself</strong>.
+            </p>
+          </div>
+
+          <!-- 演示 -->
+          <div class="tab-panel" data-panel="demo" data-page-node-id="kxtMFrwCbYkoEMOdeYxKHZ">
+            <h3 data-lang="zh-CN">▶ 交互流程图演示</h3>
+            <h3 data-lang="en-US" hidden>&#9654; Interactive Flowchart Demo</h3>
+            <p class="demo-legend" data-lang="zh-CN">👆 点击任一节点查看在 Card / Mackinlay / van Wijk 三个模型中的对应</p>
+            <p class="demo-legend" data-lang="en-US" hidden>&#128073; Click any node to see its mapping in the Card / Mackinlay / van Wijk models</p>
+            <div class="demo-mount" data-demo="d-4-1" data-page-node-id="nlRTmJDQMIoh8NCrfGS26w"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 4.2 数据分类树 ============= -->
+      <article class="chapter" id="ch-2-2" data-page-node-id="4X6wORlTw0ZLeIHH1lgoDx">
+        <h2 data-page-node-id="V9FKHLdwjA6V9QU7PaMMqT" data-i18n="sec-02-2.title">2.2 数据分类树（d3.rollup 多层聚合）</h2>
+        <p class="chapter-subtitle" data-lang="zh-CN">把"按专业分"变成"按维度组合分"</p>
+        <p class="chapter-subtitle" data-lang="en-US" hidden>From &ldquo;group by major&rdquo; to &ldquo;group by dimension combinations&rdquo;</p>
+
+        <div class="tabs" data-page-node-id="FMXak8c07DjnZfDrc3se9k">
+          <button class="tab-btn active" data-tab="explain" data-page-node-id="0oVpEXd5DxsK6Aapkx8ala" data-i18n="tab.explain">📖 讲解</button>
+          <button class="tab-btn" data-tab="code" data-page-node-id="ly5u2b7v3B4DAiBtojdPfG" data-i18n="tab.code">⌨️ 关键代码</button>
+          <button class="tab-btn" data-tab="demo" data-page-node-id="dmnVWzkjaeKKGx8Yicoz4d" data-i18n="tab.demo">▶️ 演示</button>
+        </div>
+
+        <div class="tab-panels" data-page-node-id="mHaivBJHmclppbunVqJodh">
+          <!-- 讲解 -->
+          <div class="tab-panel active" data-panel="explain" data-page-node-id="jwCgNGL9gctEI4GnzkDGDS">
+            <h3 data-lang="zh-CN">📌 本节在流程中的位置：数据变换（Data Transformation）</h3>
+            <h3 data-lang="en-US" hidden>&#128204; Where This Sits: Data Transformation</h3>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="O2m78KD5e5TCotxHmQmeXY">Card 1999 数据流模型</strong>把可视化拆成四段：
+              <em>原始数据 → (变换) → 数据表 → (映射) → 视觉结构 → (渲染) → 视图</em>。
+              本节讲的 <strong>2.2</strong>，就是第一段箭头 <strong>「原始数据 → 数据表」</strong>——
+              这正是 <strong>数据变换（Data Transformation）</strong>。
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>The Card 1999 data-flow model</strong> splits visualization into four stages:
+              <em>raw data &rarr; (transform) &rarr; data table &rarr; (map) &rarr; visual structure &rarr; (render) &rarr; view</em>.
+              Section <strong>2.2</strong> is the first arrow, <strong>&ldquo;raw data &rarr; data table&rdquo;</strong> &mdash;
+              i.e. <strong>Data Transformation</strong>.
+            </p>
+            <h3 data-lang="zh-CN">你的原案例</h3>
+            <h3 data-lang="en-US" hidden>Your Original Case</h3>
+            <p data-lang="zh-CN">
+              用新生数据按 "专业 / 班级" 做 <strong data-page-node-id="O2m78KD5e5TCotxHmQmeXY">rollup 分桶聚合</strong>。
+              你演示的核心是 d3.rollup 的链式调用 —— 一个函数完成多维度分组。
+            </p>
+            <p data-lang="en-US" hidden>
+              Use the freshman data to do <strong>rollup bucketed aggregation</strong> by &ldquo;major / class&rdquo;.
+              The core of your demo is d3.rollup's chained calls &mdash; one function that performs multi-dimensional grouping.
+            </p>
+
+            <h3 data-lang="zh-CN">理论补丁：数据变换的四大操作（Card 1999 D 层）</h3>
+            <h3 data-lang="en-US" hidden>Theory Patch: Four Operations of Data Transformation (Card &rsquo;s D layer)</h3>
+            <p data-lang="zh-CN">
+              从「原始数据」到「数据表」，D 层做四类操作<strong data-page-node-id="iFrzmIGb0lXeoQsxHLosui">（注意：原文 4.2 节只讲了"分桶聚合"，这里把它放到完整的数据变换框架里）</strong>：
+            </p>
+            <p data-lang="en-US" hidden>
+              Going from &ldquo;raw data&rdquo; to a &ldquo;data table,&rdquo; the D layer performs four kinds of operations:
+            </p>
+            <table data-lang="zh-CN" class="theory-table">
+              <thead><tr><th>操作</th><th>做什么</th><th>D3 实现</th></tr></thead>
+              <tbody>
+                <tr><td><strong>清洗 / 过滤</strong> (clean / filter)</td><td>去缺失、去异常、筛选满足条件的行</td><td><code>.filter()</code>、<code>d3.csv(row)</code> 回调</td></tr>
+                <tr><td><strong>聚合 / 汇总</strong> (aggregate)</td><td>按 key 分组，把同组归约为一个值</td><td><code>d3.rollup()</code>、<code>d3.group()</code></td></tr>
+                <tr><td><strong>连接 / 关联</strong> (join)</td><td>按键把两张表拼起来（如把学生表 join 班级表）</td><td><code>d3.map</code> + 手动索引</td></tr>
+                <tr><td><strong>派生 / 衍生</strong> (derive)</td><td>由已有列算出新列（如从"班级"切出"专业"）</td><td>row 回调里算一个新字段</td></tr>
+              </tbody>
+            </table>
+            <table data-lang="en-US" hidden class="theory-table">
+              <thead><tr><th>Operation</th><th>What it does</th><th>D3 implementation</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Clean / filter</strong></td><td>Remove missing/outliers; keep rows matching a condition</td><td><code>.filter()</code>, <code>d3.csv(row)</code> callback</td></tr>
+                <tr><td><strong>Aggregate</strong></td><td>Group by key, reduce each group to a single value</td><td><code>d3.rollup()</code>, <code>d3.group()</code></td></tr>
+                <tr><td><strong>Join</strong></td><td>Combine two tables by key (e.g., student table joined to class table)</td><td><code>d3.map</code> + manual indexing</td></tr>
+                <tr><td><strong>Derive</strong></td><td>Compute a new column from existing ones (e.g., extract &ldquo;major&rdquo; from &ldquo;class&rdquo;)</td><td>compute a new field in the row callback</td></tr>
+              </tbody>
+            </table>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="iFrzmIGb0lXeoQsxHLosui">本节演示的 rollup 聚合，属于"聚合"这一行</strong>。但读懂这张表，你才知道
+              数据变换是整个可视化流水线的"第一公里" —— 数据表没整理好，后面映射/渲染全都白搭。
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>The rollup aggregation demonstrated here belongs to the &ldquo;aggregate&rdquo; row</strong>. But reading this table,
+              you realize data transformation is the &ldquo;first kilometer&rdquo; of the whole pipeline &mdash; if the data table isn't clean,
+              all the mapping and rendering downstream is wasted.
+            </p>
+
+            <h3 data-lang="zh-CN">嵌入理论：函数式聚合与 OLAP 切片</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: Functional Aggregation and OLAP Slicing</h3>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="iFrzmIGb0lXeoQsxHLosui">d3.rollup 是"按 key 分桶、再 reduce 一次"的函数式组合</strong>：
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>d3.rollup is a functional composition of &ldquo;bucket by key, then reduce once&rdquo;</strong>:
+            </p>
+            <pre data-page-node-id="aG3slgXwT3IE7sKtS6FWFU"><code data-page-node-id="ETCsDGiGH16jMtcek1eGMt"><span class="kw" data-page-node-id="vc2ZudWCk2QXoqIrV7Nt1a">const</span> result = d3.<span class="fn" data-page-node-id="kFkEUCZEJfhr6egIBe6HhJ">rollup</span>(
+  data,                    <span class="cmt" data-page-node-id="GnGBj7yCRjdl4ySv1PXXsE">// 输入数组</span>
+  v =&gt; v.length,          <span class="cmt" data-page-node-id="a4764E8KT8e873Q34qHwSE">// reducer</span>
+  d =&gt; d.major,           <span class="cmt" data-page-node-id="o7k1Aq4xvHoGWKTjWYG0e9">// key1（外层）</span>
+  d =&gt; d.class           <span class="cmt" data-page-node-id="SaJB5I03F5lJIcp2SZ2oaH">// key2（内层，可选）</span>
+);</code></pre>
+            <p data-lang="zh-CN">
+              它返回 <code data-page-node-id="DAJtQjv2RwKhkJTOpV6vsA">Map</code>（不是数组、不是对象），所以：
+            </p>
+            <p data-lang="en-US" hidden>
+              It returns a <code>Map</code> (not an array, not an object), so:
+            </p>
+            <ul data-page-node-id="BHxIo5Ef3nNL59rifb0Pgc">
+              <li data-lang="zh-CN">遍历用 <code data-page-node-id="3XXM1mDl9cR32OmJfDh2Wr">for ([k, v] of m)</code> 或 <code data-page-node-id="5QeZXRdEGe7xogHQO91CdO">m.entries()</code></li>
+              <li data-lang="en-US" hidden>Iterate using <code>for ([k, v] of m)</code> or <code>m.entries()</code></li>
+              <li data-lang="zh-CN">嵌套 rollup 出嵌套 Map</li>
+              <li data-lang="en-US" hidden>Nested rollup produces a nested Map</li>
+              <li data-lang="zh-CN">与 <code data-page-node-id="9mTz2lPuydgGtxCj4Bhgnm">d3.group</code> 的差别：rollup 把组内数据归约成<strong data-page-node-id="p99b3HbD4VLXMbGbCFCqcq">一个值</strong>，group 保留<strong data-page-node-id="3XWuWVvnlRfKf6FdHh04ld">原数组</strong></li>
+              <li data-lang="en-US" hidden>Difference from <code>d3.group</code>: rollup reduces the in-group data to <strong>a single value</strong>, while group preserves <strong>the original array</strong></li>
+            </ul>
+
+            <h3 data-lang="zh-CN">理论补丁：OLAP 切片/切块/钻取</h3>
+            <h3 data-lang="en-US" hidden>Theory Patch: OLAP Slice / Dice / Drill</h3>
+            <p data-lang="zh-CN">
+              1993 年 Codd 提出 OLAP 12 条准则，其中 3 个核心操作用 rollup 就能模拟：
+            </p>
+            <p data-lang="en-US" hidden>
+              In 1993 Codd proposed 12 OLAP rules; three of their core operations can be simulated with rollup:
+            </p>
+            <ul data-page-node-id="AdwXcEU6PqWJaFyRGUmUGD">
+              <li data-lang="zh-CN"><strong data-page-node-id="ijwRfpOQ3CiMTLWG5eiGsP">切片 (Slice)：</strong>固定一维度（如只看 2025 级）→ 等价于 <code data-page-node-id="eW84rGrj0aAdhoMGbTaI4j">.filter()</code> 后 rollup</li>
+              <li data-lang="en-US" hidden><strong>Slice:</strong> fix one dimension (e.g., only look at the 2025 cohort) &rarr; equivalent to <code>.filter()</code> then rollup</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="4PxanFBhGodDuwWbRkyuk3">切块 (Dice)：</strong>按两个维度分组 → 等价于双 key rollup</li>
+              <li data-lang="en-US" hidden><strong>Dice:</strong> group by two dimensions &rarr; equivalent to a double-key rollup</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="JNCc9PgS1LKHAN3uUk8GF7">钻取 (Drill)：</strong>层层下钻 → 等价于嵌套 rollup + 递归展开</li>
+              <li data-lang="en-US" hidden><strong>Drill:</strong> drill down level by level &rarr; equivalent to nested rollup + recursive expansion</li>
+            </ul>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="UPjXdWh2NfsZMp8ROCzXSy">教学要点</strong>：可视化系统的"下钻交互"通常背后就是 rollup + hierarchy 的组合。本节课演示 d3.rollup 的多层级能力。
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>Classroom Takeaway</strong>: a visualization system's &ldquo;drill-down interaction&rdquo; is typically backed by a combination of rollup + hierarchy. This lesson demonstrates d3.rollup's multi-level capability.
+            </p>
+          </div>
+
+          <!-- 关键代码 -->
+          <div class="tab-panel" data-panel="code" data-page-node-id="J93OxgiHqNtzaTEcBfCLx5">
+            <h3 data-lang="zh-CN">关键代码 ① 双层 rollup</h3>
+            <h3 data-lang="en-US" hidden>Key Code &mdash; Double-layer Rollup</h3>
+            <p class="code-purpose" data-lang="zh-CN">两层 key：外层 = 专业，内层 = 班级，reducer = 计数。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>Two key layers: outer = major, inner = class, reducer = count.</p>
+<pre data-page-node-id="XucpbyRBl5bjvEURmuLMS7"><code data-page-node-id="CXowmmWHpsbwFxmTJh1HQU"><span class="star" data-page-node-id="jxpmHo9Tdzdn0FG4T1YdkD">⭐</span> <span class="cmt" data-page-node-id="yogaOtOdhBJ83KueXCqOtY">// 双层 rollup：返回嵌套 Map，外层 key=专业，内层 key=班级</span>
+<span class="kw" data-page-node-id="B0QA6pKnTlGEmK3WPofUd4">const</span> nested = d3.<span class="fn" data-page-node-id="Ea6ZAcvnVR9lGJQTJAj9ZJ">rollup</span>(
+  students,
+  v =&gt; v.length,           <span class="cmt" data-page-node-id="OHoa6R0YqeuvFBUOT9CXhb">// 每组聚合为单一值（这里是 count）</span>
+  d =&gt; d.major,            <span class="cmt" data-page-node-id="SuhhruNciBh9NGqzcEx94u">// 外层 key</span>
+  d =&gt; d.class             <span class="cmt" data-page-node-id="KJRh7b5VERkkEnzx3Cmlow">// 内层 key（rest 参数，可继续加）</span>
+);
+
+<span class="cmt" data-page-node-id="MJaaDLXDGvEB1a0SwUDLr5">// 遍历嵌套 Map：</span>
+<span class="kw" data-page-node-id="R0bd314a1QXhVDxrqMCQzG">for</span> (<span class="kw" data-page-node-id="cGX1OXIwafRdlhbEWcbBAl">const</span> [major, inner] <span class="kw" data-page-node-id="ubXZheiRAfQT0EFx0BkdF7">of</span> nested) {
+  <span class="kw" data-page-node-id="lujArv8lDNmmgzGv6IsrUm">for</span> (<span class="kw" data-page-node-id="fWCleZkwtQbotP5YsmoweA">const</span> [cls, count] <span class="kw" data-page-node-id="4eTXIajHXOVztvLIcmY94e">of</span> inner) {
+    console.<span class="fn" data-page-node-id="q5en90cyZj9dbQJzswhTHG">log</span>(major, cls, count);
+  }
+}</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="ECQbTubtozXM2FBBt7zH1Y">关键点解释：</strong>
+              <code data-page-node-id="AQ6LghsiZheE0BFCTxzklP">d3.rollup</code> 的 key 参数是<strong data-page-node-id="6AdQj53VtzM22DejO1awiO">rest 参数</strong>（...keys），所以传 1 个 → 单层 Map，传 2 个 → 嵌套 Map，传 3 个 → 3 层嵌套。
+              这就是 OLAP 的"维度组合"。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key explanation:</strong>
+              The key parameter of <code>d3.rollup</code> is a <strong>rest parameter</strong> (...keys), so passing 1 &rarr; single-layer Map, 2 &rarr; nested Map, 3 &rarr; 3-layer nesting.
+              This is OLAP's &ldquo;dimension combination.&rdquo;
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ② 用正则提取专业</h3>
+            <h3 data-lang="en-US" hidden>Key Code &mdash; Extract the Major via Regex</h3>
+            <p class="code-purpose" data-lang="zh-CN">CSV 里只有"班级"字段（"软件工程1班"），需要用正则切出"专业"和"班级序号"。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>The CSV only has a &ldquo;class&rdquo; field (e.g., &ldquo;Software Engineering Class 1&rdquo;), so a regex is needed to split out the &ldquo;major&rdquo; and the &ldquo;class number.&rdquo;</p>
+<pre data-page-node-id="bm81KKtX6pXoW25YW6Gop1"><code data-page-node-id="CAoq1bRJg9l14iFCe4ZCgV"><span class="star" data-page-node-id="vNUTBRarBXHTkInjAFecKQ">⭐</span> <span class="cmt" data-page-node-id="KAn4iGrxHhENDLKuzB8V3E">// d3.csv 第二参 row 回调里逐行 transform</span>
+<span class="kw" data-page-node-id="fpCHHTruPzpcjBDkrTCV4K">const</span> data = <span class="kw" data-page-node-id="HVs7dB4ov9rJEREwsyXfB9">await</span> d3.<span class="fn" data-page-node-id="39YdjE4dYSNpFNHBsFh1Wp">csv</span>(<span class="str" data-page-node-id="QKzHkdd6pxkEtwHiHqwmhX">"./data/newstudent.csv"</span>, d =&gt; {
+  <span class="kw" data-page-node-id="7nYRSMSKTyI1HFgswF1hfE">const</span> cls = d[<span class="str" data-page-node-id="0E7XQqxdQ4i1wet63ueHGk">"班级"</span>].<span class="fn" data-page-node-id="vYrdHgmvGyjaiv5VSZWL86">trim</span>();
+  <span class="kw" data-page-node-id="LQvwIzz5VBQ3Ar8dF4D4nG">const</span> m = cls.<span class="fn" data-page-node-id="XZpGvhXzGFwCbL5ovpajdH">match</span>(<span class="str" data-page-node-id="NyMCMM9ZK8YGmhx5975D6j">/^(.+?)(\d+班)$/</span>);  <span class="cmt" data-page-node-id="4bWg1U9pjL47ImBzaUUDuL">// 中间非贪婪 + 末尾"数字+班"</span>
+  <span class="kw" data-page-node-id="FHQiAqPyGM8NhYhQRcpgA1">return</span> {
+    id:    +d[<span class="str" data-page-node-id="QwdTDhQGh2TlAkbCgFB29f">"序号"</span>],
+    name:  d[<span class="str" data-page-node-id="wEqYNEZAhvCIa60AnAtvkp">"姓名"</span>].<span class="fn" data-page-node-id="AoLqEAIZyMwGY3nrU1Yr2y">trim</span>(),
+    class: cls,
+    major: m ? m[<span class="num" data-page-node-id="Baj6GkMwVLd3nuBTQiZ77n">1</span>] : cls,  <span class="cmt" data-page-node-id="yMfVrjYPixHhCh7bkjenyr">// "软件工程1班" → "软件工程"</span>
+  };
+});</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="C3g3VUnyd6LV1RwZqd1V1P">关键点解释：</strong>
+              正则 <code data-page-node-id="r9EaCOZUsZlbSL7BvGiddD">/^(.+?)(\d+班)$/</code> 的 <code data-page-node-id="rkROmZZbIZRWCyXTBNZZVd">.+?</code> 是<strong data-page-node-id="5ozKnAmKOjMPbcMtw4wv1S">非贪婪</strong>匹配，会让中间尽可能短、末尾留给 <code data-page-node-id="ohLaIYZrtcdLEeV3yXGiLU">\d+班</code>。
+              <strong data-page-node-id="JNAN1M2QtMxrmEZGXEUPYC">没这个非贪婪</strong>：<code data-page-node-id="mbY0Zof9oQyeyqCnmgVADM">.+</code> 会把整串都匹配走，剩下空，<code data-page-node-id="DlihKvBRShN7fzk9P9FdgS">m[1]</code> 就是 undefined。
+              这类正则坑学生常踩，必须掌握。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key explanation:</strong>
+              In the regex <code>/^(.+?)(\d+班)$/</code>, the <code>.+?</code> is <strong>non-greedy</strong> matching &mdash; it keeps the middle as short as possible and leaves the tail for <code>\d+班</code>.
+              <strong>Without non-greedy</strong>: <code>.+</code> would consume the whole string, leaving nothing, and <code>m[1]</code> would be <code>undefined</code>.
+              This is a regex pitfall students frequently step on; you must master it.
+            </p>
+          </div>
+
+          <!-- 演示 -->
+          <div class="tab-panel" data-panel="demo" data-page-node-id="kHbq5uDzZjn05hVTVE291g">
+            <h3 data-lang="zh-CN">▶ d3.rollup 多层聚合演示</h3>
+            <h3 data-lang="en-US" hidden>&#9654; d3.rollup Multi-level Aggregation Demo</h3>
+            <div class="demo-mount" data-demo="d-4-2" data-page-node-id="vF16Fe9o55LCFUU1YWPkG9"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 4.3 树布局算法 ============= -->
+      <article class="chapter" id="ch-2-3" data-page-node-id="Z5F0CGQBCHdPsry6ptdxo3">
+        <h2 data-page-node-id="NKnPkKyaRB9bVFK146rCEH" data-i18n="sec-02-3.title">2.3 树布局（Reingold-Tilford 算法）</h2>
+        <p class="chapter-subtitle" data-lang="zh-CN">层级数据 → 屏幕坐标的算法核心</p>
+        <p class="chapter-subtitle" data-lang="en-US" hidden>The algorithmic core of hierarchical data &rarr; screen coordinates</p>
+
+        <div class="tabs" data-page-node-id="8AGdgyXCFdMIHjeIg98EBf">
+          <button class="tab-btn active" data-tab="explain" data-page-node-id="rH0uAkTrtI37yYFns1Pqya" data-i18n="tab.explain">📖 讲解</button>
+          <button class="tab-btn" data-tab="code" data-page-node-id="tOsKahIHJA7sgiYq6xNVkG" data-i18n="tab.code">⌨️ 关键代码</button>
+          <button class="tab-btn" data-tab="demo" data-page-node-id="dZ33mx51mZHLPDpllyZv3d" data-i18n="tab.demo">▶️ 演示</button>
+        </div>
+
+        <div class="tab-panels" data-page-node-id="NKAOJ9ZQc4RaUAuYhi81ft">
+          <!-- 讲解 -->
+          <div class="tab-panel active" data-panel="explain" data-page-node-id="Ul5FA5EEy5grT3epQo4Rpx">
+            <h3 data-lang="zh-CN">📌 本节在流程中的位置：视觉映射（Visual Mapping）</h3>
+            <h3 data-lang="en-US" hidden>&#128204; Where This Sits: Visual Mapping</h3>
+            <p data-lang="zh-CN">
+              接上一节 <strong>2.2 数据变换</strong>，我们有了"数据表"。本节的 <strong>2.3</strong> 是第二段箭头
+              <strong>「数据表 → 视觉结构」</strong> —— 也就是 <strong>视觉映射（Visual Mapping）</strong>。
+              它回答一个核心问题：<em>数据里每个属性，该用哪个视觉通道来表达？</em>
+            </p>
+            <p data-lang="en-US" hidden>
+              Following the <strong>2.2 data transformation</strong>, we now have a &ldquo;data table.&rdquo; Section <strong>2.3</strong> is the second arrow,
+              <strong>&ldquo;data table &rarr; visual structure&rdquo;</strong> &mdash; i.e. <strong>Visual Mapping</strong>.
+              It answers one core question: <em>for each data attribute, which visual channel should express it?</em>
+            </p>
+            <h3 data-lang="zh-CN">你的原案例</h3>
+            <h3 data-lang="en-US" hidden>Your Original Case</h3>
+            <p data-lang="zh-CN">
+              你的 4.2 节提到"树形结构可视化"。这节展开<strong data-page-node-id="fkYLk05QT9lFWYSyOEAYZI">树布局算法</strong>原理 —— 拿到层级数据后，怎么把节点摆到屏幕上不打架？
+            </p>
+            <p data-lang="en-US" hidden>
+              Your Section 4.2 mentioned &ldquo;tree-structure visualization.&rdquo; This lesson expands on the <strong>tree layout algorithm</strong> &mdash; once you have hierarchical data, how do you place nodes on screen without overlap?
+            </p>
+
+            <h3 data-lang="zh-CN">理论核心：什么是视觉通道？Mackinlay 的排名</h3>
+            <h3 data-lang="en-US" hidden>Theory Core: What Is a Visual Channel? Mackinlay's Ranking</h3>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="fkYLk05QT9lFWYSyOEAYZI">视觉通道（visual channel）</strong>是指"把数据编码到视觉元素上"的载体：
+              位置、长度、面积、角度、颜色、形状、纹理……
+              <strong>Mackinlay 1986</strong> 给出经典排名：对<em>不同数据类型</em>，各通道的<strong>量化精确度</strong>不一样。
+              这就是下面这张图。
+            </p>
+            <p data-lang="en-US" hidden>
+              A <strong>visual channel</strong> is the carrier that &ldquo;encodes data onto a visual element&rdquo;:
+              position, length, area, angle, color, shape, texture&hellip;
+              <strong>Mackinlay (1986)</strong> gave the classic ranking: for <em>different data types</em>, the <strong>quantitative accuracy</strong>
+              of each channel differs. That is the figure below.
+            </p>
+            <figure class="theory-figure" data-lang="zh-CN">
+              <img src="./img/01-mackinlay-ranking.png" alt="Mackinlay 1986 视觉通道排名" />
+              <figcaption>图 1 · Mackinlay 1986 通道排名：对 Quantitative（定量）/ Ordinal（有序）/ Nominal（名义）三类数据，各通道的量化精确度排序。位置（Position）永远最准。</figcaption>
+            </figure>
+            <figure class="theory-figure" data-lang="en-US" hidden>
+              <img src="./img/01-mackinlay-ranking.png" alt="Mackinlay 1986 visual channel ranking" />
+              <figcaption>Figure 1 &middot; Mackinlay (1986) channel ranking: for Quantitative / Ordinal / Nominal data, the quantitative-accuracy ordering of each channel. Position is always the most accurate.</figcaption>
+            </figure>
+            <ul data-page-node-id="wHeVIceEqa9SQttJ7CByFg">
+              <li data-lang="zh-CN"><strong>位置（Position）</strong>：三种数据类型都是第一 —— 人眼对位置最敏感</li>
+              <li data-lang="en-US" hidden><strong>Position</strong>: ranks #1 for all three types &mdash; the eye is most sensitive to position</li>
+              <li data-lang="zh-CN"><strong>定量数据</strong>：长度 → 角度 → 斜率 → 面积（长条形图比面积图准）</li>
+              <li data-lang="en-US" hidden><strong>Quantitative data</strong>: length &rarr; angle &rarr; slope &rarr; area (bar charts beat area charts)</li>
+              <li data-lang="zh-CN"><strong>名义数据</strong>：位置 → 色调（hue）→ 纹理 → 连接 → 形状</li>
+              <li data-lang="en-US" hidden><strong>Nominal data</strong>: position &rarr; hue &rarr; texture &rarr; connection &rarr; shape</li>
+            </ul>
+
+            <h3 data-lang="zh-CN">理论核心：图元（marks）与视觉通道的构成</h3>
+            <h3 data-lang="en-US" hidden>Theory Core: Marks and the Composition of Visual Channels</h3>
+            <p data-lang="zh-CN">
+              视觉结构由 <strong>图元（mark）</strong>打底：点（Point）、线（Line）、面（Area）。
+              然后通过 <strong>通道</strong>把这些图元"做记号"：位置、颜色、形状、倾斜、大小。
+              下面两张图拆开讲。
+            </p>
+            <p data-lang="en-US" hidden>
+              The visual structure is built on <strong>marks</strong>: Point, Line, Area.
+              These marks are then &ldquo;marked up&rdquo; through <strong>channels</strong>: position, color, shape, tilt, size.
+              The next two figures break this apart.
+            </p>
+            <figure class="theory-figure" data-lang="zh-CN">
+              <img src="./img/02-marks-points-lines-areas.png" alt="图元：点/线/面" />
+              <figcaption>图 2 · 图元（marks）三族：点（Points）、线（Lines）、面（Areas）。图元决定"一份数据长什么样"，是视觉结构的骨架。</figcaption>
+            </figure>
+            <figure class="theory-figure" data-lang="en-US" hidden>
+              <img src="./img/02-marks-points-lines-areas.png" alt="Marks: Points / Lines / Areas" />
+              <figcaption>Figure 2 &middot; Three families of marks: Points, Lines, Areas. Marks determine &ldquo;what a datum looks like&rdquo; &mdash; the skeleton of the visual structure.</figcaption>
+            </figure>
+            <figure class="theory-figure" data-lang="zh-CN">
+              <img src="./img/03-channels-position-color-shape.png" alt="视觉通道：位置/颜色/形状/倾斜/大小" />
+              <figcaption>图 3 · 常用视觉通道族：位置（Position，含水平/垂直/两者）、颜色（Color）、形状（Shape）、倾斜（Tilt）、大小（Size，含长度/面积/体积）。</figcaption>
+            </figure>
+            <figure class="theory-figure" data-lang="en-US" hidden>
+              <img src="./img/03-channels-position-color-shape.png" alt="Visual channels: Position / Color / Shape / Tilt / Size" />
+              <figcaption>Figure 3 &middot; Common visual-channel families: Position (horizontal / vertical / both), Color, Shape, Tilt, Size (length / area / volume).</figcaption>
+            </figure>
+
+            <h3 data-lang="zh-CN">理论核心：两类通道 —— 幅度 vs 标识</h3>
+            <h3 data-lang="en-US" hidden>Theory Core: Two Channel Classes &mdash; Magnitude vs Identity</h3>
+            <p data-lang="zh-CN">
+              按"能不能表达量的多少"，通道分两类：
+              <strong>幅度通道（Magnitude）</strong>表达<em>有序/定量</em>属性；<strong>标识通道（Identity）</strong>表达<em>类别</em>属性。
+              选错类别 = 误导读者。
+            </p>
+            <p data-lang="en-US" hidden>
+              By &ldquo;whether it can express magnitude,&rdquo; channels split into two classes:
+              <strong>Magnitude channels</strong> express <em>ordered / quantitative</em> attributes; <strong>Identity channels</strong> express <em>categorical</em> attributes.
+              Picking the wrong class misleads readers.
+            </p>
+            <figure class="theory-figure" data-lang="zh-CN">
+              <img src="./img/04-magnitude-channels.png" alt="幅度通道：有序属性" />
+              <figcaption>图 4 · 幅度通道（Magnitude Channels）：表达"有序属性"。按精确度排序 —— 共用尺度位置最准，长度/倾斜/面积次之，颜色亮度、饱和度和体积最弱（都标 "Same" 即排序有歧义）。</figcaption>
+            </figure>
+            <figure class="theory-figure" data-lang="en-US" hidden>
+              <img src="./img/04-magnitude-channels.png" alt="Magnitude Channels: Ordered Attributes" />
+              <figcaption>Figure 4 &middot; Magnitude Channels: express &ldquo;ordered attributes.&rdquo; Ordered by accuracy &mdash; position on a common scale is best; length / tilt / area next; color luminance, saturation, and volume are weakest (all marked &ldquo;Same&rdquo; &mdash; ambiguous ordering).</figcaption>
+            </figure>
+            <figure class="theory-figure" data-lang="zh-CN">
+              <img src="./img/05-identity-channels.png" alt="标识通道：类别属性" />
+              <figcaption>图 5 · 标识通道（Identity Channels）：表达"类别属性" —— 空间区域、色调（hue）、运动（motion）、形状（shape）。它们能区分"不同类"，但分不出"谁多谁少"。</figcaption>
+            </figure>
+            <figure class="theory-figure" data-lang="en-US" hidden>
+              <img src="./img/05-identity-channels.png" alt="Identity Channels: Categorical Attributes" />
+              <figcaption>Figure 5 &middot; Identity Channels: express &ldquo;categorical attributes&rdquo; &mdash; spatial region, hue, motion, shape. They distinguish different categories but cannot rank &ldquo;more vs less.&rdquo;</figcaption>
+            </figure>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="fkYLk05QT9lFWYSyOEAYZI">本节案例的落点</strong>：树布局（Reingold-Tilford）本质上就是一种<strong>视觉映射</strong> ——
+              用 <em>位置通道</em> 把层级关系编码成"父在上、子在下的树"。下面讲它的算法。
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>Where this lesson lands</strong>: tree layout (Reingold-Tilford) is essentially a <strong>visual mapping</strong> &mdash;
+              it uses the <em>position channel</em> to encode hierarchy as &ldquo;parent above, children below.&rdquo; The algorithm follows.
+            </p>
+
+            <h3 data-lang="zh-CN">嵌入理论：Reingold-Tilford 算法（d3.tree 的核心）</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: The Reingold-Tilford Algorithm (the core of d3.tree)</h3>
+            <p data-lang="zh-CN">
+              Reingold &amp; Tilford 1981 年提出的算法，至今仍是 d3.tree() 的实现核心。核心思路：
+            </p>
+            <p data-lang="en-US" hidden>
+              The algorithm proposed by Reingold &amp; Tilford in 1981 is still the implementation core of <code>d3.tree()</code>. Core idea:
+            </p>
+            <ol data-page-node-id="jxFtoB5KoYVa7HNjRvAT0X">
+              <li data-lang="zh-CN"><strong data-page-node-id="lYIIAWxFwDStaidmytvWJx">第一遍（自底向上）：</strong>对每个父节点，计算其左右子树"占用多少横向空间"</li>
+              <li data-lang="en-US" hidden><strong>First pass (bottom-up):</strong> for each parent node, compute how much horizontal space its left and right subtrees &ldquo;occupy&rdquo;</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="WAWxMa3kfDT3fQFfBMHgx2">第二遍（自顶向下）：</strong>给每个节点分配<strong data-page-node-id="L0UOhMcH7aA5nOznAFyYZc">绝对 x 坐标</strong>（保证兄弟节点紧贴父节点中线且不重叠）</li>
+              <li data-lang="en-US" hidden><strong>Second pass (top-down):</strong> assign every node an <strong>absolute x-coordinate</strong> (so siblings hug the parent's centerline without overlapping)</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="P0Uc1uoM6SAp5c1QOKhh08">第三遍：</strong>处理"线程"（threads）—— 修复子节点跨父中线时的对齐</li>
+              <li data-lang="en-US" hidden><strong>Third pass:</strong> handle &ldquo;threads&rdquo; &mdash; fix the alignment when children cross the parent's centerline</li>
+            </ol>
+
+            <p data-lang="zh-CN"><strong data-page-node-id="Urm6k5qHca2kjYja21J0Ft">复杂度的处理</strong>：</p>
+            <p data-lang="en-US" hidden><strong>Complexity handling</strong>:</p>
+            <ul data-page-node-id="HaYWzVftCVxqzjaEfFGI8I">
+              <li data-lang="zh-CN"><strong data-page-node-id="TkpdZQIBmV9iILouc527aE">O(n)</strong> 时间 —— 比简单的"递归平分"要快</li>
+              <li data-lang="en-US" hidden><strong>O(n)</strong> time &mdash; faster than a naive &ldquo;recursive halving&rdquo;</li>
+              <li data-lang="zh-CN">节点的<strong data-page-node-id="DQKffhcrylbwtImYB4KPYn">左右子树宽度的最小值</strong> = 至少容纳所有子节点的水平空间</li>
+              <li data-lang="en-US" hidden>A node's <strong>minimum left/right subtree width</strong> = the horizontal space needed at minimum to hold all its children</li>
+              <li data-lang="zh-CN">不同布局策略选型：<code data-page-node-id="Vpj014dcpM8tIQaQacUQGP">d3.tree</code>（左右）、<code data-page-node-id="DtsBIp7rHgW4hWNQcOREc9">d3.cluster</code>（左右紧贴）、<code data-page-node-id="BAN7UM1f9jPibZuL5xSQ37">d3.treemap</code>（面积）</li>
+              <li data-lang="en-US" hidden>Layout-strategy options: <code>d3.tree</code> (left-right), <code>d3.cluster</code> (left-right, packed), <code>d3.treemap</code> (area)</li>
+            </ul>
+
+            <h3 data-lang="zh-CN">理论补丁：d3-hierarchy 模块全家桶</h3>
+            <h3 data-lang="en-US" hidden>Theory Patch: The d3-hierarchy Module Family</h3>
+            <ul data-page-node-id="wHeVIceEqa9SQttJ7CByFg">
+              <li data-lang="zh-CN"><code data-page-node-id="DmA6ByTifHm4cnSCkYZdnp">hierarchy(data)</code>：把任意嵌套 data 转成 hierarchy 结构（每个节点加 parent/children/depth）</li>
+              <li data-lang="en-US" hidden><code>hierarchy(data)</code>: convert any nested data into a hierarchy structure (each node gets <code>parent</code> / <code>children</code> / <code>depth</code>)</li>
+              <li data-lang="zh-CN"><code data-page-node-id="LoUHdkz5jDkinyGQo988jW">tree().size([h, w])</code>：reingold-tilford 算法，左右布局</li>
+              <li data-lang="en-US" hidden><code>tree().size([h, w])</code>: Reingold-Tilford algorithm, left-right layout</li>
+              <li data-lang="zh-CN"><code data-page-node-id="QFi1nAwdWS8hH4mZf6Xk2N">cluster().size([h, w])</code>：所有叶子节点对齐到同一深度</li>
+              <li data-lang="en-US" hidden><code>cluster().size([h, w])</code>: align all leaf nodes to the same depth</li>
+              <li data-lang="zh-CN"><code data-page-node-id="Y788Ay2Ici3X2QBtewwnCo">treemap().tile(...)</code>：面积（slice-and-dice / squarified / resquarify 算法）</li>
+              <li data-lang="en-US" hidden><code>treemap().tile(...)</code>: area-based (slice-and-dice / squarified / resquarify algorithms)</li>
+              <li data-lang="zh-CN"><code data-page-node-id="dzBSZKKAQgUxQdhh8zDu1x">pack().radius(d =&gt; ...)</code>：圆环打包（circle packing）</li>
+              <li data-lang="en-US" hidden><code>pack().radius(d =&gt; ...)</code>: circle packing</li>
+              <li data-lang="zh-CN"><code data-page-node-id="jn7dPQDT7btodbNCTtOuqE">partition().size([h, w])</code>：icicle / sunburst 布局</li>
+              <li data-lang="en-US" hidden><code>partition().size([h, w])</code>: icicle / sunburst layout</li>
+            </ul>
+          </div>
+
+          <!-- 关键代码 -->
+          <div class="tab-panel" data-panel="code" data-page-node-id="PBLvlHuX0yxSlq5YGvM9mA">
+            <h3 data-lang="zh-CN">关键代码 ① hierarchy + tree 三步走</h3>
+            <h3 data-lang="en-US" hidden>Key Code &mdash; hierarchy + tree in Three Steps</h3>
+            <p class="code-purpose" data-lang="zh-CN">这是 d3-hierarchy 的标准模式：先建 hierarchy、再求 tree layout、最后画 links + nodes。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>This is the standard d3-hierarchy pattern: first build the hierarchy, then compute the tree layout, and finally draw links + nodes.</p>
+<pre data-page-node-id="cbBSFdxoaA32SaZmCZGAqi"><code data-page-node-id="ER6RPeS2F1Soz57taOME38"><span class="star" data-page-node-id="PwSpfJMv2mx8tmDnCMwepS">⭐</span> <span class="cmt" data-page-node-id="3L1kwBTyuf7RgrDz2dkdln">// 1. hierarchy：从嵌套 JSON → 计算每个节点的 parent/children/depth</span>
+<span class="kw" data-page-node-id="3WGZcB0gtPGrzKZAm1k3lo">const</span> root = d3.<span class="fn" data-page-node-id="klUBFEHY2CTa7A3SVpfvdA">hierarchy</span>(rootData);
+
+<span class="star" data-page-node-id="iUAwSApXopWvPlNevQOFPt">⭐</span> <span class="cmt" data-page-node-id="1moc45Ym5j2zDWIsGujqWF">// 2. tree layout：给每个节点算 x/y 坐标</span>
+<span class="kw" data-page-node-id="7WFw9NAgA4lgzGZDycOGYK">const</span> treeLayout = d3.<span class="fn" data-page-node-id="Dppak2RRMTnsdm09tAMHiE">tree</span>().<span class="fn" data-page-node-id="yG2Zx980h4KF0rsLMA42di">size</span>([<span class="num" data-page-node-id="8ownRHhEyOXIhj79kA8YJ1">360</span>, <span class="num" data-page-node-id="fGGpfPdpyjNQZQqre5hFnF">720</span>]);
+<span class="kw" data-page-node-id="RIYH3lWB9u3Mzv7XD9yTK8">const</span> treeData = <span class="fn" data-page-node-id="tG9hefzUd6h30Qna9v0cUl">treeLayout</span>(root);
+
+<span class="star" data-page-node-id="XxzIjZfPVB5ouj8JePPLju">⭐</span> <span class="cmt" data-page-node-id="OHEOZEiOpVHq98UEde3aB2">// 3. 画 links：父-子连线（Reingold-Tilford 算法结果就在这里）</span>
+g.<span class="fn" data-page-node-id="12CtH6fM9EYLOVLCagJOF6">selectAll</span>(<span class="str" data-page-node-id="2lJ8FOeQo5DZ6L0KZyRX6V">".link"</span>).<span class="fn" data-page-node-id="qKgJI01DggIm3FDAfdx8h1">data</span>(treeData.links()).<span class="fn" data-page-node-id="OcefRDOcbCGOzHWg4NkU6g">join</span>(<span class="str" data-page-node-id="EWyTaPUL4xbGTV5lJG1ENq">"path"</span>)
+  .<span class="fn" data-page-node-id="BEOrSxlHTD90sqHizaTloj">attr</span>(<span class="str" data-page-node-id="mAW7j6SXpbMGQRHMNRupa1">"d"</span>, d3.<span class="fn" data-page-node-id="GgKQaiq9CKz0NwBkW3kzOg">linkHorizontal</span>().<span class="fn" data-page-node-id="vQnDPoJrS921HrM5HPv5iJ">x</span>(d =&gt; d.y).<span class="fn" data-page-node-id="d4yRjOUQ4uFHXTc1iLMqfd">y</span>(d =&gt; d.x));
+
+<span class="star" data-page-node-id="SUyhQWSrDLizE4elAYFIKW">⭐</span> <span class="cmt" data-page-node-id="EJpP14GqqBGCrZH5rqgJIv">// 4. 画 nodes：圆 + 文字</span>
+<span class="kw" data-page-node-id="YiRy5fXHVJxylVusEfSXcP">const</span> ng = g.<span class="fn" data-page-node-id="Hb6YvKA2tycszfxMYFUptL">selectAll</span>(<span class="str" data-page-node-id="QS2nVykYjfcGdQwrvUgFd6">".node"</span>).<span class="fn" data-page-node-id="vryy2Ey1t8S6oXICDHDdQY">data</span>(treeData.<span class="fn" data-page-node-id="d9kX41PG4Eg7cDDiZFjH5k">descendants</span>()).<span class="fn" data-page-node-id="uGUYixbPhNZFSj3G97DCkW">join</span>(<span class="str" data-page-node-id="dKMqF0EWAq5Qpg4QIap2yJ">"g"</span>)
+  .<span class="fn" data-page-node-id="8tJUO4GgoMUhTQWI0q3Gp5">attr</span>(<span class="str" data-page-node-id="XDue6mYZy6XuDl29GLSh34">"transform"</span>, d =&gt; <span class="str" data-page-node-id="rF8gXWcBbltKOPuXeB17CI">`translate(<span class="kw" data-page-node-id="UbbeXZVLWOCGooMHcqCssx">${</span>d.y<span class="kw" data-page-node-id="k7BdyD1LYCKx0ISG3ZIRE9">}</span>, <span class="kw" data-page-node-id="7z0LDAoMbsHATO4Pq50w3t">${</span>d.x<span class="kw" data-page-node-id="W1H17uQNPBTgIXuvA64AUk">}</span>)`</span>);
+
+ng.<span class="fn" data-page-node-id="N4iKsdI1bjHxtxdTUK9Usu">append</span>(<span class="str" data-page-node-id="nliS4jPyu7fpaGmCT0lyeI">"circle"</span>).<span class="fn" data-page-node-id="0cRVnCdrYMQYbEgCasZV4I">attr</span>(<span class="str" data-page-node-id="SC8sQMB0SD6eZIyC56Kgi0">"r"</span>, <span class="num" data-page-node-id="BOy4LTG2c0DEFDSqq1XSKe">5</span>);
+ng.<span class="fn" data-page-node-id="EJJWNDrZ4K71dVb9x4pI7V">append</span>(<span class="str" data-page-node-id="PTBfnHChi6W8Teh0yIb1hQ">"text"</span>)
+  .<span class="fn" data-page-node-id="F5m6MAak0VLhHWAI0NNyE5">attr</span>(<span class="str" data-page-node-id="6xSqpf2CdbDMGGsTDECAJP">"text-anchor"</span>, d =&gt; d.children ? <span class="str" data-page-node-id="6avk946TAOr4BALUp4YNGl">"end"</span> : <span class="str" data-page-node-id="f6PHYxJvo9AGpuIFWqmb68">"start"</span>)
+  .<span class="fn" data-page-node-id="fWE8PbBDMXXOKic8Qndlxr">attr</span>(<span class="str" data-page-node-id="IQddjKGxwHOKKOjrgUkfSg">"x"</span>, d =&gt; d.children ? -<span class="num" data-page-node-id="qlVFMYdz30mGWDCjzJ02kp">8</span> : <span class="num" data-page-node-id="yGxoyBvq20EnSlOLs7z2eI">8</span>)
+  .<span class="fn" data-page-node-id="WOYc0O8DdByLhfdtGSlUWa">text</span>(d =&gt; d.data.name);</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="zWtGx1Lrz6vEp8p6BEpwiA">关键点解释：</strong>
+              <code data-page-node-id="QuRpAJl9hmjFjsy9CEtzpN">treeData.x</code> 是<strong data-page-node-id="HsXKd26oWSabnOisHrXbKK">深度方向</strong>（默认垂直），<code data-page-node-id="QQOXWlNtq9yHtkKPPR6iL9">treeData.y</code> 是<strong data-page-node-id="C48gR1wptzJOZikagSSj8z">水平方向</strong>（同一深度的不同节点）。
+              所以 linkHorizontal 用 <code data-page-node-id="w6NzcP8NTU61gAtJqe5qUE">x=d.y, y=d.x</code> —— 横线方向走 y，垂直方向走 x。
+              <strong data-page-node-id="SnnZzLENRwuSorxrhKDB7y">这种"x 轴走 y、y 轴走 x"的 swap 是横向树特有的，记住。</strong>
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key explanation:</strong>
+              <code>treeData.x</code> is the <strong>depth direction</strong> (vertical by default), while <code>treeData.y</code> is the <strong>horizontal direction</strong> (different nodes at the same depth).
+              So <code>linkHorizontal</code> uses <code>x=d.y, y=d.x</code> &mdash; the horizontal direction rides on y, and the vertical direction rides on x.
+              <strong>This &ldquo;x-axis rides on y, y-axis rides on x&rdquo; swap is unique to horizontal trees &mdash; commit it to memory.</strong>
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ② separation 控制父子间距</h3>
+            <h3 data-lang="en-US" hidden>Key Code &mdash; separation Controls Parent-Child Spacing</h3>
+            <p class="code-purpose" data-lang="zh-CN">separation 接收函数，返回 [node, parent] 之间的"间隔倍数"。</p>
+            <p class="code-purpose" data-lang="en-US" hidden><code>separation</code> accepts a function and returns the &ldquo;spacing multiplier&rdquo; between [node, parent].</p>
+<pre data-page-node-id="GBJ7Tnzzc4JkpD43bONjk8"><code data-page-node-id="kNVUm8ECkUbS8PY94k6eFE"><span class="kw" data-page-node-id="IPaMS2yCPfAVyI5Zi190Is">const</span> treeLayout = d3.<span class="fn" data-page-node-id="ZXtruwINHuDqqFzOfJAWgs">tree</span>()
+  .<span class="fn" data-page-node-id="WSg54oDd4vZbnjgaExJ0Kt">size</span>([<span class="num" data-page-node-id="egcDAoQ8WH9tVB3FU6leAh">360</span>, <span class="num" data-page-node-id="8u6eWIkSoWab5lkbGgpt2g">720</span>])
+  .<span class="fn" data-page-node-id="4EBK2gP9X7ougRqwZfpg57">separation</span>((a, b) =&gt; (a.parent === b.parent ? <span class="num" data-page-node-id="51MVbV1h3F1KuN2KOCEBPX">1</span> : <span class="num" data-page-node-id="folThA2wSdLupIAcG1HJcJ">2</span>));
+                              <span class="cmt" data-page-node-id="JCMBpmQYMcNlxllEXnGuGG">//   ↑ 兄弟节点紧贴        ↑ 非兄弟至少隔 2 倍</span></code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="yzZGiu6b8ieDpZwytEvQ3Q">关键点解释：</strong>
+              separation 默认值 <code data-page-node-id="ttbhxqGAb0fDyWjBNQ33ez">(a, b) =&gt; a.parent === b.parent ? 1 : 2</code>。
+              改成 <code data-page-node-id="g7NxGgqALoZyMguXofWzmq">0.5</code> → 全部挤一起；改成 <code data-page-node-id="2gOV9SDYoci0c06D0NUzVQ">2.0</code> → 树变宽。
+              <strong data-page-node-id="8hFtWFrNd87q8DskGgeKVO">Demo 里有个 slider</strong> 让你实时调看效果。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key explanation:</strong>
+              The default value of <code>separation</code> is <code>(a, b) =&gt; a.parent === b.parent ? 1 : 2</code>.
+              Change it to <code>0.5</code> &rarr; everything squishes together; change it to <code>2.0</code> &rarr; the tree widens.
+              <strong>There is a slider in the demo</strong> so you can adjust it in real time and see the effect.
+            </p>
+          </div>
+
+          <!-- 演示 -->
+          <div class="tab-panel" data-panel="demo" data-page-node-id="sL0mvx55oPkKR1mCXCGH2W">
+            <h3 data-lang="zh-CN">▶ 树布局演示</h3>
+            <h3 data-lang="en-US" hidden>&#9654; Tree Layout Demo</h3>
+            <p class="demo-legend" data-lang="zh-CN">👆 切换聚合层次（专业→班级 / 性别→专业→班级 等），滑动 slider 调 separation 看效果 · 这就是用「位置通道」做视觉映射</p>
+            <p class="demo-legend" data-lang="en-US" hidden>&#128073; Switch aggregation levels (major &rarr; class / gender &rarr; major &rarr; class, etc.) and drag the slider to adjust <code>separation</code> &middot; this is visual mapping via the &ldquo;position channel&rdquo;</p>
+            <div class="demo-mount" data-demo="d-4-3" data-page-node-id="DhACMZEtuAJ2gBA9ofzj1m"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 4.4 树形列表渲染 ============= -->
+      <article class="chapter" id="ch-2-4" data-page-node-id="n4bPra3IkaeEz3oisS9EnZ">
+        <h2 data-page-node-id="cxCxajdNV6fWmOZkZM8YNG" data-i18n="sec-02-4.title">2.4 树形列表渲染（classed + 事件委托）</h2>
+        <p class="chapter-subtitle" data-lang="zh-CN">把树画成可折叠的 HTML 列表，处理点击、冒泡、委托三个坑</p>
+        <p class="chapter-subtitle" data-lang="en-US" hidden>Render the tree as a collapsible HTML list &mdash; handling three pitfalls: click, bubbling, and delegation</p>
+
+        <div class="tabs" data-page-node-id="yZvM8YDvFFcfeWHACBIyrt">
+          <button class="tab-btn active" data-tab="explain" data-page-node-id="I8urhYpIY4LrfzSKl2GL8C" data-i18n="tab.explain">📖 讲解</button>
+          <button class="tab-btn" data-tab="code" data-page-node-id="G9cuRqFgfZh0O6ctc2IZCZ" data-i18n="tab.code">⌨️ 关键代码</button>
+          <button class="tab-btn" data-tab="demo" data-page-node-id="VLVDt5OSzBQuLZLJByzElg" data-i18n="tab.demo">▶️ 演示</button>
+        </div>
+
+        <div class="tab-panels" data-page-node-id="MP2vUWQPJ9MWwR8dxnf3bV">
+          <!-- 讲解 -->
+          <div class="tab-panel active" data-panel="explain" data-page-node-id="6dcBwUVrCSimx6U52BvE2y">
+            <h3 data-lang="zh-CN">📌 本节在流程中的位置：视图渲染 + 用户交互</h3>
+            <h3 data-lang="en-US" hidden>&#128204; Where This Sits: View Rendering + User Interaction</h3>
+            <p data-lang="zh-CN">
+              接上节 <strong>2.3 视觉映射</strong>，我们有了"视觉结构"。本节 <strong>2.4</strong> 是最后两段箭头：
+              <strong>「视觉结构 → 视图」（渲染）</strong> 和 <strong>「视图 ↔ 用户」（交互反馈）</strong>。
+              Card 模型的 V 层，加上 van Wijk 的反馈环，都落在这里。
+            </p>
+            <p data-lang="en-US" hidden>
+              Following the <strong>2.3 visual mapping</strong>, we now have a &ldquo;visual structure.&rdquo; Section <strong>2.4</strong> covers the last two arrows:
+              <strong>&ldquo;visual structure &rarr; view&rdquo; (rendering)</strong> and <strong>&ldquo;view &harr; user&rdquo; (interaction feedback)</strong>.
+              Card's V layer and van Wijk's feedback loop both land here.
+            </p>
+            <h3 data-lang="zh-CN">你的原案例</h3>
+            <h3 data-lang="en-US" hidden>Your Original Case</h3>
+            <p data-lang="zh-CN">原文档用了 <code data-page-node-id="PFIVxpE9d1TJDL8lVOCnB6">classed</code> 控制节点样式、用 <code data-page-node-id="liDQzaR1tl9nYitE6UtlIM">stopPropagation</code> 阻止冒泡。重点是<strong data-page-node-id="s2dYwQ0aLf5RrQN2nAbp5p">把 D3 树布局输出变成可交互的 HTML 列表</strong>。</p>
+            <p data-lang="en-US" hidden>The original document used <code>classed</code> to control node styles and <code>stopPropagation</code> to block bubbling. The focus is on <strong>turning the D3 tree layout output into an interactive HTML list</strong>.</p>
+
+            <h3 data-lang="zh-CN">嵌入理论：DOM 事件三阶段 + 事件委托</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: The Three Phases of DOM Events + Event Delegation</h3>
+            <p data-lang="zh-CN">
+              浏览器的事件流分三阶段（DOM 规范）：
+            </p>
+            <p data-lang="en-US" hidden>
+              The browser's event flow has three phases (per the DOM spec):
+            </p>
+            <ol data-page-node-id="KOPgNLSWFk1ssuCfd3Me6U">
+              <li data-lang="zh-CN"><strong data-page-node-id="iYsW6JIPi7OEqWIyW8LGPt">捕获 (capturing)：</strong>window → document → ... → 目标元素（从外到内）</li>
+              <li data-lang="en-US" hidden><strong>Capturing:</strong> window &rarr; document &rarr; ... &rarr; target element (outside to inside)</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="50DhSSt0ZRA8SlYuGGWgDr">目标 (target)：</strong>目标元素本身</li>
+              <li data-lang="en-US" hidden><strong>Target:</strong> the target element itself</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="NZ63nfbMHgowZyck4JHovy">冒泡 (bubbling)：</strong>目标元素 → ... → document → window（从内到外）</li>
+              <li data-lang="en-US" hidden><strong>Bubbling:</strong> target element &rarr; ... &rarr; document &rarr; window (inside to outside)</li>
+            </ol>
+            <p data-lang="zh-CN">默认监听的是冒泡阶段。你可以在监听器里 <code data-page-node-id="X2E4RrXVkTf3ghF3CjqbRh">e.stopPropagation()</code> 截断冒泡，让上层的监听器不再触发。</p>
+            <p data-lang="en-US" hidden>By default, listeners are registered on the bubbling phase. Inside a listener you can call <code>e.stopPropagation()</code> to cut off bubbling so ancestor listeners no longer fire.</p>
+
+            <h3 data-lang="zh-CN">理论补丁：动画 —— 视图渲染的"时间维"（van Wijk 反馈的直观体现）</h3>
+            <h3 data-lang="en-US" hidden>Theory Patch: Animation &mdash; the &ldquo;time dimension&rdquo; of view rendering</h3>
+            <p data-lang="zh-CN">
+              <strong>动画（transition）</strong>不是"花哨"，而是视图渲染在<em>时间维</em>上的展开。
+              D3 里用 <code data-page-node-id="PFIVxpE9d1TJDL8lVOCnB6">.transition().duration(ms)</code>，
+              让属性从旧值<strong>平滑过渡</strong>到新值。教学价值在 <code data-page-node-id="liDQzaR1tl9nYitE6UtlIM">duration</code> 这一个参数：
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>Animation (transition)</strong> isn't &ldquo;fancy&rdquo; &mdash; it's the <em>time dimension</em> of view rendering.
+              In D3 you use <code>.transition().duration(ms)</code> to smoothly interpolate an attribute from its old value to a new one.
+              The pedagogical value lies in the single <code>duration</code> parameter:
+            </p>
+            <ul data-page-node-id="HaYWzVftCVxqzjaEfFGI8I">
+              <li data-lang="zh-CN"><code data-page-node-id="PFIVxpE9d1TJDL8lVOCnB6">duration=0</code>：瞬间跳变，师生"看不出变化过程"</li>
+              <li data-lang="en-US" hidden><code>duration=0</code>: instant jump &mdash; you can't &ldquo;see the change happen&rdquo;</li>
+              <li data-lang="zh-CN"><code data-page-node-id="liDQzaR1tl9nYitE6UtlIM">duration=500</code>：0.5 秒过渡，能看到展开/收缩/位移的流畅过程</li>
+              <li data-lang="en-US" hidden><code>duration=500</code>: a 0.5&nbsp;s transition &mdash; you see the expand / collapse / move smoothly</li>
+              <li data-lang="zh-CN"><code data-page-node-id="liDQzaR1tl9nYitE6UtlIM">duration>1500</code>：太慢，学生开始走神</li>
+              <li data-lang="en-US" hidden><code>duration>1500</code>: too slow &mdash; students start to drift</li>
+            </ul>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="GlGD6Y4APFSc4s3qstpnNi">本节的交互 demo</strong> 特意加了 <strong>duration 滑块</strong>，
+              让你现场改变这个参数，直观看到"渲染如何随时间展开"。这是理解"视图渲染 + 交互反馈"最直接的一课。
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>This lesson's interactive demo</strong> adds a <strong>duration slider</strong> so you can change this parameter live
+              and see &ldquo;how rendering unfolds over time.&rdquo; It's the most direct lesson on &ldquo;view rendering + interaction feedback.&rdquo;
+            </p>
+
+            <h3 data-lang="zh-CN">理论补丁：事件委托 (Event Delegation)</h3>
+            <h3 data-lang="en-US" hidden>Theory Patch: Event Delegation</h3>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="GlGD6Y4APFSc4s3qstpnNi">问题</strong>：列表里有 1000 个 li，给每个 li 都绑 click 监听器 → 慢、内存大、新增元素要重新绑。
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>Problem</strong>: if a list has 1000 <code>li</code> elements and you bind a click listener to each &rarr; it's slow, memory-heavy, and newly added elements have to be re-bound.
+            </p>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="Iei2py5iNq00N9vfC3qND2">解法</strong>：只给父元素（ul/div）绑 1 个 click 监听器，利用冒泡机制 —— 子元素的 click 最终会触发父元素的监听器。用 <code data-page-node-id="MwTnVc4qR9M21RBVcmeYfO">e.target.closest('.label')</code> 找到"实际点击的是哪个子元素"。
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>Solution</strong>: bind only 1 click listener on the parent element (<code>ul</code> / <code>div</code>) and lean on bubbling &mdash; a click on any child eventually triggers the parent's listener. Use <code>e.target.closest('.label')</code> to figure out &ldquo;which child element was actually clicked.&rdquo;
+            </p>
+            <p data-lang="zh-CN">
+              <strong data-page-node-id="V0oxc2eOIgNvO1GDLslFTZ">优势</strong>：1 个监听器代替 N 个、未来新增元素自动支持。
+            </p>
+            <p data-lang="en-US" hidden>
+              <strong>Advantage</strong>: 1 listener replaces N, and any future newly added elements are automatically supported.
+            </p>
+
+            <h3 data-lang="zh-CN">关键 API：D3 classed()</h3>
+            <h3 data-lang="en-US" hidden>Key API: D3 <code>classed()</code></h3>
+            <pre data-page-node-id="tC4x16jdsWx3eNnm3v7gDQ"><code data-page-node-id="Z9seDvqlQNBfCdV7BveCxg">selection.<span class="fn" data-page-node-id="l3foihzM5fyet73mnQ1EFg">classed</span>(<span class="str" data-page-node-id="CiCF2gy8BUB4AsEY5qdLEx">"selected"</span>, <span class="kw" data-page-node-id="P4IQr1tsPWtOX6LmkENgIv">true</span>);          <span class="cmt" data-page-node-id="3JYhN3TopOuXBZuAaCgr8C">// 1) 添加 class</span>
+selection.<span class="fn" data-page-node-id="5jhC8yVyj3dUUTtMuAKKd5">classed</span>(<span class="str" data-page-node-id="KU2Y55jXrqlFa05dYPQRRp">"selected"</span>, <span class="kw" data-page-node-id="dqKaBHxvAolm1xwQ2OdEPB">false</span>);         <span class="cmt" data-page-node-id="FDU4AfohjSfN5JlVCVzPJv">// 2) 移除 class</span>
+selection.<span class="fn" data-page-node-id="gPyRihJwPq5zy9rbDSnbug">classed</span>(<span class="str" data-page-node-id="qY6O7X1usR8pI24RH7swzY">"selected"</span>, d =&gt; d.id === pickId); <span class="cmt" data-page-node-id="1icBGWJRF7yxb1Cse4EPaF">// 3) 函数式批量切换</span></code></pre>
+          </div>
+
+          <!-- 关键代码 -->
+          <div class="tab-panel" data-panel="code" data-page-node-id="JdFG0ZLn92Fht7dF29Yusm">
+            <h3 data-lang="zh-CN">关键代码 ① 事件委托（一对多监听）</h3>
+            <h3 data-lang="en-US" hidden>Key Code &mdash; Event Delegation (one-to-many listening)</h3>
+            <p class="code-purpose" data-lang="zh-CN">用递归 buildList 构建可折叠树；用 liSel 上的 click 做事件委托，不绑到每个 label。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>Use recursive <code>buildList</code> to construct the collapsible tree; use the click on <code>liSel</code> for event delegation rather than binding to each label.</p>
+<pre data-page-node-id="NO4aPZhsZ2VaPfpApUFL3d"><code data-page-node-id="PmVtqHIR0jPuN1WEBuKdRz"><span class="star" data-page-node-id="EqgMVB0vq3sL5AtxC8eASL">⭐</span> <span class="cmt" data-page-node-id="VDdYzzPedT1KLA2CAlG1Ca">// 父 ul 上绑一次 click，所有子 li 共享</span>
+<span class="kw" data-page-node-id="jFUkbFgtcIwbDYlAXcUU8X">function</span> <span class="fn" data-page-node-id="nDe0DkvHOP0bV6nAt6o4uI">buildList</span>(liSel, d) {
+  <span class="kw" data-page-node-id="x8mSZFhFm9DS0ayyeOdDyK">const</span> label = liSel.<span class="fn" data-page-node-id="KP9FkyGeUmKdFt2wYXE2E4">append</span>(<span class="str" data-page-node-id="sm4t2UJYqMfHvIehb6g7bc">"span"</span>).<span class="fn" data-page-node-id="0Lfqi3FhHQldTij6e5w0C2">attr</span>(<span class="str" data-page-node-id="IGmfAVADxieda4PtGefEq3">"class"</span>, <span class="str" data-page-node-id="jWHvMrcsjDiwr1H9qAGVJF">"label"</span>);
+
+  label.<span class="fn" data-page-node-id="g5zUSt1ihEVs3WADlTeAPj">on</span>(<span class="str" data-page-node-id="zBeBtDqJRYb9HXgtVaT513">"click.toggle"</span>, (event) =&gt; {
+    <span class="cmt" data-page-node-id="Tv8lSgdTK9HXyae7uXTMIi">// ⭐ 关键 ①：阻止冒泡 —— toggle 按钮不该触发"选中"</span>
+    event.<span class="fn" data-page-node-id="vtjCIW4BKteO3HpX7C7sMY">stopPropagation</span>();
+    d.data._collapsed = !d.data._collapsed;
+    render();
+  });
+
+  liSel.<span class="fn" data-page-node-id="drZNtq72IrgRab2TrtG6BT">on</span>(<span class="str" data-page-node-id="fGjEvBRAMP759N4yBbpnfd">"click.select"</span>, (event) =&gt; {
+    <span class="cmt" data-page-node-id="mYDR1j8ecQnBP5go39Ggwn">// ⭐ 关键 ②：如果 click 来自 toggle，已经被 stopPropagation 阻断，不会到这里</span>
+    document.<span class="fn" data-page-node-id="ARLOWDD5hk5zYfy82r97kL">querySelectorAll</span>(<span class="str" data-page-node-id="iwskQe8C0PN8OyqQviZ8sr">"li"</span>).<span class="fn" data-page-node-id="y0Dt6Cj90BV9A1bGJEu3ZD">forEach</span>(li =&gt; li.<span class="fn" data-page-node-id="uUhlR5JDCycfGg05N3NbLP">classList</span>.<span class="fn" data-page-node-id="LbiRQWKALtTSiU2PqDXvT4">remove</span>(<span class="str" data-page-node-id="6yelbSu2aF6R0JtYmME0Gx">"selected"</span>));
+    liSel.<span class="fn" data-page-node-id="UUIzKPBZxx6e4iJJB5XP8r">classed</span>(<span class="str" data-page-node-id="S6hoasfuqBEGIhmn2kRmNo">"selected"</span>, <span class="kw" data-page-node-id="DhSOfDOy0EBuGUrDCIcqZk">true</span>);
+  });
+}</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="3lqdYLDOatdOiZDau4yHrJ">关键点解释：</strong>
+              这是经典的「<strong data-page-node-id="p2ZwOZcdIHWR7FZgeg9TD4">阻止 toggle 按钮冒泡到 li 的 select 监听器</strong>」模式。如果不 stopPropagation，
+              点 toggle 时会同时触发"切换折叠"和"选中节点"，用户看着会困惑。
+              <strong data-page-node-id="BxR1GKgygV8UDOTDz31Su5">这是 DOM 事件机制的核心教学点。</strong>
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key explanation:</strong>
+              This is the classic pattern of &ldquo;<strong>stopping the toggle button from bubbling up to the <code>li</code>'s select listener</strong>.&rdquo; Without <code>stopPropagation</code>,
+              clicking the toggle would simultaneously trigger &ldquo;toggle collapse&rdquo; and &ldquo;select the node,&rdquo; which would confuse users.
+              <strong>This is a core teaching point about the DOM event mechanism.</strong>
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ② 嵌套递归 buildList</h3>
+            <h3 data-lang="en-US" hidden>Key Code &mdash; Nested Recursive buildList</h3>
+            <p class="code-purpose" data-lang="zh-CN">d3 selection 的递归渲染：每个 li 内部再有 ul/li，再递归 buildList。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>Recursive rendering with d3 selections: every li contains another ul/li, then buildList recurses into it.</p>
+<pre data-page-node-id="qR7xHVjHGQcLHkGJC6P8LW"><code data-page-node-id="ZHFp2JuIrVQDmFUXKp35ZP"><span class="kw" data-page-node-id="6ZVigfzhxWYjM4Vnwlw4kT">function</span> <span class="fn" data-page-node-id="wlYrwdG5kBQelG8CV3HZc8">render</span>() {
+  $tree.innerHTML = <span class="str" data-page-node-id="Xcu82F1vv5nEJFAaQGlrOl">""</span>;
+  <span class="kw" data-page-node-id="Go6G3dq6tA4D2JMb2WA8Yw">const</span> ul = d3.<span class="fn" data-page-node-id="pUkqGHdmYKCnFqjMZZD8Km">create</span>(<span class="str" data-page-node-id="EBxgn4jYFr7weuRLukU1Pa">"ul"</span>);
+  ul.<span class="fn" data-page-node-id="ZooaEcAntBFLGNI9BLNlfe">selectAll</span>(<span class="str" data-page-node-id="CN3b680DCbHLlRaANhOTcY">"li"</span>).<span class="fn" data-page-node-id="AXLckBpCAfoq8x7aE7hE2P">data</span>([root]).<span class="fn" data-page-node-id="Gk3rGKzUbaSjOp9d7zCGIn">join</span>(<span class="str" data-page-node-id="G6cCgCgx3QwkeOwlIZx42H">"li"</span>)
+    .<span class="fn" data-page-node-id="FN5mAAZFmQjTrFEYtlmxME">each</span>(<span class="kw" data-page-node-id="0oHbDR4DZOeWobv76jD8hh">function</span>(d) { <span class="fn" data-page-node-id="p8miRtSOrFdasfNGISAY6o">buildList</span>(d3.<span class="fn" data-page-node-id="BfVgGFQAKVjzfM5Iobi55D">select</span>(<span class="kw" data-page-node-id="Wzh4fooecvcUKszmPyKlNE">this</span>), d); });
+  $tree.<span class="fn" data-page-node-id="td0WzELjrMwW6QcczibtBK">appendChild</span>(ul.<span class="fn" data-page-node-id="PRgcVt6bA0qiLJ9QmqumgW">node</span>());
+}</code></pre>
+            <h3 data-lang="zh-CN">关键代码 ③ D3 过渡动画（transition + duration）</h3>
+            <h3 data-lang="en-US" hidden>Key Code &mdash; D3 Transition (transition + duration)</h3>
+            <p class="code-purpose" data-lang="zh-CN">视图渲染的"时间维"：让节点展开/收缩时平滑过渡，不是瞬间跳变。duration 由滑块实时控制。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>The &ldquo;time dimension&rdquo; of view rendering: smoothly interpolate node expand / collapse instead of an instant jump. <code>duration</code> is controlled by a live slider.</p>
+<pre><code><span class="star">⭐</span> <span class="cmt">// 关键：transition + duration = 让属性随时间平滑变化</span>
+svg.<span class="fn">selectAll</span>(<span class="str">".node"</span>)
+  .<span class="fn">transition</span>()                                  <span class="cmt">// 进入过渡状态</span>
+  .<span class="fn">duration</span>(<span class="kw">DURATION</span>)                          <span class="cmt">// 时长（ms），滑块控制</span>
+  .<span class="fn">attr</span>(<span class="str">"transform"</span>, d =&gt; <span class="str">`translate(${d.y}, ${d.x})`</span>)
+  .<span class="fn">attr</span>(<span class="str">"opacity"</span>, <span class="num">1</span>);
+
+<span class="cmt">// 新节点进入时：先设 opacity=0，再过渡到 1 → 淡入效果</span>
+ng.<span class="fn">attr</span>(<span class="str">"opacity"</span>, <span class="num">0</span>)
+  .<span class="fn">transition</span>().<span class="fn">duration</span>(<span class="kw">DURATION</span>).<span class="fn">attr</span>(<span class="str">"opacity"</span>, <span class="num">1</span>);</code></pre>
+            <h3 data-lang="zh-CN">关键代码 ④ 动画时长滑块（直接在 HTML/CSS 里控制）</h3>
+            <h3 data-lang="en-US" hidden>Key Code &mdash; Animation Duration Slider</h3>
+<pre><code><span class="cmt">&lt;!-- HTML 滑块：监听 input 事件即可改 DURATION --&gt;</span>
+&lt;input id="dur" type="range" min="0" max="1500" step="50" value="500"&gt;
+
+<span class="cmt">// JS：改变 DURATION 后重放动画</span>
+document.<span class="fn">getElementById</span>(<span class="str">"dur"</span>).<span class="fn">addEventListener</span>(<span class="str">"input"</span>, e =&gt; {
+  <span class="kw">DURATION</span> = +e.target.value;
+  render();   <span class="cmt">// 用新时长重新做一次过渡</span>
+});</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="fu1xIIoIw3U4wCJz2BPyQ2">关键点解释：</strong>
+              <strong data-page-node-id="jvWTEjOHOfr3HutOAgEAyl">为什么用 innerHTML = "" 清空再重画？</strong>
+              D3 没有"智能更新"树结构（层级变化）的 API —— 节点展开/折叠会改变父子结构，最简单的做法是全量重新渲染。
+              用 <code data-page-node-id="t4UcVjEKHP0979ucEjpQXS">selection.each()</code> 配合 <code data-page-node-id="8UPzNc8anzHApxD3wwac7X">d3.select(this)</code> 把原生元素转回 selection，<strong data-page-node-id="qnPvEQPv4DcgtA5P27KRDV">这是 D3 与原生 DOM 互操作的关键模式</strong>。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key explanation:</strong>
+              <strong>Why use <code>innerHTML = ""</code> to clear and redraw?</strong>
+              D3 has no &ldquo;smart-update&rdquo; API for tree structures (where hierarchy changes) &mdash; expanding or collapsing a node changes the parent-child structure, and the simplest approach is a full re-render.
+              Use <code>selection.each()</code> together with <code>d3.select(this)</code> to convert the raw element back into a selection &mdash; <strong>this is the key pattern for D3-native-DOM interop</strong>.
+            </p>
+          </div>
+
+          <!-- 演示 -->
+          <div class="tab-panel" data-panel="demo" data-page-node-id="hAFjjJDns2DxuRQ4ucAjFh">
+            <h3 data-lang="zh-CN">▶ 可折叠树形列表</h3>
+            <h3 data-lang="en-US" hidden>&#9654; Collapsible Tree List</h3>
+            <p class="demo-legend" data-lang="zh-CN">👆 点击三角形 toggle 折叠/展开 · 点击条目本身选中（看下方日志）· 拖动「动画时长」滑块看 transition 效果</p>
+            <p class="demo-legend" data-lang="en-US" hidden>&#128073; Click the triangle to toggle collapse / expand &middot; click an item to select it (see the log) &middot; drag the &ldquo;animation duration&rdquo; slider to see the transition</p>
+            <div class="demo-mount" data-demo="d-4-4" data-page-node-id="ML6C5Tf4eRfjWmsv2xYqmW"></div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="lesson-footer" data-page-node-id="wL5iNTzfTOUzX1TQOADptD">
+    <p data-lang="zh-CN">Doc-02 集成教学页面 · 零依赖 · D3.js v7 + 原生 JS · 可独立运行</p>
+    <p data-lang="en-US" hidden>Doc-02 integrated teaching page &middot; zero dependencies &middot; D3.js v7 + vanilla JS &middot; runs standalone</p>
+  </footer>
+
+  <nav class="chapter-pager" aria-label="章节翻页">
+    <a class="pager-prev" href="../lesson-01/"><span class="pager-dir" data-i18n="common.prev">← 上一章</span><span class="pager-title">第 1 章 数据</span></a>
+    <a class="pager-portal" href="../" data-i18n="common.enter">课程门户</a>
+    <a class="pager-next" href="../lesson-03/"><span class="pager-dir" data-i18n="common.next">下一章 →</span><span class="pager-title">第 3 章 色彩专题</span></a>
+  </nav>
+
+  <script type="module" src="./lesson.js?v=202609080945"></script>
+  <script type="module" src="../i18n.js"></script>
+  <script>
+  (function () {
+    var bar = document.querySelector('.course-topbar');
+    if (!bar) return;
+    var cur = parseInt(bar.getAttribute('data-current'), 10) || 0;
+    var links = bar.querySelectorAll('.tabs a');
+    if (cur >= 0 && cur < links.length) links[cur].classList.add('current');
+  })();
+  </script>
+</body>
+</html>

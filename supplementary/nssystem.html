@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国石油大学（华东）2025新生</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="utils/data.js"></script>
+    <link rel="stylesheet" href="style/system.css">
+
+    <script src="utils/treelist.js"></script>
+    <link rel="stylesheet" href="style/treelist.css">
+    <script src="utils/table.js"></script>
+    <link rel="stylesheet" href="style/table.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>新生数据管理系统</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="chart-container">
+            <div class="controls">
+                <button class="btn" onclick="expandAll(true)">展开全部</button>
+                <button class="btn" onclick="expandAll(false)">折叠全部</button>
+            </div>
+            <div class="panel-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 6h18M3 12h18M3 18h18"></path>
+                </svg>
+                学院组织结构
+            </div>
+            <div id="tree-container"></div>
+        </div>
+
+        <div class="table-section">
+            <div class="panel-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 10h18M3 14h18M3 18h18M3 6h18"></path>
+                </svg>
+                学生数据表
+            </div>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input type="text" id="search-input" placeholder="搜索学生姓名或班级...">
+                </div>
+
+                <div class="stats">
+                    当前显示 <span id="row-count">50</span> 条记录（共 <span id="total-rows">150</span> 条）
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="data-table" class="data-table"></table>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script>
+    // 启动渲染
+    main();
+    // 测试树渲染
+    async function main() {
+        try {   
+            const csvstudents = await loadCSV();
+            const students = groupOnMajorCls(addSplitColumns(csvstudents));
+            renderTree(mapToTreeStructure(students), nodeDisplay);
+            renderTable(csvstudents, "#data-table");
+            //绑定treelist和table，点击对应节点形成对表格的筛选
+            d3.selectAll(".node-content").on("click", function (event) {
+                // 移除之前选中的节点样式
+                if (selectedNode) {
+                    d3.select(selectedNode).classed("selected", false);
+                }
+                // 添加当前选中节点样式
+                d3.select(this).classed("selected", true);
+                selectedNode = this;
+                searchTerm = d3.select(this).text().split(" ")[0];
+                if(searchTerm=="青岛软件学院")  searchTerm = null;
+                console.log(searchTerm);
+                filteredData = filterArray(csvstudents, searchTerm, ['cls']);
+                renderTable(filteredData, "#data-table");
+            });
+            // 添加搜索功能
+            d3.select('#search-input').on("input", function (e) {
+                const searchTerm = e.target.value;
+                renderTable(filterArray(csvstudents, searchTerm), "#data-table");
+            });
+            // document.getElementById("search-input").addEventListener("input", function (e) {
+            //     const searchTerm = e.target.value;
+            //     renderTable(filterArray(csvstudents,searchTerm), "#data-table");
+            // });
+        } catch (error) {
+            console.error("渲染失败:", error);
+            d3.select("#tree-container").html(`<div style="color:red">加载失败: ${error.message}</div>`);
+        }
+    }
+
+</script>
+
+</html>

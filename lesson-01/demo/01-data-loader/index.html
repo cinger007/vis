@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="A8jxUSPQx9b8iFBOpGk2wN">
+<head data-page-node-id="l9JfIQzJuuP1lLWFGBQnpY">
+  <meta charset="UTF-8" data-page-node-id="9M7WO5EwPQUdF25e368hUM" />
+  <title>Demo 1 · D3 数据加载器</title>
+  <link rel="stylesheet" href="../styles.css" data-page-node-id="KWCKPox71SaHV20QEiPanl" />
+</head>
+<body data-page-node-id="pfEu6G7GwmJGHUZdZ2q9v5">
+  <a href="../index.html" data-page-node-id="OrTAATdAcNpIcKC6PMU7HM">← 返回导航</a>
+  <h1 data-page-node-id="5zIV6UmY7NQ9URiWqHj4hf">Demo 1 · D3 数据加载器</h1>
+  <p data-page-node-id="MvybvisAIpTUnwo42HpgVc">
+    对应讲义章节 <span class="tag" data-page-node-id="6M1V8eVCQVxpA7zCLwD59E">3.5 D3 数据选择器</span>。本 demo 演示
+    <strong data-page-node-id="Ms23yRSSyrN9hJF3IYRBfz">异步加载 CSV</strong>、<strong data-page-node-id="yS8YwYLfykKUXsDUpWfCNd">字段名映射</strong>（中文 → 英文）和
+    <strong data-page-node-id="NwtCzXzhQ8RxPagobMjLvu">类型转换</strong>（字符串 → Number / Date）的完整流程。
+  </p>
+
+  <div class="demo-nav" data-page-node-id="4iE188higx6CrWKW7SVjU3">
+    <div class="panel-title" data-page-node-id="qg65nGHCZdlnOUI3u9J4Nw">3.1 数据加载与转换（推荐方式：分离 row 函数）</div>
+    <p style="font-size: 13px; color: #475569; margin-bottom: 8px;" data-page-node-id="GvN5g2WZDNttqUdZyjvSM6">
+      数据文件：<code data-page-node-id="zvc9rc4IDCDcSDVlRHRFou">../data/newstudent.csv</code> · 共 <span id="row-count" data-page-node-id="3p9VXH3V5f7d4wcWRFhGfw">…</span> 行
+    </p>
+    <div class="controls" data-page-node-id="BKR8d6ykfC7EB1LPz4LBJM">
+      <button id="btn-reload" data-page-node-id="xhMEoNehCmHun3ICqzfVK2">重新加载</button>
+      <span class="legend" data-page-node-id="hf9ivcFLJaEgDAlGOaQOG7">点击按钮 → 观察控制台输出 + 下方表格</span>
+    </div>
+  </div>
+
+  <div class="panel" data-page-node-id="mkGquvL2GvMQSaCCJWCKva">
+    <div class="panel-title" data-page-node-id="KzUr131batMOtF1DQ1LVpF">Console 输出</div>
+    <div class="console" id="console" data-page-node-id="lHlD6tk37MYG6Yqe9wuj4b">点击「重新加载」查看输出…</div>
+  </div>
+
+  <div class="panel" data-page-node-id="pzWveEksOsF8zB3YhanmN8">
+    <div class="panel-title" data-page-node-id="zZqoazbSxJoxkw920fHwUn">转换后的数据（前 10 行）</div>
+    <div id="table-container" data-page-node-id="jijrFClc1Fve4mEHDWWYvW">加载中…</div>
+  </div>
+
+  <div class="panel" data-page-node-id="Dy9fJOUxBAquNp5NmPrRZo">
+    <div class="panel-title" data-page-node-id="SCj2tp1wEUrXKn5tWbHrCX">字段映射对照</div>
+    <table id="mapping-table" data-page-node-id="BlE8HBEd3C0I5mnREVdaZ3">
+      <thead data-page-node-id="88toHh3h0DQF0gPybD87o3">
+        <tr data-page-node-id="FBGIAsQPZzgTa8hLTlp1J1"><th data-page-node-id="vWoaTkccPgFMdkil6rotvx">CSV 中文列名</th><th data-page-node-id="scbG3FqnbLOtkEEHh2XtfN">JS 变量名（英文）</th><th data-page-node-id="wHN42DbjGOHu8iVrehKW2j">类型</th></tr>
+      </thead>
+      <tbody data-page-node-id="zKXBcPQ9wm1gjQAOIQO93x"></tbody>
+    </table>
+  </div>
+
+  <div class="note" data-page-node-id="sofoYoQniXTDn8I47xHLCP">
+    <strong data-page-node-id="nxUdNq7q6NRPMh4xEjCzfE">关键点：</strong>用户原文指出 "中文部分是 csv 文件中的列名称，但在后继程序处理中，英文变量可以避免语法问题"——
+    通过 <code data-page-node-id="zCy2WE8cqvWpNUtxNsqQDU">transformRow</code> 函数把中文键映射到英文，并把数值/时间字段从字符串转换为 Number / Date 类型。
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

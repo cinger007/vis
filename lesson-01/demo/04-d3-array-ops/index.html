@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="DkipszVVQriGHeVARCXaeN">
+<head data-page-node-id="FxiAhuKkJIRFS7g4d0ByzL">
+  <meta charset="UTF-8" data-page-node-id="1zanqOf7iPUuH6EJJl3n9T" />
+  <title>Demo 4 · D3 8 个数组函数</title>
+  <link rel="stylesheet" href="../styles.css" data-page-node-id="nLrE2Fix4qF1RL1zbKRbWU" />
+</head>
+<body data-page-node-id="IC5HeinT9Zb2wqHoDcPpQS">
+  <a href="../index.html" data-page-node-id="bAPckSx6Ef4ysloKgBrknq">← 返回导航</a>
+  <h1 data-page-node-id="Poy9ZlpDG85jqynVFdwilW">Demo 4 · D3 8 个数组函数</h1>
+  <p data-page-node-id="6GAJ85msXshtwsQgFpTWAJ">
+    对应讲义章节 <span class="tag" data-page-node-id="nqYtZnyWeFa0Oh1Zma9ua3">3.4 数据变换</span>。本 demo 把用户原文列出的 8 个函数
+    （map / reduce / cross / merge / pairs / transpose / zip / filter）逐个可视化对比，
+    右侧展示新生数据的真实用法。
+  </p>
+
+  <div class="demo-nav" data-page-node-id="de7irIh80L0BmdRqT9My2p">
+    <div class="panel-title" data-page-node-id="D12guPZPgb1zh1GeH4anGj">选择函数查看</div>
+    <div class="controls" data-page-node-id="GB8aDma7l26QgjnK3jdikz">
+      <label data-page-node-id="qM82ZbBjXlRG39YXRErw1d">函数：
+        <select id="fn-select" data-page-node-id="lVBlc4FJ7vjA0MYrAlKKPP">
+          <option value="map" data-page-node-id="sbaq4z5xv0afTXR1MFzKHf">map</option>
+          <option value="reduce" data-page-node-id="DuuO7AH72UBZwqmUoNJv98">reduce</option>
+          <option value="cross" data-page-node-id="XsLUfjVGSF1nJNdUVbdEmF">cross</option>
+          <option value="merge" data-page-node-id="sX7yxfLvlF6wLh9XSTcbEg">merge</option>
+          <option value="pairs" data-page-node-id="jnaBjuaJ92LrBLZGMd0FmN">pairs</option>
+          <option value="transpose" data-page-node-id="ncZ6MI0mDqOykEGQj34RjE">transpose</option>
+          <option value="zip" data-page-node-id="nkmWUU7HjMxIsvZBmOx5pP">zip</option>
+          <option value="filter" data-page-node-id="qgvowBvyQg7R1imeynzjey">filter</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="panel" data-page-node-id="DjS980P3WBM4SDqzBJgfO4">
+    <div class="panel-title" data-page-node-id="UuRlN4A3wdvCqbUYkQUPH2">函数说明</div>
+    <div id="fn-desc" data-page-node-id="9CSSh3VokAkoTTJ44g0Jsc"></div>
+  </div>
+
+  <div class="panel" data-page-node-id="IoEWdRCvTpzfB7oEQfYtOs">
+    <div class="panel-title" data-page-node-id="9pe46bAESw7yuzlLcf0anF">输入 → 输出</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;" data-page-node-id="cO4pSvt8Oi7m7Twa6eWGr5">
+      <div data-page-node-id="J2ni4WjSkS9tF9BCZufhlD">
+        <h3 style="font-size: 13px; color: #64748b; margin-bottom: 8px;" data-page-node-id="iWHSR7H3qIk8EtIyb6zxQ9">输入</h3>
+        <div class="console" id="fn-input" data-page-node-id="rXJXEvXnd65VJkcyaUjSwy"></div>
+      </div>
+      <div data-page-node-id="L82s0V8R4nCHea6Lys4i48">
+        <h3 style="font-size: 13px; color: #64748b; margin-bottom: 8px;" data-page-node-id="GG5CstbyEd5Y7ISAb5lwRB">输出</h3>
+        <div class="console" id="fn-output" data-page-node-id="BKcUKued9WccoFB8zAwJUH"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" data-page-node-id="UpsZx9JZ6E9Advdds6H618">
+    <div class="panel-title" data-page-node-id="VhEOuFjbtyxYt5pQV3BN2D">真实场景（新生数据）</div>
+    <div id="fn-realtime" data-page-node-id="K087gYdLVLfiS0ZUJ8HIJd"></div>
+  </div>
+
+  <div class="note" data-page-node-id="ALFFDZIuwYm5qd6C7GPNQQ">
+    <strong data-page-node-id="IxEWr7CgjtOsazpxh1C1dY">嵌入理论：</strong>这 8 个函数构成 D3 数据流的核心。
+    它们都是 <strong data-page-node-id="BB67zoe6GSARflK1VYHENi">函数式 / 不可变</strong>的：输入不变，输出新数组。
+    这与命令式 array.forEach 形成对比 —— 函数式风格天然支持数据流并行化与可测试性。
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

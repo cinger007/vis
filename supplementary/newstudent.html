@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中国石油大学（华东）2025新生</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .tooltip {
+            position: absolute;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 4px;
+            pointer-events: none;
+            font-size: 12px;
+            z-index: 10;
+        }
+        
+        .arc {
+            transition: opacity 0.3s;
+        }
+        
+        .arc:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+<div id="chart"></div>
+
+    <script>
+        // import * as d3 from "d3";
+function DrawPie(ageData){
+        const tooltip = d3.select("body")
+          .append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
+        // 设置SVG画布尺寸
+        const width = 500;
+        const height = 400;
+        const radius = Math.min(width, height) / 2 - 40;
+
+        // 创建SVG容器
+        const svg = d3.select("#chart")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", `translate(${width/2}, ${height/2})`);
+
+        // 设置颜色比例尺
+        const color = d3.scaleOrdinal()
+            .domain(ageData.map(d => d.age))
+            .range(d3.schemeCategory10);
+
+        // 创建饼图布局
+        const pie = d3.pie()
+            .value(d => d.count)
+            .sort(null);
+
+        // 生成弧线生成器
+        const arc = d3.arc()
+            .innerRadius(60)
+            .outerRadius(radius);
+
+        // 绘制饼图扇形
+        const arcs = svg.selectAll(".arc")
+            .data(pie(ageData))
+            .enter()
+            .append("g")
+            .attr("class", "arc");
+
+        arcs.append("path")
+            .attr("d", arc)
+            .attr("fill", d => color(d.data.age))
+            .attr("stroke", "white")
+            .attr("stroke-width", 1)
+            // 添加鼠标事件
+        .on("mouseover", function(event, d) {
+            // 高亮当前扇形
+            d3.select(this)
+                .attr("stroke-width", 2)
+                .attr("stroke", "black");
+            
+            // 显示提示框
+            tooltip.transition()
+                .duration(200)
+                .style("opacity", 0.9);
+                
+            tooltip.html(`
+                <div><strong>${d.data.age}岁</strong></div>
+                <div>人数: ${d.data.count}</div>
+                <div>占比: ${(d.data.count/480 * 100).toFixed(1)}%</div>
+            `)
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(event, d) {
+            // 恢复扇形样式
+            d3.select(this)
+                .attr("stroke-width", 1)
+                .attr("stroke", "white");
+                
+            // 隐藏提示框
+            tooltip.transition()
+                .duration(500)
+                .style("opacity", 0);
+        });
+
+        // 添加年龄标签
+        arcs.append("text")
+            .attr("transform", d => `translate(${arc.centroid(d)})`)
+            .attr("dy", "0.35em")
+            .text(d => `${d.data.age}岁`)
+            .style("font-size", "12px")
+            .style("text-anchor", "middle");
+
+        // 添加百分比标签
+        arcs.append("text")
+            .attr("transform", d => `translate(${arc.centroid(d)})`)
+            .attr("dy", "1.5em")
+            .text(d => `${(d.data.count/480 * 100).toFixed(1)}%`)
+            .style("font-size", "10px")
+            .style("text-anchor", "middle");
+        
+        // 添加图表标题
+        svg.append("text")
+            .attr("class", "title")
+            .attr("y", -height/2 + 20)
+            .text("新生年龄分布饼图 (总人数:480人)")
+            .style("font-size", "14px");
+}
+async function loadCSV() {
+  try{
+    const newstudent= await d3.csv("./newstudent.csv", function(d)  {//本质上是在定义一个函数,d为参数
+    return {
+      name: d.姓名,
+      age: +d.年龄, // 直接转换为数字
+      birthday: d3.timeParse("%Y-%m-%d")(d.生日)
+    };
+    });
+    // 检查年龄是否为数字
+    const nanAgeStudents = newstudent.filter(student => 
+      typeof student.age !== 'number' || isNaN(student.age)
+    );
+    
+    if (nanAgeStudents.length > 0) {
+      console.log("无效年龄数据:", nanAgeStudents);
+    }
+    // console.log(newstudent); // 此时 population 和 area 就是数字了
+    const ageDistribution = d3.rollup(
+      newstudent,
+      group => group.length,
+      d => d.age
+    );
+
+    // 转换为前端可用的格式
+    const result = Array.from(ageDistribution, 
+      ([age, count]) => ({age, count})
+    );
+    DrawPie(result);
+  }catch (error) {
+        console.error("加载CSV文件失败:", error);
+  }
+}
+loadCSV();
+//在 d3-fetch 的行转换函数中转换
+
+</script>
+</body>
+</html>

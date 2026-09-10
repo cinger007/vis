@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="EEJIhEV3WsXpce9Z1vE9jz">
+<head data-page-node-id="69HmpWew2SlB94GavDSFO7">
+  <meta charset="UTF-8" data-page-node-id="cEA4THeFCO4xxWTsPorqoV" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="XWuaZTAeGUimatTjNVqBY4" />
+  <title>第 1 章 数据 · 集成教学页面</title>
+  <link rel="stylesheet" href="./styles.css" data-page-node-id="uFPW54jagAzoFVWfzqO9UJ" />
+  <link rel="stylesheet" href="../i18n.css" />
+</head>
+<body data-page-node-id="Uz8InwD29hyaaztgx8WRzL">
+
+  <nav class="course-topbar" data-current="1">
+    <a class="brand" href="../">
+      <span class="back">←</span><span data-i18n="nav.home" data-i18n="common.enter">课程门户</span>
+    </a>
+    <ul class="tabs">
+      <li data-lang="zh-CN"><a href="../" data-i18n="nav.home" data-i18n="common.enter">课程门户</a></li>
+      <li data-lang="en-US" hidden><a href="../" data-i18n="nav.home" data-i18n="common.enter">Course Portal</a></li>
+      <li data-lang="zh-CN"><a href="../lesson-01/" data-i18n="nav.ch1">第 1 章 · 数据</a></li>
+      <li data-lang="en-US" hidden><a href="../lesson-01/" data-i18n="nav.ch1">Chapter 1 · Data</a></li>
+      <li data-lang="zh-CN"><a href="../lesson-02/" data-i18n="nav.ch2">第 2 章 · 数据可视化流程</a></li>
+      <li data-lang="en-US" hidden><a href="../lesson-02/" data-i18n="nav.ch2">Chapter 2 · Data Visualization Process</a></li>
+      <li data-lang="zh-CN"><a href="../lesson-03/" data-i18n="nav.ch3">第 3 章 · 色彩专题</a></li>
+      <li data-lang="en-US" hidden><a href="../lesson-03/" data-i18n="nav.ch3">Chapter 3 · Color Special Topic</a></li>
+      <li data-lang="zh-CN"><a href="../lesson-04/" data-i18n="nav.ch4">第 4 章 · 低维可视化</a></li>
+      <li data-lang="en-US" hidden><a href="../lesson-04/" data-i18n="nav.ch4">Chapter 4 · Low-Dimensional Visualization</a></li>
+      <li data-lang="zh-CN"><a href="../lesson-05/" data-i18n="nav.ch5">第 5 章 · 时序可视化</a></li>
+      <li data-lang="en-US" hidden><a href="../lesson-05/" data-i18n="nav.ch5">Chapter 5 · Time-Series Visualization</a></li>
+    </ul>
+  </nav>
+  <header class="lesson-header" data-page-node-id="w4BzSsJPBPuY2hXMAsIkba">
+    <div data-page-node-id="XDlOtcHMvRy0ySlcuDg9Ri">
+      <h1 data-page-node-id="D20sd68yzNQqjCyv7H5EU8">第 1 章 数据</h1>
+      <p class="subtitle" data-page-node-id="YmRjpc8CZFaVyqPbpxvfoB">Doc-01 集成教学页面 · 讲解 ⇄ 代码 ⇄ 演示 三 tab 切换</p>
+    </div>
+    <div class="header-tip" data-page-node-id="HFGAVv2h4SYSNQTlEd4RhL">
+      <span class="kbd" data-page-node-id="LFLiXutNmgNTpOIJGQ825V">Tab</span> 切换章节 · 每个章节内三 tab 自由切换
+    </div>
+  </header>
+
+  <main class="lesson-main" data-page-node-id="4ddP2ASmauD1a3yWmysJbk">
+    <!-- 左侧章节导航 -->
+    <aside class="chapter-nav" data-page-node-id="6kqVbJFshKQuykzVdwLiKW">
+      <h3 data-page-node-id="vNsjO0E7689CRyDZdzybDK" data-i18n="nav.toc">章节目录</h3>
+      <ul data-page-node-id="C3CU5mnmSvXMFkQbJ5qhwQ">
+        <li data-page-node-id="768T6XOEXJqCdOGJ94pef5"><a data-i18n="sec-01-1.title" href="#ch-1-1" data-chapter="ch-1-1" class="active" data-page-node-id="RoDecZ6nbpFn10iFqGyhtB">1.1 数据生成</a></li>
+        <li data-page-node-id="FNpDIoGOkycXjWjG0Lnb4Z"><a data-i18n="sec-01-2.title" href="#ch-1-2" data-chapter="ch-1-2" data-page-node-id="teKRndQNAzSuiEZG6Zljok">1.2 数据定义</a></li>
+        <li data-page-node-id="5lr97nCoOYxdZDC74uJ1dq"><a data-i18n="sec-01-3.title" href="#ch-1-3" data-chapter="ch-1-3" data-page-node-id="JDlBzBcR1pQBHF63J37VRj">1.3 数据属性</a></li>
+        <li data-page-node-id="wshVH4FFbYBHAhpJ7ow2zR"><a data-i18n="sec-01-4.title" href="#ch-1-4" data-chapter="ch-1-4" data-page-node-id="GuZnsEsANS1pMioi2HHW6x">1.4 数据变换</a></li>
+        <li data-page-node-id="LFCG4k9K89o8gmxGyIBsku"><a data-i18n="sec-01-5.title" href="#ch-1-5" data-chapter="ch-1-5" data-page-node-id="XOXa4ix4cphncvYUTaG8BI">1.5 D3 数据选择器</a></li>
+      </ul>
+      <div class="nav-tip" data-page-node-id="SEhKikZpJ4UYIl7ZwaABPF">        <a href="../supplementary/#第-1-章-数据" target="_blank"><span data-i18n="common.supplementary">↗ 补充 demo 集合</span></a>
+        <br>        <a href="./demo/" target="_blank"><span data-i18n="common.demo-folder">↗ 独立 demo 集合</span></a>
+        <br>        <a href="./lecture.md" target="_blank" data-i18n-href="lecture"><span data-i18n="common.full-lecture">↗ 完整讲义 markdown</span></a>
+      
+      </div>
+    </aside>
+
+    <!-- 章节内容 -->
+    <section class="chapter-content" data-page-node-id="fAwazJlNmH6D6V5Yb21D7s">
+
+      <!-- ============= 3.1 数据生成 ============= -->
+      <article class="chapter active" id="ch-1-1" data-page-node-id="GkGkzha9IlrpmNNWdaDWu7">
+        <h2 data-page-node-id="NyTzUezgJT2m5AieJukxzf" data-i18n="sec-01-1.title">1.1 数据生成</h2>
+        <p class="chapter-subtitle" data-lang="zh-CN">基于新生数据（DeepSeek 合成）讲解异步加载与字段映射</p>
+        <p class="chapter-subtitle" data-lang="en-US" hidden>Explains asynchronous loading and field mapping using the new-student dataset (synthesized by DeepSeek)</p>
+
+        <div class="tabs" data-page-node-id="TyJDYNjJkOMLHRT46zfK8N">
+          <button class="tab-btn active" data-tab="explain" data-page-node-id="tvHQ4RFoFTvPa79Nf8vAxa" data-i18n="tab.explain">📖 讲解</button>
+          <button class="tab-btn" data-tab="code" data-page-node-id="17kpdIPNftcabnTryv4lkZ" data-i18n="tab.code">⌨️ 关键代码</button>
+          <button class="tab-btn" data-tab="demo" data-page-node-id="T8Y4wOk1U3RXRq5cg5vmI6" data-i18n="tab.demo">▶️ 演示</button>
+        </div>
+
+        <div class="tab-panels" data-page-node-id="C8TPvDSLLNtQVfWz5FGTXm">
+          <!-- 讲解 -->
+          <div class="tab-panel active" data-panel="explain" data-page-node-id="DFF7km8P3IyJpXqwBEDPiT">
+            <h3 data-lang="zh-CN">你的原案例</h3>
+            <h3 data-lang="en-US" hidden>Your Original Case</h3>
+            <p data-lang="zh-CN">本章采用中国石油大学（华东）2025 级新生数据，阐述数据的特性。为了防止数据隐私泄露，数据采用 <strong data-page-node-id="wdexLSp8qkbo2lTfPVWVuJ">DeepSeek 大模型生成</strong>。数据文件 <code data-page-node-id="6NiGeFaamdRniLKLQiBI6E">data/newstudent.csv</code>，含 80 条记录。</p>
+            <p data-lang="en-US" hidden>This chapter uses the 2025 new-student data from China University of Petroleum (East China) to illustrate the characteristics of data. To prevent data privacy leaks, the data was generated by the <strong>DeepSeek large language model</strong>. The data file <code>data/newstudent.csv</code> contains 80 records.</p>
+
+            <h3 data-lang="zh-CN">嵌入理论：AI 合成数据的可信度边界</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: The Trustworthiness Boundary of AI-Synthesized Data</h3>
+            <p data-lang="zh-CN"><strong data-page-node-id="OKyvZJEIsBqEyeAn0vmHQI">数据质量四维度</strong>（Wang &amp; Strong 1996）：准确性 / 完整性 / 一致性 / 时效性。</p>
+            <p data-lang="en-US" hidden><strong>Four Dimensions of Data Quality</strong> (Wang &amp; Strong 1996): Accuracy / Completeness / Consistency / Timeliness.</p>
+            <p data-lang="zh-CN">DeepSeek 生成数据：</p>
+            <p data-lang="en-US" hidden>Data Generated by DeepSeek:</p>
+            <ul data-page-node-id="7MpJwLmfmMRUarH8CiMaUs">
+              <li data-lang="zh-CN">✅ 完整性：字段齐全</li>
+              <li data-lang="en-US" hidden>✅ Completeness: all fields present</li>
+              <li data-lang="zh-CN">⚠️ 准确性：姓名/籍贯是虚构的，不能用作真实人口分析</li>
+              <li data-lang="en-US" hidden>⚠️ Accuracy: names/hometowns are fictional and cannot be used for real demographic analysis</li>
+              <li data-lang="zh-CN">⚠️ 采样偏差：模型倾向"看起来合理"的分布（如民族偏汉族、籍贯偏大城市）</li>
+              <li data-lang="en-US" hidden>⚠️ Sampling bias: the model tends toward 'plausible-looking' distributions (e.g., over-representing the Han ethnicity, favoring large cities for hometowns)</li>
+            </ul>
+            <p class="note" data-lang="zh-CN"><strong data-page-node-id="ErebQdyTNfBQqYsBewCmSQ">课堂要点</strong>：教学场景使用合成数据没问题，但必须标注"合成数据"，避免学生误以为真实分布。</p>
+            <p class="note" data-lang="en-US" hidden><strong>Classroom Takeaway</strong>: Using synthetic data in teaching is fine, but it must be labeled as 'synthetic data' to prevent students from mistaking it for a real distribution.</p>
+          </div>
+
+          <!-- 代码 -->
+          <div class="tab-panel" data-panel="code" data-page-node-id="6JGdCi0YLCQIsZC2ukAPMb">
+            <h3 data-lang="zh-CN">关键代码 ① 字段名映射</h3>
+            <h3 data-lang="en-US" hidden>Key Code ① Field Name Mapping</h3>
+            <p class="code-purpose" data-lang="zh-CN">中文列名映射成英文变量名 —— 避免 JS 中带中文 key 引发语法/编码隐患。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>Map Chinese column names to English variable names — to avoid syntax/encoding issues caused by Chinese keys in JS.</p>
+            <pre data-page-node-id="2xoLgk9zdBmAXRgZNwntt9"><code data-page-node-id="U72aAC29sXe3L0JmRnAVTV"><span class="star" data-page-node-id="LHRM8Cr1oxzclsF2cV5YKk">⭐</span> <span class="cmt" data-page-node-id="l8TacuY7KzrYDyrb5P7TWl">// 关键点 ①：字段映射 —— 中文 → 英文</span>
+const COLUMN_MAP = {
+  <span class="str" data-page-node-id="R8PcLwX1KG0pfapGBA4pcI">"序号"</span>: <span class="str" data-page-node-id="HD4Z3LVi14MUIuK0Vmu2wW">"id"</span>,
+  <span class="str" data-page-node-id="m9f7zcfIfmW5HvquBfQcAR">"姓名"</span>: <span class="str" data-page-node-id="SWyR1BZTKSwt83jhQbJqgj">"name"</span>,
+  <span class="str" data-page-node-id="zntdBfULBoBrhxzrXYyhwU">"性别"</span>: <span class="str" data-page-node-id="eJEGGByuwEGwvmmzhMQ4j5">"gender"</span>,
+  <span class="str" data-page-node-id="YHerzZGpWGv4mXO43uFzJS">"生日"</span>: <span class="str" data-page-node-id="vjlt3nczPIsTJeUmjUcqDl">"birthday"</span>,
+  <span class="str" data-page-node-id="Ni2fnUzcZQq0z1RAJJszlD">"年龄"</span>: <span class="str" data-page-node-id="CotjAOBpZ4wMgbkCcCz3iH">"age"</span>,
+  <span class="str" data-page-node-id="A30d1Khyavv7C5FPjYCIhk">"班级"</span>: <span class="str" data-page-node-id="uSnlOAmFYhoVLI0NkP3KcV">"class"</span>,
+};</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="vIh0E220ql8kOzDAwYuWLe">关键点解释：</strong>为什么不用中文 key？
+              (1) JS 引擎对中文标识符的容错性差（老浏览器报错）；(2) 后端、JSON、URL 编码都可能引入乱码；
+              (3) IDE 自动补全、搜索、重构工具对中文支持不一致。
+              <strong data-page-node-id="ErlOiErxDKEPJkjEeOnXg4">最佳实践</strong>：CSV 用人可读的中文名，JS 内部统一英文变量。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation:</strong> Why not use Chinese keys?
+              (1) JS engines have poor tolerance for Chinese identifiers (older browsers throw errors); (2) backends, JSON, and URL encoding may introduce mojibake;
+              (3) IDE autocomplete, search, and refactoring tools have inconsistent support for Chinese.
+              <strong>Best Practice</strong>: Use human-readable Chinese names in CSV, and use unified English variables internally in JS.
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ② 类型转换函数</h3>
+            <h3 data-lang="en-US" hidden>Key Code ② Type Conversion Functions</h3>
+            <p class="code-purpose" data-lang="zh-CN">CSV 加载后所有字段都是字符串，需要把序号/年龄 → Number，生日 → Date 对象。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>After CSV loading, all fields are strings; you need to convert the index/age to Number and the birthday to a Date object.</p>
+            <pre data-page-node-id="fXXCXsq0fYppIOptov5N9G"><code data-page-node-id="jqRvL0viPFv6I2tFfRi0cV"><span class="star" data-page-node-id="scrlWWBlMu8OJEtykzu2qc">⭐</span> <span class="cmt" data-page-node-id="WVfN5If2RD09JBP2Ag7Y3F">// 关键点 ②：类型转换函数 —— 用户原文「推荐方式」</span>
+<span class="kw" data-page-node-id="r4kku1GhjGPhfo2VwAZdE0">function</span> <span class="fn" data-page-node-id="9E3iHbf3C2qD1DkkYW0HCf">transformRow</span>(d) {
+  <span class="kw" data-page-node-id="TyJDdUddrbD6aH0ICMTNHm">return</span> {
+    id:       <span class="op" data-page-node-id="SXwSow66QzxVRVzPFwyJZ3">+</span>d["序号"],              <span class="cmt" data-page-node-id="RDuojoUFtYz2v3mRhvxZjT">// 一元 + 把字符串转 Number</span>
+    name:     d["姓名"].<span class="fn" data-page-node-id="YtdqHp0vxrtTUBtkQYpGCX">trim</span>(),       <span class="cmt" data-page-node-id="RI2HqblCCx4RqaFl2aiYwN">// trim() 去掉首尾空白</span>
+    birthday: <span class="kw" data-page-node-id="3uFUCGsGrJoG48qWMadEhi">new</span> <span class="cls" data-page-node-id="3navfz3c7PCHx4dW6jcQT5">Date</span>(d["生日"]), <span class="cmt" data-page-node-id="RUt5lWM1V5yPm9BzC2pEbQ">// 字符串 → Date 对象</span>
+    age:      <span class="op" data-page-node-id="SBI8UvigG6CpN8J6VYD6zP">+</span>d["年龄"],
+    class:    d["班级"].<span class="fn" data-page-node-id="w4isbHTMC5hViEKFAOi7l9">trim</span>(),
+  };
+}</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="Q64OKEDAvIY901iTjozEHg">关键点解释：</strong>
+              <code data-page-node-id="m8LxccRP6XTU237qHWQXO2">+d["年龄"]</code> 是一元加运算符，是 JS 里把字符串转数字的最快写法（比 <code data-page-node-id="WMZwCkFbEfd8BIBzOypfQ8">Number()</code> / <code data-page-node-id="RyJe6jDPBg0ZJyRKAJdHoN">parseInt()</code> 都短）；
+              <code data-page-node-id="HyATgECJbsyHwrjA2glfXP">new Date(str)</code> 能解析 <code data-page-node-id="KtzTRXOrJ2XSeBrp7ksYtj">"2007-08-15"</code> 这类 ISO 格式，但对 <code data-page-node-id="GoxekUysAISJVlaUBPkpiL">"2007/8/15"</code> 兼容性差，要用 <code data-page-node-id="t8OTVyqJUawOdxh0lnmVTa">d3.timeParse("%Y-%m-%d")</code> 兜底。
+              <strong data-page-node-id="y3ZzVdJ7jdEDZ22U7TuKAL">坑</strong>：没有 <code data-page-node-id="mcIHm6he35hkgiEKJK5qqp">trim()</code> 的话，"软件工程1班 " 里的空格会让后续过滤/聚合出错。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation:</strong>
+              <code>+d["年龄"]</code> is the unary plus operator, the fastest way in JS to convert a string to a number (shorter than <code>Number()</code> / <code>parseInt()</code>);
+              <code>new Date(str)</code> can parse ISO formats like <code>"2007-08-15"</code>, but has poor compatibility with <code>"2007/8/15"</code>, so fall back to <code>d3.timeParse("%Y-%m-%d")</code>.
+              <strong>Pitfall</strong>: Without <code>trim()</code>, the trailing space in "软件工程1班 " will cause later filtering/aggregation to fail.
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ③ d3.csv 第二参直接传 row 回调</h3>
+            <h3 data-lang="en-US" hidden>Key Code ③ Pass the row callback directly as the second argument of d3.csv</h3>
+            <pre data-page-node-id="vSGAfOOC0hpaUokyJ7WWpw"><code data-page-node-id="5DcGa5BGRSlk5Qy6ttLqa4"><span class="star" data-page-node-id="EXCZ6ZlvtM4g9jNy9dSXHO">⭐</span> <span class="cmt" data-page-node-id="4Rv3KDIWM3Y2LyOcEyn1mS">// 关键点 ③：一行完成加载 + 转换（用户原文「代码示例 1」）</span>
+<span class="kw" data-page-node-id="sgcMQm0opQJwEoNhG2cQ9n">const</span> data = <span class="kw" data-page-node-id="0bFTzum6OnijLsswSGgZw1">await</span> d3.<span class="fn" data-page-node-id="I2d1xr4jCrhQW0v8lcAI3M">csv</span>(<span class="str" data-page-node-id="Dco1Hp0BP4vzNRiXt0UK5F">"data/newstudent.csv"</span>, transformRow);
+
+<span class="cmt" data-page-node-id="qdSgbAW3ByGsq1lb50PeCj">// 验证类型确实转换了：</span>
+console.<span class="fn" data-page-node-id="udof0qHPpk8e4qVIgnUKys">log</span>(<span class="kw" data-page-node-id="XxK9FiQfuGvNrUzMPtC1PH">typeof</span> data[<span class="num" data-page-node-id="wKd04svCzZampIGp2Vns6m">0</span>].age);        <span class="cmt" data-page-node-id="RuO87S27qdoH17pOYB2OLM">// "number"</span>
+console.<span class="fn" data-page-node-id="dJUi3SxcfwILaZB6bAG0bC">log</span>(data[<span class="num" data-page-node-id="9BuW5ObSKlOQJNyHefjz6s">0</span>].birthday <span class="kw" data-page-node-id="8lNxDf9HFos4avfkvynsWY">instanceof</span> <span class="cls" data-page-node-id="Y5M2IFdlmiukskJbRkNYzy">Date</span>); <span class="cmt" data-page-node-id="CWEczZt04UCOkb5HuhEn8J">// true</span></code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="geDX5qJsDxaU8670odCHRU">关键点解释：</strong>d3.csv 是异步函数，必须 <code data-page-node-id="Xg52SyAkhZ1KozlU6Org6u">await</code>。
+              第二参的 row 回调会在<strong data-page-node-id="ErJj08lQ6RxJql1Eqmp7q7">每一行解析后立即调用</strong>——比先 <code data-page-node-id="Y97gHO52BZgJ19saWIknmR">await d3.csv(...)</code> 再 <code data-page-node-id="tPdKIK6jBVGp2e1geTrhuj">.map(transformRow)</code> 更省内存（边读边转）。
+              <strong data-page-node-id="MBdanIgYDrqot5MkFcclhl">异步加载的意义</strong>：不阻塞页面渲染，用户能继续交互。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation:</strong> d3.csv is an asynchronous function and must be <code>await</code>ed.
+              The row callback in the second argument is <strong>invoked immediately after each row is parsed</strong> — which saves memory compared to first <code>await d3.csv(...)</code> then <code>.map(transformRow)</code> (transform while reading).
+              <strong>Significance of Asynchronous Loading</strong>: It does not block page rendering, so the user can keep interacting.
+            </p>
+          </div>
+
+          <!-- 演示 -->
+          <div class="tab-panel" data-panel="demo" data-page-node-id="ptjaolL4Gkh14By7QVNraW">
+            <p class="demo-hint" data-lang="zh-CN">点击「重新加载」查看 CSV 异步加载、字段映射、类型转换 → 输出转换后表格 + 控制台日志。</p>
+            <p class="demo-hint" data-lang="en-US" hidden>Click 'Reload' to see the asynchronous CSV loading, field mapping, and type conversion → output the transformed table + console logs.</p>
+            <div class="demo-mount" data-demo="d-3-1" data-page-node-id="2UWbYqiZsbSnuVTk3siBqL"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 3.2 数据定义 ============= -->
+      <article class="chapter" id="ch-1-2" data-page-node-id="eR6AsnBKgkBngBX01C9wox">
+        <h2 data-page-node-id="12mnKJZl6pEytr1XoYa8xG" data-i18n="sec-01-2.title">1.2 数据定义</h2>
+        <p class="chapter-subtitle" data-lang="zh-CN">DIKW 金字塔 —— 数据 → 信息 → 知识 → 智慧</p>
+        <p class="chapter-subtitle" data-lang="en-US" hidden>DIKW Pyramid — Data → Information → Knowledge → Wisdom</p>
+
+        <div class="tabs" data-page-node-id="yfgfHRULiHqxT8ZUhRSCjz">
+          <button class="tab-btn active" data-tab="explain" data-page-node-id="F0iBZz7q6MhRuIBtgKx5Ah" data-i18n="tab.explain">📖 讲解</button>
+          <button class="tab-btn" data-tab="code" data-page-node-id="DKh4GUmJ17IfrgKCGZiX3L" data-i18n="tab.code">⌨️ 关键代码</button>
+          <button class="tab-btn" data-tab="demo" data-page-node-id="fR79Mq01hXf2gAhh5cXOZD" data-i18n="tab.demo">▶️ 演示</button>
+        </div>
+
+        <div class="tab-panels" data-page-node-id="rZhCRLi6eLbNKzxmHEt5vA">
+          <div class="tab-panel active" data-panel="explain" data-page-node-id="bb5KPofKpz47qYSiaisnc1">
+            <h3 data-lang="zh-CN">你的原案例</h3>
+            <h3 data-lang="en-US" hidden>Your Original Case</h3>
+            <p data-lang="zh-CN">DI 金 W 金字塔：数据是"原始原始数据"，信息是"组织好的数据"，知识是"模式/规律"，智慧是"判断/战略"。</p>
+            <p data-lang="en-US" hidden>DIKW Pyramid: Data is 'raw data', Information is 'organized data', Knowledge is 'patterns/regularities', and Wisdom is 'judgment/strategy'.</p>
+            <table data-lang="zh-CN" class="theory-table" data-page-node-id="nAJtLhyFXlATSk5YzNloBM">
+              <thead data-page-node-id="VlWRN1kqzIpgdFD2WFbWht"><tr data-page-node-id="NgMgwGqfzGWcq6cTS0bcwC"><th data-page-node-id="S4wmUh1amZNfbSsXbOOZnh">层</th><th data-page-node-id="zljeM1ebz0G9Ri2KZrJsQW">原文</th><th data-page-node-id="nAwpMFjRygiVWlZisshJFn">回答的问题</th></tr></thead>
+              <tbody data-page-node-id="KhqgFaAfDKV74tf0IWwGB8">
+                <tr data-page-node-id="shpWEPUjwfo7OqAgl35Yeb"><td data-page-node-id="GDp5kHB87NVwz1y4xYN65X">数据</td><td data-page-node-id="7FqvDBWB06CFGZxOIqb2se">原始、离散的观察结果</td><td data-page-node-id="E4qexO9R4ik25oX4V12Kcp">—</td></tr>
+                <tr data-page-node-id="IvrgScGz6D89wObRw9zFFC"><td data-page-node-id="Tv3eqlty4fB8AZoIcVHIbc">信息</td><td data-page-node-id="XZkYDGHJryrFXBXCRSYsNI">经过处理、组织、赋予上下文的数据</td><td data-page-node-id="cNoVSaDjqwlGVbEaHgYiwA">谁 / 什么 / 何时 / 何地</td></tr>
+                <tr data-page-node-id="SFTHd14c7tmH4LRflZxFCN"><td data-page-node-id="YnnnCkCrb3QujAErR79pG7">知识</td><td data-page-node-id="jpj8ocyuAVC7Egk1a1MFJ5">对信息的进一步提炼和理解</td><td data-page-node-id="z81ibk06qZvWJiBvgGP032">如何</td></tr>
+                <tr data-page-node-id="nfedJKFqHD24eW3KSmboGU"><td data-page-node-id="qrHFzwlaKV3XvIq2OOEnHg">智慧</td><td data-page-node-id="sN2CyiFXsxbEFZQco1gbDl">运用知识做出明智判断和战略决策</td><td data-page-node-id="vr1OgeEtlJlFHRmRtBEBNB">为什么 / 应该怎么做</td></tr>
+              </tbody>
+            </table>
+            <table data-lang="en-US" hidden class="theory-table" data-page-node-id="nAJtLhyFXlATSk5YzNloBM">
+              <thead><tr><th>Tier</th><th>Term</th><th>Question Answered</th></tr></thead>
+              <tbody>
+                <tr><td>Data</td><td>Raw, discrete observations</td><td>—</td></tr>
+                <tr><td>Information</td><td>Data that has been processed, organized, and given context</td><td>Who / What / When / Where</td></tr>
+                <tr><td>Knowledge</td><td>Further refinement and understanding of information</td><td>How</td></tr>
+                <tr><td>Wisdom</td><td>Applying knowledge to make wise judgments and strategic decisions</td><td>Why / What to do</td></tr>
+              </tbody>
+            </table>
+
+            <h3 data-lang="zh-CN">嵌入理论：可视化在 DIKW 中的位置</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: The Position of Visualization in the DIKW Model</h3>
+            <p data-lang="zh-CN"><strong data-page-node-id="A5Jm8VAYw9Ou3rLI6ftmTT">关键洞见</strong>：可视化主要把 <strong data-page-node-id="FdGoOcVh4jfdXWzXKluBbp">Data 升到 Information</strong>，少数场景能升到 <strong data-page-node-id="Z3EGKqyVUpDIEv6uMLID5K">Knowledge</strong>，但难以跨越到 Wisdom。</p>
+            <p data-lang="en-US" hidden><strong>Key Insight</strong>: Visualization mainly lifts <strong>Data to Information</strong>; in a few scenarios it can reach <strong>Knowledge</strong>, but it is difficult to cross over to Wisdom.</p>
+            <ul data-page-node-id="R1Dq1uK4qCI8JdLwfArhT6">
+              <li data-lang="zh-CN">✅ Data → Information：把表格"翻译"成可读图形（折线图、柱状图、热图）</li>
+              <li data-lang="en-US" hidden>✅ Data → Information: 'Translate' the table into readable graphics (line chart, bar chart, heatmap)</li>
+              <li data-lang="zh-CN">⚠️ Information → Knowledge：模式发现需要统计模型辅助（机器学习）</li>
+              <li data-lang="en-US" hidden>⚠️ Information → Knowledge: Pattern discovery requires statistical models (machine learning)</li>
+              <li data-lang="zh-CN">❌ Knowledge → Wisdom：决策与战略超出可视化能力</li>
+              <li data-lang="en-US" hidden>❌ Knowledge → Wisdom: Decisions and strategy are beyond the capability of visualization</li>
+            </ul>
+            <p class="note" data-lang="zh-CN"><strong data-page-node-id="RJqopmBOo58ECrHb22v10p">Rowley (2007) 批评</strong>：DIKW 是过度简化的层次模型，现实中 Data 与 Information 的界限模糊。但作为教学脚手架，仍然最有价值。</p>
+            <p class="note" data-lang="en-US" hidden><strong>Rowley (2007) Critique</strong>: DIKW is an oversimplified hierarchical model; in reality the boundary between Data and Information is blurred. But as a teaching scaffold, it remains most valuable.</p>
+          </div>
+
+          <div class="tab-panel" data-panel="code" data-page-node-id="T5auFDqqqvWxEJgiWpnwlx">
+            <h3 data-lang="zh-CN">关键代码 ① SVG 金字塔路径</h3>
+            <h3 data-lang="en-US" hidden>Key Code ① SVG Pyramid Path</h3>
+            <p class="code-purpose" data-lang="zh-CN">金字塔由 4 个 trapezoid 拼接而成 —— D3 path 的 d 属性。</p>
+            <p class="code-purpose" data-lang="en-US" hidden>The pyramid is composed of 4 trapezoids joined together — the d attribute of the D3 path.</p>
+            <pre data-page-node-id="rpETKH05akl0WG6O43E0xG"><code data-page-node-id="Crfb94F2LkbrUpiBt2ZS1j"><span class="star" data-page-node-id="ryPbKcXPXaauMJgqoc0z2n">⭐</span> <span class="cmt" data-page-node-id="hkt2GMK7w8TDTFnmiL2OZQ">// 关键点 ①：trapezoid 路径 —— 从上到下 4 个点的连线</span>
+<span class="kw" data-page-node-id="j6uiSvVC2igUE6LV6xbeRl">const</span> topW = <span class="num" data-page-node-id="GYOR8EK2sRde4RhhJF4G6o">60</span>, botW = <span class="num" data-page-node-id="IyMmaZmnip1kKgt7Md3cYT">120</span>;
+<span class="kw" data-page-node-id="WHEdkRH0Ktv8liguM9OjeD">const</span> yTop = <span class="num" data-page-node-id="TMUOGMO2aOGwLIVkFX09Gb">20</span>, yBot = <span class="num" data-page-node-id="YSK1oCcI4OF3HjW0yI79F7">100</span>;
+<span class="kw" data-page-node-id="cN2iMZMxr4WJVb7plVcCaT">const</span> path = <span class="str" data-page-node-id="wOHEy28xFja3lRwpZvK0Hh">`
+  M <span class="op" data-page-node-id="j3AHsIbC1zWToHaRBOQL87">${</span>cx - topW/<span class="num" data-page-node-id="Qeiscv6IbjUu6FICpfkVVo">2</span><span class="op" data-page-node-id="r8vW51KpW3HlO3d2gA88dJ">}</span> <span class="op" data-page-node-id="5nZlmcDdKaixu9Ox92lZqO">${</span>yTop<span class="op" data-page-node-id="pQMOP7xnDM0Hbqn6D44VX6">}</span>
+  L <span class="op" data-page-node-id="BDEEBj44XifBWAH0Bn2QuE">${</span>cx + topW/<span class="num" data-page-node-id="Mxavyba20ph1Fr6ZAVEOny">2</span><span class="op" data-page-node-id="nzFC2BcrhVuBBJe2TssnOe">}</span> <span class="op" data-page-node-id="ZatxkE607em1ix5OWgJcjC">${</span>yTop<span class="op" data-page-node-id="pfXJdoEOXSxXRpfIJQNRM0">}</span>
+  L <span class="op" data-page-node-id="dXDOLookoYXSTIniy4k1MJ">${</span>cx + botW/<span class="num" data-page-node-id="D0wSj4JcV5UVPpAg6SETkz">2</span><span class="op" data-page-node-id="hAGMCmSrnTihSourtYowsF">}</span> <span class="op" data-page-node-id="vzJIe4DnKkhVQGi0LtzG7o">${</span>yBot<span class="op" data-page-node-id="f8kHdeHIvWCA3Pa1iAKxBK">}</span>
+  L <span class="op" data-page-node-id="nEBrTtYny4NDtCnGBxh782">${</span>cx - botW/<span class="num" data-page-node-id="RXXEBGLl8crEq08YUecOZH">2</span><span class="op" data-page-node-id="LNXjTA1WeVO9bgiuTDHGbJ">}</span> <span class="op" data-page-node-id="msRsqOW3EilIPRUdjvJ4zD">${</span>yBot<span class="op" data-page-node-id="KGDxYZtO0bqnO2WT68JeJ6">}</span>
+  Z
+`</span>;</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="YL7EDbx6b13T1yOLbHFEZm">关键点解释</strong>：SVG path 的 <code data-page-node-id="Zd44vkGBmZhFbcBsvkL6M0">M</code>(moveto)、<code data-page-node-id="BjbRRe9rvNJaHBJBLZh5Uh">L</code>(lineto)、<code data-page-node-id="t4CslqIfdc6GtCpr2dC6D3">Z</code>(close) 是 3 个最常用指令。
+              模板字符串 <code data-page-node-id="yaE10jec1q59zm6KzOp2Og">`${...}`</code> 可以直接嵌入 JS 变量，比字符串拼接更可读。
+              <strong data-page-node-id="duABk7bHUU0E69CVCakjEm">实践</strong>：复杂形状用 D3 的 <code data-page-node-id="0PfHKLaypMkepo43jOW7E2">d3.symbol()</code>（内置 ★●▲ 等），自己 path 容易出错。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: The SVG path commands <code>M</code> (moveto), <code>L</code> (lineto), and <code>Z</code> (close) are the three most commonly used.
+              Template literals <code>`${...}`</code> can embed JS variables directly, making them more readable than string concatenation.
+              <strong>Practice</strong>: For complex shapes, use D3's <code>d3.symbol()</code> (which has built-in ★●▲ etc.); hand-writing paths is error-prone.
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ② 交互高亮（hover/click）</h3>
+            <h3 data-lang="en-US" hidden>Key Code ② Interactive Highlighting (hover/click)</h3>
+            <pre data-page-node-id="bxqUIngjcOBdC3YwexBRJU"><code data-page-node-id="I7SeEOq0bjtmMproD1E1Ri"><span class="star" data-page-node-id="h44mQb23ykXclSmGRMAnE1">⭐</span> <span class="cmt" data-page-node-id="wZEqd6RvJGAH0CEE25gDgf">// 关键点 ②：选择集绑定事件 —— D3 的事件模型</span>
+<span class="kw" data-page-node-id="U4eCJMYMhJFI1TkDpiw4aw">const</span> g = svg.<span class="fn" data-page-node-id="OipyZgyaEPDXvoPAceWTNG">append</span>(<span class="str" data-page-node-id="Ay5E0WWyZle0k5Si102BCc">"g"</span>)
+  .<span class="fn" data-page-node-id="Df9GuCEazLMVU5qNJUEKWM">style</span>(<span class="str" data-page-node-id="h0E7umGmHUY4SGnhNmB3OK">"cursor"</span>, <span class="str" data-page-node-id="hiupT0mS3PAfy4tmuW58gs">"pointer"</span>)
+  .<span class="fn" data-page-node-id="jgwMKiWShAKDZniOTGFk2s">on</span>(<span class="str" data-page-node-id="lxldbNkhr8QwlruKl3Zcf8">"mouseover"</span>, <span class="kw" data-page-node-id="i1tAvjVHcYwDqDbzUt5HxQ">function</span>() {       <span class="cmt" data-page-node-id="M7khNIxGVAFwd3r9rzrCLA">// 注意 function 而非箭头函数</span>
+    d3.<span class="fn" data-page-node-id="AoLGGkMUTGKio1jiu5aUp7">select</span>(<span class="kw" data-page-node-id="LsXkOHtN1DpaQuEuD3C5XD">this</span>).<span class="fn" data-page-node-id="CEZvfb6MphJRRjeFyv1z8S">select</span>(<span class="str" data-page-node-id="XAUck24Pe8RGp5GjGlGDCs">"path"</span>)
+       .<span class="fn" data-page-node-id="8xR3xTGvJnXY7tpN4bxq98">transition</span>().<span class="fn" data-page-node-id="p9onlPLZBiU67BgVpVTEtD">duration</span>(<span class="num" data-page-node-id="FPL1MnKVb2p1k2saUkenny">150</span>)
+       .<span class="fn" data-page-node-id="gCT5Df3aieqgyeWRcMeqaI">attr</span>(<span class="str" data-page-node-id="vvFK2QBlXuuXfD6FWpTrH5">"fill"</span>, d3.<span class="fn" data-page-node-id="NLIzo3fAsecc4ohiyhWiWe">color</span>(layer.color).<span class="fn" data-page-node-id="9qY084IRWOWOFhiTzHXeXA">brighter</span>(<span class="num" data-page-node-id="uhDpf9F6kq7B2m3f4osoAq">0.5</span>));
+  })
+  .<span class="fn" data-page-node-id="p2ZipmmiHAw8IUCsDPUrm9">on</span>(<span class="str" data-page-node-id="QTcFVJGtDObBuAYZ7vBDXH">"click"</span>, () =&gt; <span class="fn" data-page-node-id="ZUAu7iABCXMHnhzbIw3jVP">showDetail</span>(layer));</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="FfvrSvIoO88gFMe3eE0cdJ">关键点解释</strong>：<strong data-page-node-id="NFSdkIrzOUsgbY0ayEvQnt">必须用 <code data-page-node-id="jV8ffQ5zzUZQuDxSwOKR65">function()</code> 而非箭头函数</strong>——
+              因为 D3 回调里要用 <code data-page-node-id="qbZZvNiDovGxdGdmNwtikG">this</code> 访问当前元素，箭头函数会捕获外层 <code data-page-node-id="rHrhAqGXfyz7cGsKRLjeRi">this</code> 导致失效。这是 D3 最常见的坑。
+              <code data-page-node-id="tpR486O8WmYY4mDmK1GklZ">transition().duration()</code> 是 D3 内置动画 API，比 jQuery 还简洁。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: <strong>You must use <code>function()</code> instead of arrow functions</strong> —
+              because D3 callbacks use <code>this</code> to access the current element, and arrow functions capture the outer <code>this</code>, causing it to fail. This is the most common D3 pitfall.
+              <code>transition().duration()</code> is D3's built-in animation API, even more concise than jQuery.
+            </p>
+          </div>
+
+          <div class="tab-panel" data-panel="demo" data-page-node-id="fCiYUBvXjvOCcMyuylj8or">
+            <p class="demo-hint" data-lang="zh-CN">鼠标悬停金字塔 → 高亮该层 · 点击 → 右侧显示该层定义 / 示例 / 常用可视化</p>
+            <p class="demo-hint" data-lang="en-US" hidden>Hover over the pyramid → highlight that tier · click → show that tier's definition / examples / common visualizations on the right</p>
+            <div class="demo-mount" data-demo="d-3-2" data-page-node-id="wGaOCXkmwkdWNZqzLBvbyX"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 3.3 数据属性 ============= -->
+      <article class="chapter" id="ch-1-3" data-page-node-id="cLkHjVY2hUpMD6Mq7lxJV6">
+        <h2 data-page-node-id="WTvizTfVwCXAKwtF9m71J1" data-i18n="sec-01-3.title">1.3 数据属性</h2>
+        <p class="chapter-subtitle" data-lang="zh-CN">Stevens 测量尺度 × Mackinlay 视觉通道排序</p>
+        <p class="chapter-subtitle" data-lang="en-US" hidden>Stevens Measurement Scales × Mackinlay Visual Channel Ranking</p>
+
+        <div class="tabs" data-page-node-id="OIn7UXGagLHnx79bZbuL3Y">
+          <button class="tab-btn active" data-tab="explain" data-page-node-id="uo8WlMf50TcUdS7QBYSSTf" data-i18n="tab.explain">📖 讲解</button>
+          <button class="tab-btn" data-tab="code" data-page-node-id="D4RvqCADfaF5H2393TPq3a" data-i18n="tab.code">⌨️ 关键代码</button>
+          <button class="tab-btn" data-tab="demo" data-page-node-id="vtHhFVt4JhBhRHZyQOlF8v" data-i18n="tab.demo">▶️ 演示</button>
+        </div>
+
+        <div class="tab-panels" data-page-node-id="dcPAyF6cBj9kmoPq3jfhS0">
+          <div class="tab-panel active" data-panel="explain" data-page-node-id="iGLyjl7S6Bw2osfYm25iqm">
+            <h3 data-lang="zh-CN">你的原案例（3 大类）</h3>
+            <h3 data-lang="en-US" hidden>Your Original Case (3 Categories)</h3>
+            <p data-lang="zh-CN">你的原文给出 3 类属性：</p>
+            <p data-lang="en-US" hidden>Your original text gives 3 types of attributes:</p>
+            <ul data-page-node-id="J45kVAd66fHR3C0RDeIuVs">
+              <li data-lang="zh-CN"><strong data-page-node-id="jkw02f7T0guK8DtBhYa3kl">类别型属性</strong>：符号或名称，无顺序关系（性别、姓名）</li>
+              <li data-lang="en-US" hidden><strong>Categorical Attribute</strong>: a symbol or name with no ordering (gender, name)</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="GiBSMDlIezNY1tXP7Js5YF">序数型属性</strong>：属性值有顺序（学位：本科/硕士/博士）</li>
+              <li data-lang="en-US" hidden><strong>Ordinal Attribute</strong>: attribute values have an order (degree: bachelor's/master's/doctorate)</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="oOWGsWhfhBXKZJjZcg7T4b">数值型属性</strong>：定量方法（年龄、价格）</li>
+              <li data-lang="en-US" hidden><strong>Numerical Attribute</strong>: quantitative method (age, price)</li>
+            </ul>
+
+            <h3 data-lang="zh-CN">嵌入理论：Stevens 测量尺度（1946）—— 4 类</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: Stevens Measurement Scales (1946) — 4 Types</h3>
+            <p data-lang="zh-CN">Stevens 把测量尺度分为 <strong data-page-node-id="PwEGxmV9OP2v3NKbirZoVy">4 类</strong>，比你的原文更精细：</p>
+            <p data-lang="en-US" hidden>Stevens divides measurement scales into <strong>4 types</strong>, finer than your original text:</p>
+            <table data-lang="zh-CN" class="theory-table" data-page-node-id="boArSfszbaS99sOfwBPCJ3">
+              <thead data-page-node-id="HC7r3CzzTFhOtyyrM821As"><tr data-page-node-id="j9CyjXfzDsUX8Oe65S56Rl"><th data-page-node-id="arNXAPbnCnjftj28DkwZBr">类别</th><th data-page-node-id="5pMZGmSWd7RM8nCjcdUBek">允许的运算</th><th data-page-node-id="98croDesNS0aXmz5vvqIj8">典型示例</th><th data-page-node-id="zSV7jopQzJxqGzB6qoMpcQ">对应你原文</th></tr></thead>
+              <tbody data-page-node-id="LggmtbBEwivIaVP1XH1pAZ">
+                <tr data-page-node-id="r6ytpn5BrXx1ExHY4as2aq"><td data-page-node-id="PbFzWDsBZ5cedq3fTlot2n">名义 Nominal</td><td data-page-node-id="pmOaxkphxYMGFD2dlijMRD">等价 / 不等价</td><td data-page-node-id="C0GXdogTWvN5agjsshTvU1">姓名、性别</td><td data-page-node-id="V1QHbXC8Fdr35wvzH4B38Z">类别型</td></tr>
+                <tr data-page-node-id="ZqtlEzxqu8ljJFfXHBDzw4"><td data-page-node-id="LtLyf8FfGZibsQIR5ZaZ5U">序数 Ordinal</td><td data-page-node-id="17WLJ9RTVk2xNHMGUDu7Ij">+ &gt; &lt;</td><td data-page-node-id="IcE8itJkl5EkX3MzUhAB9z">等级、班级序号</td><td data-page-node-id="X2g0uR1nv1OzndkZqtwML8">序数型</td></tr>
+                <tr data-page-node-id="D3HAD5Ruc6iJO8TEpBP1rg"><td data-page-node-id="dZHJesjdMsUWtmTIn3LXZU">区间 Interval</td><td data-page-node-id="tw3rqV2T0Ybd7uQskS6byb">+ 加减</td><td data-page-node-id="0gLyAWaNRVeXS1mhCCJuE6">温度（°C）</td><td data-page-node-id="BCxDVVT5GlnAG6eSHQ6S4a">—</td></tr>
+                <tr data-page-node-id="aEgn1zEle2wlXKUhJXzoYA"><td data-page-node-id="PTNm6HxB9BriPnGBN6N0y4">比率 Ratio</td><td data-page-node-id="HSxp7VGewHNmYh29To3LUZ">+ 加减乘除</td><td data-page-node-id="lX8ytoxxPG597gFvmUzhgf">年龄、价格</td><td data-page-node-id="V5R54rZHAJbQfB8QC3W3D0">数值型</td></tr>
+              </tbody>
+            </table>
+            <table data-lang="en-US" hidden class="theory-table" data-page-node-id="boArSfszbaS99sOfwBPCJ3">
+              <thead><tr><th>Category</th><th>Allowed Operations</th><th>Typical Example</th><th>Maps to Your Original</th></tr></thead>
+              <tbody>
+                <tr><td>Nominal</td><td>Equivalence / Non-equivalence</td><td>Name, Gender</td><td>Categorical</td></tr>
+                <tr><td>Ordinal</td><td>+ &gt; &lt;</td><td>Rank, Class index</td><td>Ordinal</td></tr>
+                <tr><td>Interval</td><td>+ Add/Subtract</td><td>Temperature (°C)</td><td>—</td></tr>
+                <tr><td>Ratio</td><td>+ Add/Subtract/Multiply/Divide</td><td>Age, Price</td><td>Numerical</td></tr>
+              </tbody>
+            </table>
+            <p data-lang="zh-CN"><strong data-page-node-id="UIPHJehibNJjRB4SxFazaH">关键区别</strong>：区间尺度没有"真零点"（0°C 不是"没有温度"）；比率尺度有真零点（0 元 = 没有钱）。</p>
+            <p data-lang="en-US" hidden><strong>Key Difference</strong>: The interval scale has no 'true zero point' (0°C is not 'no temperature'); the ratio scale has a true zero (0 yuan = no money).</p>
+
+            <h3 data-lang="zh-CN">嵌入理论：Mackinlay 视觉通道排序（1986）</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: Mackinlay Visual Channel Ranking (1986)</h3>
+            <p data-lang="zh-CN">Mackinlay 提出视觉通道分 3 档：</p>
+            <p data-lang="en-US" hidden>Mackinlay proposes dividing visual channels into 3 tiers:</p>
+            <table data-lang="zh-CN" class="theory-table" data-page-node-id="VjH21b7VZnUJvDdzffdKI6">
+              <thead data-page-node-id="98paXdaijKa3fzrB4Bsh6e"><tr data-page-node-id="ZsdQniuKCyCQsxkR5ujErs"><th data-page-node-id="o900malbLtnzCiwxHAN1Z2">档次</th><th data-page-node-id="WcNe0TnHRLYKdpcPx5zjOD">通道</th><th data-page-node-id="vHW4MT51tY0vl3xL7QlaOu">适合的属性</th></tr></thead>
+              <tbody data-page-node-id="x5hl8GpRpvQKvJtoNYYciW">
+                <tr data-page-node-id="YkAdfig4xJ2Ff0oE4oAOJx"><td data-page-node-id="EK01GmBRmVciTJeBCPkhCn">定量型</td><td data-page-node-id="E6bekSOObhVfkcr5ls2UF4">位置、长度、角度</td><td data-page-node-id="I1bTGNNAePIRlXNJSZJJC9">比率 / 区间</td></tr>
+                <tr data-page-node-id="J0z2m9AirUCw5sK0fCmtKH"><td data-page-node-id="p0vh6wnjdQMC5EuHN8khr1">顺序型</td><td data-page-node-id="dJmt5KR7gcNZgzhhN6eNZJ">亮度、密度、饱和度</td><td data-page-node-id="usAQGwqKykMZYFXr1yMxUx">序数</td></tr>
+                <tr data-page-node-id="KfaFqCNixBLr2tH4kd02Du"><td data-page-node-id="H3lOtv05dUFVx0feFIIXN5">定性型</td><td data-page-node-id="rqPpT6DNcLZdrTkFqIOoLX">色相、形状</td><td data-page-node-id="tcZqm7bSBWxNrhwib7t5rh">名义</td></tr>
+              </tbody>
+            </table>
+            <table data-lang="en-US" hidden class="theory-table" data-page-node-id="VjH21b7VZnUJvDdzffdKI6">
+              <thead><tr><th>Tier</th><th>Channel</th><th>Suitable Attribute</th></tr></thead>
+              <tbody>
+                <tr><td>Quantitative</td><td>Position, Length, Angle</td><td>Ratio / Interval</td></tr>
+                <tr><td>Ordered</td><td>Brightness, Density, Saturation</td><td>Ordinal</td></tr>
+                <tr><td>Qualitative</td><td>Hue, Shape</td><td>Nominal</td></tr>
+              </tbody>
+            </table>
+            <p data-lang="zh-CN"><strong data-page-node-id="eI2rMeuBjzRLmsrmAyOVa6">核心发现</strong>：位置是最强的定量通道；色相是最强的定性通道。错配 → 信息丢失。</p>
+            <p data-lang="en-US" hidden><strong>Core Finding</strong>: Position is the strongest quantitative channel; hue is the strongest qualitative channel. Mismatch → information loss.</p>
+          </div>
+
+          <div class="tab-panel" data-panel="code" data-page-node-id="MIEAEDBOtjP7EJqTOPlA3l">
+            <h3 data-lang="zh-CN">关键代码 ① 比例尺选型</h3>
+            <h3 data-lang="en-US" hidden>Key Code ① Scale Selection</h3>
+            <pre data-page-node-id="PrNU28WcgNUZ11TyCkFvJg"><code data-page-node-id="EpeI3rVqAirYdROeCKv8dl"><span class="star" data-page-node-id="WuQeEJ9L2cnTReZe8vK4e4">⭐</span> <span class="cmt" data-page-node-id="jkWO9r3sWjLKblqjL2lyfx">// 关键点 ①：scale 选型 —— 属性 ↔ 通道的映射</span>
+<span class="cmt" data-page-node-id="Cl4LaWE0xmU7maCkWZRBex">// 比率型数据 → scaleLinear（连续定量）</span>
+<span class="kw" data-page-node-id="OZaToRGGBBHtN4zHTx0kp6">const</span> x = d3.<span class="fn" data-page-node-id="LhW1TH300ZBfqpd1fClEH7">scaleLinear</span>().<span class="fn" data-page-node-id="jNKV3k6IvY1VQE6PHyyL73">domain</span>([<span class="num" data-page-node-id="xRmYurRmrY0gLJhewWUSkn">0</span>, <span class="num" data-page-node-id="GyB74o0GQOmyWqnPqRpInq">100</span>]).<span class="fn" data-page-node-id="Ekjr8XEbysBLDdHFcPbOFZ">range</span>([<span class="num" data-page-node-id="o35tQMSPL3JWmFRfD8DDCz">0</span>, <span class="num" data-page-node-id="08Szl98WxfHzUwZ6Yd1sv8">800</span>]);
+
+<span class="cmt" data-page-node-id="z9YEWpN1hdG1ioCAZznSJQ">// 名义/序数型数据 → scaleBand（离散分类）</span>
+<span class="kw" data-page-node-id="5QAmoXXFevjJF6XB1AF3qs">const</span> x = d3.<span class="fn" data-page-node-id="BISzPF0ZLxcEEYLOhq9hCj">scaleBand</span>().<span class="fn" data-page-node-id="xPolvvvMGfGxioQMEuzPO9">domain</span>([<span class="str" data-page-node-id="s59VdImRwa6gz8PJMZtnoI">"软件1班"</span>, <span class="str" data-page-node-id="0ZuamArnn8uQZJqOHBOJRx">"软件2班"</span>]).<span class="fn" data-page-node-id="jQvt20bd9gqKVJtLn85RR9">range</span>([<span class="num" data-page-node-id="dJeXIBxg4H0KwmuOB8iB0l">0</span>, <span class="num" data-page-node-id="LI2B3dxAq9BL3hlvzyIe9Q">800</span>]);</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="uPPI2dZSVUGbhTZbeEPlxh">关键点解释</strong>：D3 比例尺的 <code data-page-node-id="b8olhnNKD7105ni51OEYTO">domain()</code> 是数据域（输入），<code data-page-node-id="shttPxcIATOcYIJUHCIWbm">range()</code> 是值域（输出像素）。
+              选错比例尺是初学者最常犯的错：<strong data-page-node-id="DvtJPDcsQJhbhtTk8HXMRc">类别数据用 scaleLinear 会算出没有意义的中间值</strong>（如 0.5 班）。
+              <strong data-page-node-id="8HTYLq0kWcuJaWjJaE7BvY">记忆口诀</strong>：连续定量用 Linear，离散分类用 Band，序数可用 Point。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: A D3 scale's <code>domain()</code> is the data domain (input) and <code>range()</code> is the value range (output pixels).
+              Choosing the wrong scale is the most common beginner mistake: <strong>using scaleLinear for categorical data produces meaningless intermediate values</strong> (e.g., class 0.5).
+              <strong>Memory Aid</strong>: Use Linear for continuous quantitative, Band for discrete categorical, and Point for ordinal.
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ② colormap 选型</h3>
+            <h3 data-lang="en-US" hidden>Key Code ② Colormap Selection</h3>
+            <pre data-page-node-id="ETmXe242ci8HLEMWuxrlBR"><code data-page-node-id="mOYinF6lqQkSxPdTvtuYTa"><span class="star" data-page-node-id="vIj52YxWDROUjF4WBCljs8">⭐</span> <span class="cmt" data-page-node-id="1iRyB3DUjOu1o0sDD0TpWF">// 关键点 ②：颜色映射 —— 顺序型 vs 定性型 vs 发散型</span>
+<span class="cmt" data-page-node-id="bnIAHlUKAafjEw77M1seHv">// 顺序型（顺序有意义）→ interpolateViridis / interpolateBlues</span>
+<span class="kw" data-page-node-id="dXX5O7OFccBmbhDsIyXG0n">const</span> color = d3.<span class="fn" data-page-node-id="tcamlbtfq0KBoP9jh6GmLd">scaleSequential</span>(d3.<span class="fn" data-page-node-id="nxV57fUxJZs0giicpHjXpk">interpolateViridis</span>);
+
+<span class="cmt" data-page-node-id="Ltvaf2CA232AD9tC0Nb7yD">// 定性型（无顺序）→ schemeTableau10</span>
+<span class="kw" data-page-node-id="IOEziIE5mDRbwKlT2Ss6FZ">const</span> color = d3.<span class="fn" data-page-node-id="LM9rdWUPCzROE7miKBURkW">scaleOrdinal</span>().<span class="fn" data-page-node-id="Vk0NiaaUlDnGbSnP9QvReH">range</span>(d3.<span class="fn" data-page-node-id="zkcHNy4ywOAUXNSKWAXgOv">schemeTableau10</span>);
+
+<span class="cmt" data-page-node-id="494CUKEx0iHamt09mojqfE">// 发散型（有中点）→ interpolateRdBu</span>
+<span class="kw" data-page-node-id="tipiDBWJG76pOYCvO4daqI">const</span> color = d3.<span class="fn" data-page-node-id="mylkPQJlDJ49couVTZYciC">scaleDiverging</span>(d3.<span class="fn" data-page-node-id="muooWGWMbxwPiS5DoNumve">interpolateRdBu</span>);</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="hoOu3tMQRwQVYxFP95oVjt">关键点解释</strong>：Viridis 是顺序 colormap 的标杆，色觉缺陷（CVD）友好且感知均匀。
+              <strong data-page-node-id="Lq3EvLEjAehdOxqFDrJEtN">常见错误</strong>：用彩虹色 <code data-page-node-id="cUIfhYEoB5mMigp82bLN2K">interpolateRainbow</code> 编码数值数据 —— 既不 CVD 友好，又有假边界（蓝色→绿色跳跃）。
+              <strong data-page-node-id="VseMoPnbrsXS8xNLEVGG6P">课堂提问</strong>：什么时候用发散型？答：有"中间值"的数据（如正负、温度 vs 平均值）。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: Viridis is the benchmark sequential colormap — color-vision-deficiency (CVD) friendly and perceptually uniform.
+              <strong>Common Mistake</strong>: Using the rainbow colormap <code>interpolateRainbow</code> to encode numerical data — it is neither CVD-friendly nor free of false boundaries (blue→green jumps).
+              <strong>Class Question</strong>: When to use a diverging colormap? Answer: Data that has a 'middle value' (e.g., positive/negative, temperature vs. average).
+            </p>
+          </div>
+
+          <div class="tab-panel" data-panel="demo" data-page-node-id="4UEQlxBIuKsOEiPpc4qjmo">
+            <p class="demo-hint" data-lang="zh-CN">4 个 sub-demo：① 类别用色相（✓）② 序数用亮度（✓）③ 数值用位置（✓）④ ❌ 数值用色相（错配，看不出大小关系）</p>
+            <p class="demo-hint" data-lang="en-US" hidden>4 sub-demos: ① Categorical uses hue (✓) ② Ordinal uses brightness (✓) ③ Numerical uses position (✓) ④ ❌ Numerical uses hue (mismatch — cannot tell magnitude)</p>
+            <div class="demo-mount" data-demo="d-3-3" data-page-node-id="3kOIbdeS7dshOd6SrurOzM"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 3.4 数据变换 ============= -->
+      <article class="chapter" id="ch-1-4" data-page-node-id="nCGwh5oESXcfCuW2yp5OKP">
+        <h2 data-page-node-id="IfEiZ0NGwY6cIBGV74uZwn" data-i18n="sec-01-4.title">1.4 数据变换</h2>
+        <p class="chapter-subtitle" data-lang="zh-CN">D3 8 个函数式数组操作</p>
+        <p class="chapter-subtitle" data-lang="en-US" hidden>D3's 8 Functional Array Operations</p>
+
+        <div class="tabs" data-page-node-id="UztgO3TKA4OgcEJfggo7Oz">
+          <button class="tab-btn active" data-tab="explain" data-page-node-id="nCBzgRBDKEhjDvmWwUw9yJ" data-i18n="tab.explain">📖 讲解</button>
+          <button class="tab-btn" data-tab="code" data-page-node-id="H7HjjAchNBblsBnJEvdE94" data-i18n="tab.code">⌨️ 关键代码</button>
+          <button class="tab-btn" data-tab="demo" data-page-node-id="QMI4u7NhVpXkGex4VZkTrE" data-i18n="tab.demo">▶️ 演示</button>
+        </div>
+
+        <div class="tab-panels" data-page-node-id="ZHwrkBvqjHb3x0toDm3KjM">
+          <div class="tab-panel active" data-panel="explain" data-page-node-id="VvhwvnZMG7DP8vQ1Z8Zyx9">
+            <h3 data-lang="zh-CN">你的原案例（8 个函数）</h3>
+            <h3 data-lang="en-US" hidden>Your Original Case (8 Functions)</h3>
+            <p data-lang="zh-CN">你的原文列出 D3 提供的 8 个常见函数：</p>
+            <p data-lang="en-US" hidden>Your original text lists 8 common functions provided by D3:</p>
+            <ol data-page-node-id="Ey5JI67pFQCOJeMmC3bEv5">
+              <li data-lang="zh-CN"><code data-page-node-id="eMQl3PxDwfR2tRobbLe5Cz">map(iterable, mapper)</code> —— 类似 Array.map</li>
+              <li data-lang="en-US" hidden><code>map(iterable, mapper)</code> — similar to Array.map</li>
+              <li data-lang="zh-CN"><code data-page-node-id="DW1EiP7VEAaaq0Q41GKrRz">reduce(iterable, reducer, init)</code> —— 类似 Array.reduce</li>
+              <li data-lang="en-US" hidden><code>reduce(iterable, reducer, init)</code> — similar to Array.reduce</li>
+              <li data-lang="zh-CN"><code data-page-node-id="rlmwsGC3jBRFr7gxCCDht6">cross(...iterables, reducer)</code> —— 笛卡尔积</li>
+              <li data-lang="en-US" hidden><code>cross(...iterables, reducer)</code> — Cartesian product</li>
+              <li data-lang="zh-CN"><code data-page-node-id="cERK5gI5oxBrdpb8NCeMjr">merge(iterables)</code> —— 合并为扁平数组</li>
+              <li data-lang="en-US" hidden><code>merge(iterables)</code> — merge into a flat array</li>
+              <li data-lang="zh-CN"><code data-page-node-id="FupFDyYEpFQaSqjTqDvxF6">pairs(iterable, reducer)</code> —— 相邻元素对</li>
+              <li data-lang="en-US" hidden><code>pairs(iterable, reducer)</code> — adjacent element pairs</li>
+              <li data-lang="zh-CN"><code data-page-node-id="KbSx6CPxrHNlDIekYAaObU">transpose(matrix)</code> —— 矩阵转置</li>
+              <li data-lang="en-US" hidden><code>transpose(matrix)</code> — matrix transpose</li>
+              <li data-lang="zh-CN"><code data-page-node-id="mo2sSCKKcJpaknaIjyPC3d">zip(...arrays)</code> —— 按位合并</li>
+              <li data-lang="en-US" hidden><code>zip(...arrays)</code> — combine by position</li>
+              <li data-lang="zh-CN"><code data-page-node-id="YLTFM8YHxVlFu3KPUiQ4Aj">filter(iterable, test)</code> —— 类似 Array.filter</li>
+              <li data-lang="en-US" hidden><code>filter(iterable, test)</code> — similar to Array.filter</li>
+            </ol>
+
+            <h3 data-lang="zh-CN">嵌入理论：函数式数据流</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: Functional Data Flow</h3>
+            <p data-lang="zh-CN">这 8 个函数的共同特点：</p>
+            <p data-lang="en-US" hidden>Common characteristics of these 8 functions:</p>
+            <ul data-page-node-id="yL0Wvmlz2MBIB0wgjBnnIe">
+              <li data-lang="zh-CN">✅ <strong data-page-node-id="zW3kZq3FKALPeQMzATVv5Y">不可变（immutable）</strong>：输入不变，返回新数组</li>
+              <li data-lang="en-US" hidden>✅ <strong>Immutable</strong>: input unchanged, returns a new array</li>
+              <li data-lang="zh-CN">✅ <strong data-page-node-id="mV0F3OyPKcGYsM2URojFhv">纯函数</strong>：相同输入 → 相同输出，无副作用</li>
+              <li data-lang="en-US" hidden>✅ <strong>Pure function</strong>: same input → same output, no side effects</li>
+              <li data-lang="zh-CN">✅ <strong data-page-node-id="fXrVgMIhyC4TxR7uHHOwXO">可链式</strong>：返回值是数组，可以接下一层变换</li>
+              <li data-lang="en-US" hidden>✅ <strong>Chainable</strong>: returns an array, can be followed by the next transformation</li>
+            </ul>
+            <p data-lang="zh-CN"><strong data-page-node-id="0Bu4aGo3XehYcEpxMJqIAH">为什么函数式？</strong></p>
+            <p data-lang="en-US" hidden><strong>Why Functional?</strong></p>
+            <ul data-page-node-id="aZvIqiTwPF1kz03K81pOlJ">
+              <li data-lang="zh-CN">可推理：每层变换独立可测</li>
+              <li data-lang="en-US" hidden>Can be reasoned about: each transformation layer is independent and testable</li>
+              <li data-lang="zh-CN">可并行：map/reduce/filter 天然支持并行化</li>
+              <li data-lang="en-US" hidden>Parallelizable: map/reduce/filter are naturally parallelizable</li>
+              <li data-lang="zh-CN">可缓存：纯函数的输出可以记忆化</li>
+              <li data-lang="en-US" hidden>Cacheable: outputs of pure functions can be memoized</li>
+            </ul>
+            <p class="note" data-lang="zh-CN"><strong data-page-node-id="xmrQi88qTj30FLNdteBU1C">数据立方体（OLAP）雏形</strong>：<code data-page-node-id="hJBHvyA0AKP38B46gyB2Yn">transpose</code> 做宽/长格式转换，<code data-page-node-id="juCVTFoGsL3pW5NnCTk5AA">group + rollup</code> 做切片/切块/钻取 —— 这正是 BI 系统的核心。</p>
+            <p class="note" data-lang="en-US" hidden><strong>The Prototype of the Data Cube (OLAP)</strong>: <code>transpose</code> performs wide/long format conversion, and <code>group + rollup</code> performs slicing/dicing/drilling — this is exactly the core of BI systems.</p>
+          </div>
+
+          <div class="tab-panel" data-panel="code" data-page-node-id="Ed4hxAaa7BJo1PhZcAMlw5">
+            <h3 data-lang="zh-CN">关键代码 ① map / reduce 的链式组合</h3>
+            <h3 data-lang="en-US" hidden>Key Code ① Chained Composition of map / reduce</h3>
+            <pre data-page-node-id="Hw6lSqgEITZskwZVCOHgLp"><code data-page-node-id="nklXfAj5M2ckZI8F9DCceD"><span class="star" data-page-node-id="3f2KlpLEJTxXW5DSk5f9bz">⭐</span> <span class="cmt" data-page-node-id="TRyGxANcZPV5gLLC8aU8U3">// 关键点 ①：函数式数据流 —— map 后接 filter 再 reduce</span>
+<span class="kw" data-page-node-id="hBOeWGYuz3yL7KCWSacNqs">const</span> avgAge =
+  students
+    .<span class="fn" data-page-node-id="szyS8Jj9w7LL8u6SOTsmQm">filter</span>(s =&gt; s.gender === <span class="str" data-page-node-id="mJlWa7QnGowbE40fKyW4qx">"男"</span>)    <span class="cmt" data-page-node-id="lybNCJBMbTrY3Kz3bqelW4">// ① 过滤男生</span>
+    .<span class="fn" data-page-node-id="Y7yU8keEhDZZNBzhwte9rH">map</span>(s =&gt; s.age)                    <span class="cmt" data-page-node-id="zaLU9rvSXoeBzQoM0MOdYc">// ② 提取年龄</span>
+    .<span class="fn" data-page-node-id="b8rbKRx9hZLZ5wQTQSF9JZ">reduce</span>((sum, a) =&gt; sum + a, <span class="num" data-page-node-id="k5e7o3fuiJXZNAzzL31Z17">0</span>) <span class="cmt" data-page-node-id="ASv88Spx3sEgDfgtmToyEm">// ③ 合计</span>
+  / students.<span class="fn" data-page-node-id="aJWeniNuFeNEj0N2qIb5ov">filter</span>(s =&gt; s.gender === <span class="str" data-page-node-id="c1xh372tuZYBCxOsAiirnx">"男"</span>).length; <span class="cmt" data-page-node-id="BDbesnpf64gwdrSWiESlkI">// ④ 求平均</span></code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="Fv6TtA0PC8b1fv5G9aPftn">关键点解释</strong>：链式调用的每一步返回新数组，不会修改原数组。
+              <strong data-page-node-id="3KLE98tJSEq5zchdv0RCLh">与命令式对比</strong>：命令式需要 4 个临时变量 + 一个 for 循环，函数式一行搞定。
+              <strong data-page-node-id="ijalAsiCfBEriMjFiNgwtc">性能权衡</strong>：每次 map/filter 都会创建新数组，对超大数组有性能损耗（百万级以上才显著）。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: Each step of the chained call returns a new array and does not modify the original array.
+              <strong>Compared with Imperative</strong>: The imperative style needs 4 temporary variables + a for loop, while the functional style does it in one line.
+              <strong>Performance Trade-off</strong>: Each map/filter creates a new array, which incurs a performance cost for very large arrays (only significant above the million level).
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ② cross（笛卡尔积）</h3>
+            <h3 data-lang="en-US" hidden>Key Code ② cross (Cartesian Product)</h3>
+            <pre data-page-node-id="ejI5r2s3Hspdh4ywsl1FMZ"><code data-page-node-id="KkS19OEI59HCGX66OJw64p"><span class="star" data-page-node-id="7s8kQOUGaNiIOnarN58tSS">⭐</span> <span class="cmt" data-page-node-id="hBMBnSlmUXuQAxWosmOwGD">// 关键点 ②：cross —— 笛卡尔积，用于两两组合</span>
+<span class="kw" data-page-node-id="oeKFgDAwC2aF4pY66N5sa0">const</span> genders = [<span class="str" data-page-node-id="bhwGa4ObxEKCaFV4ahFp57">"男"</span>, <span class="str" data-page-node-id="w1Hl5EXWjS3PiGHiQIwpl0">"女"</span>];
+<span class="kw" data-page-node-id="T2N7YIxnbDusoig2yvtaNN">const</span> majors  = [<span class="str" data-page-node-id="qeDICvEinWFxU9WGb0JaOK">"软件工程"</span>, <span class="str" data-page-node-id="xGySZFyXBEcflR3Vz1edDC">"数据科学"</span>];
+<span class="kw" data-page-node-id="Pzb68bRek9f24CFmMmFDEA">const</span> combos  = d3.<span class="fn" data-page-node-id="nzs3m46ZD4GkyGowVmMF58">cross</span>(genders, majors);
+<span class="cmt" data-page-node-id="yJjgix6xlRrC7Qd7rrkt2q">// → [["男","软件工程"], ["男","数据科学"], ["女","软件工程"], ["女","数据科学"]]</span></code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="JLBsHreg1kCX9HEGF4qpSt">关键点解释</strong>：笛卡尔积常用在"两两组合"分析（如性别 × 专业的人数统计）。
+              第二参 reducer 可选，用来"合并"两个元素。
+              <strong data-page-node-id="C9HAytaxfb06jF7DFYQaHG">扩展</strong>：3 个数组的笛卡尔积是 8 种，n 个数组的笛卡尔积是乘积大小。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: The Cartesian product is commonly used in 'pairwise combination' analysis (e.g., counting students by gender × major).
+              The second reducer argument is optional and is used to 'combine' the two elements.
+              <strong>Extension</strong>: The Cartesian product of 3 arrays yields 8 combinations; for n arrays it is the product of their sizes.
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ③ group / rollup（聚合）</h3>
+            <h3 data-lang="en-US" hidden>Key Code ③ group / rollup (Aggregation)</h3>
+            <pre data-page-node-id="sqmKgLqQPlnPm5uIbMYpqa"><code data-page-node-id="61VRA0SdEgMpAjz0fjcQXa"><span class="star" data-page-node-id="mGwr5ZMbxgrMO5AaoIoCds">⭐</span> <span class="cmt" data-page-node-id="BehFvvVUE67yVJdFwrvUA0">// 关键点 ③：group 与 rollup —— 层次聚合</span>
+<span class="cmt" data-page-node-id="IFXCcMMrML4ecWjr7jCnf3">// group 返回 Map（保留所有元素）</span>
+<span class="kw" data-page-node-id="aiBRp0MADcoXto6pHujtgB">const</span> byClass = d3.<span class="fn" data-page-node-id="jaflqUB0T0JDoiZc7zRg7J">group</span>(students, s =&gt; s.class);
+<span class="cmt" data-page-node-id="HAgyxW6HKDxs8YkljnVDV2">// rollup 返回 Map（每个 key 只保留聚合值）</span>
+<span class="kw" data-page-node-id="ob2wvtd3BVwlBv6XIymwAd">const</span> countByClass = d3.<span class="fn" data-page-node-id="CbfK3jfE7K4AdTKqpJCdLf">rollup</span>(
+  students,
+  v =&gt; v.length,
+  s =&gt; s.class
+);</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="3aajLRIwFuumFBMPHocJKs">关键点解释</strong>：<code data-page-node-id="WAOzAM30shL2NkrBM3rFpn">group</code> vs <code data-page-node-id="EcpEAp0CyDBASif7lu8M5U">rollup</code> 是"分组保留"vs"分组聚合"的区别。
+              <code data-page-node-id="cIRpPEG9IjZExF7Nk5BdQS">rollup</code> 第二参是 reducer 函数（这里取长度），后续章节 doc-02 会详细用 rollup 做树形数据。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: <code>group</code> vs <code>rollup</code> is the difference between 'keep groups' and 'aggregate groups'.
+              The second argument of <code>rollup</code> is a reducer function (here it takes the length); in later chapter doc-02, rollup will be used in detail for tree-structured data.
+            </p>
+          </div>
+
+          <div class="tab-panel" data-panel="demo" data-page-node-id="StLDqQjTRAyvg95G3dKXOl">
+            <p class="demo-hint" data-lang="zh-CN">下拉切换 8 个函数，右侧显示输入/输出对照 + 真实场景（新生数据）</p>
+            <p class="demo-hint" data-lang="en-US" hidden>Use the dropdown to switch among the 8 functions; the right side shows input/output comparison + a real scenario (new-student data)</p>
+            <div class="demo-mount" data-demo="d-3-4" data-page-node-id="N8GSGHn7gSo9bsBYJeapWu"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 3.5 D3 数据选择器 ============= -->
+      <article class="chapter" id="ch-1-5" data-page-node-id="4DbcyVtX7DtcqmJ3cHSuxc">
+        <h2 data-page-node-id="rp7dCIQEliqgBoCh0Rr4es" data-i18n="sec-01-5.title">1.5 D3 数据选择器</h2>
+        <p class="chapter-subtitle" data-lang="zh-CN">Selection 与 enter / update / exit 三态模型</p>
+        <p class="chapter-subtitle" data-lang="en-US" hidden>Selection and the enter / update / exit Three-State Model</p>
+
+        <div class="tabs" data-page-node-id="P9MWkXCm95tIdXOoCLzBOQ">
+          <button class="tab-btn active" data-tab="explain" data-page-node-id="WLvPzqgqqClm5zcB2G8npv" data-i18n="tab.explain">📖 讲解</button>
+          <button class="tab-btn" data-tab="code" data-page-node-id="fgLgcpSRW2Mme3rlqpqW2I" data-i18n="tab.code">⌨️ 关键代码</button>
+          <button class="tab-btn" data-tab="demo" data-page-node-id="bMSKxKTyNDRDbBX9aogKd7" data-i18n="tab.demo">▶️ 演示</button>
+        </div>
+
+        <div class="tab-panels" data-page-node-id="sBFiPYEJbCEhAZVInEXSyl">
+          <div class="tab-panel active" data-panel="explain" data-page-node-id="mQMDFYtM2G9u4K1FapjrG4">
+            <h3 data-lang="zh-CN">你的原案例（6 个选择器方法）</h3>
+            <h3 data-lang="en-US" hidden>Your Original Case (6 Selector Methods)</h3>
+            <p data-lang="zh-CN">你的原文梳理了 6 个选择器方法：</p>
+            <p data-lang="en-US" hidden>Your original text outlines 6 selector methods:</p>
+            <table data-lang="zh-CN" class="theory-table" data-page-node-id="TuEJmmP2GHXqFVaAY9ugRS">
+              <thead data-page-node-id="y69uVUmIETqjQtUWMvCTdN"><tr data-page-node-id="lTlN1FkqkeBcNrsTnq5MYZ"><th data-page-node-id="k3xXh0xUTCPmJ4mZzZOEpj">方法</th><th data-page-node-id="tz1FEPY07OEnA8oJAWPEoF">返回</th></tr></thead>
+              <tbody data-page-node-id="W6nq5F8OGqsU4M4RF9t8R8">
+                <tr data-page-node-id="YLMTqeDnllCyhEGmdzvgzU"><td data-page-node-id="EYp9TmmnJfLwGY7J6qWmCC"><code data-page-node-id="DPb4HhLQWFBPVEDe61QJLK">d3.select</code></td><td data-page-node-id="HemQAhKeeeFPAthtbeP43b">单个元素</td></tr>
+                <tr data-page-node-id="V52jznb93jJxOunIuflfry"><td data-page-node-id="jJGNnyV5vwNbQzTYnPEw6k"><code data-page-node-id="B6FhprmwXF995zgOYVAz6W">d3.selectAll</code></td><td data-page-node-id="I3F29CO5AcjJBrwWC0mF8D">多个元素的 selection</td></tr>
+                <tr data-page-node-id="cBIgGLpNPVNO5JOk2XumU9"><td data-page-node-id="b41G3fKfaNLIzU0NhISzxm"><code data-page-node-id="u1vwO8soreD4cHE9GHg1V6">selection.select</code></td><td data-page-node-id="23EO4wD84KR67DetkTOWyU">每个选中元素的后代中第一个</td></tr>
+                <tr data-page-node-id="BTfLoDRpEhOwm5rzsrYZac"><td data-page-node-id="srZhzZAFZL9g6TVrVGkHJq"><code data-page-node-id="ikjFO5ALuTJ3VoRH8L5XCg">selection.selectAll</code></td><td data-page-node-id="GI3Z7jf8qiyCgtHy0Cxj36">后代中所有</td></tr>
+                <tr data-page-node-id="qDLR3wlnwLZy25PZauc2fU"><td data-page-node-id="aCglV4BCQ2rXoqzBU1eQyp"><code data-page-node-id="OYRd5WGchDlkY847MXepIT">selection.selectChild</code></td><td data-page-node-id="DBQBu98YiTa0M82FqcAe2F">直接子元素第一个</td></tr>
+                <tr data-page-node-id="3GgLmnRHR9XT5YYBPhgULR"><td data-page-node-id="DRUxUfKpGQHdvlL7iFs0Pg"><code data-page-node-id="0eleTtylKoK787wG6gVT3k">selection.selectChildren</code></td><td data-page-node-id="2QC1TlxgoNXjxfUG1UCfbW">所有直接子元素</td></tr>
+              </tbody>
+            </table>
+            <table data-lang="en-US" hidden class="theory-table" data-page-node-id="TuEJmmP2GHXqFVaAY9ugRS">
+              <thead><tr><th>Method</th><th>Returns</th></tr></thead>
+              <tbody>
+                <tr><td><code>d3.select</code></td><td>single element</td></tr>
+                <tr><td><code>d3.selectAll</code></td><td>selection of multiple elements</td></tr>
+                <tr><td><code>selection.select</code></td><td>the first descendant of each selected element</td></tr>
+                <tr><td><code>selection.selectAll</code></td><td>all descendants</td></tr>
+                <tr><td><code>selection.selectChild</code></td><td>the first direct child element</td></tr>
+                <tr><td><code>selection.selectChildren</code></td><td>all direct child elements</td></tr>
+              </tbody>
+            </table>
+
+            <h3 data-lang="zh-CN">嵌入理论：Data-Join 三态模型（Mike Bostock）</h3>
+            <h3 data-lang="en-US" hidden>Embedded Theory: The Data-Join Three-State Model (Mike Bostock)</h3>
+            <p data-lang="zh-CN">D3 的核心是 <strong data-page-node-id="QN00kfdyCpU4aRKBbnK6Ph">Data-Join</strong>：把数据数组"绑定"到 DOM 元素上。</p>
+            <p data-lang="en-US" hidden>The core of D3 is <strong>Data-Join</strong>: 'binding' a data array to DOM elements.</p>
+            <p data-lang="zh-CN">当数据变化时：</p>
+            <p data-lang="en-US" hidden>When the data changes:</p>
+            <ul data-page-node-id="IsDFmrjAbbZ8l9mC17RhpC">
+              <li data-lang="zh-CN">新数据 &gt; 旧数据：多出来的进入 <strong style="color:#10b981" data-page-node-id="uSGduCZqTf7nDERmBeAyiX">enter</strong>（要 append）</li>
+              <li data-lang="en-US" hidden>New data &gt; old data: the extras enter <strong style="color:#10b981">enter</strong> (need to append)</li>
+              <li data-lang="zh-CN">新数据 = 旧数据：原有元素进入 <strong style="color:#0ea5e9" data-page-node-id="aICgrdAK7Mkzue7bS6oHJR">update</strong>（要改属性）</li>
+              <li data-lang="en-US" hidden>New data = old data: the existing elements enter <strong style="color:#0ea5e9">update</strong> (need attribute changes)</li>
+              <li data-lang="zh-CN">新数据 &lt; 旧数据：多余的元素进入 <strong style="color:#ef4444" data-page-node-id="DRChHTUEUhy3bFqEpEFFHz">exit</strong>（要 remove）</li>
+              <li data-lang="en-US" hidden>New data &lt; old data: the surplus elements enter <strong style="color:#ef4444">exit</strong> (need to remove)</li>
+            </ul>
+
+            <h3 data-lang="zh-CN">Data-Join vs 命令式 DOM</h3>
+            <h3 data-lang="en-US" hidden>Data-Join vs Imperative DOM</h3>
+            <table data-lang="zh-CN" class="theory-table" data-page-node-id="CU1qDkg27zZz5gFsMrLMb2">
+              <thead data-page-node-id="L2fsvqLVSdSmGGakVXFsxm"><tr data-page-node-id="FN9YdeQbmSLW2zg46TjWAV"><th data-page-node-id="UD72JmR9n1hANLLReh63gb">命令式</th><th data-page-node-id="8EfYNlwZf2QgdQ7whnmoUS">声明式（Data-Join）</th></tr></thead>
+              <tbody data-page-node-id="ZWV56NgxdyxTLdxJZjU0DG">
+                <tr data-page-node-id="e2gKKuNvaUa7kzQji508S5"><td data-page-node-id="SSQhGWefMnovwOpBdInio8"><code data-page-node-id="WH7YKex4rX6icTvvABB3CY">createElement</code> 后逐个 append</td><td data-page-node-id="deK9pdBiJkLO9kxqrB8iTB"><code data-page-node-id="kizLyYnSGGP2foj4KEzldW">.data(arr).join(...)</code> 一行</td></tr>
+                <tr data-page-node-id="n9Yq8WjkPulPu7Todc2b23"><td data-page-node-id="ti48ZeyElm9YSxRlI0DEol">全量重绘</td><td data-page-node-id="ETtP0n84Shk7ESnFuL4OKg">增量更新（性能好）</td></tr>
+                <tr data-page-node-id="D5rxl1AJDPZo4QQHAkpGOF"><td data-page-node-id="9r6PiSu5I4w4VuV6q1AByf">元素身份丢失</td><td data-page-node-id="qNRr79fdPrfL0BuskxpnGh">key 函数保留稳定身份（动画自然）</td></tr>
+                <tr data-page-node-id="e2CKa5wSZVQD0vhrlstuGS"><td data-page-node-id="vegoRKDHvxSYaZ8xhhzBvF">与数据流脱节</td><td data-page-node-id="2Pydiq6QmGeBLcUuMiqYzT">与函数式数据流天然契合</td></tr>
+              </tbody>
+            </table>
+            <table data-lang="en-US" hidden class="theory-table" data-page-node-id="CU1qDkg27zZz5gFsMrLMb2">
+              <thead><tr><th>Imperative</th><th>Declarative (Data-Join)</th></tr></thead>
+              <tbody>
+                <tr><td><code>createElement</code> then append one by one</td><td><code>.data(arr).join(...)</code> in one line</td></tr>
+                <tr><td>full re-render</td><td>incremental update (better performance)</td></tr>
+                <tr><td>element identity lost</td><td>key function preserves stable identity (natural animation)</td></tr>
+                <tr><td>disconnected from the data flow</td><td>naturally fits the functional data flow</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tab-panel" data-panel="code" data-page-node-id="yui6pIYxosI3RS09p7Bxsx">
+            <h3 data-lang="zh-CN">关键代码 ① .join(enter, update, exit) 三态</h3>
+            <h3 data-lang="en-US" hidden>Key Code ① .join(enter, update, exit) Three States</h3>
+            <pre data-page-node-id="H2ItxQxH9yn4QiwUZJSBg7"><code data-page-node-id="rpDhdgYYylIeHV6Ax8LbD4"><span class="star" data-page-node-id="wBfxtzIP7G5b7sCOcuGm3k">⭐</span> <span class="cmt" data-page-node-id="raSF4Gsz3EoJduwcELxpm4">// 关键点 ①：D3 v5+ 的 join() API —— 优雅处理三态</span>
+<span class="kw" data-page-node-id="IbX1LZCaeBenM5CXkxnmu1">const</span> circles = svg.<span class="fn" data-page-node-id="ZDchM0HiA97hXdOeqGL32d">selectAll</span>(<span class="str" data-page-node-id="R0IGb5OZBP5yU1d4Bzdii4">"circle"</span>)
+  .<span class="fn" data-page-node-id="4NY4qkmOuu7y3ZQZ0RP3lu">data</span>(currentData)
+  .<span class="fn" data-page-node-id="z3cCaNIxCwU3ZBgffZ6ap1">join</span>(
+    enter  =&gt; enter.<span class="fn" data-page-node-id="axaEI2jsib4tDVIvLS21Rg">append</span>(<span class="str" data-page-node-id="LBty5Wo2EBWkt8A8MN07ac">"circle"</span>).<span class="fn" data-page-node-id="2EvGkDy9HKmuyslHQm8tR5">attr</span>(<span class="str" data-page-node-id="mZ9KM1bHoh9ZHIVtb1M59f">"fill"</span>, <span class="str" data-page-node-id="DNQiTGYZlaPiX2NbHY9ewv">"green"</span>),  <span class="cmt" data-page-node-id="K8vPC9RAghCpEAhDEFHAT1">// enter</span>
+    update =&gt; update.<span class="fn" data-page-node-id="cjvScLU2fAYqfiEWYhOkmz">attr</span>(<span class="str" data-page-node-id="qTeGylIFCGD2znWQGXeAOG">"fill"</span>, <span class="str" data-page-node-id="UdKXk87Avj3WRuHotTnXtf">"cyan"</span>),                              <span class="cmt" data-page-node-id="syFmGOjaaCk4EAQsZwzhlM">// update</span>
+    exit   =&gt; exit.<span class="fn" data-page-node-id="IVrrXBBbD0SAxESnrLgF2u">remove</span>()                                                   <span class="cmt" data-page-node-id="3TEWecvfVNA5FLaFDuTM4W">// exit</span>
+  );</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="8pqEvdepQom2AcsNtbAp8V">关键点解释</strong>：join 的三个回调分别在 enter / update / exit 阶段被调用。
+              这种"声明式三态"比 v3 的 <code data-page-node-id="0dSD74EunAxFsD8wyaeBO1">enter().append()</code> + <code data-page-node-id="toQJgYVridwMY7AtdJHeSB">exit().remove()</code> 写法更简洁，逻辑更不易出错。
+              <strong data-page-node-id="JP34Cs9WgNf8EYaBcHdo8E">类比</strong>：React 的 diff + patch —— 同样思想，但 React 帮你做了，D3 让你自己写变换函数。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: The three callbacks of join are invoked in the enter / update / exit phases respectively.
+              This 'declarative three-state' pattern is more concise than the v3 <code>enter().append()</code> + <code>exit().remove()</code> style, and less error-prone.
+              <strong>Analogy</strong>: React's diff + patch — the same idea, but React does it for you, while D3 lets you write the transformation functions yourself.
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ② key 函数保身份</h3>
+            <h3 data-lang="en-US" hidden>Key Code ② key Function Preserves Identity</h3>
+            <pre data-page-node-id="XPt1GBGaS9C4qakk7ihXGd"><code data-page-node-id="l2dYTzBpmNFD0DVM731Jsk"><span class="star" data-page-node-id="8a112nsIMn6anWzHbqrtpt">⭐</span> <span class="cmt" data-page-node-id="Q8bG7UXoFS5AwEHvgiJXFn">// 关键点 ②：key 函数 —— 元素身份的稳定器</span>
+<span class="cmt" data-page-node-id="EG6oDWWkxTQGGcNaSvS7yp">// ❌ 不带 key：数据顺序变化 → 所有元素都"update"，过渡动画错乱</span>
+svg.<span class="fn" data-page-node-id="9X4rCQjFPJE6Gb01D4j1Hu">selectAll</span>(<span class="str" data-page-node-id="3wpfhUFKbbbfKa9Wilva6S">"circle"</span>).<span class="fn" data-page-node-id="NlYwJMCh2FHNEIJu0r1Sqy">data</span>(newData);
+
+<span class="cmt" data-page-node-id="YxRXrshT1vlSRkr53hyWVK">// ✅ 带 key：用唯一字段绑定身份，元素"知道自己是哪个"</span>
+svg.<span class="fn" data-page-node-id="pNwBEa3eFIW0FJ5BsJq67s">selectAll</span>(<span class="str" data-page-node-id="cFAEBfbU8cVc9LABuaPMoi">"circle"</span>).<span class="fn" data-page-node-id="YsFKaHJVYW2RcnPN3mTMrR">data</span>(newData, d =&gt; d.id);
+
+<span class="cmt" data-page-node-id="n5L0vObEMQRlgadjjgr9HX">// 同样的逻辑用 React 描述：key={item.id}</span></code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="DtHlo6jbzPZd7lRwGtbZuk">关键点解释</strong>：<strong data-page-node-id="KABx0q7YFPTEXaDNWKqpzm">key 函数是 D3 动画的灵魂</strong>。
+              没有 key 时，D3 按 index 绑定身份：数据重排会导致"所有元素都换位置"。
+              带 key 后，每个 circle 知道自己的 id 是什么，重排时只是 cx 变化，过渡动画自然。
+              <strong data-page-node-id="QNWxRrRkpsOzkWHFpCMY8Y">类比</strong>：与 React 的 <code data-page-node-id="DAIAgZNvtcFEE0nkvlKZ2Q">key={item.id}</code> 完全相同的思想。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: <strong>The key function is the soul of D3 animation</strong>.
+              Without a key, D3 binds identity by index: reordering data causes 'all elements to move'.
+              With a key, each circle knows its id, and on reorder only cx changes, so the transition animation is natural.
+              <strong>Analogy</strong>: Exactly the same idea as React's <code>key={item.id}</code>.
+            </p>
+
+            <h3 data-lang="zh-CN">关键代码 ③ d3.select vs d3.selectAll</h3>
+            <h3 data-lang="en-US" hidden>Key Code ③ d3.select vs d3.selectAll</h3>
+            <pre data-page-node-id="GF2jwf93F5ShzO91GV75Ei"><code data-page-node-id="HLwBTwtJAvScRMRvyuU3Wm"><span class="star" data-page-node-id="1hEW71KTCNkoHWPa6AB97F">⭐</span> <span class="cmt" data-page-node-id="ar6Qt0cHBpCArajc9ZBCDR">// 关键点 ③：选择器的核心区别</span>
+<span class="cmt" data-page-node-id="6hLATAtZPjCfHgEJo9kawA">// select：返回 1 个元素（第一个匹配）；数据绑定只对这一个元素</span>
+<span class="kw" data-page-node-id="KY8gJJYeqqTfjDYrAJGYDQ">const</span> title = d3.<span class="fn" data-page-node-id="2UR65S9pCTCYxkafnmiGjT">select</span>(<span class="str" data-page-node-id="16x5CEEABhPyaCvceSk0AG">"#title"</span>);
+
+<span class="cmt" data-page-node-id="hanqbgBXMRkGcoLni9slXs">// selectAll：返回多个元素；数据绑定按顺序一一对应</span>
+<span class="kw" data-page-node-id="De5ukHAognydmzHUoe3z1H">const</span> bars = d3.<span class="fn" data-page-node-id="N1KIFcknCnztQ7eFycEu0n">selectAll</span>(<span class="str" data-page-node-id="lycTkUfSKcFKtYgNXeCdT3">".bar"</span>).<span class="fn" data-page-node-id="lI4aAfcq2RDZOiBG9vgvC1">data</span>(values);</code></pre>
+            <p class="key-point" data-lang="zh-CN">
+              <strong data-page-node-id="JRuypTr2fgW35gCTpnAyqy">关键点解释</strong>：<code data-page-node-id="HQQv6n8tJiwx7ISmpwhluT">select</code> 用于"操作单个元素"，<code data-page-node-id="EmwtSFwDbUjdhTVSzzt0nw">selectAll</code> 用于"批量绑定数据"。
+              <strong data-page-node-id="GABC1qpUPJXSYANbH8JB1y">常见错误</strong>：用 <code data-page-node-id="SYsjQRw4aqnNUs0LlXDL97">selectAll(".bar")</code> 给一个数组绑定数据时，元素数量与数据数量必须匹配，否则会"留空"或"溢出"。
+              <strong data-page-node-id="GH3XiH2jWncCWrpZHHAjIf">最佳实践</strong>：先用 <code data-page-node-id="nu8jRs9ZF486741g4eANtN">selectAll</code> 创建占位元素（可能为空），再 <code data-page-node-id="jEBJHvWLZjxdihez8VRqw6">.data().join(...)</code>。
+            </p>
+            <p class="key-point" data-lang="en-US" hidden>
+              <strong>Key-Point Explanation</strong>: <code>select</code> is used to 'operate on a single element', and <code>selectAll</code> is used to 'bind data in bulk'.
+              <strong>Common Mistake</strong>: When using <code>selectAll(".bar")</code> to bind data to an array, the number of elements must match the number of data items, otherwise it will 'leave gaps' or 'overflow'.
+              <strong>Best Practice</strong>: First use <code>selectAll</code> to create placeholder elements (possibly empty), then <code>.data().join(...)</code>.
+            </p>
+          </div>
+
+          <div class="tab-panel" data-panel="demo" data-page-node-id="eBBzQyNGhklDiLIDoG9ueD">
+            <p class="demo-hint" data-lang="zh-CN">点击按钮触发 enter (绿) / update (蓝) / exit (红)，观察三态切换</p>
+            <p class="demo-hint" data-lang="en-US" hidden>Click the button to trigger enter (green) / update (blue) / exit (red), and observe the three-state switching</p>
+            <div class="demo-mount" data-demo="d-3-5" data-page-node-id="I8WTtjclyxbctgrHRrAV7t"></div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="lesson-footer" data-page-node-id="MpcrcezdFsKurpWZafEUbz">
+    <p data-lang="zh-CN">Doc-01 集成教学页面 · 零依赖 · D3.js v7 + 原生 JS · 可独立运行</p>
+    <p data-lang="en-US" hidden>Doc-01 Integrated Teaching Page · Zero Dependencies · D3.js v7 + Vanilla JS · Standalone</p>
+  </footer>
+
+  <nav class="chapter-pager" aria-label="章节翻页">
+    <span class="pager-prev empty"></span>
+    <a class="pager-portal" href="../" data-i18n="common.enter">课程门户</a>
+    <a class="pager-next" href="../lesson-02/"><span class="pager-dir" data-i18n="common.next">下一章 →</span><span class="pager-title">第 2 章 数据可视化流程</span></a>
+  </nav>
+
+  <script type="module" src="./lesson.js?v=202609080945"></script>
+  <script type="module" src="../i18n.js"></script>
+  <script>
+  (function () {
+    var bar = document.querySelector('.course-topbar');
+    if (!bar) return;
+    var cur = parseInt(bar.getAttribute('data-current'), 10) || 0;
+    var links = bar.querySelectorAll('.tabs a');
+    if (cur >= 0 && cur < links.length) links[cur].classList.add('current');
+  })();
+  </script>
+</body>
+</html>

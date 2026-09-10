@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="zHRubHDeoG8to2JDDc3Z9j">
+<head data-page-node-id="l1lKFxKPZr3jyPStMjlMcZ">
+  <meta charset="UTF-8" data-page-node-id="q6Ngk84P1qnLICw8FW1Cbd" />
+  <title>Demo 3 · 属性类型 × 视觉通道</title>
+  <link rel="stylesheet" href="../styles.css" data-page-node-id="FLYwLqIjpxQPCYJFtLGJQy" />
+</head>
+<body data-page-node-id="gtyfR3RF5j2BBqB6lEQd2e">
+  <a href="../index.html" data-page-node-id="468ryv9yc6B7ODZQtykdyp">← 返回导航</a>
+  <h1 data-page-node-id="vQpczTaLAlof0mguaUuNKi">Demo 3 · 属性类型 × 视觉通道（Mackinlay 1986）</h1>
+  <p data-page-node-id="woUp7n5WSXWmst1ZXvEKSz">
+    对应讲义章节 <span class="tag" data-page-node-id="hLUInLWIHxY8r1BAQlDlzQ">3.3 数据属性</span>。本 demo 把用户原文的"3 大属性"扩展为
+    <strong data-page-node-id="BPxgFhSA8vbrf3lQTRhzov">Stevens 测量尺度（4 类）</strong>，并对照 Mackinlay 自动可视化框架给出的
+    <strong data-page-node-id="oosigIJicvUpKmGtCH1Efx">视觉通道排序</strong>，演示"属性 → 通道"的匹配与错配。
+  </p>
+
+  <div class="demo-nav" data-page-node-id="pok42pV7QtanIHPCOCsjO1">
+    <div class="panel-title" data-page-node-id="7P6Dz0D0peyUZqVfYtHGEH">Stevens 测量尺度 × 视觉通道排序（Mackinlay）</div>
+    <table data-page-node-id="yeV2pjyNY67V9UfzAGSzmz">
+      <thead data-page-node-id="3BU3JWFFhCszucVe0ACzPk">
+        <tr data-page-node-id="hWsIk06cTQmva0cld4T0na"><th data-page-node-id="yywiuTeBziOojsZafRSksC">属性类型</th><th data-page-node-id="YWqIX9lDSD6jRtScvYnGbr">示例</th><th data-page-node-id="MYrcexiJZbT1iuVcPImDjY">推荐通道</th><th data-page-node-id="PQJbtOeDGsqG0vCt9f2HUS">不推荐通道</th></tr>
+      </thead>
+      <tbody data-page-node-id="KbAWbBnD74JhtTx35rhAnE">
+        <tr data-page-node-id="jU4yYbwFp5YibA3G5C4Jff"><td data-page-node-id="NUIOlqrjRLr15vrqqKd50x">名义（类别）</td><td data-page-node-id="DjzY791uoOQIxQ8ng9tI0h">姓名、专业、民族</td><td data-page-node-id="v8Qj5PIA4eTeMCgDlst6qP">色相（Hue）、形状</td><td data-page-node-id="e1G6bzfzIDNUBq0dD0B2cB">大小、亮度（无意义）</td></tr>
+        <tr data-page-node-id="mRkHIgsu6k5yAE3FqrUVZR"><td data-page-node-id="rMBUf43wGV45piBVnyAFDl">序数</td><td data-page-node-id="ga2MqazzKKEl4KaHNX2jhl">班级序号、等级</td><td data-page-node-id="dqU0n5oOBdHeCvCKQZoKRL">亮度、位置、密度</td><td data-page-node-id="inizyO5k64s4scngDEKOpn">色相（顺序不明确）</td></tr>
+        <tr data-page-node-id="TphzqFeoUUJ8EIdczm1F6x"><td data-page-node-id="k0szK0apN0J3g9O5pN6xEZ">区间</td><td data-page-node-id="eKVNTz8cBAU3GV2PsKBbe3">温度（°C）</td><td data-page-node-id="E88KwUEOWyJUuwxXENpl9y">位置、长度</td><td data-page-node-id="CzbRWjZ3ffU4D1hmDDAk3u">比值（没有真零）</td></tr>
+        <tr data-page-node-id="x6Brm0SGhg0yRZvKg4k9jt"><td data-page-node-id="PMrnjy54aRVyyP5lygCjJX">比率</td><td data-page-node-id="reoYmOzumILn97BFfOl3Zu">年龄、价格、人口</td><td data-page-node-id="RnWD8mwGA6GgWCsi0oGt9D">位置、长度、面积</td><td data-page-node-id="evFYWXZAkjb6asLuHeDAg7">色相（顺序丢失）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel" data-page-node-id="BGwkiE5mzEB5BGGLuEbw47">
+    <div class="panel-title" data-page-node-id="D0Fp8VQJGzWhFKeLA6jwnm">Demo 3.1 · 类别属性（名义） → 色相编码</div>
+    <p style="font-size:13px; color:#475569;" data-page-node-id="f1dnnI03dUEu5Xb1F25ffX">用新生数据"专业"字段演示类别属性的可视化。</p>
+    <svg id="cat-plot" style="width:100%; height:280px;" data-page-node-id="LMk5zD4jyeRYDL54dQ2imr"></svg>
+  </div>
+
+  <div class="panel" data-page-node-id="DCn7ATBwE6jxPRGUJB2Gpv">
+    <div class="panel-title" data-page-node-id="hYWj5ComvpgexwLbGuLbWQ">Demo 3.2 · 序数属性 → 亮度编码</div>
+    <p style="font-size:13px; color:#475569;" data-page-node-id="bv2G9G4BL2lNuVohFJJlZ7">用"班级序号"演示序数属性。</p>
+    <svg id="ord-plot" style="width:100%; height:160px;" data-page-node-id="esJ6P5TWJzTyiFJhuNaZJ1"></svg>
+  </div>
+
+  <div class="panel" data-page-node-id="n4ZennaxBfanlGzOcO25Ns">
+    <div class="panel-title" data-page-node-id="lco7S74R2DPudTPsYRitrv">Demo 3.3 · 数值属性（比率） → 位置编码（推荐）</div>
+    <svg id="num-plot" style="width:100%; height:240px;" data-page-node-id="hgBTUxfhBOAkRlveAsK0AB"></svg>
+  </div>
+
+  <div class="panel" data-page-node-id="6EtZzEpYJAGbCgL4DaZqE9">
+    <div class="panel-title" data-page-node-id="F1pzOqOISJ5FqLHQC38Glm">Demo 3.4 · ❌ 数值用色相编码（错配演示）</div>
+    <p style="font-size:13px; color:#991b1b;" data-page-node-id="ebUUnIBTm335hwdD1nt79j">把"年龄"用色相编码 —— 看不到大小关系了。</p>
+    <svg id="bad-plot" style="width:100%; height:240px;" data-page-node-id="aYGMiWERae12SiN2UttrGb"></svg>
+  </div>
+
+  <div class="note" data-page-node-id="6aJlxUxZ5PlBTLXY9LD9GW">
+    <strong data-page-node-id="s0fkMm8uKW05LaoxMF0RJM">嵌入理论（Mackinlay 1986）：</strong>视觉通道分为"定量型"（位置/长度/角度，能精确读数）与
+    "定性型"（色相/形状，仅能区分）。"顺序型"居中（亮度/密度）。把定量数据用定性通道编码，
+    会损失信息 —— 这就是 Demo 3.4 错配演示的根因。
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,862 @@
+[
+  {
+    "idx": 0,
+    "chapter": "ch-5-1",
+    "tab": "",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "时间有 5 个核心属性：有序 / 连续 / 周期 / 独立于空间 / 结构性。每个属性都影响可视化设计。",
+    "zh_clean": "时间有 5 个核心属性：有序 / 连续 / 周期 / 独立于空间 / 结构性。每个属性都影响可视化设计。",
+    "en": "Time has 5 core properties: ordered / continuous / cyclic / independent of space / structural. Each property shapes visualization design."
+  },
+  {
+    "idx": 1,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 2,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 6.1 节列出 5 个时间属性，没有可视化。这章把这 5 个属性变成可交互卡片。",
+    "zh_clean": "原 6.1 节列出 5 个时间属性，没有可视化。这章把这 5 个属性变成可交互卡片。",
+    "en": "Original section 6.1 listed the 5 time properties without any visualization. This chapter turns those 5 properties into interactive cards."
+  },
+  {
+    "idx": 3,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedding Chen Wei's Textbook Theory"
+  },
+  {
+    "idx": 4,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"Q6AEGAnkmqIa0pr9nnZChs\">有序性</strong>：时间是有序的，两个事件有先后次序，与因果关系紧密相连。",
+    "zh_clean": "<strong>有序性</strong>：时间是有序的，两个事件有先后次序，与因果关系紧密相连。",
+    "en": "<strong>Order</strong>: Time is ordered—any two events have a before/after, tightly linked to causality."
+  },
+  {
+    "idx": 5,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"dVAP1QNXRpH6pfymaz6F55\">连续性</strong>：时间连续，两个时间点之间总存在另一个时间点。",
+    "zh_clean": "<strong>连续性</strong>：时间连续，两个时间点之间总存在另一个时间点。",
+    "en": "<strong>Continuity</strong>: Time is continuous—between any two moments there is always another moment."
+  },
+  {
+    "idx": 6,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"F1z39eJp2yFtdwSOIB4CF3\">周期性</strong>：自然过程常有循环规律（季节、昼夜），可采用循环时间域。",
+    "zh_clean": "<strong>周期性</strong>：自然过程常有循环规律（季节、昼夜），可采用循环时间域。",
+    "en": "<strong>Periodicity</strong>: Natural processes often follow cyclic patterns (seasons, day/night)—a cyclic time domain can be used."
+  },
+  {
+    "idx": 7,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"7OTfkPl3CxTDv4sRQneUio\">独立于空间</strong>：时间与空间紧相关，但科学过程大多独立处理。",
+    "zh_clean": "<strong>独立于空间</strong>：时间与空间紧相关，但科学过程大多独立处理。",
+    "en": "<strong>Independence from space</strong>: Time is tightly coupled with space, but scientific processes usually treat them independently."
+  },
+  {
+    "idx": 8,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"X8mzLVD0SjkYOMxTFcfNMl\">结构性</strong>：时间尺度分年/月/日/时/分/秒，分割既有自然反映（昼夜）也有人为定义（60 秒）。",
+    "zh_clean": "<strong>结构性</strong>：时间尺度分年/月/日/时/分/秒，分割既有自然反映（昼夜）也有人为定义（60 秒）。",
+    "en": "<strong>Structure</strong>: Time scales split into year / month / day / hour / minute / second—some divisions reflect nature (day/night), others are human convention (60 seconds)."
+  },
+  {
+    "idx": 9,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "为什么 5 个属性都重要？",
+    "zh_clean": "为什么 5 个属性都重要？",
+    "en": "Why do all 5 properties matter?"
+  },
+  {
+    "idx": 10,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "设计时序图前先想清楚这 5 个属性，能避免常见错误：",
+    "zh_clean": "设计时序图前先想清楚这 5 个属性，能避免常见错误：",
+    "en": "Thinking through these 5 properties before designing a time series chart avoids common pitfalls:"
+  },
+  {
+    "idx": 11,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"GZ3qveQVijDtuWPZmAFFFE\">有序性</strong>缺失 → 散点图错位成噪声",
+    "zh_clean": "<strong>有序性</strong>缺失 → 散点图错位成噪声",
+    "en": "Missing <strong>order</strong> → scatter plot misaligned into noise"
+  },
+  {
+    "idx": 12,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"p67pU8HAqOnNvRP18MUegp\">连续性</strong>混淆 → 离散数据用错连线",
+    "zh_clean": "<strong>连续性</strong>混淆 → 离散数据用错连线",
+    "en": "Confused <strong>continuity</strong> → discrete data wrongly connected"
+  },
+  {
+    "idx": 13,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"4IvwpRT3v0zZzvLXJJMVCQ\">周期性</strong>忽略 → 季节趋势被\"抹平\"",
+    "zh_clean": "<strong>周期性</strong>忽略 → 季节趋势被\"抹平\"",
+    "en": "Ignored <strong>periodicity</strong> → seasonal trends “flattened out”"
+  },
+  {
+    "idx": 14,
+    "chapter": "ch-5-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"aj1WJ3LxWQ3mngEFyFAkAc\">结构性</strong>不匹配 → 工作日/周末、闰年都出错",
+    "zh_clean": "<strong>结构性</strong>不匹配 → 工作日/周末、闰年都出错",
+    "en": "Mismatched <strong>structure</strong> → weekdays/weekends, leap years all go wrong"
+  },
+  {
+    "idx": 15,
+    "chapter": "ch-5-1",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "⭐ Key Code"
+  },
+  {
+    "idx": 16,
+    "chapter": "ch-5-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"2wkPi32ymgmKON5DnZaFGH\">关键点 1：5 个属性以对象数组组织</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：5 个属性以对象数组组织</strong>",
+    "en": "⭐ <strong>Key Point 1: the 5 properties are organized as an array of objects</strong>"
+  },
+  {
+    "idx": 17,
+    "chapter": "ch-5-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ 对象数组 = 一份数据 + 多处使用。卡片渲染、详细解释、筛选过滤都从同一数据源派生，避免改一处漏一处。",
+    "zh_clean": "⭐ 对象数组 = 一份数据 + 多处使用。卡片渲染、详细解释、筛选过滤都从同一数据源派生，避免改一处漏一处。",
+    "en": "⭐ Array of objects = one data source, many uses. Card rendering, detailed explanations, and filtering all derive from the same source—so you never miss a spot when editing."
+  },
+  {
+    "idx": 18,
+    "chapter": "ch-5-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"UJG8jWBBGNOUZhrtNpsUkz\">关键点 2：d3.timeDay.range 生成等间距日序列</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：d3.timeDay.range 生成等间距日序列</strong>",
+    "en": "⭐ <strong>Key Point 2: d3.timeDay.range generates an equally-spaced day sequence</strong>"
+  },
+  {
+    "idx": 19,
+    "chapter": "ch-5-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <code data-page-node-id=\"FIIJypGXJeVkzHiUqh56ym\">d3.timeDay</code> 是 d3-time 模块的核心：<code data-page-node-id=\"oaNB3it3K1UDVdTGEiL5RV\">range(start, stop)</code> 返回两个时刻之间所有\"日\"的离散数组，<code data-page-node-id=\"RCKE5c2fTfgKMudW21k06O\">offset(date, n)</code> 加减 n 天。<strong data-page-node-id=\"tr7mrrVqwhsYkD01Ef9mOq\">结构性（structural）就靠这种\"时间尺度\"操作实现</strong>。",
+    "zh_clean": "⭐ <code>d3.timeDay</code> 是 d3-time 模块的核心：<code>range(start, stop)</code> 返回两个时刻之间所有\"日\"的离散数组，<code>offset(date, n)</code> 加减 n 天。<strong>结构性（structural）就靠这种\"时间尺度\"操作实现</strong>。",
+    "en": "⭐ <code>d3.timeDay</code> is the core of the d3-time module: <code>range(start, stop)</code> returns a discrete array of every “day” between two moments; <code>offset(date, n)</code> adds or subtracts n days. <strong>Structure (structural) is achieved through this kind of “time-scale” operation</strong>."
+  },
+  {
+    "idx": 20,
+    "chapter": "ch-5-2",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "x 轴 = 时间，y 轴 = 度量。最常见的时序图：法国人名 1900-2020 的使用频率。",
+    "zh_clean": "x 轴 = 时间，y 轴 = 度量。最常见的时序图：法国人名 1900-2020 的使用频率。",
+    "en": "x-axis = time, y-axis = measure. The most common time series chart: frequency of French names from 1900–2020."
+  },
+  {
+    "idx": 21,
+    "chapter": "ch-5-2",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 22,
+    "chapter": "ch-5-2",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 6.2.1 节用折线图展示法国几十年人名（Marie / Jean / Camille）的使用频率变化。<br data-page-node-id=\"kPpP43a37jJQxBPZpEfes9\">\n            原始页面附带\"词云 + 鼠标高亮 + 时间段筛选\"，但代码只给了关键折线段。",
+    "zh_clean": "原 6.2.1 节用折线图展示法国几十年人名（Marie / Jean / Camille）的使用频率变化。<br>\n            原始页面附带\"词云 + 鼠标高亮 + 时间段筛选\"，但代码只给了关键折线段。",
+    "en": "Original section 6.2.1 used line charts to show usage-frequency changes of French names (Marie / Jean / Camille) over decades.<br>The original page bundled “word cloud + hover highlight + time-range filter,” but the code only included the key line segments."
+  },
+  {
+    "idx": 23,
+    "chapter": "ch-5-2",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedding Chen Wei's Textbook Theory"
+  },
+  {
+    "idx": 24,
+    "chapter": "ch-5-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"dL8HVld16b2WIumTftOGYc\">标准时序图本质</strong>：二维线图，x = 时间，y = 度量。优势是<strong data-page-node-id=\"kQvc4GQTCorPkcquFjtOkm\">在线性时间域</strong>中的变化趋势一目了然。",
+    "zh_clean": "<strong>标准时序图本质</strong>：二维线图，x = 时间，y = 度量。优势是<strong>在线性时间域</strong>中的变化趋势一目了然。",
+    "en": "<strong>Essence of the standard time series chart</strong>: a 2D line chart with x = time, y = measure. The advantage is that <strong>change trends in a linear time domain</strong> are immediately clear."
+  },
+  {
+    "idx": 25,
+    "chapter": "ch-5-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"6448TVww3Iul4TcSuYNiHt\">缺点</strong>：难以表达<strong data-page-node-id=\"nV2b0AQRYZt4c1XFtiJVRu\">周期性</strong>——所以才有了 5.3 日历图和 5.4 螺旋图。",
+    "zh_clean": "<strong>缺点</strong>：难以表达<strong>周期性</strong>——所以才有了 5.3 日历图和 5.4 螺旋图。",
+    "en": "<strong>Drawback</strong>: hard to express <strong>periodicity</strong>—hence section 5.3 calendar heatmap and section 5.4 spiral."
+  },
+  {
+    "idx": 26,
+    "chapter": "ch-5-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"RtshVGsMekS3fv4BUdAq1M\">交互</strong>：鼠标 hover 高亮、tip 显示、筛选时间段——是数据新闻标配。",
+    "zh_clean": "<strong>交互</strong>：鼠标 hover 高亮、tip 显示、筛选时间段——是数据新闻标配。",
+    "en": "<strong>Interaction</strong>: hover highlight, tooltip, time-range filtering—the data-journalism standard."
+  },
+  {
+    "idx": 27,
+    "chapter": "ch-5-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"D6zEUIgiLLJbEVp8OhJQRE\">实战选择</strong>：数据点数 ≤ 50 用 linear；点数 50-500 用 monotoneX / curveCatmullRom；点数 > 500 才考虑面积 / 箱形。",
+    "zh_clean": "<strong>实战选择</strong>：数据点数 ≤ 50 用 linear；点数 50-500 用 monotoneX / curveCatmullRom；点数 > 500 才考虑面积 / 箱形。",
+    "en": "<strong>Choosing in practice</strong>: ≤50 points use linear; 50–500 use monotoneX / curveCatmullRom; >500 consider area / box plot."
+  },
+  {
+    "idx": 28,
+    "chapter": "ch-5-2",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "⭐ Key Code"
+  },
+  {
+    "idx": 29,
+    "chapter": "ch-5-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"ZLWmv0rYm9Q8ch54lE9u2H\">关键点 1：d3.timeParse + d3.timeFormat 时间格式化</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：d3.timeParse + d3.timeFormat 时间格式化</strong>",
+    "en": "⭐ <strong>Key Point 1: d3.timeParse + d3.timeFormat for time formatting</strong>"
+  },
+  {
+    "idx": 30,
+    "chapter": "ch-5-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ d3-time 是 d3 的核心模块。d3.timeParse / timeFormat 处理<strong data-page-node-id=\"3EevGEjWBHv9U2GmVIHSkb\">任何时序数据必须先掌握</strong>——尤其 CSV 里年份是字符串\"2024\"而非 Date 对象。",
+    "zh_clean": "⭐ d3-time 是 d3 的核心模块。d3.timeParse / timeFormat 处理<strong>任何时序数据必须先掌握</strong>——尤其 CSV 里年份是字符串\"2024\"而非 Date 对象。",
+    "en": "⭐ d3-time is a core d3 module. d3.timeParse / timeFormat must be mastered first when handling <strong>any time series data</strong>—especially since CSV years are strings like “2024,” not Date objects."
+  },
+  {
+    "idx": 31,
+    "chapter": "ch-5-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"srL1GM5hUJY5KRinTlHCHT\">关键点 2：d3.scaleTime 时间轴</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：d3.scaleTime 时间轴</strong>",
+    "en": "⭐ <strong>Key Point 2: d3.scaleTime time axis</strong>"
+  },
+  {
+    "idx": 32,
+    "chapter": "ch-5-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <code data-page-node-id=\"Nb2grQUclLZZ9jfMjyI7NE\">scaleTime</code> 比 <code data-page-node-id=\"l4QohAAO2TptSRvSXCMLD1\">scaleLinear</code> 多两个能力：1) 自动按时间跨度选 tick 间隔（10 年 / 12 月 / 30 天）；2) 时区处理（实际项目记得设 <code data-page-node-id=\"6UJVbk88WWYtOVG0Iyh7vn\">utc()</code>）。",
+    "zh_clean": "⭐ <code>scaleTime</code> 比 <code>scaleLinear</code> 多两个能力：1) 自动按时间跨度选 tick 间隔（10 年 / 12 月 / 30 天）；2) 时区处理（实际项目记得设 <code>utc()</code>）。",
+    "en": "⭐ <code>scaleTime</code> has two extra capabilities over <code>scaleLinear</code>: 1) auto-pick tick intervals based on time span (10 years / 12 months / 30 days); 2) timezone handling (in real projects, remember to set <code>utc()</code>)."
+  },
+  {
+    "idx": 33,
+    "chapter": "ch-5-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"iCYx2h21chGWHZa7cNTKqt\">关键点 3：hover 高亮 + tip</strong>",
+    "zh_clean": "⭐ <strong>关键点 3：hover 高亮 + tip</strong>",
+    "en": "⭐ <strong>Key Point 3: hover highlight + tooltip</strong>"
+  },
+  {
+    "idx": 34,
+    "chapter": "ch-5-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ 通用 hover 模板：透明矩形 + focus g（line + circle + text）。d3.bisector 找最近点比手写循环快且准。",
+    "zh_clean": "⭐ 通用 hover 模板：透明矩形 + focus g（line + circle + text）。d3.bisector 找最近点比手写循环快且准。",
+    "en": "⭐ Generic hover template: transparent rect + focus g (line + circle + text). d3.bisector finds the nearest point faster and more accurately than a hand-written loop."
+  },
+  {
+    "idx": 35,
+    "chapter": "ch-5-3",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "以\"年=行 / 周=列\"展示全年数据，发现周期性 + 周内趋势 + 节假日异常。",
+    "zh_clean": "以\"年=行 / 周=列\"展示全年数据，发现周期性 + 周内趋势 + 节假日异常。",
+    "en": "Display a full year of data with “year = row / week = column”—reveal periodicity + weekly trends + holiday anomalies."
+  },
+  {
+    "idx": 36,
+    "chapter": "ch-5-3",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 37,
+    "chapter": "ch-5-3",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 6.2.2 节用日历热图展示 2024 年北京每日最高温度。每月之间用红线分隔。",
+    "zh_clean": "原 6.2.2 节用日历热图展示 2024 年北京每日最高温度。每月之间用红线分隔。",
+    "en": "Original section 6.2.2 used a calendar heatmap to show Beijing’s daily maximum temperature in 2024. Red lines separate each month."
+  },
+  {
+    "idx": 38,
+    "chapter": "ch-5-3",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedding Chen Wei's Textbook Theory"
+  },
+  {
+    "idx": 39,
+    "chapter": "ch-5-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"NgJKuPzfaYxA4yGhcOUNt2\">日历热图 (Calendar Heatmap)</strong>：<strong data-page-node-id=\"1YessGXS6BG2HsL6xm9NIy\">van Wijk 2008</strong> 提出，x = 周（年内的第几周），y = 星期几，颜色 = 数值。",
+    "zh_clean": "<strong>日历热图 (Calendar Heatmap)</strong>：<strong>van Wijk 2008</strong> 提出，x = 周（年内的第几周），y = 星期几，颜色 = 数值。",
+    "en": "<strong>Calendar Heatmap</strong>: proposed by <strong>van Wijk 2008</strong>, x = week (week-of-year), y = day of week, color = value."
+  },
+  {
+    "idx": 40,
+    "chapter": "ch-5-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"2uRFBqbgbn0K29W4pP8KLL\">适用场景</strong>：长时序（年）+ 周期性（星期 / 月）+ 异常检测（节假日、工作日 vs 周末）。",
+    "zh_clean": "<strong>适用场景</strong>：长时序（年）+ 周期性（星期 / 月）+ 异常检测（节假日、工作日 vs 周末）。",
+    "en": "<strong>Use cases</strong>: long time series (years) + periodicity (weekday / month) + anomaly detection (holidays, weekday vs weekend)."
+  },
+  {
+    "idx": 41,
+    "chapter": "ch-5-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"yXDfSalajNLUXeg9Q3VnrN\">设计要点</strong>：\n                <ul data-page-node-id=\"I4GHP36lvqwXwaRnfZyKea\">\n                  <li data-page-node-id=\"L5yY8inBISiBJtLwvxuVb6\">每周从周日（或周一）开始——影响\"周末\"在视觉上的位置</li>\n                  <li data-page-node-id=\"hRmeI7j3SMAbeBEPqsPaKZ\">月份之间用红线分隔——比 7×53 网格更易读</li>\n                  <li data-page-node-id=\"mVy1Yff5W6w8PWtEURCm64\">colormap 用顺序型（如 Viridis）——见 <a href=\"../lesson-03/#ch-3-2\" data-page-node-id=\"jGTVA3PsV5Y6gp8GPQEe7m\">第 3 章 3.2 colormap</a></li>\n                </ul>\n              ",
+    "zh_clean": "<strong>设计要点</strong>：\n                <ul>\n                  <li>每周从周日（或周一）开始——影响\"周末\"在视觉上的位置</li>\n                  <li>月份之间用红线分隔——比 7×53 网格更易读</li>\n                  <li>colormap 用顺序型（如 Viridis）——见 <a href=\"../lesson-03/#ch-3-2\">第 3 章 3.2 colormap</a></li>\n                </ul>\n              ",
+    "en": ""
+  },
+  {
+    "idx": 42,
+    "chapter": "ch-5-3",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "isMonthDivider 的巧妙之处",
+    "zh_clean": "isMonthDivider 的巧妙之处",
+    "en": "The cleverness of isMonthDivider"
+  },
+  {
+    "idx": 43,
+    "chapter": "ch-5-3",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "判断 7 天前与今天是否同月——是则同月分割线，否则需要画月线。这是日历可视化的核心算法。",
+    "zh_clean": "判断 7 天前与今天是否同月——是则同月分割线，否则需要画月线。这是日历可视化的核心算法。",
+    "en": "Check whether 7 days ago and today are in the same month—if so, draw a same-month separator; otherwise draw a month-divider. This is the core algorithm of calendar visualization."
+  },
+  {
+    "idx": 44,
+    "chapter": "ch-5-3",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "⭐ Key Code"
+  },
+  {
+    "idx": 45,
+    "chapter": "ch-5-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"jtGrDGJnHGtVqACRBqTKvy\">关键点 1：d3.timeDay.range + d3.timeFormat.isoDate</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：d3.timeDay.range + d3.timeFormat.isoDate</strong>",
+    "en": "⭐ <strong>Key Point 1: d3.timeDay.range + d3.timeFormat.isoDate</strong>"
+  },
+  {
+    "idx": 46,
+    "chapter": "ch-5-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <code data-page-node-id=\"Xc3B3LWEJaDRZqQHDe7KA3\">d3.timeDay.range(start, stop)</code> 是\"日内连续性 + 结构性\"两个属性的合击——自动按日粒度切分整年，<strong data-page-node-id=\"Ej1AcqD4NgSww3hmxsKcMp\">闰年 366 / 平年 365 自动正确</strong>。",
+    "zh_clean": "⭐ <code>d3.timeDay.range(start, stop)</code> 是\"日内连续性 + 结构性\"两个属性的合击——自动按日粒度切分整年，<strong>闰年 366 / 平年 365 自动正确</strong>。",
+    "en": "⭐ <code>d3.timeDay.range(start, stop)</code> combines “intra-day continuity + structure”—it automatically slices a whole year by day, with <strong>leap-year 366 / common-year 365 handled correctly</strong>."
+  },
+  {
+    "idx": 47,
+    "chapter": "ch-5-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"NaZlBUi7OyRAVApIpLTFX8\">关键点 2：周日为起点布局</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：周日为起点布局</strong>",
+    "en": "⭐ <strong>Key Point 2: Sunday-first layout</strong>"
+  },
+  {
+    "idx": 48,
+    "chapter": "ch-5-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <strong data-page-node-id=\"ynU6hID2frUbII1me0swRI\">周日 vs 周一布局</strong>是日历热图的设计分歧：周日为起点是<strong data-page-node-id=\"D9osVA254RbNO6VZWuNMsn\">英文日历传统</strong>（2024-01-01 是周一，所在列第 1 行往下是 周一→周六，最末行是周日）。中文场景常改成周一起点。",
+    "zh_clean": "⭐ <strong>周日 vs 周一布局</strong>是日历热图的设计分歧：周日为起点是<strong>英文日历传统</strong>（2024-01-01 是周一，所在列第 1 行往下是 周一→周六，最末行是周日）。中文场景常改成周一起点。",
+    "en": "⭐ <strong>Sunday vs Monday layout</strong> is a calendar heatmap design fork: Sunday-first is the <strong>English calendar convention</strong> (2024-01-01 is Monday, so in its column row 1 is Mon→Sat and the last row is Sun). Chinese settings often switch to Monday-first."
+  },
+  {
+    "idx": 49,
+    "chapter": "ch-5-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"OchPrUY1xmYUc3X2vdSza0\">关键点 3：isMonthDivider 月份分隔</strong>",
+    "zh_clean": "⭐ <strong>关键点 3：isMonthDivider 月份分隔</strong>",
+    "en": "⭐ <strong>Key Point 3: isMonthDivider month separation</strong>"
+  },
+  {
+    "idx": 50,
+    "chapter": "ch-5-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ 不用循环\"找每个月的第一天\"，改用\"7 天前是否同月\"——简洁又正确，<strong data-page-node-id=\"Pzw1ncCpnYLXezclxFFSIX\">O(n) 一遍扫描即可</strong>。这是日历热图作者 van Wijk 的精妙算法。",
+    "zh_clean": "⭐ 不用循环\"找每个月的第一天\"，改用\"7 天前是否同月\"——简洁又正确，<strong>O(n) 一遍扫描即可</strong>。这是日历热图作者 van Wijk 的精妙算法。",
+    "en": "⭐ Instead of looping to “find each month’s first day,” use “are 7 days ago and today in the same month?”—simple and correct, just an <strong>O(n) single-pass scan</strong>. This is the elegant algorithm from calendar heatmap author van Wijk."
+  },
+  {
+    "idx": 51,
+    "chapter": "ch-5-4",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "将时间沿圆周排列（螺旋 = 圆 + 持续展开）。发现周期性：每个回路 = 一个周期。",
+    "zh_clean": "将时间沿圆周排列（螺旋 = 圆 + 持续展开）。发现周期性：每个回路 = 一个周期。",
+    "en": "Place time along a circle (spiral = circle + continuous unwinding). Reveal periodicity: each loop = one cycle."
+  },
+  {
+    "idx": 52,
+    "chapter": "ch-5-4",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 53,
+    "chapter": "ch-5-4",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 6.2.3 节用阿基米德螺旋（等速螺旋）布局日期，每个回路代表 1 年 / 1 月 / 1 周。每个日期对应螺旋上的一个扇环。",
+    "zh_clean": "原 6.2.3 节用阿基米德螺旋（等速螺旋）布局日期，每个回路代表 1 年 / 1 月 / 1 周。每个日期对应螺旋上的一个扇环。",
+    "en": "Original section 6.2.3 used an Archimedean spiral (uniform-velocity spiral) to lay out dates, with each loop representing 1 year / 1 month / 1 week. Each date corresponds to a sector ring on the spiral."
+  },
+  {
+    "idx": 54,
+    "chapter": "ch-5-4",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedding Chen Wei's Textbook Theory"
+  },
+  {
+    "idx": 55,
+    "chapter": "ch-5-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"q3C7NpeO1ZoYx20vxFUS7S\">螺旋 vs 折线</strong>：折线在线性时间域表现\"趋势\"，但难以表现\"周期\"；螺旋沿圆周重复，能突出周期性。",
+    "zh_clean": "<strong>螺旋 vs 折线</strong>：折线在线性时间域表现\"趋势\"，但难以表现\"周期\"；螺旋沿圆周重复，能突出周期性。",
+    "en": "<strong>Spiral vs line</strong>: a line captures “trend” in a linear time domain but struggles with “cycle”; a spiral repeats around the circle, highlighting periodicity."
+  },
+  {
+    "idx": 56,
+    "chapter": "ch-5-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"zaWZmd9HXpL0xbwUA6dWEG\">阿基米德螺旋 (Archimedean Spiral)</strong>：<code data-page-node-id=\"k3U5Q56vqL2ACXJCJMFa8D\">r = a + bθ</code>，<strong data-page-node-id=\"jFlFXJ1lsoiPdul6rK4j6O\">等速展开</strong>（每转一圈半径增加常量 b）。",
+    "zh_clean": "<strong>阿基米德螺旋 (Archimedean Spiral)</strong>：<code>r = a + bθ</code>，<strong>等速展开</strong>（每转一圈半径增加常量 b）。",
+    "en": "<strong>Archimedean Spiral</strong>: <code>r = a + bθ</code>, with <strong>uniform unwinding</strong> (radius increases by a constant b per revolution)."
+  },
+  {
+    "idx": 57,
+    "chapter": "ch-5-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"2wnGXZHVfFDq3uh0FZz3SQ\">动态 Δθ 算法</strong>：原文档的精妙点——<code data-page-node-id=\"m0X61Razzk9qlLjVYB1mmh\">Δθ = boxSize / √(b² + r²)</code>，<strong data-page-node-id=\"5g4FHCM7lfvQAdGNmqs1tg\">让每个扇环的弧长近似相等</strong>，保持视觉一致性。",
+    "zh_clean": "<strong>动态 Δθ 算法</strong>：原文档的精妙点——<code>Δθ = boxSize / √(b² + r²)</code>，<strong>让每个扇环的弧长近似相等</strong>，保持视觉一致性。",
+    "en": "<strong>Dynamic Δθ algorithm</strong>: the original document’s elegant move—<code>Δθ = boxSize / √(b² + r²)</code>, which <strong>keeps each sector ring’s arc length roughly equal</strong>, preserving visual consistency."
+  },
+  {
+    "idx": 58,
+    "chapter": "ch-5-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"57GkffgApAdIr4lq4vkHIJ\">实战取舍</strong>：螺旋适合\"年/季节/周\"的循环，<strong data-page-node-id=\"6CJJCQzaya6mS2GfHi224d\">不适合\"无周期\"或\"周期太长\"</strong>。",
+    "zh_clean": "<strong>实战取舍</strong>：螺旋适合\"年/季节/周\"的循环，<strong>不适合\"无周期\"或\"周期太长\"</strong>。",
+    "en": "<strong>Practical trade-offs</strong>: spirals suit “year / season / week” cycles, but are <strong>unsuitable when there is “no cycle” or “the cycle is too long”</strong>."
+  },
+  {
+    "idx": 59,
+    "chapter": "ch-5-4",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "关键路径生成",
+    "zh_clean": "关键路径生成",
+    "en": "Key Path Generation"
+  },
+  {
+    "idx": 60,
+    "chapter": "ch-5-4",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "每个日期对应螺旋上的一个扇环——4 个关键点：起点外/终点外/终点内/起点内，闭合回起点。",
+    "zh_clean": "每个日期对应螺旋上的一个扇环——4 个关键点：起点外/终点外/终点内/起点内，闭合回起点。",
+    "en": "Each date maps to a sector ring on the spiral—4 key points: outer start / outer end / inner end / inner start, closing back to the start."
+  },
+  {
+    "idx": 61,
+    "chapter": "ch-5-4",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "⭐ Key Code"
+  },
+  {
+    "idx": 62,
+    "chapter": "ch-5-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"33Ewu1PmzbEq04bn6L3KBO\">关键点 1：极坐标 → 笛卡尔坐标</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：极坐标 → 笛卡尔坐标</strong>",
+    "en": "⭐ <strong>Key Point 1: polar → Cartesian coordinates</strong>"
+  },
+  {
+    "idx": 63,
+    "chapter": "ch-5-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ 极坐标 = (r, θ)，笛卡尔 = (x, y)，<strong data-page-node-id=\"jkJFDLpCcssjzZ0E2BMNL0\">θ 每增 2π，r 增 b</strong>——这就形成\"每转一圈外扩一格\"的螺旋。如果 b=0，就是普通圆周。",
+    "zh_clean": "⭐ 极坐标 = (r, θ)，笛卡尔 = (x, y)，<strong>θ 每增 2π，r 增 b</strong>——这就形成\"每转一圈外扩一格\"的螺旋。如果 b=0，就是普通圆周。",
+    "en": "⭐ Polar = (r, θ), Cartesian = (x, y); <strong>θ grows by 2π, r grows by b</strong>—this produces a “one ring out per loop” spiral. If b=0, it becomes an ordinary circle."
+  },
+  {
+    "idx": 64,
+    "chapter": "ch-5-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"WoEYykmS28hxjd8wQfAQ3L\">关键点 2：动态角度增量</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：动态角度增量</strong>",
+    "en": "⭐ <strong>Key Point 2: dynamic angle increment</strong>"
+  },
+  {
+    "idx": 65,
+    "chapter": "ch-5-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ 这条公式是原文档的核心洞察：<strong data-page-node-id=\"hGsxm550yhfGoiEQr45eft\">当半径增大时，相同角度对应的弧长会变长</strong>，所以要让 Δθ 随半径增大而减小——这样\"每个扇环的弧长\"近似相等，视觉上整齐一致。",
+    "zh_clean": "⭐ 这条公式是原文档的核心洞察：<strong>当半径增大时，相同角度对应的弧长会变长</strong>，所以要让 Δθ 随半径增大而减小——这样\"每个扇环的弧长\"近似相等，视觉上整齐一致。",
+    "en": "⭐ This formula is the original document’s core insight: <strong>as the radius grows, the same angle spans a longer arc</strong>, so Δθ must shrink as r grows—keeping each sector ring’s arc length roughly equal and visually uniform."
+  },
+  {
+    "idx": 66,
+    "chapter": "ch-5-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"Mjlf9MXqR3uEFt7GBGB0Mi\">关键点 3：扇环路径生成</strong>",
+    "zh_clean": "⭐ <strong>关键点 3：扇环路径生成</strong>",
+    "en": "⭐ <strong>Key Point 3: sector-ring path generation</strong>"
+  },
+  {
+    "idx": 67,
+    "chapter": "ch-5-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ SVG path 极简：<code data-page-node-id=\"2QAyhUVbfIPsv9oK8uBgQK\">M</code> 移动、<code data-page-node-id=\"rNn6n3ZI2b06KPj5rvcSX0\">L</code> 画线、<code data-page-node-id=\"gR0t2Zq2O05IT9zbGolLiF\">Z</code> 闭合。手算 4 顶点比用 d3.arc() 灵活（d3.arc 是从圆弧角度算的，对螺旋无法直接用）。",
+    "zh_clean": "⭐ SVG path 极简：<code>M</code> 移动、<code>L</code> 画线、<code>Z</code> 闭合。手算 4 顶点比用 d3.arc() 灵活（d3.arc 是从圆弧角度算的，对螺旋无法直接用）。",
+    "en": "⭐ SVG path in essence: <code>M</code> move, <code>L</code> line, <code>Z</code> close. Computing the 4 vertices by hand is more flexible than d3.arc() (which is built for circular arcs and cannot directly handle a spiral)."
+  },
+  {
+    "idx": 68,
+    "chapter": "ch-5-5",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "多角色叙事：每条线 = 一个角色 / 组织 / 进程，y 轴位置 = 聚散关系，时间 = 故事进展。",
+    "zh_clean": "多角色叙事：每条线 = 一个角色 / 组织 / 进程，y 轴位置 = 聚散关系，时间 = 故事进展。",
+    "en": "Multi-character narrative: each line = one character / organization / process, y-position = togetherness vs apartness, time = story progress."
+  },
+  {
+    "idx": 69,
+    "chapter": "ch-5-5",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 70,
+    "chapter": "ch-5-5",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 6.2.4 节用《侏罗纪公园》5 个角色（Alan / T-REX / Raptors / Malcolm / Dilophosaurus）做 Storyline 时间线。事件层用红色半透明圆圈标注关键冲突。",
+    "zh_clean": "原 6.2.4 节用《侏罗纪公园》5 个角色（Alan / T-REX / Raptors / Malcolm / Dilophosaurus）做 Storyline 时间线。事件层用红色半透明圆圈标注关键冲突。",
+    "en": "Original section 6.2.4 used five characters from <em>Jurassic Park</em> (Alan / T-REX / Raptors / Malcolm / Dilophosaurus) to build a Storyline timeline. The event layer marks key conflicts with semi-transparent red circles."
+  },
+  {
+    "idx": 71,
+    "chapter": "ch-5-5",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedding Chen Wei's Textbook Theory"
+  },
+  {
+    "idx": 72,
+    "chapter": "ch-5-5",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"WCv8IMaCZJOutIeX4e2FcP\">Storyline 起源</strong>：2008 年斯坦福大学 Ogawa & Ma 提出，原本用于电影/学术合作者关系网。",
+    "zh_clean": "<strong>Storyline 起源</strong>：2008 年斯坦福大学 Ogawa & Ma 提出，原本用于电影/学术合作者关系网。",
+    "en": "<strong>Storyline origin</strong>: introduced by Ogawa & Ma at Stanford in 2008, originally for movie / academic collaborator networks."
+  },
+  {
+    "idx": 73,
+    "chapter": "ch-5-5",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"KZ0HTjqIkjHdbGaBqZEsWC\">核心</strong>：把每个角色/组织/进程抽象为\"生命线\"，<strong data-page-node-id=\"BP4aPjGfeQ85E04vqqeiJ0\">线靠近 = 角色相遇 / 冲突，线分开 = 角色分离</strong>。",
+    "zh_clean": "<strong>核心</strong>：把每个角色/组织/进程抽象为\"生命线\"，<strong>线靠近 = 角色相遇 / 冲突，线分开 = 角色分离</strong>。",
+    "en": "<strong>Core idea</strong>: abstract each character / organization / process as a “life line,” where <strong>lines close = meeting / conflict, lines apart = separation</strong>."
+  },
+  {
+    "idx": 74,
+    "chapter": "ch-5-5",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"YUi1sJnGp9QrKaRD5cVlHl\">3 大元素</strong>：\n                <ol data-page-node-id=\"VPy2aO8Mlbr8XMZaQpunp7\">\n                  <li data-page-node-id=\"XYGJcGcfE8oxY16dcDwI52\"><strong data-page-node-id=\"AVKsEmjFJk2n3UZavFUsc5\">时间尺度映射</strong>：电影时长 → SVG 宽度，x 轴严格按比例对齐</li>\n                  <li data-page-node-id=\"KegGgUBqKHRKRbAwNb1OQw\"><strong data-page-node-id=\"gLp9yXUSWQ9eH8KzsWiLrZ\">Catmull-Rom 样条</strong>：<code data-page-node-id=\"sIQ7U1U94ALgDuA7zLUm1G\">curveCatmullRom.alpha(0.5)</code> 张力系数 0.5，\"自然流动\"但不\"过度弯曲\"</li>\n                  <li data-page-node-id=\"aGHTaB35SbPQNe9lR4xU0c\"><strong data-page-node-id=\"hQB5PU2OsFO1OytsCJQ48J\">事件层</strong>：半透明红圈 + 文字，标注关键转折点</li>\n                </ol>\n              ",
+    "zh_clean": "<strong>3 大元素</strong>：\n                <ol>\n                  <li><strong>时间尺度映射</strong>：电影时长 → SVG 宽度，x 轴严格按比例对齐</li>\n                  <li><strong>Catmull-Rom 样条</strong>：<code>curveCatmullRom.alpha(0.5)</code> 张力系数 0.5，\"自然流动\"但不\"过度弯曲\"</li>\n                  <li><strong>事件层</strong>：半透明红圈 + 文字，标注关键转折点</li>\n                </ol>\n              ",
+    "en": ""
+  },
+  {
+    "idx": 75,
+    "chapter": "ch-5-5",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"CaMEREhCwWb8voJdo25GHi\">应用场景</strong>：电影分析、案件多人时间线、体育比赛互动、项目任务交接。",
+    "zh_clean": "<strong>应用场景</strong>：电影分析、案件多人时间线、体育比赛互动、项目任务交接。",
+    "en": "<strong>Use cases</strong>: film analysis, multi-party case timelines, sports interactions, project task handovers."
+  },
+  {
+    "idx": 76,
+    "chapter": "ch-5-5",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "为什么 Catmull-Rom 不用 monotoneX？",
+    "zh_clean": "为什么 Catmull-Rom 不用 monotoneX？",
+    "en": "Why Catmull-Rom instead of monotoneX?"
+  },
+  {
+    "idx": 77,
+    "chapter": "ch-5-5",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "monotoneX 保证\"不过度弯曲\"但会让线\"过于直\"，<strong data-page-node-id=\"1wVn5yuev64CuJjsxf8i0p\">失去叙事的\"河流感\"</strong>。Catmull-Rom 张力系数 0.5 是经验值——既能流动又不震荡。",
+    "zh_clean": "monotoneX 保证\"不过度弯曲\"但会让线\"过于直\"，<strong>失去叙事的\"河流感\"</strong>。Catmull-Rom 张力系数 0.5 是经验值——既能流动又不震荡。",
+    "en": "monotoneX guarantees “no over-curving” but makes lines “too straight,” <strong>losing the narrative “river feel”</strong>. Catmull-Rom’s 0.5 tension is an empirical value—flows well without oscillating."
+  },
+  {
+    "idx": 78,
+    "chapter": "ch-5-5",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "⭐ Key Code"
+  },
+  {
+    "idx": 79,
+    "chapter": "ch-5-5",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"AlQA79PJtAE1UZ3XcMLqD8\">关键点 1：每个角色 = 一条 path</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：每个角色 = 一条 path</strong>",
+    "en": "⭐ <strong>Key Point 1: each character = one path</strong>"
+  },
+  {
+    "idx": 80,
+    "chapter": "ch-5-5",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <strong data-page-node-id=\"HidolmwnsmuHwLUINTMX2L\">用 y 值表达\"关系\"</strong>是关键：T-REX 和 Grant 在 t=78 都画到 y=130，<strong data-page-node-id=\"kltVaK5Qwd2cT9YTSjpTxx\">视觉上两条线聚拢</strong>= \"T-REX 攻击 Grant\"。这不是算法生成，是<strong data-page-node-id=\"0qg0QqkZdD9LrSjhu0edDd\">手工叙事设计</strong>——但 d3 提供工具让你能这样手工做。",
+    "zh_clean": "⭐ <strong>用 y 值表达\"关系\"</strong>是关键：T-REX 和 Grant 在 t=78 都画到 y=130，<strong>视觉上两条线聚拢</strong>= \"T-REX 攻击 Grant\"。这不是算法生成，是<strong>手工叙事设计</strong>——但 d3 提供工具让你能这样手工做。",
+    "en": "⭐ <strong>Using y to encode “relationships”</strong> is the key: T-REX and Grant both at y=130 at t=78, so <strong>the two lines visually converge</strong> = “T-REX attacks Grant.” This isn’t algorithmically generated—it’s <strong>manual narrative design</strong>, but d3 gives you the tools to do it by hand."
+  },
+  {
+    "idx": 81,
+    "chapter": "ch-5-5",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"Lo87C4D9gjkyVPInn1PfD9\">关键点 2：事件层（叙事锚点）</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：事件层（叙事锚点）</strong>",
+    "en": "⭐ <strong>Key Point 2: event layer (narrative anchors)</strong>"
+  },
+  {
+    "idx": 82,
+    "chapter": "ch-5-5",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <strong data-page-node-id=\"RBCkMyacqJh8uD51pTbD6W\">事件层与线层解耦</strong>：线层表达\"关系流动\"，事件层表达\"叙事锚点\"。这种<strong data-page-node-id=\"rVqGSQrqGdU49xEoLOURbM\">双层结构</strong>是 Storyline 的标准设计——可分别动画、可独立筛选。",
+    "zh_clean": "⭐ <strong>事件层与线层解耦</strong>：线层表达\"关系流动\"，事件层表达\"叙事锚点\"。这种<strong>双层结构</strong>是 Storyline 的标准设计——可分别动画、可独立筛选。",
+    "en": "⭐ <strong>Decouple event layer from line layer</strong>: the line layer expresses “relationship flow,” the event layer expresses “narrative anchors.” This <strong>two-layer structure</strong> is the standard Storyline design—each can be animated or filtered independently."
+  },
+  {
+    "idx": 83,
+    "chapter": "ch-5-5",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"WvuMgWwH10h2lEECVt8D1Q\">关键点 3：alpha(0.5) 张力系数</strong>",
+    "zh_clean": "⭐ <strong>关键点 3：alpha(0.5) 张力系数</strong>",
+    "en": "⭐ <strong>Key Point 3: alpha(0.5) tension coefficient</strong>"
+  },
+  {
+    "idx": 84,
+    "chapter": "ch-5-5",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ 选 0.5 是经验值：比 0 更\"软\"（看起来有故事感），比 1.0 更\"稳\"（不会过山车）。做时间叙事就用 0.5；做科学曲线拟合就用 0.2-0.3（更接近数据）。",
+    "zh_clean": "⭐ 选 0.5 是经验值：比 0 更\"软\"（看起来有故事感），比 1.0 更\"稳\"（不会过山车）。做时间叙事就用 0.5；做科学曲线拟合就用 0.2-0.3（更接近数据）。",
+    "en": "⭐ 0.5 is an empirical value: softer than 0 (looks narrative), steadier than 1.0 (no roller-coaster). Use 0.5 for time-based narratives; use 0.2–0.3 for scientific curve fitting (closer to data)."
+  },
+  {
+    "idx": 85,
+    "chapter": "ch-5-5",
+    "tab": "demo",
+    "tag": "p",
+    "class": "",
+    "zh": "Doc-05 集成教学页面 · 零依赖 · D3.js v7 + 原生 JS · 可独立运行 · 含 5 章节（时间属性 / 标准时序图 / 日历热图 / 螺旋 / Storyline）",
+    "zh_clean": "Doc-05 集成教学页面 · 零依赖 · D3.js v7 + 原生 JS · 可独立运行 · 含 5 章节（时间属性 / 标准时序图 / 日历热图 / 螺旋 / Storyline）",
+    "en": "Doc-05 integrated teaching page · zero dependencies · D3.js v7 + vanilla JS · standalone runnable · 5 chapters (Time Properties / Standard Time Series Chart / Calendar Heatmap / Spiral / Storyline)"
+  }
+]

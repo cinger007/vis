@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D3.js 等值线图</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        #contour-map {
+            margin-top: 20px;
+        }
+
+        .contour {
+            fill: none;
+            stroke: #ff0000;
+            stroke-width: 1.5px;
+        }
+
+        .heatmap-cell {
+            stroke: white;
+            stroke-width: 0.3px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>10×10 数据等值线可视化</h1>
+    <div id="contour-map"></div>
+
+    <script>
+        async function main() {
+            try {
+                // 修正1：使用正确的参数顺序和格式
+                const csvText = await d3.text("data/terrain10.csv");
+                const data = d3.csvParseRows(csvText, function (row) {
+                    // 对每一行进行处理，将字符串转换为数值
+                    return row.map(function (column) {
+                        return isNaN(column) ? column : +column;
+                    })
+                }); // 直接返回原始行
+                console.log("加载成功:", data);
+                renderHeatmap(data,"#contour-map");
+            } catch (error) {
+                console.error("加载CSV文件失败:", error);
+            }
+        }
+        main();
+
+        function renderHeatmap(gridData,chartid) {
+            // 1. 检查数据范围（调试用）
+            const minValue = d3.min(gridData, row => d3.min(row));
+            const maxValue = d3.max(gridData, row => d3.max(row));
+            console.log("Data range:", minValue, maxValue);
+
+            // 2. 设置画布
+            const width = 600, height = 600;
+            const margin = { top: 40, right: 40, bottom: 40, left: 40 };
+            const innerWidth = width - margin.left - margin.right;
+            const innerHeight = height - margin.top - margin.bottom;
+
+            const svg = d3.select(chartid)
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+            // 3. 颜色映射
+            const valueExtent = [minValue, maxValue];
+            const colorScale = d3.scaleSequential(d3.interpolateViridis)
+                .domain(valueExtent);
+
+            // 4. 使用 gridData (二维数组) 直接绘制热力图
+            const cellWidth = innerWidth / gridData[0].length; // 根据网格列数计算单元格宽度
+            const cellHeight = innerHeight / gridData.length; // 根据网格行数计算单元格高度
+
+            // 为每一行数据创建一个 <g> 分组，并设置垂直偏移（y值）
+            const row = svg.selectAll(".row")
+                .data(gridData) // 绑定二维数组，每个元素是一行数据
+                .enter().append("g")
+                .attr("class", "row")
+                .attr("transform", (d, i) => `translate(0, ${i * cellHeight})`); // 按行索引定位
+
+            // 在每个行分组中，为每个数据点（列）创建一个矩形
+            row.selectAll(".cell")
+                .data(d => d) // 绑定每一行内部的数据数组
+                .enter().append("rect")
+                .attr("class", "heatmap-cell")
+                .attr("x", (d, i) => i * cellWidth) // 按列索引定位
+                .attr("y", 0) // Y定位已由父级<g>的transform完成
+                .attr("width", cellWidth)
+                .attr("height", cellHeight)
+                .attr("fill", d => colorScale(d)); // d 直接是当前数据点的数值
+        }
+    </script>
+</body>
+
+</html>

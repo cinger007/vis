@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>性别数据对比</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 600px;
+        }
+        .chart-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .bars-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0; /* 紧邻排列 */
+            margin-bottom: 20px;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+        .legend-text {
+            font-size: 14px;
+            color: #555;
+        }
+        .value-label {
+            font-weight: bold;
+            font-size: 16px;
+            fill: white;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-title">性别分布统计</div>
+        <div class="bars-container">
+            <svg id="gender-chart" width="400" height="80"></svg>
+        </div>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #4e79a7;"></div>
+                <span class="legend-text">男性</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #e15759;"></div>
+                <span class="legend-text">女性</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 数据配置
+        const data = [
+            { value: 2025, color: "#4e79a7", label: "男性" },
+            { value: 1280, color: "#e15759", label: "女性" }
+        ];
+
+        // 图表尺寸
+        const svgWidth = 400;
+        const svgHeight = 80;
+        const barHeight = 50;
+        const spacing = 0; // 条形间距为0，实现紧邻效果
+
+        // 计算比例尺
+        const totalValue = data[0].value + data[1].value;
+        const scale = d3.scaleLinear()
+            .domain([0, totalValue])
+            .range([0, svgWidth]);
+
+        // 创建SVG
+        const svg = d3.select("#gender-chart")
+            .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
+
+        // 计算条形位置
+        let currentX = 0;
+
+        // 绘制条形
+        data.forEach((item, index) => {
+            const barWidth = scale(item.value);
+            
+            // 绘制矩形条
+            svg.append("rect")
+                .attr("x", currentX)
+                .attr("y", (svgHeight - barHeight) / 2)
+                .attr("width", barWidth)
+                .attr("height", barHeight)
+                .attr("fill", item.color)
+                .attr("rx", 4)
+                .attr("ry", 4);
+            
+            // 添加数值标签
+            svg.append("text")
+                .attr("class", "value-label")
+                .attr("x", currentX + barWidth / 2)
+                .attr("y", svgHeight / 2)
+                .text(item.value);
+            
+            currentX += barWidth + spacing;
+        });
+
+        // 添加总数显示
+        svg.append("text")
+            .attr("x", svgWidth / 2)
+            .attr("y", svgHeight - 5)
+            .attr("text-anchor", "middle")
+            .attr("font-size", "12px")
+            .attr("fill", "#666")
+            .text(`总计: ${totalValue.toLocaleString()}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="akRHuTODNhme8OOGMh7MIS">
+<head data-page-node-id="PL9V9nXCyEwC69DkzC8sIy">
+  <meta charset="UTF-8" data-page-node-id="zKgX9WDNmhZa3snoRP0HAQ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="Ons8EmpZSZjDrVmroNDdXK">
+  <title>补充 Demo 集合 · 可视化导论</title>
+  <link rel="stylesheet" href="../portal/styles.css" data-page-node-id="F4QPN8ksmZkfS3V2lViMb3">
+  <link rel="stylesheet" href="../i18n.css" />
+  <style>
+    body {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+      background: #f8fafc;
+      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    h1 {
+      font-size: 28px;
+      color: #1e1b4b;
+      margin: 0 0 8px;
+    }
+    .subtitle {
+      color: #64748b;
+      font-size: 14px;
+      margin: 0 0 32px;
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 6px 12px;
+      background: #eef2ff;
+      color: #4338ca;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .back:hover { background: #c7d2fe; }
+
+    .chapter {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+    .chapter h2 {
+      margin: 0 0 4px;
+      font-size: 18px;
+      color: #4338ca;
+    }
+    .chapter .hint {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+    .demos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .demo-card {
+      display: block;
+      padding: 12px 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #1e293b;
+      transition: all 0.15s;
+    }
+    .demo-card:hover {
+      background: #eef2ff;
+      border-color: #c7d2fe;
+      transform: translateY(-1px);
+    }
+    .demo-card .name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .demo-card .desc {
+      font-size: 12px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body data-page-node-id="PtBNH9KGizgFaAubm6EF8q">
+
+<a class="back" href="../" data-page-node-id="ODILnN4IZYCvuhS2wzrLGz" data-i18n="common.back">← 返回课程门户</a>
+<h1 data-page-node-id="czZPskvDyO4RluXiBNPc3d" data-i18n="supp.title">补充 Demo 集合</h1>
+<p class="subtitle" data-page-node-id="YbWFbDNqkZZKiUV58UIGym" data-i18n="supp.tagline">从 J:\教学\可视化导论新课件\ 导入 · 与课程章节配合的实战 demo</p>
+
+<!-- 第 1 章 数据 -->
+<div class="chapter" data-page-node-id="dzuvnOuqTaKgq2DFzMKcMG">
+  <h2 data-page-node-id="oxzr7z3szadMFUULb8OmRk" data-i18n="supp.ch1">第 1 章 · 数据</h2>
+  <p class="hint" data-page-node-id="vQbTuoVgrP8KSC49X9O4NU" data-i18n="supp.hint1">对应 doc-01：1.1 数据生成</p>
+  <div class="demos" data-page-node-id="BiHZ3GYMdgMuetwEP5xqEV">
+    <a class="demo-card" href="tableshow.html" target="_blank" data-page-node-id="DQ32YVMnokcPeCqp1cUEkL">
+      <div class="name" data-page-node-id="qRcWsDPU1lZn7XbbYYqDBL">tableshow.html</div>
+      <div class="desc" data-page-node-id="YCrK96iNb42CQUmIiID1zU">新生数据表格展示（d3.csv → renderTable）</div>
+    </a>
+    <a class="demo-card" href="newstudent.html" target="_blank" data-page-node-id="4rlI2nZmZIDvTjAyeHTr8X">
+      <div class="name" data-page-node-id="KZdEYreLdqs72PN9ork4bQ">newstudent.html</div>
+      <div class="desc" data-page-node-id="4bj1V2sSzyAFhABY9MxYo6">新生年龄分布饼图（d3.rollup 聚合 + d3.arc）</div>
+    </a>
+  </div>
+</div>
+
+<!-- 第 2 章 数据可视化流程 -->
+<div class="chapter" data-page-node-id="JxkK2sHKk0TvlfDVfgwsJK">
+  <h2 data-page-node-id="5ue1CjY1fzpwtnjk3SfcM7" data-i18n="supp.ch2">第 2 章 · 数据可视化流程</h2>
+  <p class="hint" data-page-node-id="n7IDjrLC9as15t5s09Ge2d" data-i18n="supp.hint2">对应 doc-02：4.4 树形列表</p>
+  <div class="demos" data-page-node-id="z049d7VBIUaKEGHEcCAsJR">
+    <a class="demo-card" href="treelist.html" target="_blank" data-page-node-id="HgIQnIMhYPNAQpUS7atlko">
+      <div class="name" data-page-node-id="RodfqHOtygDHKXQfJD1nDS">treelist.html</div>
+      <div class="desc" data-page-node-id="Zehir67GCTSiPXxptDPcyw">可展开/折叠的树形列表（d3-hierarchy + d3.select）</div>
+    </a>
+    <a class="demo-card" href="nssystem.html" target="_blank" data-page-node-id="GZCH63ajvmsifCIruEOww1">
+      <div class="name" data-page-node-id="7stedUYkg7irRUkaf2VcmD">nssystem.html</div>
+      <div class="desc" data-page-node-id="pWsiRWW0jRpn6jx4YL6pa6">新生数据管理系统（树 + 表格联动 + 搜索）</div>
+    </a>
+  </div>
+</div>
+
+<!-- 第 3 章 色彩专题 -->
+<div class="chapter" data-page-node-id="F1m0GU2BQhm44CDqNlOMyC">
+  <h2 data-page-node-id="6JbEqx93LH0LWbqyVEk9gD" data-i18n="supp.ch3">第 3 章 · 色彩专题</h2>
+  <p class="hint" data-page-node-id="hINIde6z2FUwQ1SpcjibMr" data-i18n="supp.hint3">对应 doc-03：3.4 5 大色系</p>
+  <div class="demos" data-page-node-id="8yvwHrM5C94uxuyzAticjC">
+    <a class="demo-card" href="sex_compare.html" target="_blank" data-page-node-id="Fxv82RDyMXvLFxvGL1XjAn">
+      <div class="name" data-page-node-id="gv4vktcJC6klqcQP8ZE0U8">sex_compare.html</div>
+      <div class="desc" data-page-node-id="8CHDsfwjff0BjH3v3PKKMx">性别数据对比条形图（双系列 + 颜色编码）</div>
+    </a>
+  </div>
+</div>
+
+<!-- 第 4 章 低维数据可视化 -->
+<div class="chapter" data-page-node-id="2WYtUncczVZMXcWa8q2ErS">
+  <h2 data-page-node-id="mG6kvKtSR1i0ZAisy6F9md" data-i18n="supp.ch4">第 4 章 · 低维数据可视化</h2>
+  <p class="hint" data-page-node-id="xRZ9Rk6AcZlGDo0NrYqSjY" data-i18n="supp.hint4">对应 doc-04：4.1 数据转换 / 4.3 曲线拟合 / 4.5 等值线</p>
+  <div class="demos" data-page-node-id="FSqJEFS8Wy6WE6v3i4LmxO">
+    <a class="demo-card" href="crime1985.html" target="_blank" data-page-node-id="njYgHbx3dmlAJFXoyepzXe">
+      <div class="name" data-page-node-id="GTbNMLAKoTQ3ZRaqxsAeF0">crime1985.html</div>
+      <div class="desc" data-page-node-id="GIFurzl2TcinuEfT0ixdaA">1985 美国犯罪数据性别差异（d3-regression 散点）</div>
+    </a>
+    <a class="demo-card" href="regression.html" target="_blank" data-page-node-id="E9TyRAFmcr377HbpRj8SgR">
+      <div class="name" data-page-node-id="LU8FOb4Sqp618XZy3H7Pvb">regression.html</div>
+      <div class="desc" data-page-node-id="bCFhixPyTKaQwxch3c7fVq">d3-regression 线性回归最小示例</div>
+    </a>
+    <a class="demo-card" href="colormap.html" target="_blank" data-page-node-id="xwFe5POxHCJoH40xuhRMbu">
+      <div class="name" data-page-node-id="SmgmhVOLON16qPbGYCZCHa">colormap.html</div>
+      <div class="desc" data-page-node-id="pV6gc6hstacAQjlHPN5E1E">10×10 terrain colormap 热力图（d3.interpolateViridis）</div>
+    </a>
+    <a class="demo-card" href="mark.html" target="_blank" data-page-node-id="EndoeFgUSH4v3tZyphXE4o">
+      <div class="name" data-page-node-id="7KZ2OOm8EmWctQNzGt8Pxd">mark.html</div>
+      <div class="desc" data-page-node-id="XvfZXuKJgAGNH1GABxkV3m">10×10 标记法（按数值大小画方块）</div>
+    </a>
+    <a class="demo-card" href="contour.html" target="_blank" data-page-node-id="1JQAKzcUtnYtuBJNNVsgrN">
+      <div class="name" data-page-node-id="MgcEMIVmTuQVVnQp5sID8x">contour.html</div>
+      <div class="desc" data-page-node-id="eMTf1oXC9IxDKm6GTXUFfd">移动四边形法等值线提取（自实现 Marching Squares）</div>
+    </a>
+    <a class="demo-card" href="contourd3.html" target="_blank" data-page-node-id="lzUaPOhnNL1Xe7ojcpGiMu">
+      <div class="name" data-page-node-id="q0az0LSf9KsnWE2mnIPvZG">contourd3.html</div>
+      <div class="desc" data-page-node-id="RADpPDQs0qYGxJoNGcpaGZ">D3 内置 d3-contour 等值线</div>
+    </a>
+    <a class="demo-card" href="volumeRendering.html" target="_blank" data-page-node-id="FnaWHc7rBtE9LHZcaWnGCG">
+      <div class="name" data-page-node-id="CbqeMGcWHASmU7wlswLnaa">volumeRendering.html</div>
+      <div class="desc" data-page-node-id="HdPHM5PDcEnVt6TcDtV1BS">WebGL 体绘制（Three.js，等值线 3D 扩展）</div>
+    </a>
+  </div>
+</div>
+
+<!-- 第 5 章 时序数据可视化 -->
+<div class="chapter" data-page-node-id="eRkIJVnzFzp2odxFa9xr2m">
+  <h2 data-page-node-id="iXqHEMtd7HoQxt9JU3tpR2" data-i18n="supp.ch5">第 5 章 · 时序数据可视化</h2>
+  <p class="hint" data-page-node-id="6oIvE59xBQn11kGeZSjKgD" data-i18n="supp.hint5">对应 doc-05：5.3 日历热图 / 5.4 阿基米德螺旋</p>
+  <div class="demos" data-page-node-id="JCCzxg7tX9tYEd0VogpKWK">
+    <a class="demo-card" href="yearcalendar.html" target="_blank" data-page-node-id="rUovbqnkSCusYHIvM98xua">
+      <div class="name" data-page-node-id="3RrVnnZff0EWsYx6MeFqTZ">yearcalendar.html</div>
+      <div class="desc" data-page-node-id="xSnazMcZusM7KWx7LdAjsM">带日分割线的横纵转置热力图日历（van Wijk 风格）</div>
+    </a>
+    <a class="demo-card" href="calendar.html" target="_blank" data-page-node-id="9A7xEspl1aJcRoTP5SVdhc">
+      <div class="name" data-page-node-id="I0YIQmBAnnoT6AkxCzNHWx">calendar.html</div>
+      <div class="desc" data-page-node-id="aiNCvZwbSCdybBuYcp9Mz2">2008 螺旋时间轴日历（基础版）</div>
+    </a>
+    <a class="demo-card" href="calendar1.html" target="_blank" data-page-node-id="dBDLDPbvCYnHgCh9iFABDs">
+      <div class="name" data-page-node-id="gJtOQCEmtQi6MtFqXzcjLi">calendar1.html</div>
+      <div class="desc" data-page-node-id="nEKIaekX96PzW7Nn4OCXDA">2008 螺旋时间轴日历（变体 1）</div>
+    </a>
+    <a class="demo-card" href="calendar3.html" target="_blank" data-page-node-id="V2NZCRWYpX844qKVKNvlVZ">
+      <div class="name" data-page-node-id="NaP5toFBAqcZWAWowo9anB">calendar3.html</div>
+      <div class="desc" data-page-node-id="yqIA6OZAoHKsWZlSMjsfBh">2008 螺旋时间轴日历（变体 3）</div>
+    </a>
+  </div>
+</div>
+
+<script type="module" src="../i18n.js"></script>
+</body>
+</html>

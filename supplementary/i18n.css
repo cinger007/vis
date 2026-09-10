@@ -1,0 +1,102 @@
+/* =============================================================
+ * i18n.css — Language switcher styles (v1.0 · 2026-09-09)
+ * 共用样式：portal 主页 + 5 个 lesson
+ * ============================================================= */
+
+/* --- 顶部导航内嵌的版本 --- */
+.course-topbar .lang-switch {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0;
+  padding: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.course-topbar .lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.course-topbar .lang-switch button:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.course-topbar .lang-switch button.active {
+  background: #1e293b;
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Portal 主页浮动版本（无 topbar） --- */
+.lang-switch.lang-switch-floating {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.lang-switch.lang-switch-floating button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.lang-switch.lang-switch-floating button:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.lang-switch.lang-switch-floating button.active {
+  background: #1e293b;
+  color: #fff;
+}
+
+/* --- 移动端适配 --- */
+@media (max-width: 768px) {
+  .course-topbar .lang-switch {
+    margin-left: 8px;
+    padding: 2px;
+  }
+  .course-topbar .lang-switch button {
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+  .lang-switch.lang-switch-floating {
+    top: 12px;
+    right: 12px;
+  }
+  .lang-switch.lang-switch-floating button {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "chartid" : "#chart",
+    "margin" : { "top": 40, "right": 100, "bottom": 60, "left": 200 },
+    "width" : 800,
+    "height" : 600,
+    "x_title" : "性别差比例 (男性比例 - 女性比例)",
+    "y_title" : "犯罪类型",
+    "index_col" : "crimeType",
+    "key_col" : "genderDiffRatio"
+}

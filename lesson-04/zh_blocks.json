@@ -1,0 +1,642 @@
+[
+  {
+    "idx": 0,
+    "chapter": "ch-4-1",
+    "tab": "",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "你的 Crime 数据是宽格式，可视化常需要长格式。转换函数一行解决。",
+    "zh_clean": "你的 Crime 数据是宽格式，可视化常需要长格式。转换函数一行解决。",
+    "en": "Your Crime data is in wide format, but visualization often needs long format. A one-liner conversion function handles it."
+  },
+  {
+    "idx": 1,
+    "chapter": "ch-4-1",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 2,
+    "chapter": "ch-4-1",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 5.1 节用了 1985 美国 50 州犯罪数据（CSV），含 8 个犯罪指标列。",
+    "zh_clean": "原 5.1 节用了 1985 美国 50 州犯罪数据（CSV），含 8 个犯罪指标列。",
+    "en": "Section 5.1 used 1985 U.S. crime data (CSV) for the 50 states, with 8 crime-indicator columns."
+  },
+  {
+    "idx": 3,
+    "chapter": "ch-4-1",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedded Theory"
+  },
+  {
+    "idx": 4,
+    "chapter": "ch-4-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"ADGuwa7jz66PvUyECEwC5j\">长格式（long）</strong>：每行一个观测，列 = 字段（如 <code data-page-node-id=\"jlrLIy8ds09cKfHIyMXZyJ\">{state, metric, value}</code>）。优点：方便过滤、分组、绑定到 d3 join。",
+    "zh_clean": "<strong>长格式（long）</strong>：每行一个观测，列 = 字段（如 <code>{state, metric, value}</code>）。优点：方便过滤、分组、绑定到 d3 join。",
+    "en": "<strong>Long format (long)</strong>: one observation per row, columns = fields (e.g., <code>{state, metric, value}</code>). Pros: easy to filter, group, and bind to a d3 join."
+  },
+  {
+    "idx": 5,
+    "chapter": "ch-4-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"f0IgdQtA4Xo2S2vnLHU5Vv\">宽格式（wide）</strong>：每行一个实体，列 = 指标（如 <code data-page-node-id=\"imKkWs89LBwVIxOh7ZtVEk\">{state, murder, robbery, ...}</code>）。优点：人眼读得懂、直观。",
+    "zh_clean": "<strong>宽格式（wide）</strong>：每行一个实体，列 = 指标（如 <code>{state, murder, robbery, ...}</code>）。优点：人眼读得懂、直观。",
+    "en": "<strong>Wide format (wide)</strong>: one entity per row, columns = metrics (e.g., <code>{state, murder, robbery, ...}</code>). Pros: human-readable and intuitive."
+  },
+  {
+    "idx": 6,
+    "chapter": "ch-4-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"VxAFQTfyGUNyWUSiO1osP2\">转换</strong>：<code data-page-node-id=\"vaz2nPvpXmU8Ltyf2ay5Bi\">flatMap</code> + 循环键名 = 几行代码搞定。",
+    "zh_clean": "<strong>转换</strong>：<code>flatMap</code> + 循环键名 = 几行代码搞定。",
+    "en": "<strong>Conversion</strong>: <code>flatMap</code> + iterating over key names = a few lines of code."
+  },
+  {
+    "idx": 7,
+    "chapter": "ch-4-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"WIbIqhHDGDHC9WpAKb1wvb\">d3.autoType</strong>：自动推断列类型（数字、日期、布尔），省得手动 <code data-page-node-id=\"W51rGXOhVQUXJJqOnyVlwP\">+d.field</code>。",
+    "zh_clean": "<strong>d3.autoType</strong>：自动推断列类型（数字、日期、布尔），省得手动 <code>+d.field</code>。",
+    "en": "<strong>d3.autoType</strong>: auto-infers column types (number, date, boolean), saving you from manual <code>+d.field</code>."
+  },
+  {
+    "idx": 8,
+    "chapter": "ch-4-1",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "&#9733; Key Code"
+  },
+  {
+    "idx": 9,
+    "chapter": "ch-4-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"Ckxt7tB2dAsRBx3OjElGFL\">关键点 1：d3.csv 第二参 = 类型转换回调</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：d3.csv 第二参 = 类型转换回调</strong>",
+    "en": "&#9733; <strong>Key Point 1: the second argument of d3.csv = the type-conversion callback</strong>"
+  },
+  {
+    "idx": 10,
+    "chapter": "ch-4-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <code data-page-node-id=\"ZDyy0aLHXlj6gUD1brfDOr\">d3.autoType</code> 内部就是遍历每列、用 <code data-page-node-id=\"FliqGvBdFnIyA1EHGKABfi\">Number()</code> / <code data-page-node-id=\"C79qhlGlnnvisKzIVCKRdu\">Date()</code> / 字符串检测。能识别的就转、识别不了保持字符串。",
+    "zh_clean": "⭐ <code>d3.autoType</code> 内部就是遍历每列、用 <code>Number()</code> / <code>Date()</code> / 字符串检测。能识别的就转、识别不了保持字符串。",
+    "en": "&#9733; <code>d3.autoType</code> internally walks each column using <code>Number()</code> / <code>Date()</code> / string detection. Recognized types are converted; unrecognized values stay as strings."
+  },
+  {
+    "idx": 11,
+    "chapter": "ch-4-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"guMze0pNdhA1JIbdF7Hpuk\">关键点 2：宽 → 长（flatMap 模式）</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：宽 → 长（flatMap 模式）</strong>",
+    "en": "&#9733; <strong>Key Point 2: wide &rarr; long (the flatMap pattern)</strong>"
+  },
+  {
+    "idx": 12,
+    "chapter": "ch-4-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <code data-page-node-id=\"DikYCq0GUkODHfV7MPapSM\">flatMap</code> 是 ES2019，是 \"map + 一维 flatten\" 的简写。比 <code data-page-node-id=\"ugHDORqNCbt8ubTz0hyeYd\">map().flat()</code> 链式更直观。",
+    "zh_clean": "⭐ <code>flatMap</code> 是 ES2019，是 \"map + 一维 flatten\" 的简写。比 <code>map().flat()</code> 链式更直观。",
+    "en": "&#9733; <code>flatMap</code> is ES2019, shorthand for &ldquo;map + one-level flatten&rdquo;. More intuitive than the <code>map().flat()</code> chain."
+  },
+  {
+    "idx": 13,
+    "chapter": "ch-4-2",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "数据空间 → 坐标系空间 → 屏幕空间。三层职责分明，错了就乱套。",
+    "zh_clean": "数据空间 → 坐标系空间 → 屏幕空间。三层职责分明，错了就乱套。",
+    "en": "Data space &rarr; coordinate system space &rarr; screen space. Three layers with clearly separated responsibilities; mix them up and everything falls apart."
+  },
+  {
+    "idx": 14,
+    "chapter": "ch-4-2",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 15,
+    "chapter": "ch-4-2",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 5.1.2 节用散点展示 Crime 数据（murder vs robbery），坐标轴是 1985 数据。",
+    "zh_clean": "原 5.1.2 节用散点展示 Crime 数据（murder vs robbery），坐标轴是 1985 数据。",
+    "en": "Section 5.1.2 used a scatter plot to display Crime data (murder vs. robbery), with the 1985 data on the coordinate axes."
+  },
+  {
+    "idx": 16,
+    "chapter": "ch-4-2",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedded Theory"
+  },
+  {
+    "idx": 17,
+    "chapter": "ch-4-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"hRrus8Wvu0XOluh90xRPMU\">三层空间</strong>：\n                <ol data-page-node-id=\"UIzkQ5cjSVMTA0UnhUBpqg\">\n                  <li data-page-node-id=\"pOtpmOMSZmd3EOO7N59HLi\"><strong data-page-node-id=\"7c7iil7gYXtZls1r0ua3W0\">数据空间</strong>：原始数值（如人口 27058000、谋杀率 8）</li>\n                  <li data-page-node-id=\"Gd0I98094aVAOinuB00RnN\"><strong data-page-node-id=\"cWSqc6f8f7CHSZJQiTVl6c\">坐标系空间</strong>：归一化到 0..innerWidth（标准化坐标）</li>\n                  <li data-page-node-id=\"9Hk6zJdTPbkRcASNesBL6L\"><strong data-page-node-id=\"PAEMxVSzKBTP047xIYJopA\">屏幕空间</strong>：加上 margin 偏移（最终像素位置）</li>\n                </ol>\n              ",
+    "zh_clean": "<strong>三层空间</strong>：\n                <ol>\n                  <li><strong>数据空间</strong>：原始数值（如人口 27058000、谋杀率 8）</li>\n                  <li><strong>坐标系空间</strong>：归一化到 0..innerWidth（标准化坐标）</li>\n                  <li><strong>屏幕空间</strong>：加上 margin 偏移（最终像素位置）</li>\n                </ol>\n              ",
+    "en": ""
+  },
+  {
+    "idx": 18,
+    "chapter": "ch-4-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"scvur5O5yKDehxiojCPUCW\">为什么分层</strong>：坐标系空间内的元素（线、点）可以共享，切换屏幕尺寸时无需重算。d3.axisBottom 自动帮你做坐标系→屏幕。",
+    "zh_clean": "<strong>为什么分层</strong>：坐标系空间内的元素（线、点）可以共享，切换屏幕尺寸时无需重算。d3.axisBottom 自动帮你做坐标系→屏幕。",
+    "en": "<strong>Why layer them</strong>: elements inside the coordinate system space (lines, points) can be shared &mdash; no recalculation when the screen size changes. d3.axisBottom handles the coordinate-system &rarr; screen step automatically."
+  },
+  {
+    "idx": 19,
+    "chapter": "ch-4-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"PHDrdCKNtVXuoGl62mG2Tl\">scale 选型</strong>：\n                <ul data-page-node-id=\"GVUEXPQYzXPApaBFR56hNK\">\n                  <li data-page-node-id=\"YtFVDDFL5o1tVYSMK0sCna\"><code data-page-node-id=\"UpZNOANW2drhW43Dkk9nap\">scaleLinear</code>：均匀分布，最常用</li>\n                  <li data-page-node-id=\"6deHXAI12xXf8ftKR8tBgg\"><code data-page-node-id=\"5A95DmWEWlXSbBSWh9mJxJ\">scaleLog</code>：跨数量级（人口从 53 万到 2700 万）</li>\n                  <li data-page-node-id=\"2FktoWkRqbf2eaxaJfC1EM\"><code data-page-node-id=\"eE8Q4kV3XNeZ7XcOlJhDW8\">scaleSqrt</code>：面积感知（圆面积映射到值）</li>\n                  <li data-page-node-id=\"lJkR2IFo098G6qrzMxCCjf\"><code data-page-node-id=\"Nf9D2JoZ0J6cv88EQQ3quA\">scaleBand</code>：类别轴（柱状图）</li>\n                </ul>\n              ",
+    "zh_clean": "<strong>scale 选型</strong>：\n                <ul>\n                  <li><code>scaleLinear</code>：均匀分布，最常用</li>\n                  <li><code>scaleLog</code>：跨数量级（人口从 53 万到 2700 万）</li>\n                  <li><code>scaleSqrt</code>：面积感知（圆面积映射到值）</li>\n                  <li><code>scaleBand</code>：类别轴（柱状图）</li>\n                </ul>\n              ",
+    "en": ""
+  },
+  {
+    "idx": 20,
+    "chapter": "ch-4-2",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "&#9733; Key Code"
+  },
+  {
+    "idx": 21,
+    "chapter": "ch-4-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"vfcwORnnxDKVNV2v14QoI4\">关键点 1：数据空间 vs 屏幕空间，两层 scale</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：数据空间 vs 屏幕空间，两层 scale</strong>",
+    "en": "&#9733; <strong>Key Point 1: data space vs. screen space &mdash; two layers of scales</strong>"
+  },
+  {
+    "idx": 22,
+    "chapter": "ch-4-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ 错位示范：直接把 domain/max 和 range/[M.l, M.l+innerW] 写在一个 scale 里 → 改 margin 要改两处。三层分立就清爽。",
+    "zh_clean": "⭐ 错位示范：直接把 domain/max 和 range/[M.l, M.l+innerW] 写在一个 scale 里 → 改 margin 要改两处。三层分立就清爽。",
+    "en": "&#9733; Misalignment example: writing <code>domain=max</code> and <code>range=[M.l, M.l+innerW]</code> in one scale &rarr; changing the margin means editing two places. The three-layer separation keeps things clean."
+  },
+  {
+    "idx": 23,
+    "chapter": "ch-4-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"xYnCYxPwgRgei5Uci5k3ri\">关键点 2：log scale 跨数量级</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：log scale 跨数量级</strong>",
+    "en": "&#9733; <strong>Key Point 2: log scale spans orders of magnitude</strong>"
+  },
+  {
+    "idx": 24,
+    "chapter": "ch-4-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ log 轴对\"指数增长\"数据特别合适。人的视觉是\"乘法\"而不是\"加法\"，所以 log 让\"等比数列\"在屏幕上\"等距\"。",
+    "zh_clean": "⭐ log 轴对\"指数增长\"数据特别合适。人的视觉是\"乘法\"而不是\"加法\"，所以 log 让\"等比数列\"在屏幕上\"等距\"。",
+    "en": "&#9733; A log axis is especially well-suited for &ldquo;exponential growth&rdquo; data. Human vision is &ldquo;multiplicative&rdquo; rather than &ldquo;additive&rdquo;, so log turns a &ldquo;geometric sequence&rdquo; into &ldquo;equally-spaced&rdquo; points on screen."
+  },
+  {
+    "idx": 25,
+    "chapter": "ch-4-3",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "同 50 个点，用 10 种 line.curve 画风各异。什么时候用哪种？",
+    "zh_clean": "同 50 个点，用 10 种 line.curve 画风各异。什么时候用哪种？",
+    "en": "Same 50 points, 10 different <code>line.curve</code> styles. Which to use when?"
+  },
+  {
+    "idx": 26,
+    "chapter": "ch-4-3",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 27,
+    "chapter": "ch-4-3",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 5.1.3 节用折线 + 散点展示趋势。原始代码用了 <code data-page-node-id=\"XPVrTdySpNzRtAvnYA4HNz\">curveCatmullRom</code>，没讲为什么。",
+    "zh_clean": "原 5.1.3 节用折线 + 散点展示趋势。原始代码用了 <code>curveCatmullRom</code>，没讲为什么。",
+    "en": "Section 5.1.3 used a line + scatter plot to show trends. The original code used <code>curveCatmullRom</code> without explaining why."
+  },
+  {
+    "idx": 28,
+    "chapter": "ch-4-3",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedded Theory"
+  },
+  {
+    "idx": 29,
+    "chapter": "ch-4-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"SLC5Pg6EtrhwpMfz75LBxC\">插值 vs 拟合</strong>：\n                <ul data-page-node-id=\"3IjoR7eehkYNaqVeqUzVSZ\">\n                  <li data-page-node-id=\"6B27A7CkEhk8gXL1kMBEQp\">插值（interpolation）：曲线经过所有数据点（如 Catmull-Rom、Natural）</li>\n                  <li data-page-node-id=\"LXiefZRt6UzBDJGuZaHRHq\">拟合（fitting）：曲线不经过数据点，只反映趋势（如线性回归 LOESS）</li>\n                </ul>\n              ",
+    "zh_clean": "<strong>插值 vs 拟合</strong>：\n                <ul>\n                  <li>插值（interpolation）：曲线经过所有数据点（如 Catmull-Rom、Natural）</li>\n                  <li>拟合（fitting）：曲线不经过数据点，只反映趋势（如线性回归 LOESS）</li>\n                </ul>\n              ",
+    "en": ""
+  },
+  {
+    "idx": 30,
+    "chapter": "ch-4-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"rVmHvwIsPWir17Znl5FmEs\">d3.line().curve()</strong> 提供 10+ 种 curve，最常用：",
+    "zh_clean": "<strong>d3.line().curve()</strong> 提供 10+ 种 curve，最常用：",
+    "en": "<strong>d3.line().curve()</strong> offers 10+ curves; the most commonly used are:"
+  },
+  {
+    "idx": 31,
+    "chapter": "ch-4-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"pADBHuCbBNibqe2IBTkDlS\">step 系</strong>：用于离散阶跃（数字信号、状态切换）",
+    "zh_clean": "<strong>step 系</strong>：用于离散阶跃（数字信号、状态切换）",
+    "en": "<strong>step family</strong>: for discrete steps (digital signals, state transitions)"
+  },
+  {
+    "idx": 32,
+    "chapter": "ch-4-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"LZ9up1OIobUp5nANPpuDJl\">catmullRom / natural</strong>：过所有点的张力样条，\"看起来平滑\"",
+    "zh_clean": "<strong>catmullRom / natural</strong>：过所有点的张力样条，\"看起来平滑\"",
+    "en": "<strong>catmullRom / natural</strong>: tension splines that pass through all points &mdash; &ldquo;looks smooth&rdquo;"
+  },
+  {
+    "idx": 33,
+    "chapter": "ch-4-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"rhBUYBHDKJsDmb6f7UeUTI\">monotoneX</strong>：保持原数据序列单调（不会出现伪震荡）",
+    "zh_clean": "<strong>monotoneX</strong>：保持原数据序列单调（不会出现伪震荡）",
+    "en": "<strong>monotoneX</strong>: preserves the monotonicity of the original data sequence (no spurious oscillations)"
+  },
+  {
+    "idx": 34,
+    "chapter": "ch-4-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"IaT31xAg89Psl7JvPwJCDo\">选择原则</strong>：数据有顺序性 → monotoneX / linear；数据本身抖动大 → catmullRom / basis 平滑；离散状态 → step",
+    "zh_clean": "<strong>选择原则</strong>：数据有顺序性 → monotoneX / linear；数据本身抖动大 → catmullRom / basis 平滑；离散状态 → step",
+    "en": "<strong>Selection principles</strong>: ordered data &rarr; <code>monotoneX</code> / <code>linear</code>; jittery data &rarr; <code>catmullRom</code> / <code>basis</code> to smooth; discrete states &rarr; <code>step</code>"
+  },
+  {
+    "idx": 35,
+    "chapter": "ch-4-3",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "&#9733; Key Code"
+  },
+  {
+    "idx": 36,
+    "chapter": "ch-4-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"rCKQqKFQmGoWNpKET0Nndc\">关键点 1：d3.line + curve 一行切换</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：d3.line + curve 一行切换</strong>",
+    "en": "&#9733; <strong>Key Point 1: switch curves with d3.line + curve in one line</strong>"
+  },
+  {
+    "idx": 37,
+    "chapter": "ch-4-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <code data-page-node-id=\"xm5zOXH6z4m4KjzHap3Ydb\">datum(data)</code> 把数组当整体传给 path（不是每个元素绑一个）。d3.line 内部循环生成 M/L/C 命令。",
+    "zh_clean": "⭐ <code>datum(data)</code> 把数组当整体传给 path（不是每个元素绑一个）。d3.line 内部循环生成 M/L/C 命令。",
+    "en": "&#9733; <code>datum(data)</code> passes the array as a whole to the path (not one element at a time). Inside, d3.line loops to generate M/L/C commands."
+  },
+  {
+    "idx": 38,
+    "chapter": "ch-4-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"0Nq0POyYoTyLJmr7WHt1uj\">关键点 2：拟合 vs 插值的取舍</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：拟合 vs 插值的取舍</strong>",
+    "en": "&#9733; <strong>Key Point 2: the trade-off between fitting and interpolation</strong>"
+  },
+  {
+    "idx": 39,
+    "chapter": "ch-4-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ 经验法则：散点超过 30 个 → 用拟合；散点 &lt; 10 个 → 用插值（保持信息完整）。Crime 数据 50 个州 → 拟合更稳。",
+    "zh_clean": "⭐ 经验法则：散点超过 30 个 → 用拟合；散点 &lt; 10 个 → 用插值（保持信息完整）。Crime 数据 50 个州 → 拟合更稳。",
+    "en": "&#9733; Rule of thumb: more than 30 points &rarr; use fitting; fewer than 10 points &rarr; use interpolation (preserve full information). Crime data has 50 states &rarr; fitting is more robust."
+  },
+  {
+    "idx": 40,
+    "chapter": "ch-4-4",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "人眼对斜率的估计 <strong data-page-node-id=\"eFgZlgejjcLWXaVfJ20mEp\">不是</strong> 线性的。45° 是视觉\"中点\"。",
+    "zh_clean": "人眼对斜率的估计 <strong>不是</strong> 线性的。45° 是视觉\"中点\"。",
+    "en": "Human perception of slope is <strong>not</strong> linear. 45&deg; is the visual &ldquo;midpoint&rdquo;."
+  },
+  {
+    "idx": 41,
+    "chapter": "ch-4-4",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 42,
+    "chapter": "ch-4-4",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 5.1.4 节提到\"平均倾斜度最优为 45°\"，但没解释原因。",
+    "zh_clean": "原 5.1.4 节提到\"平均倾斜度最优为 45°\"，但没解释原因。",
+    "en": "Section 5.1.4 mentions that &ldquo;the optimal average slope is 45&deg;&rdquo; without explaining why."
+  },
+  {
+    "idx": 43,
+    "chapter": "ch-4-4",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedded Theory"
+  },
+  {
+    "idx": 44,
+    "chapter": "ch-4-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"pLF7NNEKITesJ9sWiKF0MF\">Cleveland 1984 实验</strong>：让被试估计直线的斜率，发现：\n                <ul data-page-node-id=\"BWTWaIQ0etm8ZWno3xgM3E\">\n                  <li data-page-node-id=\"VCwQfGTlqbnS8tTssE8Gj7\">斜率 = 0° 或 90° 时，估计误差最大</li>\n                  <li data-page-node-id=\"KPpZsV6920OCfCaAI7gFNf\">斜率 = 45° 时，估计最准</li>\n                  <li data-page-node-id=\"2TzvAvl3mBijFoDTGB3vou\">呈 U 型曲线</li>\n                </ul>\n              ",
+    "zh_clean": "<strong>Cleveland 1984 实验</strong>：让被试估计直线的斜率，发现：\n                <ul>\n                  <li>斜率 = 0° 或 90° 时，估计误差最大</li>\n                  <li>斜率 = 45° 时，估计最准</li>\n                  <li>呈 U 型曲线</li>\n                </ul>\n              ",
+    "en": ""
+  },
+  {
+    "idx": 45,
+    "chapter": "ch-4-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"JCD9YENLmwZLFCpwsQbkFO\">Stevens 幂律</strong>：感知斜率 ≈ (真实斜率)^1.0 ~ 1.3。即人眼把\"陡度\"夸张了 30%。",
+    "zh_clean": "<strong>Stevens 幂律</strong>：感知斜率 ≈ (真实斜率)^1.0 ~ 1.3。即人眼把\"陡度\"夸张了 30%。",
+    "en": "<strong>Stevens&rsquo; power law</strong>: perceived slope &asymp; (actual slope)<sup>1.0&ndash;1.3</sup>. In other words, the eye exaggerates &ldquo;steepness&rdquo; by about 30%."
+  },
+  {
+    "idx": 46,
+    "chapter": "ch-4-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"hp5rfMs7pDS8Q11RSNVXaR\">设计原则</strong>：\n                <ul data-page-node-id=\"CFjiTN91vVV0shpoGczebM\">\n                  <li data-page-node-id=\"BEloBKYuVhwEbh7MwSyV1Q\">关键数据斜率落在 30°~60° 区间最稳</li>\n                  <li data-page-node-id=\"w9WltkeIaTdn3TYWmeWKyG\">对比增长曲线时，用 log 轴让陡度落在 45° 左右</li>\n                  <li data-page-node-id=\"LOQ6BR1BUcy9PGHGfAENUi\">避免在 5° 以下或 85° 以上做趋势对比（误差太大）</li>\n                </ul>\n              ",
+    "zh_clean": "<strong>设计原则</strong>：\n                <ul>\n                  <li>关键数据斜率落在 30°~60° 区间最稳</li>\n                  <li>对比增长曲线时，用 log 轴让陡度落在 45° 左右</li>\n                  <li>避免在 5° 以下或 85° 以上做趋势对比（误差太大）</li>\n                </ul>\n              ",
+    "en": ""
+  },
+  {
+    "idx": 47,
+    "chapter": "ch-4-4",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "&#9733; Key Code"
+  },
+  {
+    "idx": 48,
+    "chapter": "ch-4-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"VnAcP9AKTVGMkCo3DVIrr3\">关键点 1：极坐标转笛卡尔坐标</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：极坐标转笛卡尔坐标</strong>",
+    "en": "&#9733; <strong>Key Point 1: convert polar to Cartesian coordinates</strong>"
+  },
+  {
+    "idx": 49,
+    "chapter": "ch-4-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ SVG 的 y 轴向下（与数学相反），所以 sin 角度项要取负。这是初学者最常踩的坑。",
+    "zh_clean": "⭐ SVG 的 y 轴向下（与数学相反），所以 sin 角度项要取负。这是初学者最常踩的坑。",
+    "en": "&#9733; SVG&rsquo;s y axis points downward (opposite to math convention), so the sine term must be negated. This is the most common pitfall for beginners."
+  },
+  {
+    "idx": 50,
+    "chapter": "ch-4-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"C6FmxPYUp1XtUPZkzu6nFS\">关键点 2：把抽象理论变成可调参数</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：把抽象理论变成可调参数</strong>",
+    "en": "&#9733; <strong>Key Point 2: turn abstract theory into tunable parameters</strong>"
+  },
+  {
+    "idx": 51,
+    "chapter": "ch-4-5",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "给定标量场 + 阈值，追踪 <code data-page-node-id=\"88M93ZJfyf3t1bhlCCHq0E\">值 = 阈值</code> 的曲线。",
+    "zh_clean": "给定标量场 + 阈值，追踪 <code>值 = 阈值</code> 的曲线。",
+    "en": "Given a scalar field + threshold, trace the curve where <code>value = threshold</code>."
+  },
+  {
+    "idx": 52,
+    "chapter": "ch-4-5",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 53,
+    "chapter": "ch-4-5",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原 5.2.2 节用 Marching Squares 提取 Crime 数据的等值线。原始代码是截图占位。",
+    "zh_clean": "原 5.2.2 节用 Marching Squares 提取 Crime 数据的等值线。原始代码是截图占位。",
+    "en": "Section 5.2.2 used Marching Squares to extract isocontours from Crime data. The original code was a screenshot placeholder."
+  },
+  {
+    "idx": 54,
+    "chapter": "ch-4-5",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入陈为教材理论",
+    "zh_clean": "嵌入陈为教材理论",
+    "en": "Embedded Theory"
+  },
+  {
+    "idx": 55,
+    "chapter": "ch-4-5",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"upVn40xpACV81sWcrsdIvy\">Marching Squares 原理</strong>：把标量场离散化为网格，每个 cell 4 个角的\"是否大于阈值\"决定 case 编号 0~15（2⁴=16 种）。每种 case 对应 0/1/2 条线段，把\"超过阈值\"和\"未超过阈值\"的两片区域分开。",
+    "zh_clean": "<strong>Marching Squares 原理</strong>：把标量场离散化为网格，每个 cell 4 个角的\"是否大于阈值\"决定 case 编号 0~15（2⁴=16 种）。每种 case 对应 0/1/2 条线段，把\"超过阈值\"和\"未超过阈值\"的两片区域分开。",
+    "en": "<strong>How Marching Squares works</strong>: discretize the scalar field into a grid. For each cell, the &ldquo;above threshold / not&rdquo; state of its 4 corners yields a case index from 0 to 15 (2<sup>4</sup> = 16 cases). Each case corresponds to 0, 1, or 2 line segments that separate the &ldquo;above-threshold&rdquo; region from the &ldquo;not&rdquo; region."
+  },
+  {
+    "idx": 56,
+    "chapter": "ch-4-5",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"Fe0t0l3LZ4QO4LB7EDWgk7\">16 种 case</strong>：编码 bit0=BL、bit1=BR、bit2=TR、bit3=TL。",
+    "zh_clean": "<strong>16 种 case</strong>：编码 bit0=BL、bit1=BR、bit2=TR、bit3=TL。",
+    "en": "<strong>16 cases</strong>: encoded as bit0=BL, bit1=BR, bit2=TR, bit3=TL."
+  },
+  {
+    "idx": 57,
+    "chapter": "ch-4-5",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"hMpRKCmJWRWKs5uxphd8cg\">扩展到 3D</strong>：Marching Cubes（Lorensen & Cline 1987），2⁸=256 种 case，常用于医学 MRI / CT 等值面提取。",
+    "zh_clean": "<strong>扩展到 3D</strong>：Marching Cubes（Lorensen & Cline 1987），2⁸=256 种 case，常用于医学 MRI / CT 等值面提取。",
+    "en": "<strong>Extension to 3D</strong>: Marching Cubes (Lorensen &amp; Cline, 1987), with 2<sup>8</sup> = 256 cases, widely used for extracting isosurfaces from medical MRI / CT scans."
+  },
+  {
+    "idx": 58,
+    "chapter": "ch-4-5",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"GlQW9DsLB9lhQuBfBLF3LR\">应用场景</strong>：\n                <ul data-page-node-id=\"r9iSgCaKuLyjOGPLxFyY36\">\n                  <li data-page-node-id=\"gwvBjVgJ0pkXzp6iOXG0wn\">地形等高线（地图）</li>\n                  <li data-page-node-id=\"fFINRKoGavySSBS9P9SME5\">医学影像（MRI/CT 等值面）</li>\n                  <li data-page-node-id=\"7qAwC8RC2fbyphfx0EkXIU\">密度等高图（核密度估计）</li>\n                  <li data-page-node-id=\"MaAeQ4JiUm2DfSoKEpexqb\">天气预报（等温线、等压线）</li>\n                </ul>\n              ",
+    "zh_clean": "<strong>应用场景</strong>：\n                <ul>\n                  <li>地形等高线（地图）</li>\n                  <li>医学影像（MRI/CT 等值面）</li>\n                  <li>密度等高图（核密度估计）</li>\n                  <li>天气预报（等温线、等压线）</li>\n                </ul>\n              ",
+    "en": ""
+  },
+  {
+    "idx": 59,
+    "chapter": "ch-4-5",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "⭐ 关键代码",
+    "zh_clean": "⭐ 关键代码",
+    "en": "&#9733; Key Code"
+  },
+  {
+    "idx": 60,
+    "chapter": "ch-4-5",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"dQl7Tv4apPAXdJNbffC9qR\">关键点 1：16 case lookup table（核心数据结构）</strong>",
+    "zh_clean": "⭐ <strong>关键点 1：16 case lookup table（核心数据结构）</strong>",
+    "en": "&#9733; <strong>Key Point 1: the 16-case lookup table (core data structure)</strong>"
+  },
+  {
+    "idx": 61,
+    "chapter": "ch-4-5",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "⭐ <strong data-page-node-id=\"ScG4zbsidUWb5FsNX8Gzf1\">saddle case（5 和 10）是 Marching Squares 唯一需要\"判断中心值\"的歧义情况</strong>——其它 14 种 case 一查表就出。Saddle 用 cell 中心点对比阈值决定连线方向。",
+    "zh_clean": "⭐ <strong>saddle case（5 和 10）是 Marching Squares 唯一需要\"判断中心值\"的歧义情况</strong>——其它 14 种 case 一查表就出。Saddle 用 cell 中心点对比阈值决定连线方向。",
+    "en": "&#9733; <strong>The saddle case (5 and 10) is the only ambiguous situation in Marching Squares that requires &ldquo;checking the center value&rdquo;</strong> &mdash; the other 14 cases are resolved with a simple lookup. For saddle cases, compare the cell center to the threshold to decide how to connect the line segments."
+  },
+  {
+    "idx": 62,
+    "chapter": "ch-4-5",
+    "tab": "code",
+    "tag": "p",
+    "class": "",
+    "zh": "⭐ <strong data-page-node-id=\"6QBOyBhdxCyZ7nc9y11ahI\">关键点 2：位运算拼 case 编号</strong>",
+    "zh_clean": "⭐ <strong>关键点 2：位运算拼 case 编号</strong>",
+    "en": "&#9733; <strong>Key Point 2: assemble the case index with bitwise operations</strong>"
+  },
+  {
+    "idx": 63,
+    "chapter": "ch-4-5",
+    "tab": "demo",
+    "tag": "p",
+    "class": "",
+    "zh": "Doc-04 集成教学页面 · 零依赖 · D3.js v7 + 原生 JS · 可独立运行 · 含 5 章节（数据转换 / 坐标轴 / 曲线 / 倾角 / 等值线）",
+    "zh_clean": "Doc-04 集成教学页面 · 零依赖 · D3.js v7 + 原生 JS · 可独立运行 · 含 5 章节（数据转换 / 坐标轴 / 曲线 / 倾角 / 等值线）",
+    "en": "Doc-04 integrated teaching page &middot; zero dependencies &middot; D3.js v7 + vanilla JS &middot; standalone runnable &middot; 5 chapters (data transformation / axes / curves / slope / isocontours)"
+  }
+]

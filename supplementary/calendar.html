@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>2008 螺旋时间轴日历 - D3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    html, body { margin:0; height:100%; background:#15181e; color:#eaeef4; font-family: Arial, Helvetica, sans-serif; }
+    .page { display:flex; gap:24px; align-items:flex-start; padding:16px; }
+    #heatmap-panel, #spiral-panel { flex:1 1 0; min-width:0; }
+    svg { display:block; margin:0 auto; }
+    .day-group text { fill:#fff; font-size:8px; text-anchor:middle; dominant-baseline:middle; }
+    .seg { stroke:none; }
+    /* 去除默认填充，颜色由元素属性控制 */
+    .letter-seg { fill:#9e9e9e; }
+    .letter-seg.highlight { fill:#fff; }
+    .letter-text { fill:#fff; font-size:10px; font-weight:bold; text-anchor:middle; dominant-baseline:middle; pointer-events:none; }
+    .seg-text { font-size:10px; font-weight:bold; text-anchor:middle; dominant-baseline:middle; pointer-events:none; }
+    .center-year { font-size:40px; text-anchor:middle; dominant-baseline:middle; fill:#eaeef4; pointer-events:none; }
+    .center-main { font-size:20px; text-anchor:middle; dominant-baseline:middle; fill:#eaeef4; pointer-events:none; }
+    .center-sub  { font-size:16px; text-anchor:middle; dominant-baseline:middle; fill:#b8c0cc; pointer-events:none; }
+    .spiral-path { fill:none; stroke:#555; stroke-width:0.6; pointer-events:none; }
+    .spiral-edge { fill:none; stroke:#bdbdbd; stroke-width:0.8; pointer-events:none; }
+    .segment-edge { fill:none; stroke:#dcdcdc; stroke-width:0.4; pointer-events:none; }
+
+    /* Heatmap panel scoped styles (from index2.html) */
+    #heatmap-panel { --bg:#15181e; --panel:#1e2229; --text:#eaeef4; --muted:#a8b0bd; --grid:#2a2e37; --stroke:#b8c0cc; }
+    #spiral-panel { background:#1e2229; border-radius:10px; padding:8px; box-shadow:0 1px 0 rgba(0,0,0,.35) inset; }
+    #heatmap-panel .calendar-wrap{display:flex; flex-direction:column; gap:18px}
+    #heatmap-panel .calendar-year{background:var(--panel); padding:12px 16px; border-radius:10px; box-shadow:0 1px 0 rgba(0,0,0,.35) inset}
+    #heatmap-panel .year-header{display:flex; align-items:center; gap:10px; margin-bottom:4px}
+    #heatmap-panel .year-title{font-weight:600; letter-spacing:.5px; color:var(--text)}
+    #heatmap-panel svg{width:100%; height:auto; display:block}
+    #heatmap-panel .cell{stroke:var(--bg); stroke-width:1px}
+    #heatmap-panel .month-boundary{stroke:var(--stroke); stroke-width:1; fill:none; opacity:.6}
+    #heatmap-panel .dow-label{fill:var(--muted); font-size:10px}
+    #heatmap-panel .month-label{fill:var(--muted); font-size:10px}
+    #heatmap-panel .legend{display:flex; align-items:center; gap:8px; margin-top:8px}
+    #heatmap-panel .legend .swatch{width:14px; height:14px; border-radius:3px; border:1px solid var(--bg)}
+    #heatmap-panel .legend .legend-text{font-size:12px; color:var(--muted)}
+    #heatmap-panel .tooltip{position:fixed; pointer-events:none; background:#11151b; color:#cfe3ff; border:1px solid #223048; padding:6px 8px; border-radius:8px; font-size:12px; box-shadow:0 6px 18px rgba(0,0,0,.35); opacity:0; transform:translate(-50%, -120%);}
+  </style>
+  <!-- 使用 D3 v7 -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+</head>
+<body>
+<div class="page">
+  <div id="heatmap-panel">
+    <div class="calendar-wrap" id="calendar"></div>
+    <div class="legend" id="legend"></div>
+    <div class="tooltip" id="tip"></div>
+  </div>
+  <div id="spiral-panel"></div>
+  </div>
+
+<!-- Heatmap (from index2.html) -->
+<script>
+(function(){
+  const container = d3.select('#calendar');
+  const csvPath = '/data/calendar_data_modified.csv';
+  const cellSize = 14;
+  const margin = {top: 18, right: 16, bottom: 18, left: 26};
+  const monthLabelY = 10;
+  const color = window.heatColorScale || (window.heatColorScale = d3.scaleSequential(d3.interpolateRdYlGn).domain([0, 100]));
+  const tip = d3.select('#tip');
+
+  function dayIndexMonday(d){ return (d.getDay() + 6) % 7; }
+  function weeksInYear(year){
+    const s = new Date(year,0,1);
+    const e = new Date(year,11,31);
+    // 使用以周一为起点的周计数，保证列布局与周一到周日顺序一致
+    return d3.timeMonday.count(d3.timeYear(s), d3.timeDay.offset(e,1)) + 1;
+  }
+  const fmtISO = d3.timeFormat('%Y-%m-%d');
+  function monthPath(cell, t0){
+    const t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0);
+    const d0 = dayIndexMonday(t0);
+    const d1 = dayIndexMonday(t1);
+    // 月份边界的周序号改为以周一起点
+    const w0 = d3.timeMonday.count(d3.timeYear(t0), t0);
+    const w1 = d3.timeMonday.count(d3.timeYear(t1), t1);
+    return `M${(w0 + 1) * cell},${d0 * cell}
+            H${w0 * cell}
+            V${7 * cell}
+            H${w1 * cell}
+            V${(d1 + 1) * cell}
+            H${(w1 + 1) * cell}
+            V0
+            H${(w0 + 1) * cell}
+            Z`;
+  }
+
+  d3.csv(csvPath, d => ({ date: new Date(d.date), value: +d.value || 0 }))
+    .then(rows => {
+      rows.sort((a,b) => a.date - b.date);
+      const byKey = new Map(rows.map(r => [fmtISO(r.date), r.value]));
+      const years = Array.from(new Set(rows.map(r => r.date.getFullYear()))).sort((a,b) => a - b);
+
+      years.forEach(year => {
+        const s = new Date(year, 0, 1);
+        const e = new Date(year, 11, 31);
+        const days = d3.timeDay.range(s, d3.timeDay.offset(e, 1)).map(d => ({ date: d, value: byKey.get(fmtISO(d)) ?? 0 }));
+        const weeks = weeksInYear(year);
+
+        const width = margin.left + margin.right + weeks * cellSize;
+        const height = margin.top + margin.bottom + 7 * cellSize + monthLabelY;
+
+        const wrap = container.append('div')
+          .attr('class', 'calendar-year')
+          .attr('data-year', year)
+          .style('cursor','pointer')
+          .on('click', () => { if (window.renderSpiral) window.renderSpiral(year); });
+        const header = wrap.append('div').attr('class', 'year-header');
+        header.append('div').attr('class', 'year-title').text(`${year}`);
+
+        const svg = wrap.append('svg')
+          .attr('viewBox', `0 0 ${width} ${height}`)
+          .attr('preserveAspectRatio', 'xMidYMid meet');
+
+        const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+        const dow = ['一','二','三','四','五','六','日'];
+        g.selectAll('text.dow-label')
+          .data(dow)
+          .join('text')
+          .attr('class','dow-label')
+          .attr('x', -8)
+          .attr('y', (d,i) => (i + 0.75) * cellSize)
+          .attr('text-anchor','end')
+          .text(d => d);
+
+        g.selectAll('rect.cell')
+          .data(days)
+          .join('rect')
+          .attr('class','cell')
+          .attr('width', cellSize - 1)
+          .attr('height', cellSize - 1)
+          // 每列的x基于以周一为起点的周序号，确保列内自上而下为周一到周日
+          .attr('x', d => d3.timeMonday.count(d3.timeYear(d.date), d.date) * cellSize)
+          .attr('y', d => dayIndexMonday(d.date) * cellSize)
+          .attr('rx', 2).attr('ry', 2)
+          .attr('fill', d => color(d.value))
+          .on('mouseenter', (ev, d) => {
+            const fmt = d3.timeFormat('%Y-%m-%d');
+            tip.style('opacity', 1)
+              .html(`<strong>${fmt(d.date)}</strong><br/>值：${d.value}`)
+              .style('left', (ev.clientX + 12) + 'px')
+              .style('top', (ev.clientY - 8) + 'px');
+          })
+          .on('mousemove', (ev) => {
+            tip.style('left', (ev.clientX + 12) + 'px')
+               .style('top', (ev.clientY - 8) + 'px');
+          })
+          .on('mouseleave', () => tip.style('opacity', 0))
+          .on('click', (ev, d) => { if (window.renderSpiral) window.renderSpiral(d.date.getFullYear()); });
+
+        const months = d3.timeMonth.range(s, d3.timeMonth.offset(e,1));
+        g.append('g')
+          .selectAll('path')
+          .data(months)
+          .join('path')
+          .attr('class','month-boundary')
+          .attr('d', m => monthPath(cellSize, m));
+
+        const monthFmt = d3.timeFormat('%b');
+        g.append('g')
+          .selectAll('text.month-label')
+          .data(months)
+          .join('text')
+          .attr('class','month-label')
+          // 月份标签位置同样基于周一起点的周序号
+          .attr('x', m => (d3.timeMonday.count(d3.timeYear(m), m) + 0.5) * cellSize)
+          .attr('y', -6)
+          .attr('text-anchor','middle')
+          .text(m => monthFmt(m));
+      });
+    });
+
+  const legend = d3.select('#legend');
+  legend.append('span').attr('class','legend-text').text('低');
+  d3.range(0, 6).forEach(i => {
+    const v = i / 5 * 100;
+    legend.append('div').attr('class','swatch').style('background', color(v));
+  });
+  legend.append('span').attr('class','legend-text').text('高');
+})();
+</script>
+
+<!-- Spiral calendar (original index.html) -->
+<script>
+(function() {
+  const csvPath = '/data/calendar_data_modified.csv';
+
+  async function renderSpiral(yearDesired) {
+    if (!window._spiralRows) {
+      window._spiralRows = await d3.csv(csvPath, d => ({ date: new Date(d.date), value: +d.value || 0 }));
+      window._spiralRows.sort((a,b) => a.date - b.date);
+    }
+    const rows = window._spiralRows;
+    const years = Array.from(new Set(rows.map(r => r.date.getFullYear()))).sort((a,b) => a - b);
+    const year = (yearDesired != null) ? yearDesired : years[years.length - 1];
+
+    // 清空并重绘面板
+    const panelSel = d3.select('#spiral-panel');
+    panelSel.selectAll('*').remove();
+
+  // 画布与坐标系配置
+  const width = 800, height = 800;
+  const svg = panelSel
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height)
+    .attr('viewBox', `${-width/2} ${-height/2} ${width} ${height}`);
+
+  // 与左侧热力图共享颜色尺度（0-100）
+  const heatColor = window.heatColorScale || (window.heatColorScale = d3.scaleSequential(d3.interpolateRdYlGn).domain([0, 100]));
+
+  // 文本颜色选择：根据背景颜色提高对比度
+  function relLuminance(colorStr){
+    const c = d3.color(colorStr);
+    if(!c) return 0; // fallback
+    const rgb = [c.r, c.g, c.b].map(v => {
+      v /= 255;
+      return v <= 0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4);
+    });
+    return 0.2126*rgb[0] + 0.7152*rgb[1] + 0.0722*rgb[2];
+  }
+  function contrastRatio(fg, bg){
+    const L1 = relLuminance(fg) + 0.05;
+    const L2 = relLuminance(bg) + 0.05;
+    return L1 > L2 ? L1/L2 : L2/L1;
+  }
+  function pickTextColor(bg, prefer){
+    const threshold = 4.5; // 小字号文本建议对比度
+    if (prefer && contrastRatio(prefer, bg) >= threshold) return prefer;
+    // 备选颜色中选择对比度最高的
+    const candidates = ['#1a1d22', '#ffffff', '#eaeef4'];
+    let best = candidates[0], bestRatio = 0;
+    for (const c of candidates){
+      const r = contrastRatio(c, bg);
+      if (r > bestRatio){ best = c; bestRatio = r; }
+    }
+    return best;
+  }
+
+  const centerX = 0, centerY = 0;
+
+  // 极坐标核心参数
+  // 1. 数据准备：直接加载 CSV 并构造该年份的完整日期数组，缺失填充
+  const fmtISO = d3.timeFormat('%Y-%m-%d');
+  const byKey = new Map(rows.map(r => [fmtISO(r.date), r.value]));
+  const startDate = new Date(year, 0, 1);
+  const endDate = new Date(year, 11, 31);
+  const months = d3.range(1, 13);
+  const data = d3.timeDay.range(startDate, d3.timeDay.offset(endDate, 1)).map(dt => {
+    const m = dt.getMonth() + 1;
+    const iso = fmtISO(dt);
+    return {
+      year,
+      month: m,
+      day: dt.getDate(),
+      weekDay: dt.getDay(),
+      monthDays: new Date(year, m, 0).getDate(),
+      id: iso,
+      value: byKey.get(iso) ?? 0
+    };
+  });
+
+  // 2. 螺旋坐标参数（阿基米德螺旋 r = a + bθ）
+  const boxSize = 32;
+  const stepLen = boxSize;               // 邻接：步长等于方框宽度
+  const a = -0;                          // 初始半径（调小以缩小中心空洞）
+  const coilGap = boxSize;               // 希望相邻圈之间的径向间距等于方框厚度
+  const b = coilGap / (2 * Math.PI);     // 使相邻圈几乎无缝贴合（Δr = 2πb = boxSize）
+  const rStart = 360;                    // 起始半径，保证一月在最外层
+  let theta = (rStart - a) / b;          // 从外沿开始
+  const thetaStart = theta;              // 记录开始角度用于绘制整体边界
+
+  // 计算当前位置与切线角度
+  function pos(t) {
+    const r = a + b * t;
+    const x = r * Math.cos(t);
+    const y = r * Math.sin(t);
+    const dxdt = b * Math.cos(t) - r * Math.sin(t);
+    const dydt = b * Math.sin(t) + r * Math.cos(t);
+    const tangentDeg = Math.atan2(dydt, dxdt) * 180 / Math.PI;
+    return { r, x, y, tangentDeg };
+  }
+
+  // 螺旋边界坐标（外/内）
+  function posOuter(t) {
+    const r = a + b * t + coilGap/2;
+    return { x: r * Math.cos(t), y: r * Math.sin(t) };
+  }
+  function posInner(t) {
+    const r = a + b * t - coilGap/2;
+    return { x: r * Math.cos(t), y: r * Math.sin(t) };
+  }
+
+  // 生成沿螺旋的扇环段路径（相邻段边界一致，保证无缝）
+  function segmentPath(t0, t1, samples = 6) {
+    const dt = (t1 - t0) / samples;
+    let d = '';
+    // 外边界：t0 -> t1
+    let t = t0;
+    let p = posOuter(t);
+    d += `M ${p.x} ${p.y}`;
+    for (let i=1; i<=samples; i++) {
+      t = t0 + dt * i;
+      p = posOuter(t);
+      d += ` L ${p.x} ${p.y}`;
+    }
+    // 内边界：t1 -> t0（回程）
+    for (let i=samples; i>=0; i--) {
+      t = t0 + dt * i;
+      p = posInner(t);
+      d += ` L ${p.x} ${p.y}`;
+    }
+    d += ' Z';
+    return d;
+  }
+
+  function segmentMid(t0, t1) {
+    const tm = (t0 + t1) / 2;
+    return pos(tm);
+  }
+
+  // 按给定曲线长度前进，返回新位置
+  function advance(len, dir = -1) { // 默认向内推进
+    const r = a + b * theta;
+    const dtheta = (len / Math.sqrt(b*b + r*r)) * dir;
+    theta += dtheta;
+    const p = pos(theta);
+    spiralPoints.push([p.x, p.y]);
+    return p;
+  }
+
+  // 3. 分层分组与中心文字
+  const centerMain = svg.append('text')
+     .attr('class','center-main')
+     .attr('x', centerX)
+     .attr('y', centerY + 2)
+     .text(year);
+  const centerSub = svg.append('text')
+     .attr('class','center-sub')
+     .attr('x', centerX)
+     .attr('y', centerY + 26)
+     .text('');
+  const spiralLayer = svg.append('g').attr('class','spiral');
+  const itemsLayer = svg.append('g').attr('class','items');
+  const edgesLayer  = svg.append('g').attr('class','edges');
+
+  // 4. 顺序沿螺旋绘制：月份缩写 + 日期方框
+  const monthsAbbr = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  const monthLettersMap = new Map();
+  const spiralPoints = [];
+  spiralPoints.push([pos(theta).x, pos(theta).y]);
+
+  const dataByMonth = d3.group(data, d => d.month);
+  const weekInitialsEn = ['S','M','T','W','T','F','S'];
+  const weekNamesZh = ['周日','周一','周二','周三','周四','周五','周六'];
+
+  months.forEach(m => {
+    // 首字母单扇环段，并与后续日期段无缝衔接
+    const ch = monthsAbbr[m-1];
+    const letterSegs = [];
+    {
+      const t0 = theta;
+      const r = a + b * t0;
+      const dtheta = (stepLen / Math.sqrt(b*b + r*r)) * -1;
+      const t1 = t0 + dtheta;
+      const pathD = segmentPath(t0, t1);
+      const pathSel = itemsLayer.append('path')
+        .attr('class', 'seg letter-seg')
+        .attr('d', pathD);
+      const mid = segmentMid(t0, t1);
+      itemsLayer.append('text')
+        .attr('class','letter-text')
+        .attr('transform', `translate(${mid.x},${mid.y})`)
+        .text(ch);
+      // 扇环两条径向直边的淡色描边
+      const p0o = posOuter(t0), p0i = posInner(t0);
+      const p1o = posOuter(t1), p1i = posInner(t1);
+      edgesLayer.append('line')
+        .attr('class','segment-edge')
+        .attr('x1', p0o.x).attr('y1', p0o.y)
+        .attr('x2', p0i.x).attr('y2', p0i.y);
+      edgesLayer.append('line')
+        .attr('class','segment-edge')
+        .attr('x1', p1o.x).attr('y1', p1o.y)
+        .attr('x2', p1i.x).attr('y2', p1i.y);
+      letterSegs.push(pathSel.node());
+      theta = t1;
+      spiralPoints.push([mid.x, mid.y]);
+    }
+    monthLettersMap.set(m, letterSegs);
+
+    // 绘制本月的每一天，方框沿曲线等距分布、紧挨排列
+    const monthDays = dataByMonth.get(m);
+    monthDays.forEach(d => {
+      const t0 = theta;
+      const r = a + b * t0;
+      const dtheta = (stepLen / Math.sqrt(b*b + r*r)) * -1;
+      const t1 = t0 + dtheta;
+      const pathD = segmentPath(t0, t1);
+      // 扇环背景颜色按天与热力图对应（共享颜色尺度）
+      const fillColor = heatColor(d.value);
+      const pathSel = itemsLayer.append('path')
+        .attr('class', 'seg')
+        .attr('d', pathD)
+        .attr('fill', fillColor);
+      const mid = segmentMid(t0, t1);
+      const preferColor = (d.weekDay === 0 || d.weekDay === 1) ? '#ee9b4c' : '#9e9e9e';
+      const textColor = pickTextColor(fillColor, preferColor);
+      itemsLayer.append('text')
+        .attr('class','seg-text')
+        .attr('transform', `translate(${mid.x},${mid.y})`)
+        .attr('fill', textColor)
+        .text(`${weekInitialsEn[d.weekDay]} ${d.day}`);
+
+      // 扇环两条径向直边的淡色描边
+      const q0o = posOuter(t0), q0i = posInner(t0);
+      const q1o = posOuter(t1), q1i = posInner(t1);
+      edgesLayer.append('line')
+        .attr('class','segment-edge')
+        .attr('x1', q0o.x).attr('y1', q0o.y)
+        .attr('x2', q0i.x).attr('y2', q0i.y);
+      edgesLayer.append('line')
+        .attr('class','segment-edge')
+        .attr('x1', q1o.x).attr('y1', q1o.y)
+        .attr('x2', q1i.x).attr('y2', q1i.y);
+
+      pathSel.on('click', () => {
+        centerMain.text(`${d.year}年${d.month}月${d.day}日`);
+        centerSub.text(`${weekNamesZh[d.weekDay]} ${d.value}`);
+      });
+
+      pathSel.append('title')
+        .text(`${d.year}年${d.month}月${d.day}日 ${weekNamesZh[d.weekDay]} 值：${d.value}`);
+
+      theta = t1;
+      spiralPoints.push([mid.x, mid.y]);
+    });
+  });
+
+  // 5. 绘制螺旋参考路径（置于底层）
+  const line = d3.line().curve(d3.curveNatural);
+  spiralLayer.append('path')
+    .attr('class','spiral-path')
+    .attr('d', line(spiralPoints));
+
+  // 6. 绘制整体外/内边界线以增强对比（颜色独立于段填充）
+  const thetaEnd = theta; // 当前为结束角度（已经推进到最后）
+  const stepEdge = 0.05;  // 采样步长，越小越平滑
+  const outerPts = [];
+  const innerPts = [];
+  for (let t = thetaStart; t >= thetaEnd; t -= stepEdge) {
+    const po = posOuter(t);
+    const pi = posInner(t);
+    outerPts.push([po.x, po.y]);
+    innerPts.push([pi.x, pi.y]);
+  }
+  edgesLayer.append('path')
+    .attr('class','spiral-edge')
+    .attr('d', d3.line()(outerPts));
+  edgesLayer.append('path')
+    .attr('class','spiral-edge')
+    .attr('d', d3.line()(innerPts));
+  }
+  window.renderSpiral = renderSpiral;
+  renderSpiral();
+})();
+</script>
+</body>
+</html>

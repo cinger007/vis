@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国石油大学（华东）2025新生</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="utils/data.js"></script>
+    <!-- <script src="https://unpkg.com/d3-regression@latest/dist/d3-regression.min.js"></script> -->
+    <script src="utils/scatter.js"></script>
+    <link rel="stylesheet" href="style/scatter.css">
+</head>
+
+<body>
+    <div class="chart-container">
+        <h2>1985年美国犯罪数据性别差异比例（从大到小排序）</h2>
+        <div id="chart"></div>
+    </div>
+</body>
+<script>
+    // 启动渲染
+    main();
+    // 测试树渲染
+    async function main() {
+        try {
+            const data = await await d3.csv("data/1985CrimeGender.csv", function (d) {//本质上是在定义一个函数,d为参数
+                return { crimeType:d.犯罪类型, male: +d.男性, female: +d.女性};
+            });
+            data.forEach(rec => {
+                rec.genderDiffRatio = (rec.male-rec.female)/(rec.male+rec.female);
+            });
+            data.sort((a, b) => b.genderDiffRatio - a.genderDiffRatio);//排序
+            renderScatter(data,"#chart");
+        } catch (error) {
+            console.error("渲染失败:", error);
+            d3.select("#tree-container").html(`<div style="color:red">加载失败: ${error.message}</div>`);
+        }
+    }
+
+</script>
+
+</html>

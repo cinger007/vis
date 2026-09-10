@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>移动四边形法等值线提取 - 修复版</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .grid-cell {
+            fill: none;
+            stroke: #e0e0e0;
+            stroke-width: 1px;
+        }
+
+        .contour-line {
+            fill: none;
+            stroke: #e74c3c;
+            stroke-width: 2px;
+        }
+
+        .contour-point {
+            fill: #3498db;
+            r: 2;
+        }
+
+        .control-panel {
+            margin: 20px 0;
+        }
+
+        .threshold-display {
+            margin: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            margin: 0 5px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+        input[type="range"] {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>移动四边形法等值线提取</h2>
+
+        <div class="control-panel">
+            <div class="threshold-display">
+                等值线阈值: <span id="threshold-value">0.0</span>
+            </div>
+            <input type="range" id="threshold-slider" min="-1" max="1" step="0.05" value="0.0">
+            <button onclick="regenerateData()">重新生成数据</button>
+            <button onclick="toggleGrid()">切换网格</button>
+        </div>
+
+        <svg id="marching-squares-canvas" width="600" height="500"></svg>
+    </div>
+
+    <script>
+        // 配置参数
+        const config = {
+            gridSize: 20,
+            canvasWidth: 600,
+            canvasHeight: 500,
+            showGrid: true
+        };
+
+        // 全局变量
+        let gridData = [];
+        let currentThreshold = 0.0;
+
+        // 初始化
+        function init() {
+            generateGridData();
+            updateVisualization();
+            setupEventListeners();
+        }
+
+        // 生成模拟网格数据
+        function generateGridData() {
+            gridData = [];
+            for (let i = 0; i < config.gridSize; i++) {
+                const row = [];
+                for (let j = 0; j < config.gridSize; j++) {
+                    // 归一化坐标到 [-2, 2]
+                    const x = (j / config.gridSize - 0.5) * 4;
+                    const y = (i / config.gridSize - 0.5) * 4;
+
+                    // 创建简单的测试函数
+                    let value = Math.sin(x) * Math.cos(y);
+                    value += 0.5 * Math.exp(-(x * x + y * y));
+
+                    row.push(value);
+                }
+                gridData.push(row);
+            }
+            console.log("数据生成完成，范围:",
+                d3.min(gridData.flat()).toFixed(2),
+                "到",
+                d3.max(gridData.flat()).toFixed(2));
+        }
+
+        // 修复版的移动四边形法
+        function marchingSquares(threshold) {
+            const lines = [];
+            const cellSizeX = config.canvasWidth / (config.gridSize - 1);
+            const cellSizeY = config.canvasHeight / (config.gridSize - 1);
+
+            console.log("计算等值线，阈值:", threshold);
+
+            d3.range(config.gridSize - 1).forEach(i => {
+                d3.range(config.gridSize - 1).forEach(j => {
+                    // 获取四个顶点值
+                    const v4 = [bl, br, tr, tl] = [
+                        gridData[i + 1][j], gridData[i + 1][j + 1], gridData[i][j + 1], gridData[i][j]
+                    ];
+
+                    // 计算状态码（使用d3.sum简化）
+                    let state = d3.sum([1,2,4,8].map((w,index) => (v4[index] >= threshold) * w));
+
+                    // 计算当前四边形的坐标
+                    const x = j * cellSizeX;
+                    const y = i * cellSizeY;
+
+                    // 使用D3的线性比例尺进行插值
+                    const interpolateX = d3.scaleLinear()
+                        .domain([0, 1])
+                        .range([x, x + cellSizeX]);
+
+                    const interpolateY = d3.scaleLinear()
+                        .domain([0, 1])
+                        .range([y, y + cellSizeY]);
+
+                    // 计算插值参数t
+                    const getT = (v1, v2) => (threshold - v1) / (v2 - v1);
+
+                    const left = [x, interpolateY(getT(tl, bl))];
+                    const right = [x + cellSizeX, interpolateY(getT(tr, br))];
+                    const top = [interpolateX(getT(tl, tr)), y];
+                    const bottom = [interpolateX(getT(bl, br)), y + cellSizeY];
+
+                    // 根据状态码确定等值线
+                    code = [[], [[left, bottom]], [[bottom, right]], [[left, right]],
+                    [[right, top]], [[left, top], [right, bottom]], [[bottom, top]], [[top, left]],
+                    [], [], [[left, bottom], [right, top]], [],
+                    [], [], [], []];
+                    [1, 2, 3, 4, 6, 7].forEach(d => code[15 - d] = code[d]);
+                    lines.push(...code[state]);
+                })
+            });
+
+            console.log("生成等值线段数量:", lines.length);
+            return lines;
+        }
+
+        // 更新可视化
+        function updateVisualization() {
+            const svg = d3.select("#marching-squares-canvas");
+            svg.selectAll("*").remove();
+
+            // 计算等值线
+            const contourLines = marchingSquares(currentThreshold);
+
+            // 绘制网格
+            if (config.showGrid) {
+                drawGrid(svg);
+            }
+
+            // 绘制等值线
+            drawContours(svg, contourLines);
+
+            // 更新阈值显示
+            d3.select("#threshold-value").text(currentThreshold.toFixed(2));
+        }
+
+        // 绘制网格
+        function drawGrid(svg) {
+            const cellSizeX = config.canvasWidth / (config.gridSize - 1);
+            const cellSizeY = config.canvasHeight / (config.gridSize - 1);
+
+            // 绘制网格点
+            for (let i = 0; i < config.gridSize; i++) {
+                for (let j = 0; j < config.gridSize; j++) {
+                    svg.append("circle")
+                        .attr("class", "contour-point")
+                        .attr("cx", j * cellSizeX)
+                        .attr("cy", i * cellSizeY);
+                }
+            }
+
+            // 绘制网格线
+            for (let i = 0; i < config.gridSize; i++) {
+                // 垂直线
+                svg.append("line")
+                    .attr("class", "grid-cell")
+                    .attr("x1", i * cellSizeX)
+                    .attr("y1", 0)
+                    .attr("x2", i * cellSizeX)
+                    .attr("y2", config.canvasHeight);
+
+                // 水平线
+                svg.append("line")
+                    .attr("class", "grid-cell")
+                    .attr("x1", 0)
+                    .attr("y1", i * cellSizeY)
+                    .attr("x2", config.canvasWidth)
+                    .attr("y2", i * cellSizeY);
+            }
+        }
+
+        // 绘制等值线
+        function drawContours(svg, contourLines) {
+            console.log("绘制等值线，线段数量:", contourLines.length);
+            // 绘制等值线（使用d3.line）
+            svg.selectAll(".contour-line")
+                .data(contourLines.filter(line => line && line.length === 2))
+                .join("path")
+                .attr("class", "contour-line")
+                .attr("d", d3.line(d => d[0], d => d[1]))
+                .attr("data-index", (d, i) => i);
+
+            // 显示信息
+            const flatData = gridData.flat();
+            const minVal = d3.min(flatData);
+            const maxVal = d3.max(flatData);
+
+            svg.append("text")
+                .attr("x", 10)
+                .attr("y", 20)
+                .attr("fill", "#e74c3c")
+                .attr("font-size", "14px")
+                .attr("font-weight", "bold")
+                .text(`阈值: ${currentThreshold.toFixed(2)}`);
+
+            svg.append("text")
+                .attr("x", 10)
+                .attr("y", 40)
+                .attr("fill", "#666")
+                .attr("font-size", "12px")
+                .text(`数据范围: [${minVal.toFixed(2)}, ${maxVal.toFixed(2)}]`);
+
+            svg.append("text")
+                .attr("x", 10)
+                .attr("y", 60)
+                .attr("fill", "#666")
+                .attr("font-size", "12px")
+                .text(`等值线段: ${contourLines.length}条`);
+        }
+
+        // 事件监听器设置
+        function setupEventListeners() {
+            d3.select("#threshold-slider")
+                .on("input", function () {
+                    currentThreshold = +this.value;
+                    updateVisualization();
+                });
+        }
+
+        // 重新生成数据
+        function regenerateData() {
+            generateGridData();
+            updateVisualization();
+        }
+
+        // 切换网格显示
+        function toggleGrid() {
+            config.showGrid = !config.showGrid;
+            updateVisualization();
+        }
+
+        // 页面加载时初始化
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛软件学院25级新生</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="utils/data.js"></script>
+    <script src="utils/treelist.js"></script>
+    <link rel="stylesheet" href="style/treelist.css">
+</head>
+
+<body>
+    <div class="chart-container">
+        <div class="title">青岛软件学院25级新生</div>
+        <div class="controls">
+            <button class="btn" onclick="expandAll(true)">展开全部</button>
+            <button class="btn" onclick="expandAll(false)">折叠全部</button>
+        </div>
+        <div id="tree-container"></div>
+    </div>
+
+    <script>
+        // 启动渲染
+        main();
+        // 测试树渲染
+        async function main() {
+            try {
+                const students = await load();
+                renderTree(mapToTreeStructure(students),nodeDisplay);
+            } catch (error) {
+                console.error("渲染失败:", error);
+                d3.select("#tree-container").html(`<div style="color:red">加载失败: ${error.message}</div>`);
+            }
+        }
+    </script>
+</body>
+
+</html>

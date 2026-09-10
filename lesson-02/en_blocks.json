@@ -1,0 +1,872 @@
+[
+  {
+    "idx": 0,
+    "chapter": "ch-2-1",
+    "tab": "",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "从「拿到一张表」到「画出一张图」的完整链路",
+    "zh_clean": "从「拿到一张表」到「画出一张图」的完整链路",
+    "en": "The complete pipeline from \"getting a table\" to \"drawing a chart\""
+  },
+  {
+    "idx": 1,
+    "chapter": "ch-2-1",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 2,
+    "chapter": "ch-2-1",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              <strong data-page-node-id=\"Gt09aW9kyXLvebSvgeGjLk\">3 个可视化流程模型</strong>：① 参考 Card 1999 模型绘制流程图（Box Flowcharts）→\n              ② Mackinlay 自动化准则 → ③ van Wijk 模型（含交互反馈）。\n            ",
+    "zh_clean": "\n              <strong>3 个可视化流程模型</strong>：① 参考 Card 1999 模型绘制流程图（Box Flowcharts）→\n              ② Mackinlay 自动化准则 → ③ van Wijk 模型（含交互反馈）。\n            ",
+    "en": "\n              <strong>3 visualization pipeline models</strong>: ① Reference the Card 1999 model for box flowcharts &rarr;\n              ② Mackinlay's automation principles &rarr; ③ van Wijk's model (with interaction feedback).\n            "
+  },
+  {
+    "idx": 3,
+    "chapter": "ch-2-1",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              原始图片是你的概念图。<strong data-page-node-id=\"q5ZApGCzwNprT9LPo7rB89\">本节课</strong>用 D3 重画这张概念图，每个节点点击后能展开细节。\n            ",
+    "zh_clean": "\n              原始图片是你的概念图。<strong>本节课</strong>用 D3 重画这张概念图，每个节点点击后能展开细节。\n            ",
+    "en": "\n              The original image is your concept map. <strong>This lesson</strong> uses D3 to redraw this concept map &mdash; every node expands details when clicked.\n            "
+  },
+  {
+    "idx": 4,
+    "chapter": "ch-2-1",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入理论：可视化流程的三个经典模型",
+    "zh_clean": "嵌入理论：可视化流程的三个经典模型",
+    "en": "Embedded Theory: Three Classic Models of the Visualization Pipeline"
+  },
+  {
+    "idx": 5,
+    "chapter": "ch-2-1",
+    "tab": "explain",
+    "tag": "table",
+    "class": "theory-table",
+    "zh": "\n              <thead data-page-node-id=\"VpVzWp6ywZrhdm2bX4hHu1\">\n                <tr data-page-node-id=\"VDGsDdyEQCOCvLyMiSegX8\"><th data-page-node-id=\"UmaIxKfAYLFuH0VGf3UHDo\">模型</th><th data-page-node-id=\"vL5mYTJIGi9Yl3qhgRNRDF\">作者 / 年份</th><th data-page-node-id=\"SeESifMZNkJJpUoMZtHQtC\">核心思想</th></tr>\n              </thead>\n              <tbody data-page-node-id=\"FWyQcXd2HCUToX3ZlgSbCm\">\n                <tr data-page-node-id=\"7W2zJgtKxercbnR89zCMJ1\">\n                  <td data-page-node-id=\"UGLAZRN1dDXBAbVuojb6aA\"><strong data-page-node-id=\"Mq17cX9nnSV0lQ0RrTQkRF\">Card 数据流模型</strong></td>\n                  <td data-page-node-id=\"FfbCxJoe6kYnGniq1LjefJ\">Card, Mackinlay &amp; Shneiderman, 1999</td>\n                  <td data-page-node-id=\"QdM7Y06edWa0BilFqvnZwu\">原始数据 → 数据表 → 视觉结构 → 视图（嵌套变换 D→T→V→C/L/S）</td>\n                </tr>\n                <tr data-page-node-id=\"aEKil5CzvMrkpJR7NpQ0Xb\">\n                  <td data-page-node-id=\"9wUV4nCsyES0NMvhXXOTGt\"><strong data-page-node-id=\"hB9zqA4HMGMHnnA1GiBtLk\">Mackinlay 自动化准则</strong></td>\n                  <td data-page-node-id=\"ImhYVEmgLjcUdgGUbQ7WnY\">Mackinlay 1986</td>\n                  <td data-page-node-id=\"yuav8SGisqapd8uzJm7rZU\">对每种数据类型，自动选「量化准确性最高」的视觉通道（如：数值→位置、类别→色调）</td>\n                </tr>\n                <tr data-page-node-id=\"yBxBSnyTN4sjHTRBDC2O8E\">\n                  <td data-page-node-id=\"xkiLFloma0HXbZBT9roomx\"><strong data-page-node-id=\"c3Gv6fIaC7XEZfVAw7wQRp\">van Wijk 反馈模型</strong></td>\n                  <td data-page-node-id=\"6htjqVGJN9tyslEeMiNTsn\">van Wijk 2005</td>\n                  <td data-page-node-id=\"dGswazcV1VKzhsqWP27RDU\">View ⇆ Filter ⇆ Param ⇆ Other Views —— 强调<strong data-page-node-id=\"GvpB8XM5tkReV8tn0bZ3wf\">交互反馈循环</strong></td>\n                </tr>\n              </tbody>\n            ",
+    "zh_clean": "\n              <thead>\n                <tr><th>模型</th><th>作者 / 年份</th><th>核心思想</th></tr>\n              </thead>\n              <tbody>\n                <tr>\n                  <td><strong>Card 数据流模型</strong></td>\n                  <td>Card, Mackinlay &amp; Shneiderman, 1999</td>\n                  <td>原始数据 → 数据表 → 视觉结构 → 视图（嵌套变换 D→T→V→C/L/S）</td>\n                </tr>\n                <tr>\n                  <td><strong>Mackinlay 自动化准则</strong></td>\n                  <td>Mackinlay 1986</td>\n                  <td>对每种数据类型，自动选「量化准确性最高」的视觉通道（如：数值→位置、类别→色调）</td>\n                </tr>\n                <tr>\n                  <td><strong>van Wijk 反馈模型</strong></td>\n                  <td>van Wijk 2005</td>\n                  <td>View ⇆ Filter ⇆ Param ⇆ Other Views —— 强调<strong>交互反馈循环</strong></td>\n                </tr>\n              </tbody>\n            ",
+    "en": "\n              <thead>\n                <tr><th>Model</th><th>Author / Year</th><th>Core Idea</th></tr>\n              </thead>\n              <tbody>\n                <tr>\n                  <td><strong>Card Data Flow Model</strong></td>\n                  <td>Card, Mackinlay &amp; Shneiderman, 1999</td>\n                  <td>Raw data &rarr; data table &rarr; visual structure &rarr; view (nested transformations D&rarr;T&rarr;V&rarr;C/L/S)</td>\n                </tr>\n                <tr>\n                  <td><strong>Mackinlay's Automation Principles</strong></td>\n                  <td>Mackinlay, 1986</td>\n                  <td>For each data type, automatically pick the visual channel with the highest &ldquo;quantitative accuracy&rdquo; (e.g., quantitative &rarr; position, categorical &rarr; hue)</td>\n                </tr>\n                <tr>\n                  <td><strong>van Wijk Feedback Model</strong></td>\n                  <td>van Wijk, 2005</td>\n                  <td>View &harr; Filter &harr; Param &harr; Other Views &mdash; emphasizing the <strong>interaction feedback loop</strong></td>\n                </tr>\n              </tbody>\n            "
+  },
+  {
+    "idx": 6,
+    "chapter": "ch-2-1",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              <strong data-page-node-id=\"L3CFQKDsq29xKQAnH2TF40\">核心教学要点</strong>：三个模型描述同一件事的不同侧面——\n              Card 给\"管道\"，Mackinlay 给\"自动决策\"，van Wijk 给\"反馈环\"。\n              <strong data-page-node-id=\"ha48b6H3I1OlCe6DDDsrmd\">三者是叠加关系，不是冲突关系。</strong>\n            ",
+    "zh_clean": "\n              <strong>核心教学要点</strong>：三个模型描述同一件事的不同侧面——\n              Card 给\"管道\"，Mackinlay 给\"自动决策\"，van Wijk 给\"反馈环\"。\n              <strong>三者是叠加关系，不是冲突关系。</strong>\n            ",
+    "en": "\n              <strong>Core teaching points</strong>: the three models describe different facets of the same thing &mdash;\n              Card gives you the &ldquo;pipeline,&rdquo; Mackinlay gives you &ldquo;automated decisions,&rdquo; and van Wijk gives you the &ldquo;feedback loop.&rdquo;\n              <strong>They layer on top of each other rather than conflict.</strong>\n            "
+  },
+  {
+    "idx": 7,
+    "chapter": "ch-2-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"9lkPO67nCOv5awhbaygUrn\">Card 模型</strong>：告诉你\"transform 之后该 mapping，mapping 之后该 view\"",
+    "zh_clean": "<strong>Card 模型</strong>：告诉你\"transform 之后该 mapping，mapping 之后该 view\"",
+    "en": "<strong>Card model</strong>: tells you &ldquo;after transform comes mapping, after mapping comes view&rdquo;"
+  },
+  {
+    "idx": 8,
+    "chapter": "ch-2-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"VvtvHTSobHpsU20VC8nSzU\">Mackinlay</strong>：告诉你\"mapping 这一步怎么自动决策\"",
+    "zh_clean": "<strong>Mackinlay</strong>：告诉你\"mapping 这一步怎么自动决策\"",
+    "en": "<strong>Mackinlay</strong>: tells you &ldquo;how to automate the mapping step&rdquo;"
+  },
+  {
+    "idx": 9,
+    "chapter": "ch-2-1",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"nUCXD80SXhdTerrmPcj7hW\">van Wijk</strong>：告诉你\"view 之后还要把用户操作 feed 回去\"",
+    "zh_clean": "<strong>van Wijk</strong>：告诉你\"view 之后还要把用户操作 feed 回去\"",
+    "en": "<strong>van Wijk</strong>: tells you &ldquo;after view, you still need to feed user actions back&rdquo;"
+  },
+  {
+    "idx": 10,
+    "chapter": "ch-2-1",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "关键代码 ① SVG 流程图节点 + 箭头",
+    "zh_clean": "关键代码 ① SVG 流程图节点 + 箭头",
+    "en": "Key Code &mdash; SVG Flowchart Nodes + Arrows"
+  },
+  {
+    "idx": 11,
+    "chapter": "ch-2-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "code-purpose",
+    "zh": "5 个 step 节点横向排列，相邻节点之间用 SVG marker 画的箭头连接。",
+    "zh_clean": "5 个 step 节点横向排列，相邻节点之间用 SVG marker 画的箭头连接。",
+    "en": "5 step nodes arranged horizontally, connected by SVG-marker-drawn arrows between adjacent nodes."
+  },
+  {
+    "idx": 12,
+    "chapter": "ch-2-1",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "\n              <strong data-page-node-id=\"xoflUCP3YwQff4qG3MljCl\">关键点解释：</strong>\n              <code data-page-node-id=\"vvgzNCU5dxg7agLbEHBzJi\">marker-end=\"url(#arrowhead)\"</code> 是 SVG 引用的方式 —— 把 &lt;defs&gt; 里定义的形状\"嵌入\"到线段末端；\n              <code data-page-node-id=\"wY4u7ebmpawMAGXQSTs1H3\">classed(\"selected\", predicate)</code> 接收布尔函数，一次性切换所有节点的\"selected\"状态，<strong data-page-node-id=\"0q3M1EUcEi57yjembM6vF9\">避免自己写 forEach</strong>。\n            ",
+    "zh_clean": "\n              <strong>关键点解释：</strong>\n              <code>marker-end=\"url(#arrowhead)\"</code> 是 SVG 引用的方式 —— 把 &lt;defs&gt; 里定义的形状\"嵌入\"到线段末端；\n              <code>classed(\"selected\", predicate)</code> 接收布尔函数，一次性切换所有节点的\"selected\"状态，<strong>避免自己写 forEach</strong>。\n            ",
+    "en": "\n              <strong>Key explanation:</strong>\n              <code>marker-end=\"url(#arrowhead)\"</code> is SVG's referencing mechanism &mdash; it &ldquo;embeds&rdquo; a shape defined inside <code>&lt;defs&gt;</code> at the line's end;\n              <code>classed(\"selected\", predicate)</code> takes a boolean function and toggles the &ldquo;selected&rdquo; state of every node in one call, <strong>so you avoid writing forEach yourself</strong>.\n            "
+  },
+  {
+    "idx": 13,
+    "chapter": "ch-2-1",
+    "tab": "demo",
+    "tag": "h3",
+    "class": "",
+    "zh": "▶ 交互流程图演示",
+    "zh_clean": "▶ 交互流程图演示",
+    "en": "&#9654; Interactive Flowchart Demo"
+  },
+  {
+    "idx": 14,
+    "chapter": "ch-2-1",
+    "tab": "demo",
+    "tag": "p",
+    "class": "demo-legend",
+    "zh": "👆 点击任一节点查看在 Card / Mackinlay / van Wijk 三个模型中的对应",
+    "zh_clean": "👆 点击任一节点查看在 Card / Mackinlay / van Wijk 三个模型中的对应",
+    "en": "&#128073; Click any node to see its mapping in the Card / Mackinlay / van Wijk models"
+  },
+  {
+    "idx": 15,
+    "chapter": "ch-2-2",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "把\"按专业分\"变成\"按维度组合分\"",
+    "zh_clean": "把\"按专业分\"变成\"按维度组合分\"",
+    "en": "From &ldquo;group by major&rdquo; to &ldquo;group by dimension combinations&rdquo;"
+  },
+  {
+    "idx": 16,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 17,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              用新生数据按 \"专业 / 班级\" 做 <strong data-page-node-id=\"O2m78KD5e5TCotxHmQmeXY\">rollup 分桶聚合</strong>。\n              你演示的核心是 d3.rollup 的链式调用 —— 一个函数完成多维度分组。\n            ",
+    "zh_clean": "\n              用新生数据按 \"专业 / 班级\" 做 <strong>rollup 分桶聚合</strong>。\n              你演示的核心是 d3.rollup 的链式调用 —— 一个函数完成多维度分组。\n            ",
+    "en": "\n              Use the freshman data to do <strong>rollup bucketed aggregation</strong> by &ldquo;major / class&rdquo;.\n              The core of your demo is d3.rollup's chained calls &mdash; one function that performs multi-dimensional grouping.\n            "
+  },
+  {
+    "idx": 18,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入理论：函数式聚合与 OLAP 切片",
+    "zh_clean": "嵌入理论：函数式聚合与 OLAP 切片",
+    "en": "Embedded Theory: Functional Aggregation and OLAP Slicing"
+  },
+  {
+    "idx": 19,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              <strong data-page-node-id=\"iFrzmIGb0lXeoQsxHLosui\">d3.rollup 是\"按 key 分桶、再 reduce 一次\"的函数式组合</strong>：\n            ",
+    "zh_clean": "\n              <strong>d3.rollup 是\"按 key 分桶、再 reduce 一次\"的函数式组合</strong>：\n            ",
+    "en": "\n              <strong>d3.rollup is a functional composition of &ldquo;bucket by key, then reduce once&rdquo;</strong>:\n            "
+  },
+  {
+    "idx": 20,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              它返回 <code data-page-node-id=\"DAJtQjv2RwKhkJTOpV6vsA\">Map</code>（不是数组、不是对象），所以：\n            ",
+    "zh_clean": "\n              它返回 <code>Map</code>（不是数组、不是对象），所以：\n            ",
+    "en": "\n              It returns a <code>Map</code> (not an array, not an object), so:\n            "
+  },
+  {
+    "idx": 21,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "遍历用 <code data-page-node-id=\"3XXM1mDl9cR32OmJfDh2Wr\">for ([k, v] of m)</code> 或 <code data-page-node-id=\"5QeZXRdEGe7xogHQO91CdO\">m.entries()</code>",
+    "zh_clean": "遍历用 <code>for ([k, v] of m)</code> 或 <code>m.entries()</code>",
+    "en": "Iterate using <code>for ([k, v] of m)</code> or <code>m.entries()</code>"
+  },
+  {
+    "idx": 22,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "嵌套 rollup 出嵌套 Map",
+    "zh_clean": "嵌套 rollup 出嵌套 Map",
+    "en": "Nested rollup produces a nested Map"
+  },
+  {
+    "idx": 23,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "与 <code data-page-node-id=\"9mTz2lPuydgGtxCj4Bhgnm\">d3.group</code> 的差别：rollup 把组内数据归约成<strong data-page-node-id=\"p99b3HbD4VLXMbGbCFCqcq\">一个值</strong>，group 保留<strong data-page-node-id=\"3XWuWVvnlRfKf6FdHh04ld\">原数组</strong>",
+    "zh_clean": "与 <code>d3.group</code> 的差别：rollup 把组内数据归约成<strong>一个值</strong>，group 保留<strong>原数组</strong>",
+    "en": "Difference from <code>d3.group</code>: rollup reduces the in-group data to <strong>a single value</strong>, while group preserves <strong>the original array</strong>"
+  },
+  {
+    "idx": 24,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "理论补丁：OLAP 切片/切块/钻取",
+    "zh_clean": "理论补丁：OLAP 切片/切块/钻取",
+    "en": "Theory Patch: OLAP Slice / Dice / Drill"
+  },
+  {
+    "idx": 25,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              1993 年 Codd 提出 OLAP 12 条准则，其中 3 个核心操作用 rollup 就能模拟：\n            ",
+    "zh_clean": "\n              1993 年 Codd 提出 OLAP 12 条准则，其中 3 个核心操作用 rollup 就能模拟：\n            ",
+    "en": "\n              In 1993 Codd proposed 12 OLAP rules; three of their core operations can be simulated with rollup:\n            "
+  },
+  {
+    "idx": 26,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"ijwRfpOQ3CiMTLWG5eiGsP\">切片 (Slice)：</strong>固定一维度（如只看 2025 级）→ 等价于 <code data-page-node-id=\"eW84rGrj0aAdhoMGbTaI4j\">.filter()</code> 后 rollup",
+    "zh_clean": "<strong>切片 (Slice)：</strong>固定一维度（如只看 2025 级）→ 等价于 <code>.filter()</code> 后 rollup",
+    "en": "<strong>Slice:</strong> fix one dimension (e.g., only look at the 2025 cohort) &rarr; equivalent to <code>.filter()</code> then rollup"
+  },
+  {
+    "idx": 27,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"4PxanFBhGodDuwWbRkyuk3\">切块 (Dice)：</strong>按两个维度分组 → 等价于双 key rollup",
+    "zh_clean": "<strong>切块 (Dice)：</strong>按两个维度分组 → 等价于双 key rollup",
+    "en": "<strong>Dice:</strong> group by two dimensions &rarr; equivalent to a double-key rollup"
+  },
+  {
+    "idx": 28,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"JNCc9PgS1LKHAN3uUk8GF7\">钻取 (Drill)：</strong>层层下钻 → 等价于嵌套 rollup + 递归展开",
+    "zh_clean": "<strong>钻取 (Drill)：</strong>层层下钻 → 等价于嵌套 rollup + 递归展开",
+    "en": "<strong>Drill:</strong> drill down level by level &rarr; equivalent to nested rollup + recursive expansion"
+  },
+  {
+    "idx": 29,
+    "chapter": "ch-2-2",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              <strong data-page-node-id=\"UPjXdWh2NfsZMp8ROCzXSy\">教学要点</strong>：可视化系统的\"下钻交互\"通常背后就是 rollup + hierarchy 的组合。本节课演示 d3.rollup 的多层级能力。\n            ",
+    "zh_clean": "\n              <strong>教学要点</strong>：可视化系统的\"下钻交互\"通常背后就是 rollup + hierarchy 的组合。本节课演示 d3.rollup 的多层级能力。\n            ",
+    "en": "\n              <strong>Classroom Takeaway</strong>: a visualization system's &ldquo;drill-down interaction&rdquo; is typically backed by a combination of rollup + hierarchy. This lesson demonstrates d3.rollup's multi-level capability.\n            "
+  },
+  {
+    "idx": 30,
+    "chapter": "ch-2-2",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "关键代码 ① 双层 rollup",
+    "zh_clean": "关键代码 ① 双层 rollup",
+    "en": "Key Code &mdash; Double-layer Rollup"
+  },
+  {
+    "idx": 31,
+    "chapter": "ch-2-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "code-purpose",
+    "zh": "两层 key：外层 = 专业，内层 = 班级，reducer = 计数。",
+    "zh_clean": "两层 key：外层 = 专业，内层 = 班级，reducer = 计数。",
+    "en": "Two key layers: outer = major, inner = class, reducer = count."
+  },
+  {
+    "idx": 32,
+    "chapter": "ch-2-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "\n              <strong data-page-node-id=\"ECQbTubtozXM2FBBt7zH1Y\">关键点解释：</strong>\n              <code data-page-node-id=\"AQ6LghsiZheE0BFCTxzklP\">d3.rollup</code> 的 key 参数是<strong data-page-node-id=\"6AdQj53VtzM22DejO1awiO\">rest 参数</strong>（...keys），所以传 1 个 → 单层 Map，传 2 个 → 嵌套 Map，传 3 个 → 3 层嵌套。\n              这就是 OLAP 的\"维度组合\"。\n            ",
+    "zh_clean": "\n              <strong>关键点解释：</strong>\n              <code>d3.rollup</code> 的 key 参数是<strong>rest 参数</strong>（...keys），所以传 1 个 → 单层 Map，传 2 个 → 嵌套 Map，传 3 个 → 3 层嵌套。\n              这就是 OLAP 的\"维度组合\"。\n            ",
+    "en": "\n              <strong>Key explanation:</strong>\n              The key parameter of <code>d3.rollup</code> is a <strong>rest parameter</strong> (...keys), so passing 1 &rarr; single-layer Map, 2 &rarr; nested Map, 3 &rarr; 3-layer nesting.\n              This is OLAP's &ldquo;dimension combination.&rdquo;\n            "
+  },
+  {
+    "idx": 33,
+    "chapter": "ch-2-2",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "关键代码 ② 用正则提取专业",
+    "zh_clean": "关键代码 ② 用正则提取专业",
+    "en": "Key Code &mdash; Extract the Major via Regex"
+  },
+  {
+    "idx": 34,
+    "chapter": "ch-2-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "code-purpose",
+    "zh": "CSV 里只有\"班级\"字段（\"软件工程1班\"），需要用正则切出\"专业\"和\"班级序号\"。",
+    "zh_clean": "CSV 里只有\"班级\"字段（\"软件工程1班\"），需要用正则切出\"专业\"和\"班级序号\"。",
+    "en": "The CSV only has a &ldquo;class&rdquo; field (e.g., &ldquo;Software Engineering Class 1&rdquo;), so a regex is needed to split out the &ldquo;major&rdquo; and the &ldquo;class number.&rdquo;"
+  },
+  {
+    "idx": 35,
+    "chapter": "ch-2-2",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "\n              <strong data-page-node-id=\"C3g3VUnyd6LV1RwZqd1V1P\">关键点解释：</strong>\n              正则 <code data-page-node-id=\"r9EaCOZUsZlbSL7BvGiddD\">/^(.+?)(\\d+班)$/</code> 的 <code data-page-node-id=\"rkROmZZbIZRWCyXTBNZZVd\">.+?</code> 是<strong data-page-node-id=\"5ozKnAmKOjMPbcMtw4wv1S\">非贪婪</strong>匹配，会让中间尽可能短、末尾留给 <code data-page-node-id=\"ohLaIYZrtcdLEeV3yXGiLU\">\\d+班</code>。\n              <strong data-page-node-id=\"JNAN1M2QtMxrmEZGXEUPYC\">没这个非贪婪</strong>：<code data-page-node-id=\"mbY0Zof9oQyeyqCnmgVADM\">.+</code> 会把整串都匹配走，剩下空，<code data-page-node-id=\"DlihKvBRShN7fzk9P9FdgS\">m[1]</code> 就是 undefined。\n              这类正则坑学生常踩，必须掌握。\n            ",
+    "zh_clean": "\n              <strong>关键点解释：</strong>\n              正则 <code>/^(.+?)(\\d+班)$/</code> 的 <code>.+?</code> 是<strong>非贪婪</strong>匹配，会让中间尽可能短、末尾留给 <code>\\d+班</code>。\n              <strong>没这个非贪婪</strong>：<code>.+</code> 会把整串都匹配走，剩下空，<code>m[1]</code> 就是 undefined。\n              这类正则坑学生常踩，必须掌握。\n            ",
+    "en": "\n              <strong>Key explanation:</strong>\n              In the regex <code>/^(.+?)(\\d+班)$/</code>, the <code>.+?</code> is <strong>non-greedy</strong> matching &mdash; it keeps the middle as short as possible and leaves the tail for <code>\\d+班</code>.\n              <strong>Without non-greedy</strong>: <code>.+</code> would consume the whole string, leaving nothing, and <code>m[1]</code> would be <code>undefined</code>.\n              This is a regex pitfall students frequently step on; you must master it.\n            "
+  },
+  {
+    "idx": 36,
+    "chapter": "ch-2-2",
+    "tab": "demo",
+    "tag": "h3",
+    "class": "",
+    "zh": "▶ d3.rollup 多层聚合演示",
+    "zh_clean": "▶ d3.rollup 多层聚合演示",
+    "en": "&#9654; d3.rollup Multi-level Aggregation Demo"
+  },
+  {
+    "idx": 37,
+    "chapter": "ch-2-3",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "层级数据 → 屏幕坐标的算法核心",
+    "zh_clean": "层级数据 → 屏幕坐标的算法核心",
+    "en": "The algorithmic core of hierarchical data &rarr; screen coordinates"
+  },
+  {
+    "idx": 38,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 39,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              你的 4.2 节提到\"树形结构可视化\"。这节展开<strong data-page-node-id=\"fkYLk05QT9lFWYSyOEAYZI\">树布局算法</strong>原理 —— 拿到层级数据后，怎么把节点摆到屏幕上不打架？\n            ",
+    "zh_clean": "\n              你的 4.2 节提到\"树形结构可视化\"。这节展开<strong>树布局算法</strong>原理 —— 拿到层级数据后，怎么把节点摆到屏幕上不打架？\n            ",
+    "en": "\n              Your Section 4.2 mentioned &ldquo;tree-structure visualization.&rdquo; This lesson expands on the <strong>tree layout algorithm</strong> &mdash; once you have hierarchical data, how do you place nodes on screen without overlap?\n            "
+  },
+  {
+    "idx": 40,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入理论：Reingold-Tilford 算法（d3.tree 的核心）",
+    "zh_clean": "嵌入理论：Reingold-Tilford 算法（d3.tree 的核心）",
+    "en": "Embedded Theory: The Reingold-Tilford Algorithm (the core of d3.tree)"
+  },
+  {
+    "idx": 41,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              Reingold &amp; Tilford 1981 年提出的算法，至今仍是 d3.tree() 的实现核心。核心思路：\n            ",
+    "zh_clean": "\n              Reingold &amp; Tilford 1981 年提出的算法，至今仍是 d3.tree() 的实现核心。核心思路：\n            ",
+    "en": "\n              The algorithm proposed by Reingold &amp; Tilford in 1981 is still the implementation core of <code>d3.tree()</code>. Core idea:\n            "
+  },
+  {
+    "idx": 42,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"lYIIAWxFwDStaidmytvWJx\">第一遍（自底向上）：</strong>对每个父节点，计算其左右子树\"占用多少横向空间\"",
+    "zh_clean": "<strong>第一遍（自底向上）：</strong>对每个父节点，计算其左右子树\"占用多少横向空间\"",
+    "en": "<strong>First pass (bottom-up):</strong> for each parent node, compute how much horizontal space its left and right subtrees &ldquo;occupy&rdquo;"
+  },
+  {
+    "idx": 43,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"WAWxMa3kfDT3fQFfBMHgx2\">第二遍（自顶向下）：</strong>给每个节点分配<strong data-page-node-id=\"L0UOhMcH7aA5nOznAFyYZc\">绝对 x 坐标</strong>（保证兄弟节点紧贴父节点中线且不重叠）",
+    "zh_clean": "<strong>第二遍（自顶向下）：</strong>给每个节点分配<strong>绝对 x 坐标</strong>（保证兄弟节点紧贴父节点中线且不重叠）",
+    "en": "<strong>Second pass (top-down):</strong> assign every node an <strong>absolute x-coordinate</strong> (so siblings hug the parent's centerline without overlapping)"
+  },
+  {
+    "idx": 44,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"P0Uc1uoM6SAp5c1QOKhh08\">第三遍：</strong>处理\"线程\"（threads）—— 修复子节点跨父中线时的对齐",
+    "zh_clean": "<strong>第三遍：</strong>处理\"线程\"（threads）—— 修复子节点跨父中线时的对齐",
+    "en": "<strong>Third pass:</strong> handle &ldquo;threads&rdquo; &mdash; fix the alignment when children cross the parent's centerline"
+  },
+  {
+    "idx": 45,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"Urm6k5qHca2kjYja21J0Ft\">复杂度的处理</strong>：",
+    "zh_clean": "<strong>复杂度的处理</strong>：",
+    "en": "<strong>Complexity handling</strong>:"
+  },
+  {
+    "idx": 46,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"TkpdZQIBmV9iILouc527aE\">O(n)</strong> 时间 —— 比简单的\"递归平分\"要快",
+    "zh_clean": "<strong>O(n)</strong> 时间 —— 比简单的\"递归平分\"要快",
+    "en": "<strong>O(n)</strong> time &mdash; faster than a naive &ldquo;recursive halving&rdquo;"
+  },
+  {
+    "idx": 47,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "节点的<strong data-page-node-id=\"DQKffhcrylbwtImYB4KPYn\">左右子树宽度的最小值</strong> = 至少容纳所有子节点的水平空间",
+    "zh_clean": "节点的<strong>左右子树宽度的最小值</strong> = 至少容纳所有子节点的水平空间",
+    "en": "A node's <strong>minimum left/right subtree width</strong> = the horizontal space needed at minimum to hold all its children"
+  },
+  {
+    "idx": 48,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "不同布局策略选型：<code data-page-node-id=\"Vpj014dcpM8tIQaQacUQGP\">d3.tree</code>（左右）、<code data-page-node-id=\"DtsBIp7rHgW4hWNQcOREc9\">d3.cluster</code>（左右紧贴）、<code data-page-node-id=\"BAN7UM1f9jPibZuL5xSQ37\">d3.treemap</code>（面积）",
+    "zh_clean": "不同布局策略选型：<code>d3.tree</code>（左右）、<code>d3.cluster</code>（左右紧贴）、<code>d3.treemap</code>（面积）",
+    "en": "Layout-strategy options: <code>d3.tree</code> (left-right), <code>d3.cluster</code> (left-right, packed), <code>d3.treemap</code> (area)"
+  },
+  {
+    "idx": 49,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "理论补丁：d3-hierarchy 模块全家桶",
+    "zh_clean": "理论补丁：d3-hierarchy 模块全家桶",
+    "en": "Theory Patch: The d3-hierarchy Module Family"
+  },
+  {
+    "idx": 50,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<code data-page-node-id=\"DmA6ByTifHm4cnSCkYZdnp\">hierarchy(data)</code>：把任意嵌套 data 转成 hierarchy 结构（每个节点加 parent/children/depth）",
+    "zh_clean": "<code>hierarchy(data)</code>：把任意嵌套 data 转成 hierarchy 结构（每个节点加 parent/children/depth）",
+    "en": "<code>hierarchy(data)</code>: convert any nested data into a hierarchy structure (each node gets <code>parent</code> / <code>children</code> / <code>depth</code>)"
+  },
+  {
+    "idx": 51,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<code data-page-node-id=\"LoUHdkz5jDkinyGQo988jW\">tree().size([h, w])</code>：reingold-tilford 算法，左右布局",
+    "zh_clean": "<code>tree().size([h, w])</code>：reingold-tilford 算法，左右布局",
+    "en": "<code>tree().size([h, w])</code>: Reingold-Tilford algorithm, left-right layout"
+  },
+  {
+    "idx": 52,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<code data-page-node-id=\"QFi1nAwdWS8hH4mZf6Xk2N\">cluster().size([h, w])</code>：所有叶子节点对齐到同一深度",
+    "zh_clean": "<code>cluster().size([h, w])</code>：所有叶子节点对齐到同一深度",
+    "en": "<code>cluster().size([h, w])</code>: align all leaf nodes to the same depth"
+  },
+  {
+    "idx": 53,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<code data-page-node-id=\"Y788Ay2Ici3X2QBtewwnCo\">treemap().tile(...)</code>：面积（slice-and-dice / squarified / resquarify 算法）",
+    "zh_clean": "<code>treemap().tile(...)</code>：面积（slice-and-dice / squarified / resquarify 算法）",
+    "en": "<code>treemap().tile(...)</code>: area-based (slice-and-dice / squarified / resquarify algorithms)"
+  },
+  {
+    "idx": 54,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<code data-page-node-id=\"dzBSZKKAQgUxQdhh8zDu1x\">pack().radius(d =&gt; ...)</code>：圆环打包（circle packing）",
+    "zh_clean": "<code>pack().radius(d =&gt; ...)</code>：圆环打包（circle packing）",
+    "en": "<code>pack().radius(d =&gt; ...)</code>: circle packing"
+  },
+  {
+    "idx": 55,
+    "chapter": "ch-2-3",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<code data-page-node-id=\"jn7dPQDT7btodbNCTtOuqE\">partition().size([h, w])</code>：icicle / sunburst 布局",
+    "zh_clean": "<code>partition().size([h, w])</code>：icicle / sunburst 布局",
+    "en": "<code>partition().size([h, w])</code>: icicle / sunburst layout"
+  },
+  {
+    "idx": 56,
+    "chapter": "ch-2-3",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "关键代码 ① hierarchy + tree 三步走",
+    "zh_clean": "关键代码 ① hierarchy + tree 三步走",
+    "en": "Key Code &mdash; hierarchy + tree in Three Steps"
+  },
+  {
+    "idx": 57,
+    "chapter": "ch-2-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "code-purpose",
+    "zh": "这是 d3-hierarchy 的标准模式：先建 hierarchy、再求 tree layout、最后画 links + nodes。",
+    "zh_clean": "这是 d3-hierarchy 的标准模式：先建 hierarchy、再求 tree layout、最后画 links + nodes。",
+    "en": "This is the standard d3-hierarchy pattern: first build the hierarchy, then compute the tree layout, and finally draw links + nodes."
+  },
+  {
+    "idx": 58,
+    "chapter": "ch-2-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "\n              <strong data-page-node-id=\"zWtGx1Lrz6vEp8p6BEpwiA\">关键点解释：</strong>\n              <code data-page-node-id=\"QuRpAJl9hmjFjsy9CEtzpN\">treeData.x</code> 是<strong data-page-node-id=\"HsXKd26oWSabnOisHrXbKK\">深度方向</strong>（默认垂直），<code data-page-node-id=\"QQOXWlNtq9yHtkKPPR6iL9\">treeData.y</code> 是<strong data-page-node-id=\"C48gR1wptzJOZikagSSj8z\">水平方向</strong>（同一深度的不同节点）。\n              所以 linkHorizontal 用 <code data-page-node-id=\"w6NzcP8NTU61gAtJqe5qUE\">x=d.y, y=d.x</code> —— 横线方向走 y，垂直方向走 x。\n              <strong data-page-node-id=\"SnnZzLENRwuSorxrhKDB7y\">这种\"x 轴走 y、y 轴走 x\"的 swap 是横向树特有的，记住。</strong>\n            ",
+    "zh_clean": "\n              <strong>关键点解释：</strong>\n              <code>treeData.x</code> 是<strong>深度方向</strong>（默认垂直），<code>treeData.y</code> 是<strong>水平方向</strong>（同一深度的不同节点）。\n              所以 linkHorizontal 用 <code>x=d.y, y=d.x</code> —— 横线方向走 y，垂直方向走 x。\n              <strong>这种\"x 轴走 y、y 轴走 x\"的 swap 是横向树特有的，记住。</strong>\n            ",
+    "en": "\n              <strong>Key explanation:</strong>\n              <code>treeData.x</code> is the <strong>depth direction</strong> (vertical by default), while <code>treeData.y</code> is the <strong>horizontal direction</strong> (different nodes at the same depth).\n              So <code>linkHorizontal</code> uses <code>x=d.y, y=d.x</code> &mdash; the horizontal direction rides on y, and the vertical direction rides on x.\n              <strong>This &ldquo;x-axis rides on y, y-axis rides on x&rdquo; swap is unique to horizontal trees &mdash; commit it to memory.</strong>\n            "
+  },
+  {
+    "idx": 59,
+    "chapter": "ch-2-3",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "关键代码 ② separation 控制父子间距",
+    "zh_clean": "关键代码 ② separation 控制父子间距",
+    "en": "Key Code &mdash; separation Controls Parent-Child Spacing"
+  },
+  {
+    "idx": 60,
+    "chapter": "ch-2-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "code-purpose",
+    "zh": "separation 接收函数，返回 [node, parent] 之间的\"间隔倍数\"。",
+    "zh_clean": "separation 接收函数，返回 [node, parent] 之间的\"间隔倍数\"。",
+    "en": "<code>separation</code> accepts a function and returns the &ldquo;spacing multiplier&rdquo; between [node, parent]."
+  },
+  {
+    "idx": 61,
+    "chapter": "ch-2-3",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "\n              <strong data-page-node-id=\"yzZGiu6b8ieDpZwytEvQ3Q\">关键点解释：</strong>\n              separation 默认值 <code data-page-node-id=\"ttbhxqGAb0fDyWjBNQ33ez\">(a, b) =&gt; a.parent === b.parent ? 1 : 2</code>。\n              改成 <code data-page-node-id=\"g7NxGgqALoZyMguXofWzmq\">0.5</code> → 全部挤一起；改成 <code data-page-node-id=\"2gOV9SDYoci0c06D0NUzVQ\">2.0</code> → 树变宽。\n              <strong data-page-node-id=\"8hFtWFrNd87q8DskGgeKVO\">Demo 里有个 slider</strong> 让你实时调看效果。\n            ",
+    "zh_clean": "\n              <strong>关键点解释：</strong>\n              separation 默认值 <code>(a, b) =&gt; a.parent === b.parent ? 1 : 2</code>。\n              改成 <code>0.5</code> → 全部挤一起；改成 <code>2.0</code> → 树变宽。\n              <strong>Demo 里有个 slider</strong> 让你实时调看效果。\n            ",
+    "en": "\n              <strong>Key explanation:</strong>\n              The default value of <code>separation</code> is <code>(a, b) =&gt; a.parent === b.parent ? 1 : 2</code>.\n              Change it to <code>0.5</code> &rarr; everything squishes together; change it to <code>2.0</code> &rarr; the tree widens.\n              <strong>There is a slider in the demo</strong> so you can adjust it in real time and see the effect.\n            "
+  },
+  {
+    "idx": 62,
+    "chapter": "ch-2-3",
+    "tab": "demo",
+    "tag": "h3",
+    "class": "",
+    "zh": "▶ 树布局演示",
+    "zh_clean": "▶ 树布局演示",
+    "en": "&#9654; Tree Layout Demo"
+  },
+  {
+    "idx": 63,
+    "chapter": "ch-2-3",
+    "tab": "demo",
+    "tag": "p",
+    "class": "demo-legend",
+    "zh": "👆 切换聚合层次（专业→班级 / 性别→专业→班级 等），滑动 slider 调 separation 看效果",
+    "zh_clean": "👆 切换聚合层次（专业→班级 / 性别→专业→班级 等），滑动 slider 调 separation 看效果",
+    "en": "&#128073; Switch aggregation levels (major &rarr; class / gender &rarr; major &rarr; class, etc.) and drag the slider to adjust <code>separation</code> and see the effect"
+  },
+  {
+    "idx": 64,
+    "chapter": "ch-2-4",
+    "tab": "demo",
+    "tag": "p",
+    "class": "chapter-subtitle",
+    "zh": "把树画成可折叠的 HTML 列表，处理点击、冒泡、委托三个坑",
+    "zh_clean": "把树画成可折叠的 HTML 列表，处理点击、冒泡、委托三个坑",
+    "en": "Render the tree as a collapsible HTML list &mdash; handling three pitfalls: click, bubbling, and delegation"
+  },
+  {
+    "idx": 65,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "你的原案例",
+    "zh_clean": "你的原案例",
+    "en": "Your Original Case"
+  },
+  {
+    "idx": 66,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "原文档用了 <code data-page-node-id=\"PFIVxpE9d1TJDL8lVOCnB6\">classed</code> 控制节点样式、用 <code data-page-node-id=\"liDQzaR1tl9nYitE6UtlIM\">stopPropagation</code> 阻止冒泡。重点是<strong data-page-node-id=\"s2dYwQ0aLf5RrQN2nAbp5p\">把 D3 树布局输出变成可交互的 HTML 列表</strong>。",
+    "zh_clean": "原文档用了 <code>classed</code> 控制节点样式、用 <code>stopPropagation</code> 阻止冒泡。重点是<strong>把 D3 树布局输出变成可交互的 HTML 列表</strong>。",
+    "en": "The original document used <code>classed</code> to control node styles and <code>stopPropagation</code> to block bubbling. The focus is on <strong>turning the D3 tree layout output into an interactive HTML list</strong>."
+  },
+  {
+    "idx": 67,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "嵌入理论：DOM 事件三阶段 + 事件委托",
+    "zh_clean": "嵌入理论：DOM 事件三阶段 + 事件委托",
+    "en": "Embedded Theory: The Three Phases of DOM Events + Event Delegation"
+  },
+  {
+    "idx": 68,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              浏览器的事件流分三阶段（DOM 规范）：\n            ",
+    "zh_clean": "\n              浏览器的事件流分三阶段（DOM 规范）：\n            ",
+    "en": "\n              The browser's event flow has three phases (per the DOM spec):\n            "
+  },
+  {
+    "idx": 69,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"iYsW6JIPi7OEqWIyW8LGPt\">捕获 (capturing)：</strong>window → document → ... → 目标元素（从外到内）",
+    "zh_clean": "<strong>捕获 (capturing)：</strong>window → document → ... → 目标元素（从外到内）",
+    "en": "<strong>Capturing:</strong> window &rarr; document &rarr; ... &rarr; target element (outside to inside)"
+  },
+  {
+    "idx": 70,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"50DhSSt0ZRA8SlYuGGWgDr\">目标 (target)：</strong>目标元素本身",
+    "zh_clean": "<strong>目标 (target)：</strong>目标元素本身",
+    "en": "<strong>Target:</strong> the target element itself"
+  },
+  {
+    "idx": 71,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "li",
+    "class": "",
+    "zh": "<strong data-page-node-id=\"NZ63nfbMHgowZyck4JHovy\">冒泡 (bubbling)：</strong>目标元素 → ... → document → window（从内到外）",
+    "zh_clean": "<strong>冒泡 (bubbling)：</strong>目标元素 → ... → document → window（从内到外）",
+    "en": "<strong>Bubbling:</strong> target element &rarr; ... &rarr; document &rarr; window (inside to outside)"
+  },
+  {
+    "idx": 72,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "默认监听的是冒泡阶段。你可以在监听器里 <code data-page-node-id=\"X2E4RrXVkTf3ghF3CjqbRh\">e.stopPropagation()</code> 截断冒泡，让上层的监听器不再触发。",
+    "zh_clean": "默认监听的是冒泡阶段。你可以在监听器里 <code>e.stopPropagation()</code> 截断冒泡，让上层的监听器不再触发。",
+    "en": "By default, listeners are registered on the bubbling phase. Inside a listener you can call <code>e.stopPropagation()</code> to cut off bubbling so ancestor listeners no longer fire."
+  },
+  {
+    "idx": 73,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "理论补丁：事件委托 (Event Delegation)",
+    "zh_clean": "理论补丁：事件委托 (Event Delegation)",
+    "en": "Theory Patch: Event Delegation"
+  },
+  {
+    "idx": 74,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              <strong data-page-node-id=\"GlGD6Y4APFSc4s3qstpnNi\">问题</strong>：列表里有 1000 个 li，给每个 li 都绑 click 监听器 → 慢、内存大、新增元素要重新绑。\n            ",
+    "zh_clean": "\n              <strong>问题</strong>：列表里有 1000 个 li，给每个 li 都绑 click 监听器 → 慢、内存大、新增元素要重新绑。\n            ",
+    "en": "\n              <strong>Problem</strong>: if a list has 1000 <code>li</code> elements and you bind a click listener to each &rarr; it's slow, memory-heavy, and newly added elements have to be re-bound.\n            "
+  },
+  {
+    "idx": 75,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              <strong data-page-node-id=\"Iei2py5iNq00N9vfC3qND2\">解法</strong>：只给父元素（ul/div）绑 1 个 click 监听器，利用冒泡机制 —— 子元素的 click 最终会触发父元素的监听器。用 <code data-page-node-id=\"MwTnVc4qR9M21RBVcmeYfO\">e.target.closest('.label')</code> 找到\"实际点击的是哪个子元素\"。\n            ",
+    "zh_clean": "\n              <strong>解法</strong>：只给父元素（ul/div）绑 1 个 click 监听器，利用冒泡机制 —— 子元素的 click 最终会触发父元素的监听器。用 <code>e.target.closest('.label')</code> 找到\"实际点击的是哪个子元素\"。\n            ",
+    "en": "\n              <strong>Solution</strong>: bind only 1 click listener on the parent element (<code>ul</code> / <code>div</code>) and lean on bubbling &mdash; a click on any child eventually triggers the parent's listener. Use <code>e.target.closest('.label')</code> to figure out &ldquo;which child element was actually clicked.&rdquo;\n            "
+  },
+  {
+    "idx": 76,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "p",
+    "class": "",
+    "zh": "\n              <strong data-page-node-id=\"V0oxc2eOIgNvO1GDLslFTZ\">优势</strong>：1 个监听器代替 N 个、未来新增元素自动支持。\n            ",
+    "zh_clean": "\n              <strong>优势</strong>：1 个监听器代替 N 个、未来新增元素自动支持。\n            ",
+    "en": "\n              <strong>Advantage</strong>: 1 listener replaces N, and any future newly added elements are automatically supported.\n            "
+  },
+  {
+    "idx": 77,
+    "chapter": "ch-2-4",
+    "tab": "explain",
+    "tag": "h3",
+    "class": "",
+    "zh": "关键 API：D3 classed()",
+    "zh_clean": "关键 API：D3 classed()",
+    "en": "Key API: D3 <code>classed()</code>"
+  },
+  {
+    "idx": 78,
+    "chapter": "ch-2-4",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "关键代码 ① 事件委托（一对多监听）",
+    "zh_clean": "关键代码 ① 事件委托（一对多监听）",
+    "en": "Key Code &mdash; Event Delegation (one-to-many listening)"
+  },
+  {
+    "idx": 79,
+    "chapter": "ch-2-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "code-purpose",
+    "zh": "用递归 buildList 构建可折叠树；用 liSel 上的 click 做事件委托，不绑到每个 label。",
+    "zh_clean": "用递归 buildList 构建可折叠树；用 liSel 上的 click 做事件委托，不绑到每个 label。",
+    "en": "Use recursive <code>buildList</code> to construct the collapsible tree; use the click on <code>liSel</code> for event delegation rather than binding to each label."
+  },
+  {
+    "idx": 80,
+    "chapter": "ch-2-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "\n              <strong data-page-node-id=\"3lqdYLDOatdOiZDau4yHrJ\">关键点解释：</strong>\n              这是经典的「<strong data-page-node-id=\"p2ZwOZcdIHWR7FZgeg9TD4\">阻止 toggle 按钮冒泡到 li 的 select 监听器</strong>」模式。如果不 stopPropagation，\n              点 toggle 时会同时触发\"切换折叠\"和\"选中节点\"，用户看着会困惑。\n              <strong data-page-node-id=\"BxR1GKgygV8UDOTDz31Su5\">这是 DOM 事件机制的核心教学点。</strong>\n            ",
+    "zh_clean": "\n              <strong>关键点解释：</strong>\n              这是经典的「<strong>阻止 toggle 按钮冒泡到 li 的 select 监听器</strong>」模式。如果不 stopPropagation，\n              点 toggle 时会同时触发\"切换折叠\"和\"选中节点\"，用户看着会困惑。\n              <strong>这是 DOM 事件机制的核心教学点。</strong>\n            ",
+    "en": "\n              <strong>Key explanation:</strong>\n              This is the classic pattern of &ldquo;<strong>stopping the toggle button from bubbling up to the <code>li</code>'s select listener</strong>.&rdquo; Without <code>stopPropagation</code>,\n              clicking the toggle would simultaneously trigger &ldquo;toggle collapse&rdquo; and &ldquo;select the node,&rdquo; which would confuse users.\n              <strong>This is a core teaching point about the DOM event mechanism.</strong>\n            "
+  },
+  {
+    "idx": 81,
+    "chapter": "ch-2-4",
+    "tab": "code",
+    "tag": "h3",
+    "class": "",
+    "zh": "关键代码 ② 嵌套递归 buildList",
+    "zh_clean": "关键代码 ② 嵌套递归 buildList",
+    "en": "Key Code &mdash; Nested Recursive <code>buildList</code>"
+  },
+  {
+    "idx": 82,
+    "chapter": "ch-2-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "code-purpose",
+    "zh": "d3 selection 的递归渲染：每个 li 内部再有 ul/li，再递归 buildList。",
+    "zh_clean": "d3 selection 的递归渲染：每个 li 内部再有 ul/li，再递归 buildList。",
+    "en": "Recursive rendering with d3 selections: every <code>li</code> contains another <code>ul/li</code>, then <code>buildList</code> recurses into it."
+  },
+  {
+    "idx": 83,
+    "chapter": "ch-2-4",
+    "tab": "code",
+    "tag": "p",
+    "class": "key-point",
+    "zh": "\n              <strong data-page-node-id=\"fu1xIIoIw3U4wCJz2BPyQ2\">关键点解释：</strong>\n              <strong data-page-node-id=\"jvWTEjOHOfr3HutOAgEAyl\">为什么用 innerHTML = \"\" 清空再重画？</strong>\n              D3 没有\"智能更新\"树结构（层级变化）的 API —— 节点展开/折叠会改变父子结构，最简单的做法是全量重新渲染。\n              用 <code data-page-node-id=\"t4UcVjEKHP0979ucEjpQXS\">selection.each()</code> 配合 <code data-page-node-id=\"8UPzNc8anzHApxD3wwac7X\">d3.select(this)</code> 把原生元素转回 selection，<strong data-page-node-id=\"qnPvEQPv4DcgtA5P27KRDV\">这是 D3 与原生 DOM 互操作的关键模式</strong>。\n            ",
+    "zh_clean": "\n              <strong>关键点解释：</strong>\n              <strong>为什么用 innerHTML = \"\" 清空再重画？</strong>\n              D3 没有\"智能更新\"树结构（层级变化）的 API —— 节点展开/折叠会改变父子结构，最简单的做法是全量重新渲染。\n              用 <code>selection.each()</code> 配合 <code>d3.select(this)</code> 把原生元素转回 selection，<strong>这是 D3 与原生 DOM 互操作的关键模式</strong>。\n            ",
+    "en": "\n              <strong>Key explanation:</strong>\n              <strong>Why use <code>innerHTML = \"\"</code> to clear and redraw?</strong>\n              D3 has no &ldquo;smart-update&rdquo; API for tree structures (where hierarchy changes) &mdash; expanding or collapsing a node changes the parent-child structure, and the simplest approach is a full re-render.\n              Use <code>selection.each()</code> together with <code>d3.select(this)</code> to convert the raw element back into a selection &mdash; <strong>this is the key pattern for D3-native-DOM interop</strong>.\n            "
+  },
+  {
+    "idx": 84,
+    "chapter": "ch-2-4",
+    "tab": "demo",
+    "tag": "h3",
+    "class": "",
+    "zh": "▶ 可折叠树形列表",
+    "zh_clean": "▶ 可折叠树形列表",
+    "en": "&#9654; Collapsible Tree List"
+  },
+  {
+    "idx": 85,
+    "chapter": "ch-2-4",
+    "tab": "demo",
+    "tag": "p",
+    "class": "demo-legend",
+    "zh": "👆 点击三角形 toggle 折叠/展开 · 点击条目本身选中（看下方日志）",
+    "zh_clean": "👆 点击三角形 toggle 折叠/展开 · 点击条目本身选中（看下方日志）",
+    "en": "&#128073; Click the triangle to toggle collapse / expand &middot; click an item itself to select it (see the log below)"
+  },
+  {
+    "idx": 86,
+    "chapter": "ch-2-4",
+    "tab": "demo",
+    "tag": "p",
+    "class": "",
+    "zh": "Doc-02 集成教学页面 · 零依赖 · D3.js v7 + 原生 JS · 可独立运行",
+    "zh_clean": "Doc-02 集成教学页面 · 零依赖 · D3.js v7 + 原生 JS · 可独立运行",
+    "en": "Doc-02 integrated teaching page &middot; zero dependencies &middot; D3.js v7 + vanilla JS &middot; runs standalone"
+  }
+]

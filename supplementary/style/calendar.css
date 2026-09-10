@@ -1,0 +1,276 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    background: #15181e;
+    color: #eaeef4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 16px;
+}
+
+#heatmap-panel,
+#spiral-panel {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.day-group text {
+    fill: #fff;
+    font-size: 8px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.seg {
+    stroke: none;
+}
+
+/* 去除默认填充，颜色由元素属性控制 */
+.letter-seg {
+    fill: #9e9e9e;
+}
+
+.letter-seg.highlight {
+    fill: #fff;
+}
+
+.letter-text {
+    fill: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+}
+
+.seg-text {
+    font-size: 10px;
+    font-weight: bold;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+}
+
+.center-year {
+    font-size: 40px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    fill: #eaeef4;
+    pointer-events: none;
+}
+
+.center-main {
+    font-size: 20px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    fill: #eaeef4;
+    pointer-events: none;
+}
+
+.center-sub {
+    font-size: 16px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    fill: #b8c0cc;
+    pointer-events: none;
+}
+
+.spiral-path {
+    fill: none;
+    stroke: #555;
+    stroke-width: 0.6;
+    pointer-events: none;
+}
+
+.spiral-edge {
+    fill: none;
+    stroke: #bdbdbd;
+    stroke-width: 0.8;
+    pointer-events: none;
+}
+
+.segment-edge {
+    fill: none;
+    stroke: #dcdcdc;
+    stroke-width: 0.4;
+    pointer-events: none;
+}
+
+/* Cross-highlight styles (stronger visibility) */
+#heatmap-panel .cell.active {
+    stroke: #00e5ff;
+    stroke-width: 3px;
+    vector-effect: non-scaling-stroke;
+    filter: drop-shadow(0 0 4px #00e5ff);
+}
+
+#spiral-panel .seg.highlight {
+    stroke: #00e5ff;
+    stroke-width: 4.5px;
+    vector-effect: non-scaling-stroke;
+    filter: drop-shadow(0 0 10px #00e5ff);
+}
+
+/* Pulse animation: single 600ms breathe (fade in-out) */
+@keyframes pulseFade {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.pulse {
+    animation: pulseFade 600ms ease-in-out 1;
+}
+
+/* Heatmap panel scoped styles (from index2.html) */
+#heatmap-panel {
+    --bg: #15181e;
+    --panel: #1e2229;
+    --text: #eaeef4;
+    --muted: #a8b0bd;
+    --grid: #2a2e37;
+    --stroke: #121314;
+}
+
+#spiral-panel {
+    background: #1e2229;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .35) inset;
+}
+
+#heatmap-panel .calendar-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 18px
+}
+
+#heatmap-panel .calendar-year {
+    background: var(--panel);
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .35) inset
+}
+
+#heatmap-panel .year-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px
+}
+
+#heatmap-panel .year-title {
+    font-weight: 600;
+    letter-spacing: .5px;
+    color: var(--text)
+}
+
+#heatmap-panel svg {
+    width: 100%;
+    height: auto;
+    display: block
+}
+
+#heatmap-panel .cell {
+    stroke: var(--bg);
+    stroke-width: 0px
+}
+
+#heatmap-panel .day-divider {
+    position: absolute;
+    left: -2px;
+    width: 2px;
+    height: 100%;
+    background: #0a0a0a;
+    z-index: 5;
+}
+
+#heatmap-panel .month-boundary {
+    stroke: var(--stroke);
+    stroke-width: 3;
+    fill: none;
+    opacity: .6
+}
+
+#heatmap-panel .dow-label {
+    fill: var(--muted);
+    font-size: 10px
+}
+
+#heatmap-panel .month-label {
+    fill: var(--muted);
+    font-size: 10px
+}
+
+#heatmap-panel .legend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px
+}
+
+#heatmap-panel .legend .swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid var(--bg)
+}
+
+#heatmap-panel .legend .legend-text {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+#heatmap-panel .tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: #11151b;
+    color: #cfe3ff;
+    border: 1px solid #223048;
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .35);
+    opacity: 0;
+    transform: translate(-50%, -120%);
+}
+
+#spiral-panel .spiral-tooltip {
+    position: fixed;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    max-width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#spiral-panel .spiral-tooltip strong {
+    color: #fff;
+    margin-bottom: 4px;
+    display: block;
+}
