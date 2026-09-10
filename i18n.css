@@ -1,0 +1,81 @@
+/* =============================================================
+ * i18n.css — Language switcher styles (v2.0 · 2026-09-09)
+ * 共用样式：portal 主页 + supplementary + 5 个 lesson
+ *
+ * 设计原则：
+ *   - .lang-switch 是唯一基类，统一样式
+ *   - .lang-switch-floating 仅用于无 topbar 的页面（portal 主页 + supplementary），
+ *     把按钮钉在右上角
+ *   - 内嵌在 .course-topbar 内的版本继承基类样式，视觉与 floating 版一致
+ * ============================================================= */
+
+/* --- 基类（所有页面共用）--- */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding: 4px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-family: inherit;
+}
+
+.lang-switch button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.lang-switch button:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.lang-switch button.active {
+  background: #1e293b;
+  color: #fff;
+}
+
+/* --- Portal 主页 / supplementary：无 topbar → 浮动钉右上角 --- */
+.lang-switch.lang-switch-floating {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+
+/* --- .course-topbar 内嵌版本：右对齐，垂直居中 --- */
+.course-topbar .lang-switch {
+  margin-left: auto;
+}
+
+/* --- 移动端适配 --- */
+@media (max-width: 768px) {
+  .lang-switch.lang-switch-floating {
+    top: 12px;
+    right: 12px;
+  }
+  .lang-switch.lang-switch-floating button {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+  .course-topbar .lang-switch button {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+}
+
+/* --- 双 DOM 双语正文：确保 hidden 一定生效（防被 author 样式覆盖） --- */
+[data-lang][hidden] {
+  display: none !important;
+}
