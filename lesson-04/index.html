@@ -73,10 +73,10 @@
             <h3 data-lang="zh-CN">嵌入陈为教材理论</h3>
             <h3 data-lang="en-US" hidden>Embedded Theory</h3>
             <ul data-page-node-id="c9sR9InsOy3aWasJWK5OKJ">
-              <li data-lang="zh-CN"><strong data-page-node-id="ADGuwa7jz66PvUyECEwC5j">长格式（long）</strong>：每行一个观测，列 = 字段（如 <code data-page-node-id="jlrLIy8ds09cKfHIyMXZyJ">{state, metric, value}</code>）。优点：方便过滤、分组、绑定到 d3 join。</li>
-              <li data-lang="en-US" hidden><strong>Long format (long)</strong>: one observation per row, columns = fields (e.g., <code>{state, metric, value}</code>). Pros: easy to filter, group, and bind to a d3 join.</li>
-              <li data-lang="zh-CN"><strong data-page-node-id="f0IgdQtA4Xo2S2vnLHU5Vv">宽格式（wide）</strong>：每行一个实体，列 = 指标（如 <code data-page-node-id="imKkWs89LBwVIxOh7ZtVEk">{state, murder, robbery, ...}</code>）。优点：人眼读得懂、直观。</li>
-              <li data-lang="en-US" hidden><strong>Wide format (wide)</strong>: one entity per row, columns = metrics (e.g., <code>{state, murder, robbery, ...}</code>). Pros: human-readable and intuitive.</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="ADGuwa7jz66PvUyECEwC5j">长格式（long）</strong>：每行一个观测，每行一个实体属性，列 = 字段（如 <code data-page-node-id="jlrLIy8ds09cKfHIyMXZyJ">{state, metric, value}</code>）。优点：方便过滤、分组、绑定到 d3 join。</li>
+              <li data-lang="en-US" hidden><strong>Long format (long)</strong>: one observation per row, one field per row, columns = fields (e.g., <code>{state, metric, value}</code>). Pros: easy to filter, group, and bind to a d3 join.</li>
+              <li data-lang="zh-CN"><strong data-page-node-id="f0IgdQtA4Xo2S2vnLHU5Vv">宽格式（wide）</strong>：每行一个实体，实体的所有属性都在同一行，列 = 指标（如 <code data-page-node-id="imKkWs89LBwVIxOh7ZtVEk">{state, murder, robbery, ...}</code>）。优点：人眼读得懂、直观。</li>
+              <li data-lang="en-US" hidden><strong>Wide format (wide)</strong>: one entity per row, all the fields of one entity in the same row, columns = metrics (e.g., <code>{state, murder, robbery, ...}</code>). Pros: human-readable and intuitive.</li>
               <li data-lang="zh-CN"><strong data-page-node-id="VxAFQTfyGUNyWUSiO1osP2">转换</strong>：<code data-page-node-id="vaz2nPvpXmU8Ltyf2ay5Bi">flatMap</code> + 循环键名 = 几行代码搞定。</li>
               <li data-lang="en-US" hidden><strong>Conversion</strong>: <code>flatMap</code> + iterating over key names = a few lines of code.</li>
               <li data-lang="zh-CN"><strong data-page-node-id="WIbIqhHDGDHC9WpAKb1wvb">d3.autoType</strong>：自动推断列类型（数字、日期、布尔），省得手动 <code data-page-node-id="W51rGXOhVQUXJJqOnyVlwP">+d.field</code>。</li>
